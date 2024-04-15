@@ -21,8 +21,8 @@ const itinerarySchema = new Schema({
         type: String
     },
     events:[eventSchema],
-    transportation:[transportationSchema],
-    living:[livingSchema],
+    transportations:[transportationSchema],
+    livings:[livingSchema],
   }, {
     timestamps: true
   });

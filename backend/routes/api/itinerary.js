@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
+const Event= mongoose.model('Event');
+const Living = mongoose.model('Living');
+const Transportation = mongoose.model('Transportation')
 const Itinerary = mongoose.model('Itinerary');
 const { requireUser } = require('../../config/passport');
 
@@ -63,7 +66,7 @@ router.get('/', async (req, res) => {
         title: req.body.title,
         description: req.body.description
       });
-  
+
       let itinerary = await newItinerary.save();
       itinerary = await itinerary.populate('author', '_id username');
       return res.json(itinerary);
@@ -76,8 +79,26 @@ router.get('/', async (req, res) => {
 
   router.patch('/:id/events', requireUser, async (req, res, next) => {
     try {
-        const itinerary = await Itinerary.findById(req.params.id)
-        res.json(itinerary);
+        const updateItinerary = await Itinerary.findById(req.params.id)
+        const newEvent = new Event({
+          eventTitle: req.body.eventTitle,
+          startTime: req.body.startTime,
+          endTime: req.body.endTime,
+          location: req.body.location,
+          description: req.body.description,
+          category: req.body.category,
+          cost: req.body.cost
+        })
+        updateItinerary.events.push(newEvent)
+        try{
+          let itinerary = await updateItinerary.save()
+          itinerary = await itinerary.populate('author', '_id username');
+          return res.json(itinerary)
+
+        }
+        catch(err){
+          next(err)
+        }
       }
       catch(err) {
         const error = new Error('Itinerary not found');
@@ -85,6 +106,72 @@ router.get('/', async (req, res) => {
         error.errors = { message: "No itinerary found with that id" };
         return next(error);
       }
+
+
   });
 
+  router.patch('/:id/livings', requireUser, async (req, res, next) => {
+    try {
+        const updateItinerary = await Itinerary.findById(req.params.id)
+        const newLiving = new Living({
+          livingTitle: req.body.livingTitle,
+          startTime: req.body.startTime,
+          endTime: req.body.endTime,
+          location: req.body.location,
+          description: req.body.description,
+          cost: req.body.cost
+        })
+        updateItinerary.livings.push(newLiving)
+        try{
+          let itinerary = await updateItinerary.save()
+          itinerary = await itinerary.populate('author', '_id username');
+          return res.json(itinerary)
 
+        }
+        catch(err){
+          next(err)
+        }
+      }
+      catch(err) {
+        const error = new Error('Itinerary not found');
+        error.statusCode = 404;
+        error.errors = { message: "No itinerary found with that id" };
+        return next(error);
+      }
+
+
+  });
+  router.patch('/:id/transportations', requireUser, async (req, res, next) => {
+    try {
+        const updateItinerary = await Itinerary.findById(req.params.id)
+        const newTransportation = new Transportation({
+          transportationTitle: req.body.transportationTitle,
+          startLocation: req.body.startLocation,
+          endLocation: req.body.endLocation,
+          startTime: req.body.startTime,
+          endTime: req.body.endTime,
+          description: req.body.description,
+          cost: req.body.cost
+        })
+        updateItinerary.transportations.push(newTransportation)
+        try{
+          let itinerary = await updateItinerary.save()
+          itinerary = await itinerary.populate('author', '_id username');
+          return res.json(itinerary)
+
+        }
+        catch(err){
+          next(err)
+        }
+      }
+      catch(err) {
+        const error = new Error('Itinerary not found');
+        error.statusCode = 404;
+        error.errors = { message: "No itinerary found with that id" };
+        return next(error);
+      }
+
+
+  });
+
+  module.exports = router;
