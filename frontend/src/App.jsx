@@ -5,7 +5,8 @@ import HomePage from './components/HomePage/HomePage';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AuthRoute component={HomePage} />
+    element: 
+    <AuthRoute component={HomePage} />
   }
 ]);
 
