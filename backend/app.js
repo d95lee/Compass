@@ -9,6 +9,7 @@ const csurf = require('csurf');
 const debug = require('debug');
 
 require('./models/User');
+require('./models/Itinerary')
 require('./config/passport');
 const passport = require('passport');
 
