@@ -5,8 +5,8 @@ const transportationSchema = new Schema({
     transportationTitle: String,
     startLocation: String,
     endLocation: String,
-    startTime: Date,
-    endTime: Date,
+    startTime: String,
+    endTime: String,
     description: String,
     cost: Number
 })

@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const livingSchema = new Schema({
     livingTitle: String,
-    startTime: Date,
-    endTime: Date,
+    startTime: String,
+    endTime: String,
     location: String,
     description: String,
     cost: Number
