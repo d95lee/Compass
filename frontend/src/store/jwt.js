@@ -23,10 +23,10 @@ async function jwtFetch(url, options = {}) {
     return null;
   }
 
-  if (options.method.toUpperCase() !== "GET") {
-    options.headers["Content-Type"] =
-      options.headers["Content-Type"] || "application/json";
-    options.headers["CSRF-Token"] = getCookie("CSRF-TOKEN");
-  }
+  // if (options.method.toUpperCase() !== "GET") {
+  //   options.headers["Content-Type"] =
+  //     options.headers["Content-Type"] || "application/json";
+  //   options.headers["CSRF-Token"] = getCookie("CSRF-TOKEN");
+  // }
 
   export default jwtFetch;
