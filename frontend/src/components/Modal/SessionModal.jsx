@@ -62,9 +62,9 @@ const SessionModal = ({ modalState, setModalState }) => {
                 <form onSubmit={handleSubmit}>
                         <input 
                             className='buttons'
-                            placeholder='Username'
-                            value={username}
-                            onChange={e => setUsername(e.target.value)} 
+                            placeholder='Email'
+                            value={email}
+                            onChange={e => setEmail(e.target.value)} 
                         />
                         <input 
                             className='buttons'
