@@ -80,7 +80,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-
+  // Creating an event
   router.patch('/:id/events', requireUser, validateEventInput, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findById(req.params.id)
@@ -114,6 +114,8 @@ router.get('/', async (req, res) => {
 
   });
 
+
+   // Creating livings
   router.patch('/:id/livings', requireUser, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findById(req.params.id)
@@ -142,9 +144,10 @@ router.get('/', async (req, res) => {
         error.errors = { message: "No itinerary found with that id" };
         return next(error);
       }
-
-
   });
+
+
+   // Creating transportations
   router.patch('/:id/transportations', requireUser, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findById(req.params.id)
@@ -176,6 +179,7 @@ router.get('/', async (req, res) => {
       }
   });
 
+  // Updating the meta data (title and description of the outermost itinerary object)
   router.patch('/:id', requireUser, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findByIdAndUpdate(req.params.id, 
@@ -192,7 +196,7 @@ router.get('/', async (req, res) => {
         }
     })
 
-
+    // This is the actual EDIT for the event
   router.patch('/:id/events/:eventsId', requireUser, validateEventInput, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findById(req.params.id);
@@ -228,6 +232,7 @@ router.get('/', async (req, res) => {
 });
 
 
+// This is the actual EDIT for the transportation
 router.patch('/:id/transportations/:transportationsId', requireUser, validateTransportationInput, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findById(req.params.id);
@@ -263,6 +268,7 @@ router.patch('/:id/transportations/:transportationsId', requireUser, validateTra
 });
 
 
+// This is the actual EDIT for the living
 router.patch('/:id/livings/:livingsId', requireUser, validateLivingInput, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findById(req.params.id);
@@ -297,6 +303,7 @@ router.patch('/:id/livings/:livingsId', requireUser, validateLivingInput, async 
 });
 
 
+// Delete the ENTIRE itinerary
   router.delete('/:id', requireUser, async (req, res, next) => {
     try {
         const itinerary = await Itinerary.findById(req.params.id);
@@ -313,7 +320,7 @@ router.patch('/:id/livings/:livingsId', requireUser, validateLivingInput, async 
 });
 
 
-
+// Deleting INDIVIDUAL events
 router.patch('/:id/events/:eventsId/delete', requireUser, async (req, res, next) => {
     try {
         let itinerary = await Itinerary.findById(req.params.id);
@@ -338,6 +345,7 @@ router.patch('/:id/events/:eventsId/delete', requireUser, async (req, res, next)
 })
 
 
+// Deleting INDIVIDUAL living
   router.patch('/:id/livings/:livingsId/delete', requireUser, async (req, res, next) => {
     try {
         let itinerary = await Itinerary.findById(req.params.id);
@@ -362,6 +370,7 @@ router.patch('/:id/events/:eventsId/delete', requireUser, async (req, res, next)
 })
 
 
+// Deleting INDIVIDUAL transportation
 router.patch('/:id/transportations/:transportationsId/delete', requireUser, async (req, res, next) => {
     try {
         let itinerary = await Itinerary.findById(req.params.id);
