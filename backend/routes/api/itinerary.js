@@ -179,7 +179,7 @@ router.get('/', async (req, res) => {
   router.patch('/:id', requireUser, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findByIdAndUpdate(req.params.id, 
-            { title: req.body.title, description: req.body.description })
+            { title: req.body.title, description: req.body.description }, { new: true })
           let itinerary = await updateItinerary.save()
           itinerary = await itinerary.populate('author', '_id username');
           return res.json(itinerary)
