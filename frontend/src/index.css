@@ -1,1 +1,5 @@
 /* TODO: Add sitewide styles */
+body {
+    margin: 0;
+    font-family: helvetica;
+}

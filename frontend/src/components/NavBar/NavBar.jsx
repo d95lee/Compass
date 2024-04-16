@@ -2,10 +2,14 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './NavBar.css';
 import { logout } from '../../store/session';
+import logo from '../../../../assets/compass.png';
+import { useState } from 'react';
+import SessionModal from '../Modal/SessionModal';
 
 function NavBar () {
-  const loggedIn = useSelector(state => !!state.session.user);
   const dispatch = useDispatch();
+  const currentUser = useSelector(state => !!state.session.user);
+  const [modalState, setModalState] = useState(null);
   
   const logoutUser = e => {
       e.preventDefault();
@@ -13,29 +17,44 @@ function NavBar () {
   };
 
   const getLinks = () => {
-    if (loggedIn) {
+    if (currentUser) {
       return (
-        <div className="links-nav">
-          {/* <Link to={'/tweets'}>All Tweets</Link>
-          <Link to={'/profile'}>Profile</Link>
-          <Link to={'/tweets/new'}>Write a Tweet</Link> */}
-          <button onClick={logoutUser}>Logout</button>
-        </div>
+        <>
+          <div>
+            <p>Hello {currentUser.username}</p>
+            <button onClick={logoutUser}>
+              Logout
+            </button>
+          </div>
+        </>
       );
     } else {
+
       return (
-        <div className="links-auth">
-          {/* <Link to={'/signup'}>Signup</Link>
-          <Link to={'/login'}>Login</Link> */}
-        </div>
-      );
+        <>
+          <nav>
+            <div>
+              <img className='logo' src={logo}/>
+            </div>
+            
+            <div className="links-auth">
+              <div className='signup-button' onClick={() => setModalState('signup')}><span>Signup</span></div>
+              <div className='login-button' onClick={() => setModalState('login')}><span>Login</span></div>
+            </div>          
+          </nav>
+        </>
+      )
     }
   };
 
   return (
     <>
-      <h1></h1>
-      { getLinks() }
+   
+      {getLinks()}
+    
+      {modalState && (
+        <SessionModal modalState={modalState} setModalState={setModalState} />
+      )}
     </>
   );
 }

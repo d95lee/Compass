@@ -1,4 +1,6 @@
-function HomePage() {
+import './HomePage.css';
+
+const HomePage = ()=> {
     return (
       <>
         <p>Compass</p>
