@@ -3,18 +3,38 @@
     width: 100vw;
     background-color: rgba(25,25,25,.5);
     position: absolute;
-    padding: 20px;
     top: 0px;
     left: 0px;
     z-index: 10;
+    justify-content: center;
+    display: flex;
 }
 
 .modal-content {
     height: 50vh;
-    width: 50vw;
+    width: 25vw;
     position: absolute;
     top: 25vh;
-    left: 25vw;
     background-color: white;
     border: 1px solid;
+    text-align: center;
+}
+
+.buttons {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    border: 0.1px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.click {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0.1px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    background-color: rgb(255, 247, 0);
 }
