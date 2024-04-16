@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import './NavBar.css';
 import { logout } from '../../store/session';
 import logo from '../../../../assets/compass.png';
+import { useState } from 'react';
+import SessionModal from '../Modal/SessionModal';
 
 function NavBar () {
-  const currentUser = useSelector(state => !!state.session.user);
   const dispatch = useDispatch();
+  const currentUser = useSelector(state => !!state.session.user);
+  const [modalState, setModalState] = useState(null);
   
   const logoutUser = e => {
       e.preventDefault();
@@ -17,37 +20,41 @@ function NavBar () {
     if (currentUser) {
       return (
         <>
-          <p>Hello {currentUser.username}</p>
-          <button onClick={() => dispatch(logoutUser())}>
-            Logout
-          </button>
+          <div>
+            <p>Hello {currentUser.username}</p>
+            <button onClick={logoutUser}>
+              Logout
+            </button>
+          </div>
         </>
       );
     } else {
-        <>
-        
-        </>
-    }
+
       return (
         <>
           <nav>
             <div>
               <img className='logo' src={logo}/>
             </div>
-
+            
             <div className="links-auth">
-              <div className='signup-button'><span>Signup</span></div>
-              <div className='login-button'><span>Login</span></div>
+              <div className='signup-button' onClick={() => setModalState('signup')}><span>Signup</span></div>
+              <div className='login-button' onClick={() => setModalState('login')}><span>Login</span></div>
             </div>          
           </nav>
         </>
-
-      );
+      )
+    }
   };
 
   return (
     <>
-      { getLinks() }
+   
+      {getLinks()}
+    
+      {modalState && (
+        <SessionModal modalState={modalState} setModalState={setModalState} />
+      )}
     </>
   );
 }
