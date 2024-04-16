@@ -1,0 +1,16 @@
+.itinerary-index-item {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.itinerary-index-image {
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+}
+
+.itinerary-index-details {
+    display: flex;
+    flex-direction: column;
+}

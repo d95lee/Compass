@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './NavBar.css';
 import { logout } from '../../store/session';
-
+import logo from '../../../../assets/compass.png';
 
 function NavBar () {
   const currentUser = useSelector(state => !!state.session.user);
@@ -31,6 +31,10 @@ function NavBar () {
       return (
         <>
           <nav>
+            <div>
+              <img className='logo' src={logo}/>
+            </div>
+
             <div className="links-auth">
               <div className='signup-button'><span>Signup</span></div>
               <div className='login-button'><span>Login</span></div>
