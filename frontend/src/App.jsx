@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { AuthRoute } from './components/Routes/Routes';
 import HomePage from './components/HomePage/HomePage';
 import SessionModal from './components/Modal/SessionModal';
+import NavBar from './components/NavBar/NavBar';
 
 
 const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: 'modal',
     element: <SessionModal />
+  },
+  {
+    path: 'nav',
+    element: <NavBar/>
   }
 ]);
 

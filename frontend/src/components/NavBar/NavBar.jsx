@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './NavBar.css';
-// import { logout } from '../../store/session';
+import { logout } from '../../store/session';
+
 
 function NavBar () {
-  const loggedIn = useSelector(state => !!state.session.user);
+  const currentUser = useSelector(state => !!state.session.user);
   const dispatch = useDispatch();
   
   const logoutUser = e => {
@@ -13,16 +14,20 @@ function NavBar () {
   };
 
   const getLinks = () => {
-    // if (loggedIn) {
-    //   return (
-    //     <div className="links-nav">
-          {/* <Link to={'/tweets'}>All Tweets</Link>
-          <Link to={'/profile'}>Profile</Link>
-          <Link to={'/tweets/new'}>Write a Tweet</Link> */}
-          {/* <button onClick={logoutUser}>Logout</button> */}
-    //     </div>
-    //   );
-    // } else {
+    if (currentUser) {
+      return (
+        <>
+          <p>Hello {currentUser.username}</p>
+          <button onClick={() => dispatch(logoutUser())}>
+            Logout
+          </button>
+        </>
+      );
+    } else {
+        <>
+        
+        </>
+    }
       return (
         <>
           <nav>
@@ -34,7 +39,6 @@ function NavBar () {
         </>
 
       );
-    // }
   };
 
   return (
