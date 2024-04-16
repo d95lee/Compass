@@ -7,6 +7,8 @@ const Living = mongoose.model('Living');
 const Transportation = mongoose.model('Transportation')
 const Itinerary = mongoose.model('Itinerary');
 const { requireUser } = require('../../config/passport');
+const {findObjById} = require('../../utils/itineraryHelper')
+const validateEventInput = require('../../validations/event')
 
 
 router.get('/', async (req, res) => {
@@ -77,7 +79,7 @@ router.get('/', async (req, res) => {
   });
 
 
-  router.patch('/:id/events', requireUser, async (req, res, next) => {
+  router.patch('/:id/events', requireUser, validateEventInput, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findById(req.params.id)
         const newEvent = new Event({
@@ -175,47 +177,40 @@ router.get('/', async (req, res) => {
   });
 
 
-  router.patch('/:id/events/:eventsId', requireUser, async (req, res, next) => {
+  router.patch('/:id/events/:eventsId', requireUser, validateEventInput, async (req, res, next) => {
     try {
-        const updateItinerary = await Itinerary.findById(req.params.id)
-        const updateEvent = await Event.findById(req.params.eventsId)
-
-        if (!updateItinerary || !updateEvent) {
-            throw new Error("Itinerary or Event not found!");
+        const updateItinerary = await Itinerary.findById(req.params.id);
+        const index = findObjById(updateItinerary.events, req.params.eventsId)
+        console.log(index)
+        if(index === undefined){
+          const error = new Error('Event is not found');
+          error.statusCode = 404;
+          error.errors = { message: "No Event found with that id in the itinerary" };
+          return next(error);
+        }
+        try{
+          const updateEvent = updateItinerary.events[index]
+          updateItinerary.events[index] = {...updateEvent, eventTitle: req.body.eventTitle,
+            startTime: req.body.startTime,
+            endTime: req.body.endTime,
+            location: req.body.location,
+            description: req.body.description,
+            category: req.body.category,
+            cost: req.body.cost};
+          let itinerary = await updateItinerary.save()
+          itinerary = await itinerary.populate('author', '_id username');
+          return res.json(itinerary)
+        } catch(err){
+          next(err)
         }
 
-        if (req.body.eventTitle) {
-            updateEvent.eventTitle = req.body.eventTitle
-        }
 
-        if (req.body.startTime) {
-            updateEvent.startTime = req.body.startTime
-        }
 
-        if (req.body.endTime) {
-            updateEvent.endTime = req.body.endTime
-        }
-
-        if (req.body.location) {
-            updateEvent.location = req.body.location
-        }
-
-        if (req.body.description) {
-            updateEvent.description = req.body.description
-        }
-
-        if (req.body.category) {
-            updateEvent.category = req.body.category
-        }
-
-        if (req.body.cost) {
-            updateEvent.cost = req.body.cost
-        }
-
-        await updateEvent.save();
-        res.send(updateEvent);
-    } catch (error) {
-        res.status(404).send({ error: "Itinerary or Event doesn't exist!" });
+    } catch (err) {
+      const error = new Error('Itinerary not found');
+      error.statusCode = 404;
+      error.errors = { message: "No itinerary found with that id" };
+      return next(error);
     }
 });
 //         const newEvent = new Event({
@@ -249,18 +244,18 @@ router.get('/', async (req, res) => {
 //   });
 
 
-  router.delete('/:id/events/:eventsId', requireUser, async (req, res, next) => {
+  router.delete('/:id', requireUser, async (req, res, next) => {
     try {
-        const event = await Event.findById(req.params.eventsId);
-        if (!event) {
-            res.status(404).send({ error: "Event doesn't exist!" });
+        const itinerary = await Itinerary.findById(req.params.id);
+        if (!itinerary) {
+            res.status(404).send({ error: "Itinerary doesn't exist!" });
             return;
         }
 
-        await Event.deleteOne({ _id: req.params.eventsId });
+        await Itinerary.deleteOne({ _id: req.params.id });
         res.status(204).send();
     } catch (error) {
-        res.status(500).send({ error: "An error occurred while deleting the event." });
+        res.status(500).send({ error: "An error occurred while deleting the itinerary." });
     }
 });
 
