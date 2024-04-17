@@ -11,6 +11,8 @@ const SessionModal = ({ modalState, setModalState }) => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
 
+    console.log('here');
+
     const handleSubmit = e => {
         e.preventDefault();
         if (modalState === 'signup') {
@@ -23,6 +25,7 @@ const SessionModal = ({ modalState, setModalState }) => {
     };
 
     const formMode = () => {
+        console.log('hello');
         if (modalState === 'signup') {
             return (
                 <div className='modal-background' onClick={e => setModalState(null)}>

@@ -33,7 +33,7 @@ const router = createBrowserRouter([
     element: 
       <>
         <NavBar/>
-        <CreateItineraryModal />
+        <ItineraryIndex />
       </>
   },
   {
