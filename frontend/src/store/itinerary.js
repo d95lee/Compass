@@ -119,7 +119,7 @@ const itineraryReducer = (state = {}, action) => {
         nextState[action.itinerary._id] = action.itinerary;
             return nextState
         case RECEIVE_ITINERARIES:
-            return action.itinerary;
+            return action.itinerary.slice(0,5);
         default:
             return state;
     }
