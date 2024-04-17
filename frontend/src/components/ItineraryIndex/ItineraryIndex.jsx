@@ -3,17 +3,15 @@ import nyc from '../../../../assets/nyc-brooklyn-bridge.jpeg';
 import sydney from '../../../../assets/sydney.png';
 import paris from '../../../../assets/paris.jpeg';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchItineraries, fetchItinerary, selectItinerary, selectItineraryArray } from '../../store/itinerary';
+import { fetchItineraries, fetchItinerary, selectItineraries, selectItinerary } from '../../store/itinerary';
 import ItineraryItem from '../ItineraryItem/ItineraryItem';
 import { useEffect } from 'react';
 
 const ItineraryIndex = () => {
 
     const dispatch = useDispatch();
-    const itinerary = useSelector(selectItinerary('661f1eac27ea3103d469a6db'));
-    // const currentUser = useSelector(selectCurrentUser);
-    const itineraries = useSelector(selectItineraryArray);
-    console.log(itinerary, 'itinerary');
+
+    const itineraries = useSelector(selectItineraries);
     console.log(itineraries, 'itineraries');
 
     useEffect(() => {
@@ -24,7 +22,8 @@ const ItineraryIndex = () => {
         <>
             <div className='itinerary-index'>
                 {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
-                {itineraries?.map(itinerary => <ItineraryItem key={itinerary._id} itinerary={itinerary._id} />)}
+                {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
+
                 
                 
                 {/* <div className='itinerary-index-item'>
