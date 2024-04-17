@@ -14,7 +14,7 @@ const Profile = () => {
 
             <div className='user-info'>
                 <h3>Bio</h3>
-        
+
                 <p>I love to travel and learn about new culture, meet people and help other find their way around cities</p>
             </div>
             <button className='profile-edit-button'>Edit</button>
