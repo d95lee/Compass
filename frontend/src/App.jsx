@@ -12,6 +12,7 @@ import TestShow from './components/Test/TestShow'
 
 import { getCurrentUser } from './store/session';
 import CreateItineraryModal from './components/Modal/CreateItineraryModal';
+import Profile from './components/Profile/Profile';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
     path: 'test/:itineraryId',
     element: <TestShow/>
   },
+  {
+    path: 'profile',
+    element:
+      <>
+        <NavBar />
+        <Profile/>
+      </>
+  }
 ]);
 
 function App() {
