@@ -12,9 +12,9 @@ export const receiveItinerary = (itinerary) => ({
     itinerary
 })
 
-export const receiveItineraries = (itinerary) => ({
+export const receiveItineraries = (itineraries) => ({
     type: RECEIVE_ITINERARIES,
-    itinerary
+    itineraries
 })
 
 export const removeItinerary = (itineraryId) => ({
@@ -119,7 +119,8 @@ const itineraryReducer = (state = {}, action) => {
         nextState[action.itinerary._id] = action.itinerary;
             return nextState
         case RECEIVE_ITINERARIES:
-            return action.itinerary;
+            action.itineraries.map(itinerary => nextState[itinerary._id] = itinerary);
+            return nextState
         default:
             return state;
     }
