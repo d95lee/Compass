@@ -11,6 +11,7 @@ import Test from './components/Test/Test'
 import TestShow from './components/Test/TestShow'
 
 import { getCurrentUser } from './store/session';
+import CreateItineraryModal from './components/Modal/CreateItineraryModal';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
     element: 
       <>
         <NavBar/>
-        <ItineraryIndex />
+        <CreateItineraryModal />
       </>
   },
   {

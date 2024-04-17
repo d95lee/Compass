@@ -16,6 +16,19 @@ nav {
     background: linear-gradient(90deg, rgba(233,216,71,1) 0%, rgba(198,224,215,1) 50%, rgba(20,131,242,1) 100%);
 }
 
+.navbar-left {
+    display: flex;
+    align-items: center;
+
+}
+
+.create-button {
+    margin-left: 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
 .links-auth {
     display: flex;
     width: 150px;

@@ -5,6 +5,7 @@ import { logout } from '../../store/session';
 import logo from '../../../../assets/compass.png';
 import { useState } from 'react';
 import SessionModal from '../Modal/SessionModal';
+import CreateItineraryModal from '../Modal/CreateItineraryModal';
 
 function NavBar () {
   const dispatch = useDispatch();
@@ -33,8 +34,9 @@ function NavBar () {
       return (
         <>
           <nav>
-            <div>
+            <div className='navbar-left'>
               <img className='logo' src={logo}/>
+              <div className='create-button' onClick={() => setModalState('create')}><span>Create</span></div>
             </div>
             
             <div className="links-auth">
@@ -53,7 +55,10 @@ function NavBar () {
       {getLinks()}
     
       {modalState && (
-        <SessionModal modalState={modalState} setModalState={setModalState} />
+        <>
+          <SessionModal modalState={modalState} setModalState={setModalState} />
+          <CreateItineraryModal modalState={modalState} />
+        </>
       )}
     </>
   );

@@ -1,5 +1,7 @@
 import './ItineraryIndex.css';
 import nyc from '../../../../assets/nyc-brooklyn-bridge.jpeg';
+import sydney from '../../../../assets/sydney.png';
+import paris from '../../../../assets/paris.jpeg';
 
 const ItineraryIndex = () => {
     return (
@@ -20,7 +22,7 @@ const ItineraryIndex = () => {
 
                 <div className='itinerary-index-item'>
                     <div className='itinerary-index-image'>
-
+                        <img className='image' src={paris} />
                     </div>
 
                     <div className='index-item-details'>
@@ -32,7 +34,7 @@ const ItineraryIndex = () => {
 
                 <div className='itinerary-index-item'>
                     <div className='itinerary-index-image'>
-
+                        <img className='image' src={sydney} />
                     </div>
 
                     <div className='index-item-details'>
