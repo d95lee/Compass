@@ -17,6 +17,7 @@ function NavBar () {
       dispatch(logout());
   };   
 
+  console.log(modalState, 'modal state');
   const getLinks = () => {
     if (currentUser) {
       return (
@@ -57,7 +58,7 @@ function NavBar () {
       {modalState && (
         <>
           <SessionModal modalState={modalState} setModalState={setModalState} />
-          <CreateItineraryModal modalState={modalState} />
+          <CreateItineraryModal modalState={modalState} setModalState={setModalState}/>
         </>
       )}
     </>

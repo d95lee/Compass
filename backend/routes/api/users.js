@@ -4,18 +4,11 @@ const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 const passport = require('passport');
-const { loginUser, restoreUser } = require('../../config/passport');
+const { loginUser, restoreUser, requireUser } = require('../../config/passport');
 const { isProduction } = require('../../config/keys');
 const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
 
-
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.json({
-    message: "GET /api/users"
-  });
-});
 
 router.post('/register', validateRegisterInput, async (req, res, next) =>{
   const user = await User.findOne({
@@ -82,6 +75,21 @@ router.get('/current', restoreUser, (req, res) => {
     email: req.user.email
   });
 });
+
+router.patch('/:userId/bio', requireUser, async (req, res, next) => {
+  try {
+    const updateUser = await User.findByIdAndUpdate(req.params.userId, 
+      { bio: req.body.bio}, { new: true })
+      let user = await updateUser.save()
+      return res.json(user)
+  }
+  catch (err) {
+    const error = new Error('User not found');
+    error.statusCode = 404;
+    error.errors = { message: "No user found with that id" };
+    return next(error);
+}
+})
 
 
 module.exports = router;
