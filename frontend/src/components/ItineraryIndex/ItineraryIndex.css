@@ -1,5 +1,18 @@
+.itinerary-index-page {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.itinerary-index-left {
+    width: 200px;
+    height: 100vh;
+    border-right: 1px solid black;
+}
+
 .itinerary-index {
     margin: 50px;
+    height: 100%;
     display: flex;
     background-color: lightcyan;
 }
@@ -8,7 +21,7 @@
     margin: 10px;
     width: 250px;
     height: 300px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
