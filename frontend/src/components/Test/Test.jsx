@@ -23,12 +23,12 @@ const ItineraryAll = () => {
             {itineraryArr.map((itinerary, idx) => (
                 <div key={idx}>
                     <div>
-                        <p>{itinerary.title}</p>
+                        <p>{itinerary?.events[0]?.cost}</p>
                     </div>
                 </div>
             ))}
 
-            <p>{itinerary.title}</p>
+            {/* <p>{itinerary.title}</p> */}
         </>
     )
 }

@@ -5,13 +5,18 @@ export const CREATE_ITINERARY = "itinerary/CREATE_ITINERARY"
 export const CHANGE_ITINERARY = "itinerary/CHANGE_ITINERARY"
 export const CLEAR_ITINERARY = "itinerary/CLEAR_ITINERARY"
 
-export const receiveItinerary = (itineraryId) => ({
+export const receiveItinerary = (itinerary) => ({
     type: RECEIVE_ITINERARY,
-    itineraryId
+    itinerary
 })
 
 export const receiveItineraries = (itinerary) => ({
     type: RECEIVE_ITINERARIES,
+    itinerary
+})
+
+export const clearItineraries = (itinerary) => ({
+    type: CLEAR_ITINERARY,
     itinerary
 })
 
@@ -36,14 +41,17 @@ export const fetchItineraries = () => async dispatch => {
     }
 }
 
+export const removeItinerary = (itinerary) => async dispatch => {
+    const res = await fetch(``)
+}
 
 const itineraryReducer = (state = {}, action) => {
     const nextState = { ...state }
 
     switch (action.type) {
         case RECEIVE_ITINERARY:
-            nextState[action.itineraryId] = action.itinerary;
-            console.log("action.itinerary:", action.itineraryId)
+        // console.log("action.itinerary:", action.itineraryId)    
+        nextState[action.itinerary._id] = action.itinerary;
             return nextState
         case RECEIVE_ITINERARIES:
             return action.itinerary;

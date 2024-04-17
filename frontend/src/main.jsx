@@ -7,8 +7,11 @@ import configureStore from './store/store.js';
 import { fetchItineraries, fetchItinerary } from './store/itinerary.js';
 import { createTransportation, deleteTransportation, updateTransportation } from './store/transportation.js';
 
-const store = configureStore();
 
+
+import  {createEvent, deleteEvent, updateEvent}  from './store/event.js';
+
+const store = configureStore();
 
 if (import.meta.env.MODE !== "production") {
   window.store = store;
@@ -17,6 +20,9 @@ if (import.meta.env.MODE !== "production") {
   window.createTransportation = createTransportation
   window.updateTransportation = updateTransportation
   window.deleteTransportation = deleteTransportation
+  window.createEvent = createEvent
+  window.updateEvent = updateEvent
+  window.deleteEvent = deleteEvent
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
