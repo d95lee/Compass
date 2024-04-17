@@ -17,6 +17,26 @@ const Profile = () => {
         
                 <p>I love to travel and learn about new culture, meet people and help other find their way around cities</p>
             </div>
+            <button className='profile-edit-button'>Edit</button>
+
+            <div className='profile-itineraries'>
+                <div className='itinerary-buttons'>
+                    <button className='my-button'>My itineraries</button>
+                    <button className='saved-button'>Saved itineraries</button>
+                    <button className='liked-button'>Liked itineraries</button>
+                </div>
+                <div className='blocks'>
+                    <div className='my-itineraries'>
+
+                    </div>
+                    <div className='saved-itineraries'>
+
+                    </div>
+                    <div className='liked-itineraries'>
+
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
