@@ -2,17 +2,19 @@
     border: solid;
     top: 0px;
     left: 5%;
-    height: 50vh;
+    height: 80vh;
     width: 90%;
     position: relative;
     display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    background-color: rgb(188, 188, 188);
 }
 
-.user-img {
+.pic-div {
     border: solid;
     height: 25vh;
     width: 200px;
-    left: 10%;
     position: absolute;
     top: 100px;
     border-radius: 50%;
@@ -20,13 +22,27 @@
 
 .user-info {
     border: solid;
-    top: 100px;
+    top: 350px;
     position: absolute;
-    width: 30%;
-    height: 25vh;
-    left: 50%;
+    width: 40%;
+    height: 15vh;
+    border-radius: 10px;
 }
 
 h3 {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
+
+.background-img {
+    height: 25vh;
+    width: 100%;
+}
+
+.user-img {
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+}
+
