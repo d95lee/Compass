@@ -13,7 +13,10 @@ const userSchema = new Schema({
     hashedPassword: {
       type: String,
       required: true
-    }
+    },
+    bio: {
+      type: String
+    },
   }, {
     timestamps: true
   });
