@@ -1,4 +1,5 @@
 import jwtFetch from "./jwt";
+import {createSelector} from 'reselect'
 
 export const RECEIVE_ITINERARY = "itinerary/RECEIVE_ITINERARY"
 export const RECEIVE_ITINERARIES = 'itinerary/RECEIVE_ITINERARIES'
@@ -26,7 +27,8 @@ export const newItinerary = (itinerary) => ({
     itinerary
 })
 
-export const selectItinerary = itineraryId => state => state.itinerary[itineraryId]
+export const selectItineraries = state => state.itinerary
+export const selectItinerary = (itineraryId) => createSelector([selectItineraries], itinerary => itinerary[itineraryId])
 // export const selectItineraryArray = state => Object.values(state.itinerary)
 
 export const fetchItinerary = (itineraryId) => async dispatch => {
@@ -36,7 +38,7 @@ export const fetchItinerary = (itineraryId) => async dispatch => {
         const data = await res.json()
         dispatch(receiveItinerary(data))
     }
-} 
+}
 
 export const fetchItineraries = () => async dispatch => {
     const res = await fetch(`/api/itinerary`)
@@ -113,7 +115,7 @@ const itineraryReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ITINERARY:
-        // console.log("action.itinerary:", action.itineraryId)    
+        // console.log("action.itinerary:", action.itineraryId)
         nextState[action.itinerary._id] = action.itinerary;
             return nextState
         case RECEIVE_ITINERARIES:
