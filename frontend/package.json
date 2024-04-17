@@ -19,13 +19,15 @@
     "reselector": "^0.23.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.0.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "globals": "^15.0.0",
     "redux-logger": "^3.0.6",
     "vite": "^4.4.5",
     "vite-plugin-eslint": "^1.8.1"
