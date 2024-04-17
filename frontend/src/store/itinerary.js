@@ -12,9 +12,9 @@ export const receiveItinerary = (itinerary) => ({
     itinerary
 })
 
-export const receiveItineraries = (itinerary) => ({
+export const receiveItineraries = (itineraries) => ({
     type: RECEIVE_ITINERARIES,
-    itinerary
+    itineraries
 })
 
 export const removeItinerary = (itineraryId) => ({
@@ -108,10 +108,11 @@ export const fetchUserItineraries = (userId) => async dispatch => {
     }
 }
 
-
-
+// from express/mongoDB, receiveItineraries as an array of objects, instead of as an object of objects
+// [itinerary1, itinerary2, ....] --> each itinerary still an object
+// {itinerary1, itinerary2, ...}
 const itineraryReducer = (state = {}, action) => {
-    const nextState = { ...state }
+    const nextState = { ...state } 
 
     switch (action.type) {
         case RECEIVE_ITINERARY:
@@ -119,7 +120,8 @@ const itineraryReducer = (state = {}, action) => {
         nextState[action.itinerary._id] = action.itinerary;
             return nextState
         case RECEIVE_ITINERARIES:
-            return action.itinerary.slice(0,5);
+            action.itineraries.map(itinerary => nextState[itinerary._id] = itinerary);
+            return nextState
         default:
             return state;
     }

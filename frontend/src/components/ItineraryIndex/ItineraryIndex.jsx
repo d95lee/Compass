@@ -10,11 +10,9 @@ import { useEffect } from 'react';
 const ItineraryIndex = () => {
 
     const dispatch = useDispatch();
-    const itinerary = useSelector(selectItinerary('661f1eac27ea3103d469a6db'));
 
     const itineraries = useSelector(selectItineraries);
-    // console.log(itinerary, 'itinerary');
-    // console.log(itineraries, 'itineraries');
+    console.log(itineraries, 'itineraries');
 
     useEffect(() => {
         dispatch(fetchItineraries());
@@ -24,11 +22,7 @@ const ItineraryIndex = () => {
         <>
             <div className='itinerary-index'>
                 {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
-                <ul>
-                {Object.values(itineraries).map(itinerary => {
-                    console.log(itinerary, 'itinerary');
-                    return <ItineraryItem key={itinerary._id} itineraryId={itinerary._id} />})}
-                </ul>
+                {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
 
                 
                 
