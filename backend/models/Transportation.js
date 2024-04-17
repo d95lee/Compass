@@ -7,6 +7,7 @@ const transportationSchema = new Schema({
     endLocation: String,
     startTime: String,
     endTime: String,
+    date: Date,
     description: String,
     cost: Number
 })

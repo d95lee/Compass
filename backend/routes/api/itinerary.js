@@ -68,7 +68,8 @@ router.get('/', async (req, res) => {
       const newItinerary = new Itinerary({
         author: req.user._id,
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
+        country: req.body.country
       });
 
       let itinerary = await newItinerary.save();
@@ -88,6 +89,7 @@ router.get('/', async (req, res) => {
           eventTitle: req.body.eventTitle,
           startTime: req.body.startTime,
           endTime: req.body.endTime,
+          date: req.body.date,
           location: req.body.location,
           description: req.body.description,
           category: req.body.category,
@@ -121,6 +123,8 @@ router.get('/', async (req, res) => {
           livingTitle: req.body.livingTitle,
           startTime: req.body.startTime,
           endTime: req.body.endTime,
+          startDate: req.body.startDate,
+          endDate: req.body.endDate,
           location: req.body.location,
           description: req.body.description,
           cost: req.body.cost
@@ -154,6 +158,7 @@ router.get('/', async (req, res) => {
           endLocation: req.body.endLocation,
           startTime: req.body.startTime,
           endTime: req.body.endTime,
+          date: req.body.date,
           description: req.body.description,
           cost: req.body.cost
         })
@@ -179,7 +184,7 @@ router.get('/', async (req, res) => {
   router.patch('/:id', requireUser, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findByIdAndUpdate(req.params.id, 
-            { title: req.body.title, description: req.body.description }, { new: true })
+            { title: req.body.title, description: req.body.description, country: req.body.country }, { new: true })
           let itinerary = await updateItinerary.save()
           itinerary = await itinerary.populate('author', '_id username');
           return res.json(itinerary)
@@ -209,6 +214,7 @@ router.get('/', async (req, res) => {
             eventTitle: req.body.eventTitle,
             startTime: req.body.startTime,
             endTime: req.body.endTime,
+            date: req.body.date,
             location: req.body.location,
             description: req.body.description,
             category: req.body.category,
@@ -246,6 +252,7 @@ router.patch('/:id/transportations/:transportationsId', requireUser, validateTra
             endLocation: req.body.endLocation,
             startTime: req.body.startTime,
             endTime: req.body.endTime,
+            date: req.body.date,
             description: req.body.description,
             cost: req.body.cost };
           let itinerary = await updateItinerary.save()
@@ -279,6 +286,8 @@ router.patch('/:id/livings/:livingsId', requireUser, validateLivingInput, async 
             livingTitle: req.body.livingTitle,
             startTime: req.body.startTime,
             endTime: req.body.endTime,
+            startDate: req.body.startDate,
+            endDate: req.body.endDate,
             location: req.body.location,
             description: req.body.description,
             cost: req.body.cost };
