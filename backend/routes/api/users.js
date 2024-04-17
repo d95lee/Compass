@@ -9,6 +9,28 @@ const { isProduction } = require('../../config/keys');
 const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
 
+router.get('/', async (req, res) =>{
+  try{
+    const users = await User.find()
+    return res.json(users)
+  }
+  catch(err){
+    return res.json([])
+  }
+})
+
+router.get('/:id', async (req, res, next) => {
+  try{
+    const user = await User.findById(req.params.id)
+    return res.json(user)
+  }
+  catch(err){
+    const error = new Error('User not found');
+      error.statusCode = 404;
+      error.errors = { message: "No User found with that id" };
+      return next(error);
+  }
+})
 
 router.post('/register', validateRegisterInput, async (req, res, next) =>{
   const user = await User.findOne({
@@ -78,7 +100,7 @@ router.get('/current', restoreUser, (req, res) => {
 
 router.patch('/:userId/bio', requireUser, async (req, res, next) => {
   try {
-    const updateUser = await User.findByIdAndUpdate(req.params.userId, 
+    const updateUser = await User.findByIdAndUpdate(req.params.userId,
       { bio: req.body.bio}, { new: true })
       let user = await updateUser.save()
       return res.json(user)
