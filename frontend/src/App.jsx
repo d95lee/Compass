@@ -9,6 +9,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItineraryIndex from './components/ItineraryIndex/ItineraryIndex';
 
 import { getCurrentUser } from './store/session';
+import Profile from './components/Profile/Profile';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
       <>
         <NavBar/>
         <ItineraryIndex />
+      </>
+  },
+  {
+    path: 'profile',
+    element:
+      <>
+        <NavBar />
+        <Profile/>
       </>
   }
 ]);

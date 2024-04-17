@@ -1,0 +1,32 @@
+.profile-background {
+    border: solid;
+    top: 0px;
+    left: 5%;
+    height: 50vh;
+    width: 90%;
+    position: relative;
+    display: flex;
+}
+
+.user-img {
+    border: solid;
+    height: 25vh;
+    width: 200px;
+    left: 10%;
+    position: absolute;
+    top: 100px;
+    border-radius: 50%;
+}
+
+.user-info {
+    border: solid;
+    top: 100px;
+    position: absolute;
+    width: 30%;
+    height: 25vh;
+    left: 50%;
+}
+
+h3 {
+    position: relative;
+}
