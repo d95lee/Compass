@@ -7,6 +7,8 @@ import HomePage from './components/HomePage/HomePage';
 import SessionModal from './components/Modal/SessionModal';
 import NavBar from './components/NavBar/NavBar';
 import ItineraryIndex from './components/ItineraryIndex/ItineraryIndex';
+import Test from './components/Test/Test'
+import TestShow from './components/Test/TestShow'
 
 import { getCurrentUser } from './store/session';
 import Profile from './components/Profile/Profile';
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
         <NavBar/>
         <ItineraryIndex />
       </>
+  },
+  {
+    path: 'test',
+    element: <Test/>
+  },
+  {
+    path: 'test/:itineraryId',
+    element: <TestShow/>
   },
   {
     path: 'profile',
