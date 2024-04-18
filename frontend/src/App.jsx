@@ -75,7 +75,6 @@ const router = createBrowserRouter([
     path: 'nav/itinerary/:itineraryId/livings',
     element: 
     <>
-    <NavBar/>
     <LivingForm/>
     </>
   },
