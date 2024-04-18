@@ -22,14 +22,14 @@ const LivingForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(createLiving(itineraryId, {
-            livingTitle: setLivingTitle,
-            startTime: setStartTime,
-            endTime: setEndTime,
-            startDate: setStartDate,
-            endDate: setEndDate,
-            location: setLocation,
-            description: setDescription,
-            cost: setCost
+            livingTitle: livingTitle,
+            startTime: startTime,
+            endTime: endTime,
+            startDate: startDate,
+            endDate: endDate,
+            location: location,
+            description: description,
+            cost: cost
         }))
     }
    

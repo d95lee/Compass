@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
-import { AuthRoute } from './components/Routes/Routes';
+import { AuthRoute, ProtectedRoute } from './components/Routes/Routes';
 import HomePage from './components/HomePage/HomePage';
 import SessionModal from './components/Modal/SessionModal';
 import NavBar from './components/NavBar/NavBar';
@@ -17,68 +17,55 @@ import ItineraryForm from './components/ItineraryForm/ItineraryForm';
 // import TransportationForm from './components/ItineraryForm/TransportationForm';
 import LivingForm from './components/ItineraryForm/LivingForm';
 
+const Layout = () => {
+  return (
+    <>
+      <NavBar />
+      <Outlet />
+    </>
+  );
+};
+
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: 
-    <AuthRoute component={HomePage} />
-  },
-  {
-    path: 'modal',
-    element: <SessionModal />
-  },
-  {
-    path: 'nav',
-    element: <NavBar/>
-  },
-  {
-    path: 'nav-index',
-    element: 
-      <>
-        <NavBar/>
-        <ItineraryIndex />
-      </>
-  },
-  {
-    path: 'itinerary-show/:itineraryId',
-    element: <ItineraryShow/>
-  },
-  {
-    path: 'profile',
-    element:
-      <>
-        <NavBar />
-        <Profile/>
-      </>
-  },
-  {
-    path: 'form/itinerary/:itineraryId',
-    element: 
-      <>
-        <NavBar/>
-        <ItineraryForm/>
-      </>
-  },
-  // {
-  //   path: 'itinerary/:itineraryId/events',
-  //   element:
-  //     <>
-  //       <NavBar />
-  //       <EventForm/>
-  //     </>
-  // },
-  // {
-  //   path: 'itinerary/:itineraryId/transportations',
-  //   element: <TransportationForm/>
-  // },
-  {
-    path: 'nav/itinerary/:itineraryId/livings',
-    element: 
-    <>
-    <LivingForm/>
-    </>
-  },
-]);
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <AuthRoute component={HomePage} />
+      },
+      {
+        path: "itinerary",
+        element: <Outlet />,
+        children: [
+          {
+            index: true,
+            element: <AuthRoute component={ItineraryIndex} />
+          },
+          {
+            path: ":itineraryId",
+            element: <AuthRoute component={ItineraryShow}/> // AuthRoute, don't have to be logged in to view
+          },
+          {
+            path: "form",
+            element: <ProtectedRoute component={ItineraryForm} /> // ProtectedRoute, must be logged in
+          }
+        ]
+      },
+      {
+        path: "profile",
+        element: <Outlet/>,
+        children: [
+          {
+            path: ":userId",
+            element: <AuthRoute component={Profile}/>
+          }
+        ]
+      }
+    ]
+}])
+  
+  
 
 function App() {
   const [loaded, setLoaded] = useState(false);

@@ -40,7 +40,6 @@ export const startSession = (userInfo, route) => async dispatch => {
     });
     const { user, token } = await res.json();
     localStorage.setItem('jwtToken', token);
-    localStorage.setItem('currentUser', user);
     return dispatch(receiveCurrentUser(user));
   } catch(err) {
     const res = await err.json();
@@ -52,7 +51,6 @@ export const startSession = (userInfo, route) => async dispatch => {
 
 export const logout = () => dispatch => {
     localStorage.removeItem('jwtToken');
-    localStorage.removeItem('currentUser');
     dispatch(logoutUser());
 };
 
@@ -63,7 +61,7 @@ export const getCurrentUser = () => async dispatch => {
 };
 
 const initialState = {
-  user: localStorage.getItem('currentUser')
+  user: undefined
 };
 
 const sessionReducer = (state = initialState, action) => {

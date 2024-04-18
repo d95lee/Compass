@@ -24,14 +24,14 @@ const TransportationForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(createTransportation(itineraryId, {
-            transportationTitle: setTransportationTitle,
-            startLocation: setStartLocation,
-            endLocation: setEndLocation,
-            startTime: setEndTime,
-            endTime: setEndTime,
-            date: setDate,
-            description: setDescription,
-            cost: setCost
+            transportationTitle: transportationTitle,
+            startLocation: startLocation,
+            endLocation: endLocation,
+            startTime: endTime,
+            endTime: endTime,
+            date: date,
+            description: description,
+            cost: cost
         }))
      }
 

@@ -24,14 +24,14 @@ const Event = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(createEvent(itineraryId, {
-            eventTitle: setEventTitle,
-            startTime: setStartTime,
-            endTime: setEndTime,
-            date: setDate,
-            location: setLocation,
-            description: setDescription,
-            category: setCategory,
-            cost: setCost
+            eventTitle: eventTitle,
+            startTime: startTime,
+            endTime: endTime,
+            date: date,
+            location: location,
+            description: description,
+            category: category,
+            cost: cost
         }))    
     }
     
