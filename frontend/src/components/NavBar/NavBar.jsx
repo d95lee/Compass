@@ -34,25 +34,6 @@ function NavBar () {
 
       return (
         <>
-          <nav>
-            <div className='navbar-left'>
-              <img className='logo' src={logo}/>
-              <div className='create-button' onClick={() => setModalState('create')}><span>Create</span></div>
-            </div>
-
-            {/* <div>
-                <Link to={'itinerary'}>Itinerary</Link> <br />
-                <Link to={`itinerary/${itineraryId}`}>Itinerary Show</Link> <br />
-                <Link to={`itinerary/${itineraryId}/form`}>Itinerary Form</Link> <br />
-                <Link to={'itinerary/form'}>Profile Show</Link> <br />
-            </div>  */}
-
-            <div className="links-auth">
-              <div className='signup-button' onClick={() => setModalState('signup')}><span>Signup</span></div>
-              <div className='login-button' onClick={() => setModalState('login')}><span>Login</span></div>
-            </div>
-         
-          </nav>
               <div className='signup-button' onClick={() => setModalState('signup')}><span>Signup</span></div>
               <div className='login-button' onClick={() => setModalState('login')}><span>Login</span></div>
         </>
