@@ -6,16 +6,16 @@ import { fetchUser } from '../../store/user'
 
 
 const Profile = () => {
-    const dispatch = useDispatch()
-    const { userId } = useParams()
+    // const dispatch = useDispatch()
+    // const { userId } = useParams()
 
-    const selectUser = (userId) => state => state.user[userId]
-    const user = useSelector(selectUser(userId))
-    console.log(user)
+    // const selectUser = (userId) => state => state.user[userId]
+    // const user = useSelector(selectUser(userId))
+    // console.log(user)
 
-    useEffect(() => {
-        dispatch(fetchUser(userId))
-    }, [userId])
+    // useEffect(() => {
+    //     dispatch(fetchUser(userId))
+    // }, [userId])
 
     
 
