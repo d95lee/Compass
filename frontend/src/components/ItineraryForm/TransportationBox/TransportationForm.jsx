@@ -2,12 +2,12 @@ import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import './EventForm.css'
 import { useParams } from "react-router-dom"
-import { createTransportation } from "../../store/transportation"
+import { createTransportation } from "../../../store/transportation"
 
 const TransportationForm = () => {
     const dispatch = useDispatch()
     const { itineraryId } = useParams()
-    
+
     const [transportationTitle, setTransportationTitle] = useState('')
     const [startLocation, setStartLocation] = useState('')
     const [endLocation, setEndLocation] = useState('')
@@ -16,11 +16,11 @@ const TransportationForm = () => {
     const [date, setDate] = useState('')
     const [description, setDescription] = useState('')
     const [cost, setCost] = useState('')
-    
+
     useEffect(() => {
 
     })
-    
+
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(createTransportation(itineraryId, {

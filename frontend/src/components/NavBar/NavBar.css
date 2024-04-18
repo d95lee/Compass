@@ -29,6 +29,10 @@ nav {
     font-size: 18px;
 }
 
+.create-button:hover {
+    cursor: pointer;
+}
+
 .links-auth {
     display: flex;
     width: 150px;
