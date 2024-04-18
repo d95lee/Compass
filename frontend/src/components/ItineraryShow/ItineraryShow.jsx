@@ -1,7 +1,8 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchItinerary, selectItinerary } from "../../store/itinerary"
 import { useParams } from "react-router-dom"
+import { fetchItinerary, selectItinerary } from "../../store/itinerary"
+import "./ItineraryShow.css"
 
 
 const ItineraryShow = () => {
@@ -16,8 +17,12 @@ const ItineraryShow = () => {
     
     return (
         <>
-            <p>Test</p>
-            <p>{itinerary?.title}</p>
+            <div className="itinerary-show-page-container">
+                <div className="itinerary-timeline-container">
+                    <p>Test</p>
+                    <p>{itinerary?.title}</p>
+                </div>
+            </div>
         </>
     )
 }
