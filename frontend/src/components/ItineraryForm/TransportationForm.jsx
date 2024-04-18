@@ -4,10 +4,10 @@ import { createEvent } from "../../store/event"
 import './EventForm.css'
 import { useParams } from "react-router-dom"
 
-const Event = () => {
+const TransportationForm = () => {
     const dispatch = useDispatch()
     const { itineraryId } = useParams()
-
+    
     const [eventTitle, setEventTitle] = useState('')
     const [startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
@@ -35,20 +35,21 @@ const Event = () => {
     }))
         // setData('')
     }
-    // eventTitle
-    // startTime (Could be optional)
-    // endTime (Could be optional)
+    // transportationTitle (ex. airline name)
+	// startLocation 
+	// endLocation
+	// startTime (Could be optional)
+	// endTime (Could be optional)
     // Date *
-    // Location
-    // Description (optional)
-    // Category
-    // cost
+	// description (optional)
+    // cost	
+
     
 
     return (
         <>
             <div className="event-form-container">
-                <form className="event-form-modal">
+                <form className="event-form">
                     <label>Event Title
                         <input type="text"
                         value={eventTitle}
@@ -120,4 +121,4 @@ const Event = () => {
 }
 
 
-export default Event
+export default TransportationForm
