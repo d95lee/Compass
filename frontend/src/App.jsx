@@ -13,7 +13,9 @@ import CreateItineraryModal from './components/Modal/CreateItineraryModal';
 import Profile from './components/Profile/Profile';
 import ItineraryShow from './components/ItineraryShow/ItineraryShow';
 import ItineraryForm from './components/ItineraryForm/ItineraryForm';
-import EventForm from './components/ItineraryForm/EventForm'
+// import EventForm from './components/ItineraryForm/EventForm'
+// import TransportationForm from './components/ItineraryForm/TransportationForm';
+import LivingForm from './components/ItineraryForm/LivingForm';
 
 const router = createBrowserRouter([
   {
@@ -26,12 +28,8 @@ const router = createBrowserRouter([
     element: <SessionModal />
   },
   {
-    path: 'nav/itinerary/:itineraryId',
-    element: 
-    <>
-    <NavBar/>
-    <EventForm/>
-    </>
+    path: 'nav',
+    element: <NavBar/>
   },
   {
     path: 'nav-index',
@@ -61,13 +59,25 @@ const router = createBrowserRouter([
         <ItineraryForm/>
       </>
   },
+  // {
+  //   path: 'itinerary/:itineraryId/events',
+  //   element:
+  //     <>
+  //       <NavBar />
+  //       <EventForm/>
+  //     </>
+  // },
+  // {
+  //   path: 'itinerary/:itineraryId/transportations',
+  //   element: <TransportationForm/>
+  // },
   {
-    path: 'itinerary/:itineraryId',
-    element:
-      <>
-        <NavBar />
-        <EventForm/>
-      </>
+    path: 'nav/itinerary/:itineraryId/livings',
+    element: 
+    <>
+    <NavBar/>
+    <LivingForm/>
+    </>
   },
 ]);
 

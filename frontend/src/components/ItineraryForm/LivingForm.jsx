@@ -1,50 +1,48 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { createEvent } from "../../store/event"
 import './EventForm.css'
 import { useParams } from "react-router-dom"
+import { createLiving } from "../../store/living"
 
-const Event = () => {
+const LivingForm = () => {
     const dispatch = useDispatch()
     const { itineraryId } = useParams()
-
-    const [eventTitle, setEventTitle] = useState('')
+    
+    const [livingTitle, setLivingTitle] = useState('')
     const [startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
-    const [date, setDate] = useState('')
+    const [startDate, setStartDate] = useState('')
+    const [endDate, setEndDate] = useState('')
     const [location, setLocation] = useState('')
     const [description, setDescription] = useState('')
-    const [category, setCategory] = useState('')
     const [cost, setCost] = useState('')
     
-    useEffect(() => {
-
-    })
+   
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(createEvent(itineraryId, {
-            eventTitle: setEventTitle,
+        dispatch(createLiving(itineraryId, {
+            livingTitle: setLivingTitle,
             startTime: setStartTime,
             endTime: setEndTime,
-            date: setDate,
+            startDate: setStartDate,
+            endDate: setEndDate,
             location: setLocation,
             description: setDescription,
-            category: setCategory,
             cost: setCost
-        }))    
+        }))
     }
-    
+   
 
     return (
         <>
             <div className="event-form-container">
                 <form className="event-form-modal">
-                    <label>Event Title
+                    <label>Housing Title
                         <input type="text"
-                        value={eventTitle}
-                        onChange={(e) => setEventTitle(e.target.value)}
-                        placeholder="Event Title"
+                        value={livingTitle}
+                        onChange={(e) => setLivingTitle(e.target.value)}
+                        placeholder="Housing Title"
                         />
                     </label>
 
@@ -60,15 +58,23 @@ const Event = () => {
                         <input type="text"
                         value={endTime}
                         onChange={(e) => setEndTime(e.target.value)}
-                        placeholder="Start time 12:00"
+                        placeholder="End time 01:00"
                         />
                     </label>
 
-                    <label>Date
+                    <label>Start Date
                         <input type="text"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
                         placeholder="Date 01/01/2020"
+                        />
+                    </label>
+
+                    <label>End Date
+                        <input type="text"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
+                        placeholder="Date 02/01/2020"
                         />
                     </label>
 
@@ -88,14 +94,6 @@ const Event = () => {
                         />
                     </label>
 
-                    <label>Category
-                        <input type="text"
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                        placeholder="Category"
-                        />
-                    </label>
-
                     <label>Cost
                         <input type="text"
                         value={cost}
@@ -111,4 +109,4 @@ const Event = () => {
 }
 
 
-export default Event
+export default LivingForm

@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-import { createEvent } from "../../store/event"
 import './EventForm.css'
 import { useParams } from "react-router-dom"
+import { createTransportation } from "../../store/transportation"
 
 const TransportationForm = () => {
     const dispatch = useDispatch()
     const { itineraryId } = useParams()
     
-    const [eventTitle, setEventTitle] = useState('')
-    const [startTime, setStartTime] = useState('')
+    const [transportationTitle, setTransportationTitle] = useState('')
+    const [startLocation, setStartLocation] = useState('')
+    const [endLocation, setEndLocation] = useState('')
+    const [ startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
     const [date, setDate] = useState('')
-    const [location, setLocation] = useState('')
     const [description, setDescription] = useState('')
-    const [category, setCategory] = useState('')
     const [cost, setCost] = useState('')
     
     useEffect(() => {
@@ -23,38 +23,45 @@ const TransportationForm = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(createEvent(itineraryId, {
-            eventTitle: setEventTitle,
-            startTime: setStartTime,
+        dispatch(createTransportation(itineraryId, {
+            transportationTitle: setTransportationTitle,
+            startLocation: setStartLocation,
+            endLocation: setEndLocation,
+            startTime: setEndTime,
             endTime: setEndTime,
             date: setDate,
-            location: setLocation,
             description: setDescription,
-            category: setCategory,
             cost: setCost
-    }))
-        // setData('')
-    }
-    // transportationTitle (ex. airline name)
-	// startLocation 
-	// endLocation
-	// startTime (Could be optional)
-	// endTime (Could be optional)
-    // Date *
-	// description (optional)
-    // cost	
+        }))
+     }
 
-    
+
 
     return (
         <>
             <div className="event-form-container">
-                <form className="event-form">
-                    <label>Event Title
+                <form className="event-form-modal">
+                    <label>Transportation Title
                         <input type="text"
-                        value={eventTitle}
-                        onChange={(e) => setEventTitle(e.target.value)}
-                        placeholder="Event Title"
+                        value={transportationTitle}
+                        onChange={(e) => setTransportationTitle(e.target.value)}
+                        placeholder="Transportation Title"
+                        />
+                    </label>
+
+                    <label>Start Location
+                        <input type="text"
+                        value={startLocation}
+                        onChange={(e) => setStartLocation(e.target.value)}
+                        placeholder="Start Location"
+                        />
+                    </label>
+
+                    <label>End Location
+                        <input type="text"
+                        value={endLocation}
+                        onChange={(e) => setEndLocation(e.target.value)}
+                        placeholder="End Location"
                         />
                     </label>
 
@@ -62,7 +69,7 @@ const TransportationForm = () => {
                         <input type="text"
                         value={startTime}
                         onChange={(e) => setStartTime(e.target.value)}
-                        placeholder="Start time"
+                        placeholder="Start time 12:00"
                         />
                     </label>
 
@@ -70,7 +77,7 @@ const TransportationForm = () => {
                         <input type="text"
                         value={endTime}
                         onChange={(e) => setEndTime(e.target.value)}
-                        placeholder="End Time"
+                        placeholder="End time 01:00"
                         />
                     </label>
 
@@ -82,27 +89,11 @@ const TransportationForm = () => {
                         />
                     </label>
 
-                    <label>Location
-                        <input type="text"
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        placeholder="Location"
-                        />
-                    </label>
-
                     <label>Description
                         <input type="text"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         placeholder="Description (optional)"
-                        />
-                    </label>
-
-                    <label>Category
-                        <input type="text"
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                        placeholder="Category"
                         />
                     </label>
 
