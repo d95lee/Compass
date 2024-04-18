@@ -40,15 +40,17 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <AuthRoute component={ItineraryIndex} />
+            element: <ItineraryIndex />
           },
           {
             path: ":itineraryId",
-            element: <AuthRoute component={ItineraryShow}/> // AuthRoute, don't have to be logged in to view
-          },
-          {
-            path: "form",
-            element: <ProtectedRoute component={ItineraryForm} /> // ProtectedRoute, must be logged in
+            element: <ItineraryShow />, // AuthRoute, don't have to be logged in to view
+            children:[
+              {
+                path: "form",
+                element: <ProtectedRoute component={ItineraryForm} /> // ProtectedRoute, must be logged in
+              }
+            ]
           }
         ]
       },
@@ -58,14 +60,14 @@ const router = createBrowserRouter([
         children: [
           {
             path: ":userId",
-            element: <AuthRoute component={Profile}/>
+            element: <Profile />
           }
         ]
       }
     ]
 }])
-  
-  
+
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -73,7 +75,7 @@ function App() {
   useEffect(() => {
     dispatch(getCurrentUser()).finally(() => setLoaded(true));
   }, [dispatch]);
-  
+
   return loaded && <RouterProvider router={router} />;
 }
 
