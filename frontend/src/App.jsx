@@ -43,7 +43,10 @@ const router = createBrowserRouter([
   },
   {
     path: 'itinerary-show/:itineraryId',
-    element: <ItineraryShow/>
+    element: <>
+      <NavBar/>
+      <ItineraryShow/>
+    </>
   },
   {
     path: 'profile',

@@ -1,15 +1,35 @@
 .itinerary-show-page-container {
-    background-color: grey;
+    /* background-color: grey;
     width: 100vw;
-    height: 100vh;
+    height: 100vh; */
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 .itinerary-timeline-container {
-    background-color: white;
-    
-    width: 50%;
-    height: 50%;
+    width: 500px;
+    height: 500px;
+    border: 1px solid pink;
 }
+
+.day-header {
+    align-self:;
+}
+.itinerary-display-items-container {
+    border: 1px solid blue;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-box, .transportation-box, .living-box {
+    width: 400px;
+    height: 100px;
+    background-color: yellow;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+
