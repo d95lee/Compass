@@ -2,29 +2,34 @@ import { useEffect, useState } from 'react'
 import './Profile.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { fetchItineraries, selectItineraries } from '../../store/itinerary';
 import { fetchUser } from '../../store/user'
+import ItineraryItem from '../ItineraryItem/ItineraryItem';
 
 
 const Profile = () => {
-    const dispatch = useDispatch()
-    const { userId } = useParams()
-
-    const selectUser = (userId) => state => state.user[userId]
-    const user = useSelector(selectUser(userId))
-    console.log(user)
-
-    useEffect(() => {
-        dispatch(fetchUser(userId))
-    }, [userId])
+    const dispatch = useDispatch();
+    const { userId } = useParams();
+    const user = useSelector(state => state.session.user);
 
     
 
+    // const [itinerary, setItinerary] = useState('myItinerary');
 
-    // const [showItinerary, setItinerary] = useState('')
 
-    // const handleSubmit = e => {
-        
+    const itineraries = useSelector(selectItineraries);
+    console.log(itineraries, 'itineraries');
+
+    useEffect(() => {
+        dispatch(fetchItineraries());
+    }, [dispatch])
+
+
+
+    // if (itinerary === 'myItinerary') {
+
     // }
+    
 
     return (
         <div className='profile-background'>
@@ -43,20 +48,19 @@ const Profile = () => {
 
             <div className='profile-itineraries'>
                 <div className='itinerary-buttons'>
-                    <button className='my-button' onClick={() => {}}>My itineraries</button>
-                    <button className='saved-button'>Saved itineraries</button>
-                    <button className='liked-button'>Liked itineraries</button>
+                    <button className='my-button' onClick={() => setItinerary('myItinerary')}>My itineraries</button>
+                    <button className='saved-button' onClick={() => setItinerary('savedItinerary')}>Saved itineraries</button>
+                    <button className='liked-button' onClick={() => setItinerary('likedItinerary')}>Liked itineraries</button>
                 </div>
                 <div className='blocks'>
                     <div className='my-itineraries'>
+                            <div className='itinerary-index'>
+                            {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
+                            {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
 
+                            </div>
                     </div>
-                    <div className='saved-itineraries'>
-
-                    </div>
-                    <div className='liked-itineraries'>
-
-                    </div>
+                
                 </div>
             </div>
         </div>
