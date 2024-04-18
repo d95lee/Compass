@@ -15,7 +15,7 @@
 }
 
 .day-header {
-    align-self:;
+    /* align-items:; */
 }
 .itinerary-display-items-container {
     border: 1px solid blue;
