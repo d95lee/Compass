@@ -22,7 +22,15 @@ const ItineraryIndex = () => {
         <>
             <div className='itinerary-index-page'>
                 <div className='itinerary-index-left'>
-                    <span>Locations</span>
+                    <div className='index-locations-title'>Locations</div>
+                    <div className='index-locations'>
+                        <div className='index-location-text'>North America</div>
+                        <div className='index-location-text'>Europe</div>
+                        <div className='index-location-text'>Asia</div>
+                        <div className='index-location-text'>South America</div>
+                        <div className='index-location-text'>Africa</div>                        
+                    </div>
+
                 </div>
                 <div className='itinerary-index'>
                     {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
