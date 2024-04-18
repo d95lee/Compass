@@ -24,25 +24,16 @@ const Event = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(createEvent(itineraryId, {
-            eventTitle: setEventTitle,
-            startTime: setStartTime,
-            endTime: setEndTime,
-            date: setDate,
-            location: setLocation,
-            description: setDescription,
-            category: setCategory,
-            cost: setCost
-    }))
-        // setData('')
+            eventTitle: eventTitle,
+            startTime: startTime,
+            endTime: endTime,
+            date: date,
+            location: location,
+            description: description,
+            category: category,
+            cost: cost
+        }))    
     }
-    // eventTitle
-    // startTime (Could be optional)
-    // endTime (Could be optional)
-    // Date *
-    // Location
-    // Description (optional)
-    // Category
-    // cost
     
 
     return (
@@ -61,7 +52,7 @@ const Event = () => {
                         <input type="text"
                         value={startTime}
                         onChange={(e) => setStartTime(e.target.value)}
-                        placeholder="Start time"
+                        placeholder="Start time 12:00"
                         />
                     </label>
 
@@ -69,7 +60,7 @@ const Event = () => {
                         <input type="text"
                         value={endTime}
                         onChange={(e) => setEndTime(e.target.value)}
-                        placeholder="End Time"
+                        placeholder="Start time 12:00"
                         />
                     </label>
 

@@ -48,8 +48,26 @@ hr {
     position: absolute;
 }
 
-.event-info {
+.event-start-time {
     position: absolute;
     left: 10%;
     top: 35%;
+}
+
+.event-end-time {
+    position: absolute;
+    left: 10%;
+    top: 65%;
+}
+
+.event-location {
+    position: absolute;
+    left: 30%;
+    top: 35%;
+}
+
+.event-cost {
+    position: absolute;
+    left: 30%;
+    top: 65%;
 }

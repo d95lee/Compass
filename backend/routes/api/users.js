@@ -11,7 +11,7 @@ const validateLoginInput = require('../../validations/login');
 
 router.get('/', async (req, res) =>{
   try{
-    const users = await User.find()
+    const users = await User.find({},{username: 1, bio: 1, profileImageUrl: 1})
     return res.json(users)
   }
   catch(err){
@@ -21,7 +21,7 @@ router.get('/', async (req, res) =>{
 
 router.get('/:id', async (req, res, next) => {
   try{
-    const user = await User.findById(req.params.id)
+    const user = await User.findById(req.params.id,{username: 1, bio: 1, profileImageUrl: 1})
     return res.json(user)
   }
   catch(err){

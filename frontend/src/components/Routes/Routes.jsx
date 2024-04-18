@@ -4,13 +4,13 @@ import HomePage from '../HomePage/HomePage';
 import { Component } from 'react';
 
 export const AuthRoute = ({ component: Component, ...props }) => {
-  // const loggedIn = useSelector(state => !!state.session.user);
+  const loggedIn = useSelector(state => !!state.session.user);
 
-  // return (
-  //   !loggedIn ?
-  //     <Component {...props} /> :
-  //     <Navigate to="/home" replace={true} />
-  // );
+  return (
+    !loggedIn ?
+      <Component {...props} /> :
+      <Navigate to="/" replace={true} />
+  );
 };
 
 export const ProtectedRoute = ({ component: Component, ...props }) => {
@@ -19,6 +19,6 @@ export const ProtectedRoute = ({ component: Component, ...props }) => {
   return (
     loggedIn ? 
       <Component {...props} /> :
-      <Navigate to="/login" replace={true} />
+      <Navigate to="/" replace={true} />
   );
 };

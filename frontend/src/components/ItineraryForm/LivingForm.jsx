@@ -1,67 +1,48 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useDispatch } from "react-redux"
 import './EventForm.css'
 import { useParams } from "react-router-dom"
-import { createTransportation } from "../../store/transportation"
+import { createLiving } from "../../store/living"
 
-const TransportationForm = () => {
+const LivingForm = () => {
     const dispatch = useDispatch()
     const { itineraryId } = useParams()
     
-    const [transportationTitle, setTransportationTitle] = useState('')
-    const [startLocation, setStartLocation] = useState('')
-    const [endLocation, setEndLocation] = useState('')
-    const [ startTime, setStartTime] = useState('')
+    const [livingTitle, setLivingTitle] = useState('')
+    const [startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
-    const [date, setDate] = useState('')
+    const [startDate, setStartDate] = useState('')
+    const [endDate, setEndDate] = useState('')
+    const [location, setLocation] = useState('')
     const [description, setDescription] = useState('')
     const [cost, setCost] = useState('')
     
-    useEffect(() => {
-
-    })
+   
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(createTransportation(itineraryId, {
-            transportationTitle: transportationTitle,
-            startLocation: startLocation,
-            endLocation: endLocation,
-            startTime: endTime,
+        dispatch(createLiving(itineraryId, {
+            livingTitle: livingTitle,
+            startTime: startTime,
             endTime: endTime,
-            date: date,
+            startDate: startDate,
+            endDate: endDate,
+            location: location,
             description: description,
             cost: cost
         }))
-     }
-
-
+    }
+   
 
     return (
         <>
             <div className="event-form-container">
                 <form className="event-form-modal">
-                    <label>Transportation Title
+                    <label>Housing Title
                         <input type="text"
-                        value={transportationTitle}
-                        onChange={(e) => setTransportationTitle(e.target.value)}
-                        placeholder="Transportation Title"
-                        />
-                    </label>
-
-                    <label>Start Location
-                        <input type="text"
-                        value={startLocation}
-                        onChange={(e) => setStartLocation(e.target.value)}
-                        placeholder="Start Location"
-                        />
-                    </label>
-
-                    <label>End Location
-                        <input type="text"
-                        value={endLocation}
-                        onChange={(e) => setEndLocation(e.target.value)}
-                        placeholder="End Location"
+                        value={livingTitle}
+                        onChange={(e) => setLivingTitle(e.target.value)}
+                        placeholder="Housing Title"
                         />
                     </label>
 
@@ -81,11 +62,27 @@ const TransportationForm = () => {
                         />
                     </label>
 
-                    <label>Date
+                    <label>Start Date
                         <input type="text"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
                         placeholder="Date 01/01/2020"
+                        />
+                    </label>
+
+                    <label>End Date
+                        <input type="text"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
+                        placeholder="Date 02/01/2020"
+                        />
+                    </label>
+
+                    <label>Location
+                        <input type="text"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                        placeholder="Location"
                         />
                     </label>
 
@@ -111,5 +108,4 @@ const TransportationForm = () => {
     )
 }
 
-
-export default TransportationForm
+export default LivingForm
