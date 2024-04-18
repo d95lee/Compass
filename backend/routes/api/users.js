@@ -9,28 +9,7 @@ const { isProduction } = require('../../config/keys');
 const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
 
-router.get('/', async (req, res) =>{
-  try{
-    const users = await User.find({},{username: 1, bio: 1, profileImageUrl: 1})
-    return res.json(users)
-  }
-  catch(err){
-    return res.json([])
-  }
-})
 
-router.get('/:id', async (req, res, next) => {
-  try{
-    const user = await User.findById(req.params.id,{username: 1, bio: 1, profileImageUrl: 1})
-    return res.json(user)
-  }
-  catch(err){
-    const error = new Error('User not found');
-      error.statusCode = 404;
-      error.errors = { message: "No User found with that id" };
-      return next(error);
-  }
-})
 
 router.post('/register', validateRegisterInput, async (req, res, next) =>{
   const user = await User.findOne({
@@ -113,5 +92,27 @@ router.patch('/:userId/bio', requireUser, async (req, res, next) => {
 }
 })
 
+router.get('/', async (req, res) =>{
+  try{
+    const users = await User.find({},{username: 1, bio: 1, profileImageUrl: 1})
+    return res.json(users)
+  }
+  catch(err){
+    return res.json([])
+  }
+})
+
+router.get('/:id', async (req, res, next) => {
+  try{
+    const user = await User.findById(req.params.id,{username: 1, bio: 1, profileImageUrl: 1})
+    return res.json(user)
+  }
+  catch(err){
+    const error = new Error('User not found');
+      error.statusCode = 404;
+      error.errors = { message: "No User found with that id" };
+      return next(error);
+  }
+})
 
 module.exports = router;

@@ -11,11 +11,11 @@ function NavBar () {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => !!state.session.user);
   const [modalState, setModalState] = useState(null);
-  
+
   const logoutUser = e => {
       e.preventDefault();
       dispatch(logout());
-  };   
+  };
 
   console.log(modalState, 'modal state');
   const getLinks = () => {
@@ -34,17 +34,8 @@ function NavBar () {
 
       return (
         <>
-          <nav>
-            <div className='navbar-left'>
-              <img className='logo' src={logo}/>
-              <div className='create-button' onClick={() => setModalState('create')}><span>Create</span></div>
-            </div>
-            
-            <div className="links-auth">
               <div className='signup-button' onClick={() => setModalState('signup')}><span>Signup</span></div>
               <div className='login-button' onClick={() => setModalState('login')}><span>Login</span></div>
-            </div>          
-          </nav>
         </>
       )
     }
@@ -52,9 +43,19 @@ function NavBar () {
 
   return (
     <>
-   
-      {getLinks()}
-    
+
+      <nav>
+        <div className='navbar-left'>
+          <img className='logo' src={logo}/>
+          <div className='create-button' onClick={() => setModalState('create')}><span>Create</span></div>
+        </div>
+
+        <div className="links-auth">
+            {getLinks()}
+        </div>
+
+      </nav>
+
       {modalState && (
         <>
           <SessionModal modalState={modalState} setModalState={setModalState} />
