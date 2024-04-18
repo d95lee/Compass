@@ -3,11 +3,8 @@ import nyc from '../../../../assets/nyc-brooklyn-bridge.jpeg';
 import sydney from '../../../../assets/sydney.png';
 import paris from '../../../../assets/paris.jpeg';
 import { useDispatch, useSelector } from 'react-redux';
-<<<<<<< HEAD
 // import { fetchItineraries, fetchItinerary, selectItinerary, selectItineraryArray } from '../../store/itinerary';
-=======
 import { fetchItineraries, fetchItinerary, selectItineraries, selectItinerary } from '../../store/itinerary';
->>>>>>> 9815626e9baeb29d3f2242b4436a4cb23e9753b2
 import ItineraryItem from '../ItineraryItem/ItineraryItem';
 import { useEffect } from 'react';
 

@@ -1,8 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Profile.css'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { useParams } from 'react-router-dom'
+// import { fetchUser } from '../../store/user'
 
 
 const Profile = () => {
+    // const dispatch = useDispatch()
+    // const { userId } = useParams()
+
+    // const selectUser = (userId) => state => state.user[userId]
+    // const user = useSelector(selectUser(userId))
+    // console.log(user)
+
+    // useEffect(() => {
+    //     dispatch(fetchUser(userId))
+    // }, [userId])
+
+
 
     // const [showItinerary, setItinerary] = useState('')
 

@@ -13,7 +13,7 @@ import CreateItineraryModal from './components/Modal/CreateItineraryModal';
 import Profile from './components/Profile/Profile';
 import ItineraryShow from './components/ItineraryShow/ItineraryShow';
 import ItineraryForm from './components/ItineraryForm/ItineraryForm';
-
+import EventForm from './components/ItineraryForm/EventForm'
 
 const router = createBrowserRouter([
   {
@@ -26,8 +26,12 @@ const router = createBrowserRouter([
     element: <SessionModal />
   },
   {
-    path: 'nav',
-    element: <NavBar/>
+    path: 'nav/itinerary/:itineraryId',
+    element: 
+    <>
+    <NavBar/>
+    <EventForm/>
+    </>
   },
   {
     path: 'nav-index',
@@ -56,7 +60,15 @@ const router = createBrowserRouter([
         <NavBar/>
         <ItineraryForm/>
       </>
-  }
+  },
+  {
+    path: 'itinerary/:itineraryId',
+    element:
+      <>
+        <NavBar />
+        <EventForm/>
+      </>
+  },
 ]);
 
 function App() {
