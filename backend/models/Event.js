@@ -5,6 +5,7 @@ const eventSchema = new Schema({
     eventTitle: String,
     startTime: String,
     endTime: String,
+    date: Date,
     location: String,
     description: String,
     category: String,

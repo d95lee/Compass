@@ -20,6 +20,10 @@ const itinerarySchema = new Schema({
     description: {
         type: String
     },
+    country: {
+      type: String,
+      require: true
+     },
     events:[eventSchema],
     transportations:[transportationSchema],
     livings:[livingSchema],

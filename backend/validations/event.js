@@ -21,6 +21,8 @@ const validateEventInput = [
         .withMessage('End time must be HH:MM')
         .matches(/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/)
         .withMessage('End time must be in format HH:MM'),
+    check('date')
+        .exists({ checkFalsy: true }),
     check('location')
         .exists({ checkFalsy: true })
         .withMessage('Location can\'t be blank'),

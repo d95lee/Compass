@@ -3,17 +3,19 @@ import nyc from '../../../../assets/nyc-brooklyn-bridge.jpeg';
 import sydney from '../../../../assets/sydney.png';
 import paris from '../../../../assets/paris.jpeg';
 import { useDispatch, useSelector } from 'react-redux';
+<<<<<<< HEAD
 // import { fetchItineraries, fetchItinerary, selectItinerary, selectItineraryArray } from '../../store/itinerary';
+=======
+import { fetchItineraries, fetchItinerary, selectItineraries, selectItinerary } from '../../store/itinerary';
+>>>>>>> 9815626e9baeb29d3f2242b4436a4cb23e9753b2
 import ItineraryItem from '../ItineraryItem/ItineraryItem';
 import { useEffect } from 'react';
 
 const ItineraryIndex = () => {
 
     const dispatch = useDispatch();
-    const itinerary = useSelector(selectItinerary('661f1eac27ea3103d469a6db'));
-    // const currentUser = useSelector(selectCurrentUser);
-    const itineraries = useSelector(selectItineraryArray);
-    console.log(itinerary, 'itinerary');
+
+    const itineraries = useSelector(selectItineraries);
     console.log(itineraries, 'itineraries');
 
     useEffect(() => {
@@ -22,36 +24,17 @@ const ItineraryIndex = () => {
 
     return (
         <>
-            <div className='itinerary-index'>
-                {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
-                {itineraries?.map(itinerary => <ItineraryItem key={itinerary._id} itinerary={itinerary._id} />)}
-                
-                
-                {/* <div className='itinerary-index-item'>
-                    <div className='itinerary-index-image'>
-                        <img className='image' src={paris} />
-                    </div>
-
-                    <div className='index-item-details'>
-                        <span>Created by: Helen</span>
-                        <span>Paris Adventure</span>
-                        <span>5 days in Paris</span>
-                    </div>
+            <div className='itinerary-index-page'>
+                <div className='itinerary-index-left'>
+                    <span>Locations</span>
                 </div>
+                <div className='itinerary-index'>
+                    {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
+                    {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
 
-                <div className='itinerary-index-item'>
-                    <div className='itinerary-index-image'>
-                        <img className='image' src={sydney} />
-                    </div>
-
-                    <div className='index-item-details'>
-                        <span>Created by: Margaret</span>
-                        <span>Sydney Trip</span>
-                        <span>Explore Sydney! Week long guide</span>
-                    </div>
-                </div> */}
-
+                </div>                
             </div>
+
         </>
     )
 }

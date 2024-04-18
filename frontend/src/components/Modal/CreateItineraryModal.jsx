@@ -1,6 +1,7 @@
 import './CreateItineraryModal.css'
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { createItinerary } from '../../store/itinerary';
 
 const CreateItineraryModal = ({ modalState, setModalState })  => {
     const dispatch = useDispatch();
@@ -10,12 +11,12 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        dispatch(signup({ email, username, password }))
+        dispatch(createItinerary({ title, description }))
             .then(() => setModalState(null))
 
     };
 
-    
+
     if (modalState === 'create') {
         return (
             <>
