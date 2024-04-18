@@ -13,6 +13,8 @@ import TestShow from './components/Test/TestShow'
 import { getCurrentUser } from './store/session';
 import CreateItineraryModal from './components/Modal/CreateItineraryModal';
 import Profile from './components/Profile/Profile';
+import ItineraryForm from './components/ItineraryForm/ItineraryForm';
+
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
       <>
         <NavBar />
         <Profile/>
+      </>
+  },
+  {
+    path: 'form',
+    element: 
+      <>
+        <NavBar/>
+        <ItineraryForm/>
       </>
   }
 ]);
