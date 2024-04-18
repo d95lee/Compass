@@ -10,14 +10,12 @@ const Living = require("../models/Living.js");
 
 NUM_USER = 10
 const users = [];
-
-users.push(
-    new User ({
-      username: 'demo-user',
-      email: 'demo-user@appacademy.io',
-      hashedPassword: bcrypt.hashSync('starwars', 10)
-    })
-  )
+demoUser = new User({
+  username: 'demo-user',
+  email: 'demo-user@appacademy.io',
+  hashedPassword: bcrypt.hashSync('starwars', 10)
+})
+users.push(demoUser)
 
 
   for (let i = 1; i < NUM_USER; i++) {
@@ -36,7 +34,7 @@ users.push(
 const itineraries = []
 
 const trip1 = new Itinerary({
-  author: users[Math.floor(Math.random() * NUM_USER)]._id,
+  author: demoUser._id,
   title: "New York",
   description: "City Walk",
   country: "USA",

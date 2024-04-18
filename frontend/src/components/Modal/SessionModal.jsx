@@ -22,6 +22,12 @@ const SessionModal = ({ modalState, setModalState }) => {
         }
     };
 
+    const handleDemoLogin = e=>{
+        e.preventDefault()
+        dispatch(login({email:"demo-user@appacademy.io", password: "starwars"}))
+        .then(()=>setModalState(null))
+    }
+
     const formMode = () => {
         if (modalState === 'signup') {
             return (
@@ -29,24 +35,24 @@ const SessionModal = ({ modalState, setModalState }) => {
                 <div className='modal-content' onClick={e => e.stopPropagation()}>
                 <h2>SessionModal: {modalState}</h2>
                     <form onSubmit={handleSubmit}>
-                        <input 
+                        <input
                             className='buttons'
                             placeholder='Username'
                             value={username}
-                            onChange={e => setUsername(e.target.value)} 
+                            onChange={e => setUsername(e.target.value)}
                         />
-                        <input 
+                        <input
                             className='buttons'
                             placeholder='Email'
                             value={email}
-                            onChange={e => setEmail(e.target.value)} 
+                            onChange={e => setEmail(e.target.value)}
                         />
-                        <input 
+                        <input
                             className='buttons'
                             placeholder='Password'
                             type='password'
                             value={password}
-                            onChange={e => setPassword(e.target.value)} 
+                            onChange={e => setPassword(e.target.value)}
                         />
                         <input className='click' type="submit" value={modalState} />
                     </form>
@@ -60,20 +66,21 @@ const SessionModal = ({ modalState, setModalState }) => {
                 <div className='modal-content' onClick={e => e.stopPropagation()}>
                 <h2>SessionModal: {modalState}</h2>
                 <form onSubmit={handleSubmit}>
-                        <input 
+                        <input
                             className='buttons'
                             placeholder='Email'
                             value={email}
-                            onChange={e => setEmail(e.target.value)} 
+                            onChange={e => setEmail(e.target.value)}
                         />
-                        <input 
+                        <input
                             className='buttons'
                             placeholder='Password'
                             type='password'
                             value={password}
-                            onChange={e => setPassword(e.target.value)} 
+                            onChange={e => setPassword(e.target.value)}
                         />
                         <input className='click' type="submit" value={modalState} />
+                        <button className='click' onClick={handleDemoLogin}>Demo Login</button>
                     </form>
                 </div>
             </div>

@@ -2,12 +2,12 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import './EventForm.css'
 import { useParams } from "react-router-dom"
-import { createLiving } from "../../store/living"
+import { createLiving } from "../../../store/living"
 
 const LivingForm = () => {
     const dispatch = useDispatch()
     const { itineraryId } = useParams()
-    
+
     const [livingTitle, setLivingTitle] = useState('')
     const [startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
@@ -16,9 +16,9 @@ const LivingForm = () => {
     const [location, setLocation] = useState('')
     const [description, setDescription] = useState('')
     const [cost, setCost] = useState('')
-    
-   
-    
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(createLiving(itineraryId, {
@@ -32,7 +32,7 @@ const LivingForm = () => {
             cost: cost
         }))
     }
-   
+
 
     return (
         <>
