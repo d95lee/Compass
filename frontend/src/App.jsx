@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       </>
   },
   {
-    path: 'form',
+    path: 'form/itinerary/:itineraryId',
     element: 
       <>
         <NavBar/>
