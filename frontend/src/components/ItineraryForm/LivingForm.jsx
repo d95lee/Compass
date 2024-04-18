@@ -108,5 +108,4 @@ const LivingForm = () => {
     )
 }
 
-
 export default LivingForm
