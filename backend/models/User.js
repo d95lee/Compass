@@ -17,6 +17,10 @@ const userSchema = new Schema({
     bio: {
       type: String
     },
+    profileImageUrl: {
+      type: String,
+      // required: true //temporarily commented out for testing
+    },
   }, {
     timestamps: true
   });

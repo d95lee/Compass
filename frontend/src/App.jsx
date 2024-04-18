@@ -7,12 +7,13 @@ import HomePage from './components/HomePage/HomePage';
 import SessionModal from './components/Modal/SessionModal';
 import NavBar from './components/NavBar/NavBar';
 import ItineraryIndex from './components/ItineraryIndex/ItineraryIndex';
-import Test from './components/Test/Test'
-import TestShow from './components/Test/TestShow'
 
 import { getCurrentUser } from './store/session';
 import CreateItineraryModal from './components/Modal/CreateItineraryModal';
 import Profile from './components/Profile/Profile';
+import ItineraryShow from './components/ItineraryShow/ItineraryShow';
+import ItineraryForm from './components/ItineraryForm/ItineraryForm';
+import EventForm from './components/ItineraryForm/EventForm'
 
 const router = createBrowserRouter([
   {
@@ -25,8 +26,12 @@ const router = createBrowserRouter([
     element: <SessionModal />
   },
   {
-    path: 'nav',
-    element: <NavBar/>
+    path: 'nav/itinerary/:itineraryId',
+    element: 
+    <>
+    <NavBar/>
+    <EventForm/>
+    </>
   },
   {
     path: 'nav-index',
@@ -37,12 +42,8 @@ const router = createBrowserRouter([
       </>
   },
   {
-    path: 'test',
-    element: <Test/>
-  },
-  {
-    path: 'test/:itineraryId',
-    element: <TestShow/>
+    path: 'itinerary-show/:itineraryId',
+    element: <ItineraryShow/>
   },
   {
     path: 'profile',
@@ -51,7 +52,23 @@ const router = createBrowserRouter([
         <NavBar />
         <Profile/>
       </>
-  }
+  },
+  {
+    path: 'form',
+    element: 
+      <>
+        <NavBar/>
+        <ItineraryForm/>
+      </>
+  },
+  {
+    path: 'itinerary/:itineraryId',
+    element:
+      <>
+        <NavBar />
+        <EventForm/>
+      </>
+  },
 ]);
 
 function App() {

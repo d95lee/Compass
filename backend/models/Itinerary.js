@@ -24,6 +24,10 @@ const itinerarySchema = new Schema({
       type: String,
       require: true
      },
+    imageUrls: {
+      type: [String],
+      // required: false //temporarily commented out for testing
+    },
     events:[eventSchema],
     transportations:[transportationSchema],
     livings:[livingSchema],

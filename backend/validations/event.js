@@ -6,7 +6,7 @@ const handleValidationErrors = require('./handleValidationErrors');
 const validateEventInput = [
     check('eventTitle')
       .exists({ checkFalsy: true })
-      .withMessage('Even Title can\'t be blank'),
+      .withMessage('Event Title can\'t be blank'),
     check('startTime')
         .exists({ checkFalsy: true })
         .withMessage('Start time can\'t be blank')

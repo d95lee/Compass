@@ -8,7 +8,6 @@ import { createItinerary, deleteItinerary, fetchItineraries, fetchItinerary, fet
 import { createTransportation, deleteTransportation, updateTransportation } from './store/transportation.js';
 
 
-
 import  {createEvent, deleteEvent, updateEvent}  from './store/event.js';
 import { createLiving, deleteLiving, updateLiving } from './store/living';
 import { getCurrentUser, login } from './store/session.js';

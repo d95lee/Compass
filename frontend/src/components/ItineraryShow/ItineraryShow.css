@@ -1,0 +1,15 @@
+.itinerary-show-page-container {
+    background-color: grey;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.itinerary-timeline-container {
+    background-color: white;
+    
+    width: 50%;
+    height: 50%;
+}
