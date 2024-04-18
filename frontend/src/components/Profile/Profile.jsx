@@ -1,8 +1,14 @@
+import { useState } from 'react'
 import './Profile.css'
 
 
 const Profile = () => {
 
+    // const [showItinerary, setItinerary] = useState('')
+
+    // const handleSubmit = e => {
+        
+    // }
 
     return (
         <div className='profile-background'>
@@ -21,7 +27,7 @@ const Profile = () => {
 
             <div className='profile-itineraries'>
                 <div className='itinerary-buttons'>
-                    <button className='my-button'>My itineraries</button>
+                    <button className='my-button' onClick={() => {}}>My itineraries</button>
                     <button className='saved-button'>Saved itineraries</button>
                     <button className='liked-button'>Liked itineraries</button>
                 </div>
