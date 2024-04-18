@@ -8,7 +8,7 @@ const Event = require("../models/Event.js");
 const Transportation = require("../models/Transportation.js");
 const Living = require("../models/Living.js");
 
-
+NUM_USER = 10
 const users = [];
 
 users.push(
@@ -20,7 +20,7 @@ users.push(
   )
 
 
-  for (let i = 1; i < NUM_SEED_USERS; i++) {
+  for (let i = 1; i < NUM_USER; i++) {
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
     users.push(
@@ -35,63 +35,58 @@ users.push(
 
 const itineraries = []
 
-// itineraries.push(
-//     new Itinerary ({
-//         author: users[Math.floor(Math.random() * NUM_SEED_USERS)]._id,
-//         title: faker.hacker.phrase(),
-//         description: faker.hacker.phrase()
-        
+const trip1 = new Itinerary({
+  author: users[Math.floor(Math.random() * NUM_USER)]._id,
+  title: "New York",
+  description: "City Walk",
+  country: "USA",
+  events: [],
+  transportations: [],
+  livings: []
+});
+
+const event1 = new Event({
+  eventTitle: "Time Square Walk",
+  startTime: "12:00",
+  endTime: "13:00",
+  location: "Time Square",
+  description: "Walk",
+  cost: Math.floor(Math.random() * 10000),
+  category: "Tour",
+  date: faker.date.past()
+});
+
+const transportation1 = new Transportation({
+  transportationTitle: 'AA airline',
+  startLocation: 'SF',
+  endLocation: 'NY',
+  startTime: '01:00',
+  endTime: '09:00',
+  date: faker.date.past(),
+  description: 'good airline',
+  cost: Math.floor(Math.random() * 10000)
+});
+
+const living1 = new Living({
+  livingTitle: 'Holiday Inn',
+  startTime: '13:00',
+  endTime: '14:00',
+  startDate: faker.date.past(),
+  endDate: faker.date.soon(),
+  location: 'NY',
+  description: 'a hotel',
+  cost: Math.floor(Math.random() * 10000)
+})
+
+trip1.events.push(event1)
+trip1.transportations.push(transportation1)
+trip1.livings.push(living1)
 
 
-// })) 
 
 
-const seedData = {
-    author: 'user_id', // Replace 'user_id' with the actual user ID
-    title: 'Sample Itinerary',
-    description: 'This is a sample itinerary',
-    events: [
-      {
-        eventTitle: 'Sample Event 1',
-        startTime: '12:00', // Example time in "HH:MM" format
-        endTime: '14:00',   // Example time in "HH:MM" format
-        location: 'Sample Location 1',
-        description: 'Description of Sample Event 1',
-        category: 'Sample Category',
-        cost: 50
-      },
-      {
-        eventTitle: 'Sample Event 2',
-        startTime: '15:00', // Example time in "HH:MM" format
-        endTime: '17:00',   // Example time in "HH:MM" format
-        location: 'Sample Location 2',
-        description: 'Description of Sample Event 2',
-        category: 'Sample Category',
-        cost: 70
-      }
-    ],
-    transportations: [
-      {
-        transportationTitle: 'Flight',
-        startLocation: 'City A',
-        endLocation: 'City B',
-        startTime: '08:00', // Example time in "HH:MM" format
-        endTime: '10:00',   // Example time in "HH:MM" format
-        description: 'Flight from City A to City B',
-        cost: 200
-      }
-    ],
-    livings: [
-      {
-        livingTitle: 'Hotel',
-        startTime: '20:00', // Example time in "HH:MM" format
-        endTime: '10:00',   // Example time in "HH:MM" format (next day)
-        location: 'Sample Location',
-        description: 'Stay at Sample Hotel',
-        cost: 100
-      }
-    ]
-  };
+itineraries.push(trip1)
+
 
 
 
@@ -109,12 +104,12 @@ const seedData = {
 
 // Reset and seed db
 const insertSeeds = () => {
-  console.log("Resetting db and seeding users and tweets...");
+  console.log("Resetting db and seeding users and itineraries...");
 
   User.collection.drop()
                  .then(() => Itinerary.collection.drop())
                  .then(() => User.insertMany(users))
-                 .then(() => Itinerary.insertMany(tweets))
+                 .then(() => Itinerary.insertMany(itineraries))
                  .then(() => {
                    console.log("Done!");
                    mongoose.disconnect();
@@ -124,3 +119,7 @@ const insertSeeds = () => {
                    process.exit(1);
                  });
 }
+
+//code for seeding in terminal
+
+//dotenv node seeders/seeds.js
