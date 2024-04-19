@@ -14,6 +14,15 @@ const ItineraryShow = () => {
     }, [dispatch, itineraryId])
     const itinerary = useSelector(selectItinerary(itineraryId))
 
+
+    const itinerarySubobjectsArray = ( itinerary )=> {
+        const newArray = [];
+        itinerary.events.map(event => (newArray.push(event)));
+        itinerary.transportations.map(transportation =>newArray.push(transportation));
+        itinerary.livings.map(living => newArray.push(living));
+        return newArray;
+    }
+
     console.log(itinerary);    
     return (
         <>
