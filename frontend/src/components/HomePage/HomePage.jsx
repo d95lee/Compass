@@ -1,11 +1,15 @@
+import newGlobe from '../Globe/Globe.js';
 import './HomePage.css';
-import React from 'react';
-// import ReactGlobe from 'react-globe';
+import React, { useEffect } from 'react';
+
 
 const HomePage = ()=> {
-    return (
+    useEffect(() => {
+      newGlobe()
+    }, [])
+  
+  return (
       <>
-        {/* <ReactGlobe></ReactGlobe> */}
         <p>Compass</p>
         <footer>
           Copyright &copy; 2024 Compass
