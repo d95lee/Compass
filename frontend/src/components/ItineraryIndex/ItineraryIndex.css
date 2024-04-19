@@ -13,19 +13,27 @@
     /* align-items: center; */
 }
 
+.index-all-title {
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .index-locations-title {
     /* position: relative; */
     /* top: 50px; */
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 30px;
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 600;
 }
 
-.index-locations {
+/* .index-locations {
     
-}
+} */
 .index-location-text {
     margin-left: 30px;
     margin-bottom: 10px;

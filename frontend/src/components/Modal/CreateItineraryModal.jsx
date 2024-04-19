@@ -22,7 +22,8 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
             <>
                 <div className='create-modal-background' onClick={e => setModalState(null)}>
                     <div className='create-modal-content' onClick={e => e.stopPropagation()}>
-                        <h2>Create Itinerary</h2>
+                        <div className='create-form-header'>Start Planning Your Trip</div>
+                        <div className='create-form-title'>Create Your Itinerary</div >
                         <form onSubmit={handleSubmit}>
                             <input
                                 className='create-itinerary-input'
@@ -37,7 +38,7 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
                                 onChange={e => setDescription(e.target.value)}
                             />
 
-                            <input className='create-submit' type="submit" value={modalState} />
+                            <input className='create-submit' type="submit" value="Create" />
                         </form>
                     </div>
                 </div>

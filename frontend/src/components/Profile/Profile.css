@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     margin-top: 5px;
-    background-color: rgb(188, 188, 188);
+    /* background-color: rgb(188, 188, 188); */
     overflow: hidden;
 }
 
@@ -23,7 +23,7 @@
 
 .user-info {
     border: solid;
-    top: 350px;
+    top: 45vh;
     position: absolute;
     width: 40%;
     height: 15vh;
@@ -51,16 +51,16 @@ h3 {
 
 .profile-edit-button {
     position: absolute;
-    top: 320px;
+    top: 40vh;
 }
 
 .profile-itineraries {
     position: absolute;
-    border: solid;
-    top: 550px;
-    width: 1000px;
-    height: 600px;
-    background-color: aqua;
+    /* border: solid; */
+    top: 70vh;
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
 }
 
 .itinerary-buttons {
@@ -71,29 +71,18 @@ h3 {
 
 
 .my-button {
-    background: #f3f300;
-    height: 40px;
-    border-radius: 20px;
-}
-
-.saved-button {
-    background: #f3f300;
+    background: rgb(233,216,71);
     height: 40px;
     border-radius: 20px;
 }
 
 .liked-button {
-    background: #f3f300;
+    background: rgb(20,131,242);
     height: 40px;
     border-radius: 20px;
 }
 
 .my-button:hover {
-    background: #b3b344;
-    border: none;
-}
-
-.saved-button:hover {
     background: #b3b344;
     border: none;
 }
@@ -113,18 +102,14 @@ h3 {
 .my-itineraries {
     width: 100%;
     height: auto;
-    background: green;
+    /* background: green; */
     display: block;
 }
 
-.saved-itineraries {
-    width: 100%;
-    height: auto;
-    background: red;
-}
 
 .liked-itineraries {
     width: 100%;
     height: auto;
     background: yellow;
+    display: none;
 }

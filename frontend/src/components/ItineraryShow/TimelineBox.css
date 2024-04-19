@@ -1,0 +1,62 @@
+.event-box, .transportation-box, .living-box {
+    width: 300px;
+    height: auto;
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    /* margin-left: 30px; */
+    font-size: 14px;
+    padding: 15px;
+}
+
+.event-box {
+    border: 1px solid rgba(233, 216, 71);
+}
+
+.transportation-box {
+    border: 1px solid rgb(198, 224, 215);
+}
+
+.living-box {
+    border: 1px solid rgb(20, 131, 242);
+}
+
+.timeline-box-date {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.event-box-title {
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.timeline-box-description {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.timeline-box-location {
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.transportation-box-location {
+    margin-bottom: 3px;
+}
+
+.transportation-box-time, .location-box-time {
+    margin-bottom: 15px;
+}
+
+.timeline-box-time {
+    margin-bottom: 3px;
+    font-weight: 400;
+}
+
+.timeline-box-cost{
+    margin-top: 10px;
+}

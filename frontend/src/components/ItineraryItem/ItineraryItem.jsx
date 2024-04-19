@@ -3,6 +3,7 @@ import nyc from '../../../../assets/nyc-brooklyn-bridge.jpeg';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectItinerary, fetchItinerary } from '../../store/itinerary';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const ItineraryItem = ({itinerary}) => {
     // const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const ItineraryItem = ({itinerary}) => {
     console.log(itinerary, 'item');
     return (
         <>
-            {/* <li> */}
+            <Link to={`/itinerary/${itinerary?._id}`}>
                 <div className='itinerary-index-item'>
                     <div className='itinerary-index-image'>
                         <img className='image' src={nyc} />
@@ -27,7 +28,7 @@ const ItineraryItem = ({itinerary}) => {
                         <span className='index-item-description'>{itinerary?.description}</span>
                     </div>
                 </div>                
-            {/* </li> */}
+            </Link>
 
         </>
     )
