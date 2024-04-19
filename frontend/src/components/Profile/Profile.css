@@ -76,12 +76,6 @@ h3 {
     border-radius: 20px;
 }
 
-.saved-button {
-    background: rgb(198,224,215);
-    height: 40px;
-    border-radius: 20px;
-}
-
 .liked-button {
     background: rgb(20,131,242);
     height: 40px;
@@ -89,11 +83,6 @@ h3 {
 }
 
 .my-button:hover {
-    background: #b3b344;
-    border: none;
-}
-
-.saved-button:hover {
     background: #b3b344;
     border: none;
 }
@@ -117,12 +106,6 @@ h3 {
     display: block;
 }
 
-.saved-itineraries {
-    width: 100%;
-    height: auto;
-    background: red;
-    display: none;
-}
 
 .liked-itineraries {
     width: 100%;
