@@ -27,14 +27,14 @@ const ItineraryShow = () => {
                 <div className="itinerary-display-items-container">
                     <div className="day-header"> Day 1</div>
                     <div className='event-box'>
-                        <div>Event: {itinerary.events[0] ? itinerary.events[0].eventTitle : 'no event'}</div>
+                        <div>Event: {itinerary ? itinerary.events[0].eventTitle : 'no event'}</div>
                         <div> </div>
                     </div>
                     <div className='transportation-box'>
-                        <div>Transportation: {itinerary.transportations[0] ? itinerary.transportations[0].transportationTitle : 'no event'}</div>
+                        <div>Transportation: {itinerary ? itinerary.transportations[0].transportationTitle : 'no event'}</div>
                     </div>
                     <div className='living-box'>
-                    <div>Living: {itinerary.livings[0] ? itinerary.livings[0].livingTitle : 'no event'}</div>  
+                    <div>Living: {itinerary ? itinerary.livings[0].livingTitle : 'no event'}</div>  
                     </div>                       
                 </div>
 
