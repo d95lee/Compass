@@ -8,12 +8,13 @@ import ItineraryItem from '../ItineraryItem/ItineraryItem';
 
 
 const Profile = () => {
-<<<<<<< HEAD
     const dispatch = useDispatch();
     const { userId } = useParams();
-    const user = useSelector(state => state.session.user);
+    const user = useSelector(state => state.users[userId]);
 
-    
+    useEffect(() => {
+        dispatch(fetchUser(userId))
+    }, [dispatch, userId])
 
     // const [itinerary, setItinerary] = useState('myItinerary');
 
@@ -24,18 +25,6 @@ const Profile = () => {
     useEffect(() => {
         dispatch(fetchItineraries());
     }, [dispatch])
-=======
-    // const dispatch = useDispatch()
-    // const { userId } = useParams()
-
-    // const selectUser = (userId) => state => state.user[userId]
-    // const user = useSelector(selectUser(userId))
-    // console.log(user)
-
-    // useEffect(() => {
-    //     dispatch(fetchUser(userId))
-    // }, [userId])
->>>>>>> 763adc190efa04cf29312efedf5ae47adad97f0d
 
 
 
@@ -55,7 +44,7 @@ const Profile = () => {
             <div className='user-info'>
                 <h3>Bio</h3>
 
-                <p>I love to travel and learn about new culture, meet people and help other find their way around cities</p>
+                <p>{user?.bio}</p>
             </div>
             <button className='profile-edit-button'>Edit</button>
 
