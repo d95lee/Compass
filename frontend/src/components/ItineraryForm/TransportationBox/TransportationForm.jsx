@@ -1,46 +1,74 @@
-import { useEffect, useState } from "react"
+import {  useState } from "react"
 import { useDispatch } from "react-redux"
-import './EventForm.css'
-import { useParams } from "react-router-dom"
-import { createTransportation } from "../../../store/transportation"
+import './TransportationForm.css'
 
-const TransportationForm = () => {
+import { createTransportation, updateTransportation } from "../../../store/transportation"
+
+const TransportationForm = ({itinerary, transportation, transModalState, setTransModalState, setTransportation}) => {
     const dispatch = useDispatch()
-    const { itineraryId } = useParams()
 
-    const [transportationTitle, setTransportationTitle] = useState('')
-    const [startLocation, setStartLocation] = useState('')
-    const [endLocation, setEndLocation] = useState('')
-    const [ startTime, setStartTime] = useState('')
-    const [endTime, setEndTime] = useState('')
-    const [date, setDate] = useState('')
-    const [description, setDescription] = useState('')
-    const [cost, setCost] = useState('')
-
-    useEffect(() => {
-
-    })
+    const [transportationTitle, setTransportationTitle] = useState(transModalState === 'Add' ? '' : transportation.transportationTitle)
+    const [startLocation, setStartLocation] = useState(transModalState === 'Add' ? '' : transportation.startLocation)
+    const [endLocation, setEndLocation] = useState(transModalState === 'Add' ? '' : transportation.endLocation)
+    const [ startTime, setStartTime] = useState(transModalState === 'Add' ? '' : transportation.startTime)
+    const [endTime, setEndTime] = useState(transModalState === 'Add' ? '' : transportation.endTime)
+    const [date, setDate] = useState(transModalState === 'Add' ? '' : transportation.date)
+    const [description, setDescription] = useState(transModalState === 'Add' ? '' : transportation.description)
+    const [cost, setCost] = useState(transModalState === 'Add' ? '' : transportation.cost)
+    const [errors, setErrors] =useState([])
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(createTransportation(itineraryId, {
-            transportationTitle: transportationTitle,
-            startLocation: startLocation,
-            endLocation: endLocation,
-            startTime: endTime,
-            endTime: endTime,
-            date: date,
-            description: description,
-            cost: cost
-        }))
+        if(transModalState === 'Add'){
+            dispatch(createTransportation(itinerary._id, {
+                transportationTitle,
+                startLocation,
+                endLocation,
+                startTime,
+                endTime,
+                date,
+                description,
+                cost
+            }))
+            .then(()=> setTransModalState(null))
+            .catch(async res =>{
+                let data = await res.json();
+                setErrors(data);
+              });
+        }else{
+            dispatch(updateTransportation(itinerary._id, {
+                ...transportation,
+                transportationTitle,
+                startLocation,
+                endLocation,
+                startTime,
+                endTime,
+                date,
+                description,
+                cost
+            }))
+            .then(()=> setTransModalState(null))
+            .then(() => setTransportation({}))
+            .catch(async res =>{
+                let data = await res.json();
+                setErrors(data);
+              });
+        }
+
      }
 
+     const handleClose = e => {
+        setTransModalState(null);
+        setTransportation({})
+    }
 
 
     return (
         <>
-            <div className="event-form-container">
-                <form className="event-form-modal">
+        <div className="modal-background" onClick={handleClose}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+                <h3>{transModalState ==="Add" ? "Add Transportation" : "Edit Transportation"}</h3>
+                <form className="event-form-modal" onSubmit={handleSubmit}>
                     <label>Transportation Title
                         <input type="text"
                         value={transportationTitle}
@@ -104,8 +132,11 @@ const TransportationForm = () => {
                         placeholder="Cost"
                         />
                     </label>
-                    <button onClick={handleSubmit}>Submit</button>
+                    <input type="submit" value={"Save"} />
                 </form>
+            </div>
+        </div>
+            <div className="event-form-container">
             </div>
         </>
     )

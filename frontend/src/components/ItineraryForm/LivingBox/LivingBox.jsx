@@ -13,10 +13,13 @@ const LivingBox = ({itinerary}) => {
             <div className="living-form-box">
                 <h3>Living Accommodation</h3>
                 <button onClick={e=>setLivingModalState('Add')}>Add</button>
-                {livings && livings.map((el,idx) => (<LivingItem key={idx} living={el} setLivingModalState={setLivingModalState} setLiving={setLiving}/>))}
+                {livings && livings.map((el,idx) => (<LivingItem key={idx} living={el}
+                 setLivingModalState={setLivingModalState} setLiving={setLiving}/>))}
 
             </div>
-            {livingModalState && <LivingForm itinerary = {itinerary} living = {living} livingModalState = {livingModalState} setLivingModalState={setLivingModalState} setLiving={setLiving}/>}
+            {livingModalState && <LivingForm itinerary = {itinerary}
+                living = {living} livingModalState = {livingModalState}
+                setLivingModalState={setLivingModalState} setLiving={setLiving}/>}
 
         </>
     );

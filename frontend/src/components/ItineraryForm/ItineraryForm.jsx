@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import BasicModal from './BasicModal'
 import EventBox from './EventBox/EventBox';
 import LivingBox from './LivingBox/LivingBox';
+import TransportationBox from './TransportationBox/TransportationBox';
 const ItineraryForm = () => {
     const dispatch = useDispatch();
     const { itineraryId } = useParams();
@@ -30,6 +31,7 @@ const ItineraryForm = () => {
             </div>
             <EventBox itinerary={itinerary}/>
             <LivingBox itinerary={itinerary} />
+            <TransportationBox itinerary={itinerary} />
 
         </div>
         {basicModalState && <BasicModal basicModalState={basicModalState} setBasicModalState={setBasicModalState} itinerary={itinerary}/>}

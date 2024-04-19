@@ -8,12 +8,11 @@ import ItineraryItem from '../ItineraryItem/ItineraryItem';
 
 
 const Profile = () => {
-<<<<<<< HEAD
     const dispatch = useDispatch();
     const { userId } = useParams();
     const user = useSelector(state => state.session.user);
 
-    
+
 
     // const [itinerary, setItinerary] = useState('myItinerary');
 
@@ -24,25 +23,13 @@ const Profile = () => {
     useEffect(() => {
         dispatch(fetchItineraries());
     }, [dispatch])
-=======
-    // const dispatch = useDispatch()
-    // const { userId } = useParams()
-
-    // const selectUser = (userId) => state => state.user[userId]
-    // const user = useSelector(selectUser(userId))
-    // console.log(user)
-
-    // useEffect(() => {
-    //     dispatch(fetchUser(userId))
-    // }, [userId])
->>>>>>> 763adc190efa04cf29312efedf5ae47adad97f0d
 
 
 
     // if (itinerary === 'myItinerary') {
 
     // }
-    
+
 
     return (
         <div className='profile-background'>
@@ -73,7 +60,7 @@ const Profile = () => {
 
                             </div>
                     </div>
-                
+
                 </div>
             </div>
         </div>
