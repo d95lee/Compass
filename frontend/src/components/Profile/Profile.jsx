@@ -12,7 +12,7 @@ const Profile = () => {
     const { userId } = useParams();
     const user = useSelector(state => state.session.user);
 
-    
+
 
     // const [itinerary, setItinerary] = useState('myItinerary');
 
@@ -29,7 +29,7 @@ const Profile = () => {
     // if (itinerary === 'myItinerary') {
 
     // }
-    
+
 
     return (
         <div className='profile-background'>
@@ -60,7 +60,7 @@ const Profile = () => {
 
                             </div>
                     </div>
-                
+
                 </div>
             </div>
         </div>

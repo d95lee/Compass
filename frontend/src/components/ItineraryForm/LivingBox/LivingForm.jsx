@@ -58,7 +58,7 @@ const LivingForm = ({itinerary, living, livingModalState, setLivingModalState, s
 
     const handleClose = e => {
         setLivingModalState(null);
-        setLiving(null)
+        setLiving({})
     }
 
     return (
