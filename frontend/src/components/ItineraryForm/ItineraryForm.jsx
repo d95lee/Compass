@@ -5,6 +5,7 @@ import { fetchItinerary, selectItinerary } from '../../store/itinerary';
 import { useEffect, useState } from 'react';
 import BasicModal from './BasicModal'
 import EventBox from './EventBox/EventBox';
+import LivingBox from './LivingBox/LivingBox';
 const ItineraryForm = () => {
     const dispatch = useDispatch();
     const { itineraryId } = useParams();
@@ -17,16 +18,20 @@ const ItineraryForm = () => {
     return (
        <>
         <h2>Create Itinerary Details</h2>
-        <div className='basic info'>
-            <h3>Basic info</h3>
-            <button onClick={e => setBasicModalState(!basicModalState)}>Edit</button>
-            <ul>
-                <li>{itinerary?.title}</li>
-                <li>{itinerary?.description}</li>
-                <li>{itinerary?.country}</li>
-            </ul>
+        <div className='edit-contents'>
+            <div className='basic-info'>
+                <h3>Basic info</h3>
+                <button onClick={e => setBasicModalState(!basicModalState)}>Edit</button>
+                <ul>
+                    <li>{itinerary?.title}</li>
+                    <li>{itinerary?.description}</li>
+                    <li>{itinerary?.country}</li>
+                </ul>
+            </div>
+            <EventBox itinerary={itinerary}/>
+            <LivingBox itinerary={itinerary} />
+
         </div>
-        <EventBox itinerary={itinerary}/>
         {basicModalState && <BasicModal basicModalState={basicModalState} setBasicModalState={setBasicModalState} itinerary={itinerary}/>}
 
        </>
