@@ -14,6 +14,7 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
     const [description, setDescription] = useState(eventModalState === 'Add' ? '' : event.description)
     const [category, setCategory] = useState(eventModalState === 'Add' ? '' : event.category)
     const [cost, setCost] = useState(eventModalState === 'Add' ? '' : event.cost)
+    const [errors, setErrors] = useState([])
 
     useEffect(() => {
 
@@ -33,6 +34,10 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
                 cost
             }))
             .then(()=> setEventModalState(null))
+            .catch(async res =>{
+                let data = await res.json();
+                setErrors(data);
+              });
         }else{
             dispatch(updateEvent(itinerary._id, {
                 ...event,
@@ -47,6 +52,10 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
             }))
             .then(() => setEventModalState(null))
             .then(() => setEvent({}))
+            .catch(async res =>{
+                let data = await res.json();
+                setErrors(data);
+              });
         }
     }
 
@@ -59,7 +68,7 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
             <div className="modal-background" onClick={handleClose}>
                 <div className="modal-content" onClick={e => e.stopPropagation()}>
                     <h3>{eventModalState === "Add" ? 'Add Event' : 'Edit Event'}</h3>
-                    <form className="event-form-modal">
+                    <form className="event-form-modal" onSubmit={handleSubmit}>
                         <label>Event Title
                             <input type="text"
                             value={eventTitle}
@@ -123,7 +132,7 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
                             placeholder="Cost"
                             />
                         </label>
-                        <button onClick={handleSubmit}>Save</button>
+                        <input type="submit" value={"Save"} />
                     </form>
                 </div>
             </div>

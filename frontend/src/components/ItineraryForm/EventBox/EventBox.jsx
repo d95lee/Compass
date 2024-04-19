@@ -10,9 +10,9 @@ const EventBox = ({itinerary}) => {
 
     return(
         <>
-            <div className="event-box">
+            <div className="event-form-box">
                 <h3>Events</h3>
-                <button onClick={e=>setEventModalState('Add')}>Add Event</button>
+                <button onClick={e=>setEventModalState('Add')}>Add</button>
                 {events && events.map((el,idx) => (<EventItem key={idx} event={el} setEventModalState={setEventModalState} setEvent={setEvent}/>))}
 
             </div>

@@ -45,3 +45,8 @@
     font-size: 14px;
     text-indent: 4%;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
