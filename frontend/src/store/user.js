@@ -43,14 +43,7 @@ export const fetchUsers = () => async (dispatch) => {
     }
 }
 
-// Selector
-export const selectUsers = state => state.users
-export const selectUser = userId => createSelector(
-    [selectUsers],
-    users => users[userId]
-);
-
-// export const selectUser = (userId) => state => state.user[userId]
+// // export const selectUser = (userId) => state => state.user[userId]
 
 //Reducer
 
