@@ -1,11 +1,13 @@
+import {createSelector} from 'reselect'
+
 
 //Action
 export const RECEIVE_USERS = 'user/RECEIVE_USERS';
-export const RECEIVE_USER = 'user/RECEIVE_USER'; // corrected typo here too
+export const RECEIVE_USER = 'user/RECEIVE_USER';
 
 //Action creator
 export const receiveUser = (user) => ({
-    type: RECEIVE_USER,  // updated typo to make this RECEIVE_USER not RECEIVE_USERS
+    type: RECEIVE_USER,
     user
 });
 
@@ -41,6 +43,15 @@ export const fetchUsers = () => async (dispatch) => {
     }
 }
 
+// Selector
+export const selectUsers = state => state.users
+export const selectUser = userId => createSelector(
+    [selectUsers],
+    users => users[userId]
+);
+
+// export const selectUser = (userId) => state => state.user[userId]
+
 //Reducer
 
 const userReducer = (state={}, action) => {
@@ -53,6 +64,7 @@ const userReducer = (state={}, action) => {
         case RECEIVE_USERS:
             action.users.map(user => nextState[user._id] = user)
             return nextState;
+            // return { ...state, ...action.users}
         default:
             return state;
     };

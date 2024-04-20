@@ -11,7 +11,8 @@ const TransportationItem = ({transportation, setTransModalState, setTransportati
                 <li>Transportation Title: {transportation.transportationTitle}</li>
                 <li>Start Time: {transportation.startTime}</li>
                 <li>End Time: {transportation.endTime}</li>
-                <li>Date: {transportation.date.slice(0,10)}</li>
+                <li>Date: {transportation.startDate}</li>
+                <li>{transportation.endDate.slice(0,10)}</li>
                 <li>Start Location: {transportation.startLocation}</li>
                 <li>End Location: {transportation.endLocation}</li>
                 <li>Description: {transportation.description}</li>

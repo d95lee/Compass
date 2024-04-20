@@ -9,16 +9,18 @@ const csurf = require('csurf');
 const debug = require('debug');
 
 require('./models/User');
-require('./models/Itinerary')
-require('./models/Event')
-require('./models/Living')
-require('./models/Transportation')
+require('./models/Itinerary');
+require('./models/Event');
+require('./models/Living');
+require('./models/Transportation');
+require('./models/Like')
 require('./config/passport');
 const passport = require('passport');
 
 var usersRouter = require('./routes/api/users');
 const csrfRouter = require('./routes/api/csrf');
 const itineraryRouter = require('./routes/api/itinerary')
+const likeRouter = require('./routes/api/like')
 
 var app = express();
 
@@ -46,6 +48,7 @@ app.use(
 app.use('/api/users', usersRouter);
 app.use('/api/csrf', csrfRouter);
 app.use('/api/itinerary', itineraryRouter)
+app.use('/api/likes', likeRouter)
 
 app.use((req, res, next) => {
     const err = new Error('Not Found');

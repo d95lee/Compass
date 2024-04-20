@@ -1,0 +1,13 @@
+{
+    "type": "Map",
+    "Co-orindates":[
+        {
+            "text":"IND",
+            "size": 1.0,
+            "country": "India",
+            "city":"Chett",
+            "lat": 22.770113005430577,
+            "lng": 79.64590852119045
+        }
+    ]
+}

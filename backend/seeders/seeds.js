@@ -60,7 +60,8 @@ const transportation1 = new Transportation({
   endLocation: 'NY',
   startTime: '01:00',
   endTime: '09:00',
-  date: faker.date.past(),
+  startDate: faker.date.past(),
+  endDate: faker.date.future(),
   description: 'good airline',
   cost: Math.floor(Math.random() * 10000)
 });
