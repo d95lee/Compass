@@ -23,7 +23,7 @@ const userSchema = new Schema({
     },
     likes:[{
       type: Schema.Types.ObjectId,
-      ref: 'Itinerary'
+      ref: 'Like'
     }],
   }, {
     timestamps: true

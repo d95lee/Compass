@@ -11,6 +11,7 @@ import { createTransportation, deleteTransportation, updateTransportation } from
 import  {createEvent, deleteEvent, updateEvent}  from './store/event.js';
 import { createLiving, deleteLiving, updateLiving } from './store/living';
 import { getCurrentUser, login } from './store/session.js';
+import { likeItinerary, unlikeItinerary } from './store/like.js';
 const store = configureStore();
 
 if (import.meta.env.MODE !== "production") {
@@ -34,6 +35,8 @@ if (import.meta.env.MODE !== "production") {
   window.createLiving = createLiving;
   window.updateLiving = updateLiving;
   window.deleteLiving = deleteLiving;
+  window.likeItinerary = likeItinerary;
+  window.unlikeItinerary = unlikeItinerary;
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(

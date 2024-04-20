@@ -31,10 +31,10 @@ const itinerarySchema = new Schema({
     events:[eventSchema],
     transportations:[transportationSchema],
     livings:[livingSchema],
-    likes:[{
+    likes:{
       type: Number,
       default: 0
-    }],
+    },
   }, {
     timestamps: true
   });

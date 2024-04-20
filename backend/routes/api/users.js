@@ -95,6 +95,7 @@ router.patch('/:userId/bio', requireUser, async (req, res, next) => {
 router.get('/', async (req, res) =>{
   try{
     const users = await User.find({},{username: 1, bio: 1, profileImageUrl: 1, likes: 1})
+                            .populate('likes', '_id itinerary')
     return res.json(users)
   }
   catch(err){
@@ -105,6 +106,7 @@ router.get('/', async (req, res) =>{
 router.get('/:id', async (req, res, next) => {
   try{
     const user = await User.findById(req.params.id,{username: 1, bio: 1, profileImageUrl: 1, likes: 1})
+                            .populate('likes', '_id itinerary')
     return res.json(user)
   }
   catch(err){
