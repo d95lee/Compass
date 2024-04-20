@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './ItineraryForm.css'
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { fetchItinerary, selectItinerary } from '../../store/itinerary';
 import { useEffect, useState } from 'react';
 import BasicModal from './BasicModal'
 import EventBox from './EventBox/EventBox';
 import LivingBox from './LivingBox/LivingBox';
 import TransportationBox from './TransportationBox/TransportationBox';
+
 const ItineraryForm = () => {
     const dispatch = useDispatch();
     const { itineraryId } = useParams();
@@ -18,15 +19,24 @@ const ItineraryForm = () => {
     }, [dispatch, itineraryId])
     return (
        <>
-        <h2>Create Itinerary Details</h2>
+        <div className='edit-form-header'>
+           <div className='edit-form-header-text'>Edit Itinerary Details</div> 
+           
+           <Link to={`/itinerary/${itinerary?._id}`}>
+                <div className='itinerary-view-button-box'>
+                    <div className='itinerary-view-button'>View Itinerary</div>
+                </div>                    
+            </Link>
+        </div>
+        
         <div className='edit-contents'>
             <div className='basic-info'>
                 <h3>Basic info</h3>
                 <button onClick={e => setBasicModalState(!basicModalState)}>Edit</button>
                 <ul>
-                    <li>{itinerary?.title}</li>
-                    <li>{itinerary?.description}</li>
-                    <li>{itinerary?.country}</li>
+                    <li>Title: {itinerary?.title}</li>
+                    <li>Description: {itinerary?.description}</li>
+                    <li>Country: {itinerary?.country}</li>
                 </ul>
             </div>
             <EventBox itinerary={itinerary}/>

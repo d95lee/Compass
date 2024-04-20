@@ -9,14 +9,14 @@ const EventItem = ({event, setEventModalState, setEvent})=>{
     return (
         <>
             <ul>
-                <li>{event.eventTitle}</li>
-                <li>{event.startTime}</li>
-                <li>{event.endTime}</li>
-                <li>{event.date}</li>
-                <li>{event.location}</li>
-                <li>{event.description}</li>
-                <li>{event.category}</li>
-                <li>{event.cost}</li>
+                <li>Event Title: {event.eventTitle}</li>
+                <li>Start Time: {event.startTime}</li>
+                <li>End Time: {event.endTime}</li>
+                <li>Date: {event.date.slice(0,10)}</li>
+                <li>Location: {event.location}</li>
+                <li>Description: {event.description}</li>
+                <li>Category: {event.category}</li>
+                <li>Cost: {event.cost}</li>
             </ul>
             <button onClick={handleEditButton}>Edit</button>
         </>
