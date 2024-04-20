@@ -9,14 +9,14 @@ const LivingItem = ({living, setLivingModalState, setLiving})=>{
     return (
         <>
             <ul>
-                <li>{living.livingTitle}</li>
-                <li>{living.startTime}</li>
-                <li>{living.endTime}</li>
-                <li>{living.startDate}</li>
-                <li>{living.endDate}</li>
-                <li>{living.location}</li>
-                <li>{living.description}</li>
-                <li>{living.cost}</li>
+                <li>Accomodation Title: {living.livingTitle}</li>
+                <li>Start Time: {living.startTime}</li>
+                <li>End Time: {living.endTime}</li>
+                <li>Start Date: {living.startDate.slice(0,10)}</li>
+                <li>End Date: {living.endDate.slice(0,10)}</li>
+                <li>Location: {living.location}</li>
+                <li>Description: {living.description}</li>
+                <li>Cost: ${living.cost}</li>
             </ul>
             <button onClick={handleEditButton}>Edit</button>
         </>

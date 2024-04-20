@@ -3,7 +3,7 @@ import './TimelineBox.css';
 
 const TimelineBox = ({activity}) => {
     
-    console.log(activity, 'activity');
+    // console.log(activity, 'activity');
 
     if (activity.type === "event"){
         return (

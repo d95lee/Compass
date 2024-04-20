@@ -1,11 +1,11 @@
 
 //Action
 export const RECEIVE_USERS = 'user/RECEIVE_USERS';
-export const RECEIVE_USER = 'user/RECEVIE_USER';
+export const RECEIVE_USER = 'user/RECEIVE_USER'; // corrected typo here too
 
 //Action creator
 export const receiveUser = (user) => ({
-    type: RECEIVE_USERS,
+    type: RECEIVE_USER,  // updated typo to make this RECEIVE_USER not RECEIVE_USERS
     user
 });
 
@@ -13,6 +13,13 @@ export const receiveUsers = (users) =>({
     type: RECEIVE_USERS,
     users
 });
+
+// Selectors
+export const selectUsers = state => state.users
+export const selectUser = userId => createSelector(
+    [selectUsers],
+    users => users[userId]
+);
 
 //Thunk Action
 
