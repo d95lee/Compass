@@ -1,10 +1,18 @@
-
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { deleteLiving } from "../../../store/living.js"
 
 const LivingItem = ({living, setLivingModalState, setLiving})=>{
+    const dispatch = useDispatch();
+    const {itineraryId} = useParams();
 
     const handleEditButton = e => {
         setLivingModalState('Edit')
         setLiving(living)
+    }
+
+    const handleDeleteButton = e => {
+        dispatch(deleteLiving(itineraryId, living._id));
     }
     return (
         <>
@@ -19,6 +27,7 @@ const LivingItem = ({living, setLivingModalState, setLiving})=>{
                 <li>Cost: ${living.cost}</li>
             </ul>
             <button onClick={handleEditButton}>Edit</button>
+            <button onClick={handleDeleteButton}>Delete</button>
         </>
     );
 };

@@ -37,7 +37,6 @@ const ItineraryShow = () => {
     // add in imageUrl to connect to each itinerary
 
     // Add date key for each activity to show in different date/day columns
-    // what about flights that are overnight?
 
     // always order hotel at top or bottom after first day?
 

@@ -1,10 +1,19 @@
 import './EventItem.css'
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import {deleteEvent} from "../../../store/event.js"
 
 const EventItem = ({event, setEventModalState, setEvent})=>{
+    const dispatch = useDispatch();
+    const {itineraryId} = useParams();
 
     const handleEditButton = e => {
         setEventModalState('Edit')
         setEvent(event)
+    }
+
+    const handleDeleteButton = e => {
+        dispatch(deleteEvent(itineraryId, event._id));
     }
     return (
         <>
@@ -19,6 +28,7 @@ const EventItem = ({event, setEventModalState, setEvent})=>{
                 <li>Cost: {event.cost}</li>
             </ul>
             <button onClick={handleEditButton}>Edit</button>
+            <button onClick={handleDeleteButton}>Delete</button>
         </>
     );
 };

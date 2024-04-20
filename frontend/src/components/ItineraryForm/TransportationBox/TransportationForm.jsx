@@ -12,8 +12,8 @@ const TransportationForm = ({itinerary, transportation, transModalState, setTran
     const [endLocation, setEndLocation] = useState(transModalState === 'Add' ? '' : transportation.endLocation)
     const [ startTime, setStartTime] = useState(transModalState === 'Add' ? '' : transportation.startTime)
     const [endTime, setEndTime] = useState(transModalState === 'Add' ? '' : transportation.endTime)
-    const [startDate, setStartDate] = useState(transModalState === 'Add' ? '' : transportation.startdate)
-    const [endDate, setEndDate] = useState(transModalState === 'Add' ? '' : transportation.enddate)
+    const [startDate, setStartDate] = useState(transModalState === 'Add' ? '' : transportation.startDate)  // updated
+    const [endDate, setEndDate] = useState(transModalState === 'Add' ? '' : transportation.endDate)  // updated
     const [description, setDescription] = useState(transModalState === 'Add' ? '' : transportation.description)
     const [cost, setCost] = useState(transModalState === 'Add' ? '' : transportation.cost)
     const [errors, setErrors] =useState([])

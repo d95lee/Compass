@@ -26,15 +26,17 @@ const TimelineBox = ({activity}) => {
         return (
             <>
                 <div className='transportation-box'>
-                    <div className='timeline-box-date'>Date: {activity.date.slice(0,10)}</div>
+                    <div className='timeline-box-date'>Date: {activity.startDate.slice(0,10)}</div>
                     <div className='event-box-title'>Transportation: {activity.transportationTitle}</div>
                     <div className='timeline-box-description'>Description: {activity.description}</div>
 
                     <div className='transportation-box-location'>Start Location: {activity.startLocation}</div>
                     <div className='transportation-box-time'>Start Time: {activity.startTime}</div>
+                    <div className='transportation-box-time'>Start Date: {activity.startDate}</div>
                     
                     <div className='transportation-box-location'>End Location: {activity.endLocation}</div>
                     <div className='transportation-box-time'>End Time: {activity.endTime}</div>
+                    <div className='transportation-box-time'>End Date: {activity.endDate}</div>
                     <div className='timeline-box-cost'>Cost: ${activity.cost}</div>
                 </div>
             </>
