@@ -44,6 +44,10 @@
    margin-bottom: 20px;
 }
 
+.likes-number-text {
+    margin-left: 6px;
+}
+
 .itinerary-edit-button-box {
     height: 125px;
     width: 55px;
@@ -55,6 +59,7 @@
     position: relative;
     top: 20px;
     height: 22px;
+    cursor: pointer;
 }
 
 /* -------- SHOW PAGE CONTENT -------- */
