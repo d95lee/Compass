@@ -91,17 +91,14 @@ export const timelineSort = (itinerary) => {
 
 
 
-export const eventSortTime = (eventArray) =>{
-    //make a copy of event array of one day
-    const events = eventArray.slice();
-    return events.sort((a,b) => compareTimes(a.startTime, b.startTime));
+export const oneDaySort = (Array) =>{
+    //make a copy of array of one day of  event, transportation, living, or timeline from above helper function
+    // it will sort the day of object by looking at the startTime
+    const copy = Array.slice();
+    return copy.sort((a,b) => compareTimes(a.startTime, b.startTime));
 };
 
-export const transportationSortTime = (transportationArray) =>{
-    //make a copy of transportation array of one day
-    const transportations = transportationArray.slice();
-    return transportations.sort((a,b) => compareTimes(a.startTime, b.startTime));
-};
+
 
 export const formatDate = (dateString)=> {
     const date = new Date(dateString);
