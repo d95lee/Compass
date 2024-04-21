@@ -21,6 +21,10 @@ const userSchema = new Schema({
       type: String,
       // required: true //temporarily commented out for testing
     },
+    likes:[{
+      type: Schema.Types.ObjectId,
+      ref: 'Like'
+    }],
   }, {
     timestamps: true
   });

@@ -12,7 +12,8 @@ const TransportationForm = ({itinerary, transportation, transModalState, setTran
     const [endLocation, setEndLocation] = useState(transModalState === 'Add' ? '' : transportation.endLocation)
     const [ startTime, setStartTime] = useState(transModalState === 'Add' ? '' : transportation.startTime)
     const [endTime, setEndTime] = useState(transModalState === 'Add' ? '' : transportation.endTime)
-    const [date, setDate] = useState(transModalState === 'Add' ? '' : transportation.date)
+    const [startDate, setStartDate] = useState(transModalState === 'Add' ? '' : transportation.startDate)  // updated
+    const [endDate, setEndDate] = useState(transModalState === 'Add' ? '' : transportation.endDate)  // updated
     const [description, setDescription] = useState(transModalState === 'Add' ? '' : transportation.description)
     const [cost, setCost] = useState(transModalState === 'Add' ? '' : transportation.cost)
     const [errors, setErrors] =useState([])
@@ -26,7 +27,8 @@ const TransportationForm = ({itinerary, transportation, transModalState, setTran
                 endLocation,
                 startTime,
                 endTime,
-                date,
+                startDate,
+                endDate,
                 description,
                 cost
             }))
@@ -43,7 +45,8 @@ const TransportationForm = ({itinerary, transportation, transModalState, setTran
                 endLocation,
                 startTime,
                 endTime,
-                date,
+                startDate,
+                endDate,
                 description,
                 cost
             }))
@@ -109,10 +112,17 @@ const TransportationForm = ({itinerary, transportation, transModalState, setTran
                         />
                     </label>
 
-                    <label>Date
+                    <label>Start Date
                         <input type="text"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        placeholder="Date 01/01/2020"
+                        />
+                    </label>
+                    <label>End Date
+                        <input type="text"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
                         placeholder="Date 01/01/2020"
                         />
                     </label>

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchItineraries, fetchItinerary, selectItineraries, selectItinerary } from '../../store/itinerary';
 import ItineraryItem from '../ItineraryItem/ItineraryItem';
 import { useEffect } from 'react';
+import { removeGlobe } from '../Globe/Globe';
 
 const ItineraryIndex = () => {
 
@@ -18,6 +19,8 @@ const ItineraryIndex = () => {
     useEffect(() => {
         dispatch(fetchItineraries());
     }, [dispatch])
+
+    removeGlobe()
 
     return (
         <>

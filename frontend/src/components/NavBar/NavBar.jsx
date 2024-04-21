@@ -10,6 +10,7 @@ import CreateItineraryModal from '../Modal/CreateItineraryModal';
 function NavBar () {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => !!state.session.user);
+  const currentUsername = useSelector(state => state.session.user?.username)
   const [modalState, setModalState] = useState(null);
 
   const logoutUser = e => {
@@ -17,13 +18,16 @@ function NavBar () {
       dispatch(logout());
   };
 
+
+
+
   console.log(modalState, 'modal state');
   const getLinks = () => {
     if (currentUser) {
       return (
         <>
           <div>
-            <p>Hello {currentUser.username}</p>
+            <Link to={`profile/${currentUsername}`}><p>Hello {currentUsername}</p></Link>
             <button onClick={logoutUser}>
               Logout
             </button>
@@ -46,8 +50,13 @@ function NavBar () {
 
       <nav>
         <div className='navbar-left'>
-          <img className='logo' src={logo}/>
-          <div className='create-button' onClick={() => setModalState('create')}><span>Create</span></div>
+          <Link to={'/'}><img className='logo' src={logo}/></Link>
+          {currentUser ? 
+            (<div className='create-button' onClick={() => setModalState('create')}><span>Create</span></div>) : 
+            (<div className='create-button' onClick={() => setModalState('login')}><span>Create</span></div>)
+          }
+
+          <Link to={'/itinerary'}><div className='navbar-itineraries-text'>&nbsp;&nbsp;&nbsp;&nbsp;Itineraries</div></Link>
         </div>
 
         <div className="links-auth">

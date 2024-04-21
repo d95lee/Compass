@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { fetchItineraries, selectItineraries } from '../../store/itinerary';
 import { fetchUser, selectUser } from '../../store/user'
 import ItineraryItem from '../ItineraryItem/ItineraryItem';
+import { removeGlobe } from '../Globe/Globe';
 
 
 const Profile = () => {
@@ -31,7 +32,7 @@ const Profile = () => {
     // if (itinerary === 'myItinerary') {
 
     // }
-    
+    removeGlobe()
 
     return (
         <div className='profile-background'>

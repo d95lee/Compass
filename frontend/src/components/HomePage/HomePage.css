@@ -2,3 +2,89 @@
     background-color: rgba(255,226,64);
 
 } */
+
+.homepage-container {
+    position: relative;
+}
+
+.homepage-let-right-container {
+    position: relative;
+}
+
+.homepage-right {
+    /* background-color: rgb(210, 221, 163); */
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(198,224,215,1) 50%, rgba(210, 221, 163) 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+}
+
+.homepage-left {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.homepage-right-title {
+    margin-top: 30px;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.homepage-right-title-welcome {
+    font-size: 60px;
+}
+
+.homepage-logo {
+    width: 40px;
+    height: 40px;
+    margin: -3px;
+}
+
+.homepage-right-title-plan {
+    margin-top: -30px;
+    font-size: 30px;
+}
+
+.homepage-socials {
+    padding: 20px;
+}
+
+.homepage-socials img {
+    width: 30px;
+    height: 30px;
+}
+
+.homepage-socials-box {
+    border: 2px dotted black;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .homepage-socials-box-left {
+}
+
+.homepage-socials-box-mid {
+}
+
+.homepage-socials-box-right {
+} */
+
+
+/* .linkedin-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.github-logo {
+    width: 30px;
+    height: 25px;
+} */

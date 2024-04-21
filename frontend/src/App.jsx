@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <AuthRoute component={HomePage} />
+        element: <HomePage />
       },
       {
         path: "itinerary",
