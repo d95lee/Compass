@@ -17,7 +17,7 @@ const HomePage = ()=> {
   
   useEffect(() => {
     dispatch(fetchItineraries())
-  })
+  }, [])
 
     const carolineItinerary = useSelector(selectItinerary('662184fee0ed831fc79e7512'))
     const davidItinerary = useSelector(selectItinerary('662196350b2696132f9e4184'))
