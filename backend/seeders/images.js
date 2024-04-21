@@ -3,7 +3,7 @@ const { mongoURI: db } = require('../config/keys.js');
 const User = require('../models/User');
 
 
-const DEFAULT_PROFILE_IMAGE_URL = 'https://mern-travel.s3.us-west-1.amazonaws.com/steph-curry.jpg'
+const DEFAULT_PROFILE_IMAGE_URL = 'https://mern-travel.s3.us-west-1.amazonaws.com/joe.png'
 
 // Connect to database
 mongoose
