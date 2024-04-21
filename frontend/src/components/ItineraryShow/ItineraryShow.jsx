@@ -1,10 +1,12 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { fetchItinerary, selectItinerary } from "../../store/itinerary"
+import { fetchUser } from "../../store/user"
 import "./ItineraryShow.css"
 import TimelineBox from "./TimelineBox"
 import nyc from '../../../../assets/nyc-brooklyn-bridge.jpeg'
+import editbutton from '../../../../assets/edit-button.png'
 
 const ItineraryShow = () => {
     const dispatch = useDispatch()
@@ -15,6 +17,12 @@ const ItineraryShow = () => {
     }, [dispatch, itineraryId])
     const itinerary = useSelector(selectItinerary(itineraryId))
 
+    const userId = itinerary?.author._id
+    useEffect(() => {
+        dispatch(fetchUser(userId));
+    }, [dispatch, userId])
+
+    console.log(userId, 'userId')
 
     const itinerarySubobjectsArray = ( itinerary )=> {
         const newArray = [];  // event = { title: '', date: ''}
@@ -26,13 +34,13 @@ const ItineraryShow = () => {
 
     const timelineArray = itinerarySubobjectsArray();
     // add in username too and link to user profile page
+    // add in imageUrl to connect to each itinerary
 
     // Add date key for each activity to show in different date/day columns
-    // what about flights that are overnight?
 
     // always order hotel at top or bottom after first day?
 
-    // figure out ordering chronologically of activities
+    // figure out ordering chronologically of activities, maybe try to by ordering by key value
     const orderActivitiesArray = (activitiesArray) => {
         activitiesArray.map(activity => {
             if (activity['eventTitle']) {
@@ -56,7 +64,12 @@ const ItineraryShow = () => {
                         <div className='itinerary-show-page-title'>{itinerary?.title.toUpperCase()}</div>  
                         <div className='itinerary-show-page-description'>{itinerary?.description.toUpperCase()}</div>                    
                     </div>
-                    
+
+                    <Link to={`/itinerary/form/${itinerary?._id}`}>
+                    <div className='itinerary-edit-button-box'>
+                        <img className='itinerary-edit-button' src={editbutton} />
+                    </div>                    
+                    </Link>
                 </div>
 
 

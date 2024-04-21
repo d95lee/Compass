@@ -8,6 +8,9 @@
     margin-bottom: 30px;
 }
 
+
+/* -------- SHOW PAGE HEADER -------- */
+
 .itinerary-show-page-header {
     margin-left: 30px;
     display: flex;
@@ -36,9 +39,25 @@
     /* margin-top: 20px; */
     margin-bottom: 10px
 }
+
 .itinerary-show-page-description {
    margin-bottom: 20px;
 }
+
+.itinerary-edit-button-box {
+    height: 125px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+}
+
+.itinerary-edit-button {
+    position: relative;
+    top: 20px;
+    height: 22px;
+}
+
+/* -------- SHOW PAGE CONTENT -------- */
 
 .itinerary-show-page-content {
     /* background-color: grey;
