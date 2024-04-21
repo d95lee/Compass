@@ -12,7 +12,7 @@ import  {createEvent, deleteEvent, updateEvent}  from './store/event.js';
 import { createLiving, deleteLiving, updateLiving } from './store/living';
 import { getCurrentUser, login } from './store/session.js';
 import { likeItinerary, unlikeItinerary } from './store/like.js';
-import { eventSort, eventSortTime } from './utils/calenderSort.js';
+import { eventSort, eventSortTime, timelineSort } from './utils/calenderSort.js';
 const store = configureStore();
 
 if (import.meta.env.MODE !== "production") {
@@ -40,6 +40,7 @@ if (import.meta.env.MODE !== "production") {
   window.unlikeItinerary = unlikeItinerary;
   window.eventSort = eventSort;
   window.eventSortTime= eventSortTime;
+  window.timelineSort= timelineSort;
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
