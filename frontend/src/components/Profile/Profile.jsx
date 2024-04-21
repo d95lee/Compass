@@ -43,7 +43,6 @@ const Profile = () => {
 
             <div className='user-info'>
                 <h3>Bio</h3>
-                {user?.profileImageUrl && (<img src={user.profileImageUrl}/>)}
                 <p>{user?.bio}</p>
             </div>
             <button className='profile-edit-button'>Edit</button>
