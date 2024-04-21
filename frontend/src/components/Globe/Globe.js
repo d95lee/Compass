@@ -219,7 +219,12 @@ window.addEventListener('click', onClick, false);
 
 export default newGlobe
 
-
+export const removeGlobe = () => {
+    const globeContainer = document.getElementById('globe-container');
+    if (globeContainer) {
+        document.body.removeChild(globeContainer);
+    }
+}
 
 // const countryFeature = countries.features[0];
 // const countryProperties = countryFeature.properties;

@@ -73,3 +73,9 @@ nav {
     margin-bottom: 20px;
     margin-left: 60px;
 }
+
+.navbar-itineraries-text {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
