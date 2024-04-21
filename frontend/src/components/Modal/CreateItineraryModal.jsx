@@ -2,54 +2,32 @@ import './CreateItineraryModal.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { createItinerary, fetchItineraries } from '../../store/itinerary';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const CreateItineraryModal = ({ modalState, setModalState })  => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [lastItinerary, setLastItinerary] = useState(false)
-    const [newArr, setNewArr] = useState([]);
     const itineraryArr = useSelector(state => state.itinerary)
-    const newItinerary = useSelector(state => state.itinerary[state.itinerary.length - 1])
 
 
     useEffect(() => {
         dispatch(fetchItineraries())
     }, [dispatch])
    
-    // useEffect(() => {
-    //     if (lastItinerary) {
-    //         itineraryArr
-    //     }
-    // }, [lastItinerary])
-
-    const getLastItinerary = () => {
-        // if (lastItinerary) {
-        //     const veryLastItinerary = itineraryArr[itineraryArr.length - 1]
-        //  // if the last itinerary is true that means the itinerary was successfully created
-            // if (veryLastItinerary) {
-                // Navigate(`itinerary/form/${newItinerary}`)
-            // }
-        // }
-    }   // that means that we can now grab the last itinerary from the array
 
     const handleSubmit = async e => {
         e.preventDefault();
 
-        try {
-            const test = await dispatch(createItinerary({ title, description }));
-            setModalState(null);
-            setNewArr(prevArr => [...prevArr, test]);
-            console.log(newArr);
-        } catch (error) {
-            console.error('Error creating itinerary:', error);
-        }
+        const test = dispatch(createItinerary({ title, description }))
+            .then((data) => navigate(`itinerary/form/${data._id}`))    
+            .then(() => setModalState(null))
+        
     };
 
-    useEffect(() => {
-        console.log(newArr);
-    }, [newArr]);
+
 
 
     if (modalState === 'create') {
