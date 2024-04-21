@@ -4,9 +4,9 @@ export const eventSort = (itinerary) => {
 
     let res = {};
     ///make a copy of events
-    const events = itinerary.events.slice();
+    const events = itinerary?.events.slice();
 
-    events.map( event => {
+    events?.map( event => {
         let formattedDate = formatDate(event.date);
         if(res[formattedDate]){
             res[formattedDate].push(event);
