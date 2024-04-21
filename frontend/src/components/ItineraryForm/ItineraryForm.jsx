@@ -7,6 +7,7 @@ import BasicModal from './BasicModal'
 import EventBox from './EventBox/EventBox';
 import LivingBox from './LivingBox/LivingBox';
 import TransportationBox from './TransportationBox/TransportationBox';
+import { removeGlobe } from '../Globe/Globe';
 
 const ItineraryForm = () => {
     const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const ItineraryForm = () => {
     useEffect(() => {
         dispatch(fetchItinerary(itineraryId))
     }, [dispatch, itineraryId])
+
+    removeGlobe()
     return (
        <>
         <div className='edit-form-header'>
