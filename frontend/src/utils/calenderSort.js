@@ -1,0 +1,54 @@
+// Test object id: "662184fee0ed831fc79e7512"
+
+export const eventSort = (itinerary) => {
+
+    let res = {};
+    ///make a copy of events
+    const events = itinerary.events.slice();
+
+    events.map( event => {
+        let formattedDate = formatDate(event.date)
+        if(res[formattedDate]){
+            res[formattedDate].push(event);
+        }else{
+            res[formattedDate] = [event];
+        }
+    })
+
+    return res; /// {date: [], date: []}
+};
+
+export const eventSortTime = (eventArray) =>{
+    //make a copy of event array
+    const events = eventArray.slice()
+    return events.sort((a,b) => compareTimes(a.startTime, b.startTime))
+}
+
+export const formatDate = (dateString)=> {
+    const date = new Date(dateString)
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Adding leading zero if needed
+    const day = String(date.getDate()).padStart(2, '0'); // Adding leading zero if needed
+    const year = date.getFullYear();
+
+    return `${month}-${day}-${year}`;
+}
+
+function compareTimes(time1, time2) {
+    // Parse time strings into Date objects
+    const [hours1, minutes1] = time1.split(':').map(Number);
+    const [hours2, minutes2] = time2.split(':').map(Number);
+
+    // Create Date objects for comparison (use a reference date for consistency)
+    const referenceDate = new Date(2000, 0, 1);
+    const date1 = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate(), hours1, minutes1);
+    const date2 = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate(), hours2, minutes2);
+
+    // Compare the times
+    if (date1 < date2) {
+        return -1;
+    } else if (date1 > date2) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
