@@ -29,24 +29,18 @@ export const newItinerary = (itinerary) => ({
 
 export const selectItineraries = state => state.itinerary
 export const selectItinerary = (itineraryId) => createSelector([selectItineraries], itinerary => itinerary[itineraryId])
-// export const selectLikedItinerary = (user) => createSelector([selectItineraries], itinerary =>{
-//     const likeItineraries = []
-//     // console.log(user)
-//     user?.likes.map(like => likeItineraries.push(itinerary[like.itinerary]))
-
-//     return likeItineraries;
-// })
+export const selectItineraryByUser = (user) => createSelector([selectItineraries], itinerary => Object.values(itinerary).find(el => el?.author._id === user?._id))
 export const selectLikedItinerary = (user) => createSelector(
     [selectItineraries],
     (itineraries) => {
       if (!user || !user.likes) {
         return [];
       }
-  
+
       return user.likes.map(like => itineraries[like.itinerary]);
     }
   );
-  
+
 // export const selectItineraryArray = state => Object.values(state.itinerary)
 
 export const fetchItinerary = (itineraryId) => async dispatch => {
