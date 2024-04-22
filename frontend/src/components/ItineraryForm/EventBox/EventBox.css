@@ -22,7 +22,7 @@
 }
 
 /* --------- EVENT-DATE-BOX styling here --------- */
-.event-date-box {
+.event-date-box, .living-date-box, .transportation-date-box {
     border: 1px solid rgb(233,233,233);
     padding: 4px;
     flex-grow: 1;
@@ -32,7 +32,7 @@
     /* justify-content: center; */
 }
 
-.event-date-box-header {
+.event-date-box-header, .living-date-box-header, .transportation-date-box-header {
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 600;
