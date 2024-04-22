@@ -27,6 +27,10 @@ const Profile = () => {
     useEffect(() => {
         dispatch(fetchUser(userId));
     }, [dispatch, userId])
+    
+    
+        const likeItineraries = useSelector(selectLikedItinerary(user))
+        // console.log(likeItineraries, 'LIKED')
 
 
     // if (itinerary === 'myItinerary') {
@@ -36,8 +40,13 @@ const Profile = () => {
 
     return (
         <div className='profile-background'>
-
-            <img className='background-img' src="https://wallpapers.com/images/featured/widescreen-3ao0esn9qknhdudj.jpg" alt="" />
+        {bioState && (
+                <BioModal 
+                    bioState={bioState} 
+                    setBioState={setBioState}
+                />
+            )}
+            {/* <img className='background-img' src="" alt="" /> */}
             <div className='pic-div'>
                 {user?.profileImageUrl && (<img className='user-img' src={user?.profileImageUrl}/>)}
             </div>
