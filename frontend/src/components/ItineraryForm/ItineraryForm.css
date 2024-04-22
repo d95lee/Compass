@@ -24,18 +24,43 @@
     background-color: rgb(233, 233, 233);
 }
 
+/* --------- FORM CONTENTS --------- */
 .edit-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.basic-info {
+    /* border: 1px solid rgb(233, 233, 233); */
+    margin: 30px;
     display: flex;
     flex-direction: column;
 }
 
-.basic-info {
+.basic-info-header {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.basic-info-header-text {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.edit-itinerary-basic-info-button{
+    margin-bottom: 5px;
+}
+.living-form-box, .transportation-form-box
+ {
     border: 1px solid rgb(233, 233, 233);
     margin: 30px;
 }
 
-.event-form-box, .living-form-box, .transportation-form-box
- {
-    border: 1px solid rgb(233, 233, 233);
+.event-form-box {
     margin: 30px;
 }
