@@ -1,0 +1,42 @@
+.bio-modal-background {
+    position: absolute;
+    height: 100vh;
+    width: 100vh;
+    background-color: rgba(25,25,25,.5);
+    justify-content: center;
+    display: flex;
+    z-index: 1;
+}
+
+.bio-modal-content {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    background-color: white;
+    top: 20%;
+    justify-content: center;
+    display: flex;
+}
+
+.bio-form {
+    position: absolute;
+    top: 20%;
+    width: 90%;
+    height: 80%;
+    justify-content: center;
+    display: flex;
+}
+
+.bio-heading {
+    position: absolute;
+}
+
+.bio-paragraph {
+    width: 98%;
+    height: 80%;
+}
+
+.submit-edit {
+    position: absolute;
+    top: 85%;
+}

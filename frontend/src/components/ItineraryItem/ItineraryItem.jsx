@@ -19,7 +19,7 @@ const ItineraryItem = ({itinerary}) => {
             <Link to={`/itinerary/${itinerary?._id}`}>
                 <div className='itinerary-index-item'>
                     <div className='itinerary-index-image'>
-                        <img className='image' src={nyc} />
+                        <img className='image' src={itinerary?.imageUrls}/>
                     </div>
 
                     <div className='index-item-details'>

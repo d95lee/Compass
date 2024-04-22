@@ -2,7 +2,7 @@
     margin: 10px;
     width: 250px;
     height: 300px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -12,16 +12,16 @@
 .itinerary-index-image {
     width: 240px;
     height: 240px;
-    background-color: lightgray;
     overflow: hidden;
     /* display: flex; */
     /* align-items: center; */
+    border-radius: 7px;
 }
 
 .image {
     height: 240px;
     width: auto;
-    
+    border-radius: 7px;
 }
 
 .index-item-details {

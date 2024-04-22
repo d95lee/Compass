@@ -1,8 +1,8 @@
 .profile-background {
-    border: solid;
+    border: none;
     top: 0px;
     left: 5%;
-    height: 150vh;
+    height: 250vh;
     width: 90%;
     position: relative;
     display: flex;
@@ -13,7 +13,7 @@
 }
 
 .pic-div {
-    border: solid;
+    border: none;
     height: 25vh;
     width: 200px;
     position: absolute;
@@ -22,13 +22,15 @@
 }
 
 .user-info {
-    border: solid;
+    border: solid 0.5px;
     top: 45vh;
     position: absolute;
-    width: 40%;
+    width: 50%;
     height: 15vh;
     border-radius: 10px;
     overflow: hidden;
+    justify-content: center;
+    display: flex;
 }
 
 h3 {
@@ -51,7 +53,11 @@ h3 {
 
 .profile-edit-button {
     position: absolute;
-    top: 40vh;
+    top: 61vh;
+}
+
+.edit-form {
+    display: contents;
 }
 
 .profile-itineraries {
@@ -103,13 +109,44 @@ h3 {
     width: 100%;
     height: auto;
     /* background: green; */
-    display: block;
+    display: flex;
+    height: 45vh;
+    justify-content: center;
+    display: flex;
 }
 
 
-.liked-itineraries {
+/* .liked-itineraries {
     width: 100%;
     height: auto;
     background: yellow;
     display: none;
+} */
+
+.user-bio {
+    top: 40%;
+    position: absolute;
+    border: none;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.like-itineraries {
+    top: 100vh;
+    position: absolute;
+    
+    width: 100%;
+    height: auto;
+    /* background: green; */
+    display: flex;
+    height: 45vh;
+    justify-content: center;
+    display: flex;
+}
+
+.header-display {
+    display: flex;
+    justify-content: center;
+    position: absolute;
 }
