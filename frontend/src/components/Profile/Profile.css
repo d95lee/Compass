@@ -2,7 +2,7 @@
     border: solid;
     top: 0px;
     left: 5%;
-    height: 150vh;
+    height: 190vh;
     width: 90%;
     position: relative;
     display: flex;
@@ -109,21 +109,42 @@ h3 {
     width: 100%;
     height: auto;
     /* background: green; */
-    display: block;
-    height: 40vh;
+    display: flex;
+    height: 45vh;
+    justify-content: center;
+    display: flex;
 }
 
 
-.liked-itineraries {
+/* .liked-itineraries {
     width: 100%;
     height: auto;
     background: yellow;
     display: none;
-}
+} */
 
 .user-bio {
     top: 40%;
     position: absolute;
     border: none;
     width: 100%;
+}
+
+.like-itineraries {
+    top: 60vh;
+    position: absolute;
+    
+    width: 100%;
+    height: auto;
+    /* background: green; */
+    display: flex;
+    height: 45vh;
+    justify-content: center;
+    display: flex;
+}
+
+.header-display {
+    display: flex;
+    justify-content: center;
+    position: absolute;
 }

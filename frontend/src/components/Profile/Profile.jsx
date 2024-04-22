@@ -17,26 +17,24 @@ const Profile = () => {
 
 
     const itineraries = useSelector(selectItineraries);
+
+
     useEffect(() => {
-        dispatch(fetchItineraries());
+        dispatch(fetchItineraries(user));
     }, [dispatch])
 
-
+    
     const user = useSelector(selectUser(userId));
     useEffect(() => {
         dispatch(fetchUser(userId));
     }, [dispatch, userId])
-
+    
+    
+        const likeItineraries = useSelector(selectLikedItinerary(user))
+        console.log(likeItineraries, 'LIKED')
 
     removeGlobe()
 
-    // Editing the bio
-
-    // const [bioState, setBioState] = useState(user?.bio);
-
-    // const handleEdit = e => {
-    //     setBioState(e.target.value)
-    // }
 
     return (
         <>
@@ -59,21 +57,27 @@ const Profile = () => {
 
             </div>
             <button onClick={() => setBioState(true)} className='profile-edit-button'>Edit</button>
-            {/* {bioState && (
-                <BioModal bioState={bioState}/>
-            )} */}
+  
 
             <div className='profile-itineraries'>
-                <div className='itinerary-buttons'>
+                {/* <div className='itinerary-buttons'>
                     <button className='my-button' onClick={() => setItinerary('myItinerary')}>My itineraries</button>
                     <button className='liked-button' onClick={() => setItinerary('likedItinerary')}>Liked itineraries</button>
-                </div>
+                </div> */}
                 <div className='blocks'>
                     <div className='my-itineraries'>
+                        <h2 className='header-display'>My itineraries</h2>
                             <div className='itinerary-index'>
                             {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
                             {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
                             </div>
+                    </div>
+
+                    <div className='like-itineraries'>
+                        <h2 className='header-display'>Liked itineraries</h2>
+                        <div className='itinerary-index'>
+                        {likeItineraries.map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
+                        </div>
                     </div>
 
                 </div>
