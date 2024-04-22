@@ -113,7 +113,7 @@ const ItineraryShow = () => {
             <div className="itinerary-show-page-container">
                 <div className='itinerary-show-page-header'>
                     <div className='itinerary-photo-box'>
-                        <img className='itinerary-cover-photo' src={nyc} />
+                        <img className='itinerary-cover-photo' src={itinerary?.imageUrls} />
                     </div>
 
                     <div className='itinerary-show-page-header-text'>

@@ -21,13 +21,15 @@
 
 .itinerary-photo-box {
     height: 125px;
+    width: 125px;
     overflow: hidden;
     border-radius: 50%;
 }
 
 .itinerary-cover-photo {
     width: 125px;
-    
+    height: 100%; 
+    object-fit: cover;
 }
 
 .itinerary-show-page-header-text {
