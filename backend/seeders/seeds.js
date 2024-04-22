@@ -7,16 +7,12 @@ const Itinerary = require("../models/Itinerary.js");
 const Event = require("../models/Event.js");
 const Transportation = require("../models/Transportation.js");
 const Living = require("../models/Living.js");
+const Like = require("../models/Like.js");
 
 NUM_USER = 10
 const users = [];
-demoUser = new User({
-  username: 'demo-user',
-  email: 'demo-user@appacademy.io',
-  hashedPassword: bcrypt.hashSync('starwars', 10)
-})
-users.push(demoUser)
-
+const itineraries = [];
+const likes = [];
 
   for (let i = 1; i < NUM_USER; i++) {
     const firstName = faker.person.firstName();
@@ -31,7 +27,17 @@ users.push(demoUser)
   }
 
 
-const itineraries = []
+
+//1. create a user
+demoUser = new User({
+  username: 'demo-user',
+  email: 'demo-user@appacademy.io',
+  hashedPassword: bcrypt.hashSync('starwars', 10),
+  bio: 'I like traveling and telling it to my friends',
+  likes: []
+});
+
+//2. create itinerary
 
 const trip1 = new Itinerary({
   author: demoUser._id,
@@ -40,9 +46,10 @@ const trip1 = new Itinerary({
   country: "USA",
   events: [],
   transportations: [],
-  livings: []
+  livings: [],
+  likes: 0
 });
-
+// 3. create events in itinerary
 const event1 = new Event({
   eventTitle: "Time Square Walk",
   startTime: "12:00",
@@ -53,7 +60,7 @@ const event1 = new Event({
   category: "Tour",
   date: faker.date.past()
 });
-
+//4. create transporataions in itineraray
 const transportation1 = new Transportation({
   transportationTitle: 'AA airline',
   startLocation: 'SF',
@@ -65,7 +72,7 @@ const transportation1 = new Transportation({
   description: 'good airline',
   cost: Math.floor(Math.random() * 10000)
 });
-
+//5. create living in intinerary
 const living1 = new Living({
   livingTitle: 'Holiday Inn',
   startTime: '13:00',
@@ -77,13 +84,25 @@ const living1 = new Living({
   cost: Math.floor(Math.random() * 10000)
 })
 
+//6. push events, transportations, livings in to the itinerary created accordingly
+
 trip1.events.push(event1)
 trip1.transportations.push(transportation1)
 trip1.livings.push(living1)
 
+// 7. create like for itinerary
+const like1 = new Like({
+  user: demoUser,
+  itinerary: trip1
+})
+// 8. update likes column in both user and itinerary
+trip1.likes += 1
+demoUser.likes.push(like1)
 
+//9. push like, user, itinerary into the array accordingly
 
-
+likes.push(like1)
+users.push(demoUser)
 itineraries.push(trip1)
 
 
@@ -107,8 +126,10 @@ const insertSeeds = () => {
 
   User.collection.drop()
                  .then(() => Itinerary.collection.drop())
+                 .then(() => Like.collection.drop())
                  .then(() => User.insertMany(users))
                  .then(() => Itinerary.insertMany(itineraries))
+                 .then(() => Like.insertMany(likes))
                  .then(() => {
                    console.log("Done!");
                    mongoose.disconnect();

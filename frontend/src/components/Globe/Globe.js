@@ -44,17 +44,19 @@ const newGlobe = () => {
     // Set the position and size of the container using CSS
     globeContainer.style.position = 'absolute';
     globeContainer.style.backgroundColor = 'rgb(210, 221, 163)';
-    globeContainer.style.top = '0';
+    globeContainer.style.top = '30';
     globeContainer.style.left = '-25%';
     globeContainer.style.width = '50%';
     globeContainer.style.height = '50%';
+    globeContainer.style.minWidth = '1000px'; // Set the minimum width to 200 pixels
+
     globeContainer.style.zIndex = '-1'; // Ensure the container is behind other elements
 
         scene = new THREE.Scene()
 
         const ambientLight = new THREE.AmbientLight(0xbbbbbbb, 0.3) //0xbbbbbbb, 0.3
         scene.add(ambientLight)
-        scene.background = new THREE.Color(0xffffff) //0x040d21
+        scene.background = new THREE.Color(0xe1eeea) //0x040d21
 
         camera = new THREE.PerspectiveCamera();
         camera.aspect = window.innerWidth/ window.innerHeight;
@@ -76,8 +78,8 @@ const newGlobe = () => {
         controls.enableDamping = true;
         controls.dynamicDampingFactor = 0.01;
         controls.enablePen = false
-        controls.minDistance = 200;
-        controls.maxDistance = 500;
+        controls.minDistance = 400;
+        controls.maxDistance = 400;
         controls.rotateSpeed = 0.8
         controls.zoomSpeed = 1
         controls. autoRotate = false
@@ -193,28 +195,28 @@ function onClick(event) {
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
     // Only raycast if not panning (optimization)
-    var hits;
-    if (useRaycast) {
-        raygun.setFromCamera(mouse, camera);
+    // var hits;
+    // if (useRaycast) {
+    //     raygun.setFromCamera(mouse, camera);
 
-        // Raycast to single object
-        hits = raygun.intersectObjects(scene.children, true);
-    }
+    //     // Raycast to single object
+    //     hits = raygun.intersectObjects(scene.children, true);
+    // }
 
     // Run if we have intersections
-    if (hits.length > 0) {
-        for (var i = 0; i < hits.length; i++ ) {
-            // Check if the clicked object is one of the points
-            if (hits[i].object.userData.isPoint) {
-                // Navigate to the profile page
-                window.location.href = 'http://localhost:5173/profile'; // Change '/profile' to the URL of your profile page
-                break; // Exit the loop
-            }
-        }
-    }
+    // if (hits.length > 0) {
+    //     for (var i = 0; i < hits.length; i++ ) {
+    //         // Check if the clicked object is one of the points
+    //         if (hits[i].object.userData.isPoint) {
+    //             // Navigate to the profile page
+    //             window.location.href = 'http://localhost:5173/profile'; // Change '/profile' to the URL of your profile page
+    //             break; // Exit the loop
+    //         }
+    //     }
+    // }
 }
 
-window.addEventListener('click', onClick, false);
+// window.addEventListener('click', onClick, false);
 }
 
 export default newGlobe

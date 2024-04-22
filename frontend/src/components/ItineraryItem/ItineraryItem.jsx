@@ -27,7 +27,7 @@ const ItineraryItem = ({itinerary}) => {
                         <span className='index-item-title'>{itinerary?.title}</span>
                         <span className='index-item-description'>{itinerary?.description}</span>
                     </div>
-                </div>                
+                </div>
             </Link>
 
         </>
