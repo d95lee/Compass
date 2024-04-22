@@ -13,7 +13,7 @@ const ItineraryItem = ({itinerary}) => {
     //     dispatch(fetchItinerary(itineraryId));
     // }, [dispatch, itineraryId])
 
-    console.log(itinerary, 'item');
+    // console.log(itinerary, 'item');
     return (
         <>
             <Link to={`/itinerary/${itinerary?._id}`}>
@@ -27,7 +27,7 @@ const ItineraryItem = ({itinerary}) => {
                         <span className='index-item-title'>{itinerary?.title}</span>
                         <span className='index-item-description'>{itinerary?.description}</span>
                     </div>
-                </div>                
+                </div>
             </Link>
 
         </>
