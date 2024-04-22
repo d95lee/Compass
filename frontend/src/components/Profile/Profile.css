@@ -1,8 +1,8 @@
 .profile-background {
-    border: solid;
+    border: none;
     top: 0px;
     left: 5%;
-    height: 190vh;
+    height: 250vh;
     width: 90%;
     position: relative;
     display: flex;
@@ -13,7 +13,7 @@
 }
 
 .pic-div {
-    border: solid;
+    border: none;
     height: 25vh;
     width: 200px;
     position: absolute;
@@ -22,7 +22,7 @@
 }
 
 .user-info {
-    border: solid;
+    border: solid 0.5px;
     top: 45vh;
     position: absolute;
     width: 50%;
@@ -128,10 +128,12 @@ h3 {
     position: absolute;
     border: none;
     width: 100%;
+    justify-content: center;
+    display: flex;
 }
 
 .like-itineraries {
-    top: 60vh;
+    top: 100vh;
     position: absolute;
     
     width: 100%;

@@ -31,7 +31,7 @@ const Profile = () => {
     
     
         const likeItineraries = useSelector(selectLikedItinerary(user))
-        console.log(likeItineraries, 'LIKED')
+        // console.log(likeItineraries, 'LIKED')
 
     removeGlobe()
 
@@ -46,7 +46,7 @@ const Profile = () => {
                     setBioState={setBioState}
                 />
             )}
-            <img className='background-img' src="https://wallpapers.com/images/featured/widescreen-3ao0esn9qknhdudj.jpg" alt="" />
+            {/* <img className='background-img' src="" alt="" /> */}
             <div className='pic-div'>
                 {user?.profileImageUrl && (<img className='user-img' src={user.profileImageUrl}/>)}
             </div>
