@@ -23,22 +23,19 @@ const Profile = () => {
         dispatch(fetchItineraries(user));
     }, [dispatch])
 
-    
+
     const user = useSelector(selectUser(userId));
     useEffect(() => {
         dispatch(fetchUser(userId));
     }, [dispatch, userId])
-    
-    
+
+
         const likeItineraries = useSelector(selectLikedItinerary(user))
-        // console.log(likeItineraries, 'LIKED')
-
     removeGlobe()
-
 
     return (
         <>
-        
+
         <div className='profile-background'>
         {bioState && (
                 <BioModal 
@@ -57,14 +54,10 @@ const Profile = () => {
 
             </div>
             <button onClick={() => setBioState(true)} className='profile-edit-button'>Edit</button>
-  
+
 
             <div className='profile-itineraries'>
-                {/* <div className='itinerary-buttons'>
-                    <button className='my-button' onClick={() => setItinerary('myItinerary')}>My itineraries</button>
-                    <button className='liked-button' onClick={() => setItinerary('likedItinerary')}>Liked itineraries</button>
-                </div> */}
-                <div className='blocks'>
+            <div className='blocks'>
                     <div className='my-itineraries'>
                         <h2 className='header-display'>My itineraries</h2>
                             <div className='itinerary-index'>
