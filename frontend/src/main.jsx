@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
 import configureStore from './store/store.js';
-import { createItinerary, deleteItinerary, fetchItineraries, fetchItinerary, fetchUserItineraries, updateItinerary } from './store/itinerary.js';
+import { createItinerary, deleteItinerary, fetchItineraries, fetchItinerary, fetchUserItineraries, selectLikedItinerary, updateItinerary } from './store/itinerary.js';
 import { createTransportation, deleteTransportation, updateTransportation } from './store/transportation.js';
 
 
@@ -13,6 +13,7 @@ import { createLiving, deleteLiving, updateLiving } from './store/living';
 import { getCurrentUser, login } from './store/session.js';
 import { likeItinerary, unlikeItinerary } from './store/like.js';
 import { eventSort, timelineSort } from './utils/calenderSort.js';
+import { fetchUser, fetchUsers, selectUser } from './store/user.js';
 const store = configureStore();
 
 if (import.meta.env.MODE !== "production") {
@@ -40,6 +41,10 @@ if (import.meta.env.MODE !== "production") {
   window.unlikeItinerary = unlikeItinerary;
   window.eventSort = eventSort;
   window.timelineSort= timelineSort;
+  window.fetchUser = fetchUser;
+  window.selectLikedItinerary = selectLikedItinerary;
+  window.selectUser= selectUser;
+  window.fetchUsers= fetchUsers;
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(

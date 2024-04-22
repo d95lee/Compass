@@ -29,6 +29,13 @@ export const newItinerary = (itinerary) => ({
 
 export const selectItineraries = state => state.itinerary
 export const selectItinerary = (itineraryId) => createSelector([selectItineraries], itinerary => itinerary[itineraryId])
+export const selectLikedItinerary = (user) => createSelector([selectItineraries], itinerary =>{
+    const likeItineraries = []
+    console.log(user)
+    user?.likes.map(like => likeItineraries.push(itinerary[like.itinerary]))
+
+    return likeItineraries;
+})
 // export const selectItineraryArray = state => Object.values(state.itinerary)
 
 export const fetchItinerary = (itineraryId) => async dispatch => {
@@ -109,11 +116,12 @@ export const fetchUserItineraries = (userId) => async dispatch => {
     }
 }
 
+
 // from express/mongoDB, receiveItineraries as an array of objects, instead of as an object of objects
 // [itinerary1, itinerary2, ....] --> each itinerary still an object
 // {itinerary1, itinerary2, ...}
 const itineraryReducer = (state = {}, action) => {
-    const nextState = { ...state } 
+    const nextState = { ...state }
 
     switch (action.type) {
         case RECEIVE_ITINERARY:

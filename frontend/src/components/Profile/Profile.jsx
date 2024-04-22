@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './Profile.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { fetchItineraries, selectItineraries } from '../../store/itinerary';
+import { fetchItineraries, selectItineraries, selectLikedItinerary } from '../../store/itinerary';
 import { fetchUser, selectUser } from '../../store/user'
 import ItineraryItem from '../ItineraryItem/ItineraryItem';
 import { removeGlobe } from '../Globe/Globe';
@@ -28,6 +28,9 @@ const Profile = () => {
         dispatch(fetchUser(userId));
     }, [dispatch, userId])
 
+
+    const likedItinerary = useSelector(selectLikedItinerary(user))
+    console.log(likedItinerary)
 
     // if (itinerary === 'myItinerary') {
 
@@ -62,7 +65,7 @@ const Profile = () => {
 
                             </div>
                     </div>
-                
+
                 </div>
             </div>
         </div>
