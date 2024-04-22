@@ -28,7 +28,7 @@ function NavBar () {
       return (
         <>
           <div>
-            <Link to={`profile/${currentUserId}`}><p>Hello {currentUsername}</p></Link>
+            <span><Link to={`profile/${currentUserId}`}><p>Hello {currentUsername}</p></Link></span>
             <button onClick={logoutUser}>
               Logout
             </button>
