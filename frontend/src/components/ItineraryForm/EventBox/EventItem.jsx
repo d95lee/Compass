@@ -19,14 +19,7 @@ const EventItem = ({event, setEventModalState, setEvent})=>{
         <>
             <div className='event-box'>
                 <div className='event-box-title'>Event Title: {event.eventTitle}</div>
-                {/* <div>Start Time: {event.startTime}</div>
-                <div>End Time: {event.endTime}</div>
-                <div>Date: {event.date.slice(0,10)}</div>
-                <div>Location: {event.location}</div>
-                <div>Description: {event.description}</div>
-                <div>Category: {event.category}</div>
-                <div>Cost: {event.cost}</div> 
-                 */}
+                
                 <div className='timeline-box-description'>Description: {event.description}</div>
 
                 <div className='timeline-box-location'>Location: {event.location}</div>

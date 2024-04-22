@@ -14,7 +14,7 @@
 
 .pic-div {
     border: none;
-    height: 25vh;
+    height: 200px;
     width: 200px;
     position: absolute;
     top: 100px;
@@ -149,4 +149,13 @@ h3 {
     display: flex;
     justify-content: center;
     position: absolute;
+}
+
+.itinerary-index-profile {
+    margin: 50px;
+    height: 330px;
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

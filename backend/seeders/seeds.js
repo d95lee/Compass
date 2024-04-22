@@ -640,7 +640,7 @@ jerry = new User({
   username: 'jerry',
   email: 'jerry@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
-  profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/jerry.jpg',
+  profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/jerry.png',
   bio: 'I work hard when I work, but I sure do love my breaks!',
   likes: []
 });
