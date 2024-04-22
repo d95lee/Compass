@@ -41,4 +41,11 @@
 .timeline-event-edit-button {
     width: 20px;
     height: 20px;
+    margin-right: 10px;
+}
+
+.timeline-event-delete-button {
+    width: 19px;
+    height: 19px;
+    fill: #9c9696;
 }
