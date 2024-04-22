@@ -17,7 +17,7 @@ const Profile = () => {
 
 
     const itineraries = useSelector(selectItineraries);
-
+//hello
 
     useEffect(() => {
         dispatch(fetchItineraries(user));
@@ -49,7 +49,8 @@ const Profile = () => {
             </div>
 
             <div className='user-info'>
-                <h3>Bio</h3>
+                {/* <h5>@{user?.username}</h5> */}
+                <h3>Bio: </h3>
                 <p className='user-bio'>{user?.bio}</p>
 
             </div>
