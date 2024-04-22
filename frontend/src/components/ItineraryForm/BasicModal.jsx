@@ -24,7 +24,7 @@ const BasicModal = ({basicModalState, setBasicModalState, itinerary}) => {
     return (
         <>
             <div className='modal-background' onClick={e => setBasicModalState(null)} >
-                <div className='modal-content' onClick={e => e.stopPropagation()}>
+                <div className='basic-info-modal-content' onClick={e => e.stopPropagation()}>
                     <h3>Edit Basic information</h3>
                     <form className='basic-info-form' onSubmit={handleSubmit}>
                         <label>Title:

@@ -105,6 +105,9 @@ const ItineraryShow = () => {
         })
     }
 
+    const handleUserShow = () => {
+        navigate(`/profile/${user?._id}`);
+    }
 
     // console.log(itinerarySubobjectsArray(itinerary), 'test array');
     // console.log(itinerary);    
@@ -119,7 +122,7 @@ const ItineraryShow = () => {
                     <div className='itinerary-show-page-header-text'>
                         <div className='itinerary-show-page-title'>{itinerary?.title.toUpperCase()}</div>  
                         <div className='itinerary-show-page-description'>{itinerary?.description.toUpperCase()}</div> 
-                        <div className='itinerary-show-page-description'>@{user?.username}</div> 
+                        <div className='itinerary-show-page-description' onClick={handleUserShow}>@{user?.username}</div> 
                     </div>
                     
                     <div></div>
