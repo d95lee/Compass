@@ -4,25 +4,33 @@ import React, { useEffect } from 'react';
 import linkedin from '../../../../assets/linkedin.png'
 import github from '../../../../assets/github.png'
 import logo from '../../../../assets/compass.png';
-import { fetchItineraries, selectItinerary } from '../../store/itinerary.js';
+import { fetchItineraries, selectItinerary, selectItineraryByUser } from '../../store/itinerary.js';
 import { useDispatch, useSelector } from 'react-redux'
+import { fetchUsers, selectUserByUsername } from '../../store/user.js';
 
 
 const HomePage = ()=> {
   const dispatch = useDispatch()
-  
+
   useEffect(() => {
     newGlobe()
   }, [])
-  
+
   useEffect(() => {
     dispatch(fetchItineraries())
+    dispatch(fetchUsers())
   }, [])
 
-    const carolineItinerary = useSelector(selectItinerary('662184fee0ed831fc79e7512'))
-    const davidItinerary = useSelector(selectItinerary('662196350b2696132f9e4184'))
-    const jerryItinerary = useSelector(selectItinerary('6622acfe8d996d05d9eb0f05'))
-    const jhonItinerary = useSelector(selectItinerary('662184fee0ed831fc79e7512'))
+    const caroline = useSelector(selectUserByUsername('caroline'))
+    const jerry = useSelector(selectUserByUsername('jerry'))
+    const jhon = useSelector(selectUserByUsername('jhon'))
+    const david = useSelector(selectUserByUsername('david'))
+
+
+    const carolineItinerary = useSelector(selectItineraryByUser(caroline))
+    const davidItinerary = useSelector(selectItineraryByUser(david))
+    const jerryItinerary = useSelector(selectItineraryByUser(jerry))
+    const jhonItinerary = useSelector(selectItineraryByUser(jhon))
 
   return (
       <>
@@ -111,5 +119,5 @@ const HomePage = ()=> {
       </>
     );
   }
-  
+
   export default HomePage;
