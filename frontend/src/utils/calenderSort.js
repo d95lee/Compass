@@ -21,9 +21,9 @@ export const eventSort = (itinerary) => {
 export const livingSort = (itinerary) =>{
     let res = {};
     ///make a copy of livings
-    const livings = itinerary.livings.slice();
+    const livings = itinerary?.livings.slice();
 
-    livings.map( living => {
+    livings?.map(living => {
         let formattedDate = formatDate(living.startDate);
         if(res[formattedDate]){
             res[formattedDate].push(living);
@@ -39,9 +39,9 @@ export const livingSort = (itinerary) =>{
 export const transportationSort = (itinerary) =>{
     let res = {};
     ///make a copy of transportations
-    const transportations = itinerary.transportations.slice();
+    const transportations = itinerary?.transportations.slice();
 
-    transportations.map( transportation => {
+    transportations?.map( transportation => {
         let formattedDate = formatDate(transportation.startDate);
         if(res[formattedDate]){
             res[formattedDate].push(transportation);
