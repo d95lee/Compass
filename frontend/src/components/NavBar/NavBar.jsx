@@ -11,6 +11,7 @@ function NavBar () {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => !!state.session.user);
   const currentUsername = useSelector(state => state.session.user?.username)
+  const currentUserId= useSelector(state => state.session.user?._id)
   const [modalState, setModalState] = useState(null);
 
   const logoutUser = e => {
@@ -27,7 +28,7 @@ function NavBar () {
       return (
         <>
           <div>
-            <Link to={`profile/${currentUsername}`}><p>Hello {currentUsername}</p></Link>
+            <Link to={`profile/${currentUserId}`}><p>Hello {currentUsername}</p></Link>
             <button onClick={logoutUser}>
               Logout
             </button>
@@ -51,8 +52,8 @@ function NavBar () {
       <nav>
         <div className='navbar-left'>
           <Link to={'/'}><img className='logo' src={logo}/></Link>
-          {currentUser ? 
-            (<div className='create-button' onClick={() => setModalState('create')}><span>Create</span></div>) : 
+          {currentUser ?
+            (<div className='create-button' onClick={() => setModalState('create')}><span>Create</span></div>) :
             (<div className='create-button' onClick={() => setModalState('login')}><span>Create</span></div>)
           }
 
