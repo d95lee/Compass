@@ -12,7 +12,7 @@
 }
 
 .create-modal-content {
-    height: 40vh;
+    height: 30vh;
     width: 35vw;
     position: absolute;
     top: 25vh;
@@ -38,7 +38,7 @@
 .create-itinerary-input {
     width: 80%;
     padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     border-radius: 10px;
     border:1px solid rgb(205, 205, 205);
 }
