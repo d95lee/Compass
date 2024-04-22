@@ -37,12 +37,13 @@ const ItineraryIndex = () => {
                     </div>
 
                 </div>
-                <div></div>
-                <div className='itinerary-index'>
-                    
-                    {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
-                    {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
+                <div className='itinerary-index-right'>
+                    <div className='itinerary-index'>
+                        
+                        {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
+                        {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
 
+                    </div>
                 </div>                
             </div>
 
