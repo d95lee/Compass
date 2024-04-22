@@ -17,13 +17,13 @@
     height: 200px;
     width: 200px;
     position: absolute;
-    top: 100px;
+    top: 50px;
     border-radius: 50%;
 }
 
 .user-info {
-    border: solid 0.5px;
-    top: 45vh;
+    border: none;
+    top: 30vh;
     position: absolute;
     width: 50%;
     height: 15vh;
@@ -35,8 +35,7 @@
 
 h3 {
     position: relative;
-    display: flex;
-    justify-content: center;
+    display: inline;
     overflow: hidden;
 }
 
@@ -53,7 +52,7 @@ h3 {
 
 .profile-edit-button {
     position: absolute;
-    top: 61vh;
+    top: 40vh;
 }
 
 .edit-form {
@@ -63,7 +62,7 @@ h3 {
 .profile-itineraries {
     position: absolute;
     /* border: solid; */
-    top: 70vh;
+    top: 50vh;
     width: 100%;
     height: 100%;
     /* background-color: aqua; */
@@ -124,12 +123,12 @@ h3 {
 } */
 
 .user-bio {
-    top: 40%;
+    top: 50px;
     position: absolute;
     border: none;
-    width: 100%;
     justify-content: center;
-    display: flex;
+    display: inline;
+    margin: 0;
 }
 
 .like-itineraries {
