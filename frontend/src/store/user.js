@@ -1,4 +1,5 @@
 import {createSelector} from 'reselect'
+import jwtFetch from './jwt';
 
 
 //Action
@@ -42,6 +43,23 @@ export const fetchUsers = () => async (dispatch) => {
         dispatch(receiveUsers(data));
     }
 }
+
+export const updateBio = (bioData, userId) => (dispatch, getState) => (
+    jwtFetch(`/api/users/${userId}/bio`, {
+        method: "PATCH",
+        body: JSON.stringify(bioData)
+    })
+    .then(res => {
+        if(res.ok){
+            return res.json();
+        } else {
+            throw res;
+        }
+    })
+    .then(data => {
+        dispatch(fetchUser(data._id))
+    })
+)
 
 // // export const selectUser = (userId) => state => state.user[userId]
 

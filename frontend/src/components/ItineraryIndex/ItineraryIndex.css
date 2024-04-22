@@ -45,6 +45,7 @@
     height: 100%;
     display: flex;
     background-color: lightcyan;
+    overflow: auto;
 }
 
 .itinerary-index-item {

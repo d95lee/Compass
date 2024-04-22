@@ -25,10 +25,12 @@
     border: solid;
     top: 45vh;
     position: absolute;
-    width: 40%;
+    width: 50%;
     height: 15vh;
     border-radius: 10px;
     overflow: hidden;
+    justify-content: center;
+    display: flex;
 }
 
 h3 {
@@ -51,7 +53,11 @@ h3 {
 
 .profile-edit-button {
     position: absolute;
-    top: 40vh;
+    top: 61vh;
+}
+
+.edit-form {
+    display: contents;
 }
 
 .profile-itineraries {
@@ -104,6 +110,7 @@ h3 {
     height: auto;
     /* background: green; */
     display: block;
+    height: 40vh;
 }
 
 
@@ -112,4 +119,11 @@ h3 {
     height: auto;
     background: yellow;
     display: none;
+}
+
+.user-bio {
+    top: 40%;
+    position: absolute;
+    border: none;
+    width: 100%;
 }
