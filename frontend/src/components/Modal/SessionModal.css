@@ -20,13 +20,35 @@
     text-align: center;
 }
 
+.signup-modal-content {
+    height: 32vh;
+    width: 25vw;
+    position: absolute;
+    top: 25vh;
+    background-color: white;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 24px;
+}
+
+.login-modal-content {
+    height: 32vh;
+    width: 25vw;
+    position: absolute;
+    top: 25vh;
+    background-color: white;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 24px;
+}
+
 .buttons {
     width: 80%;
     padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     border-radius: 10px;
     border: 0.1px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border:1px solid rgb(205, 205, 205);
 }
 
 .click {
@@ -34,9 +56,21 @@
     padding: 10px;
     border-radius: 10px;
     border: 0.1px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
     cursor: pointer;
-    background-color: rgb(255, 247, 0);
+    background-color: rgba(239, 232, 101, 0.871);
+    margin-bottom: 10px;
+}
+
+.demo-login {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0.1px;
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+    cursor: pointer;
+    background-color: rgba(239, 232, 101, 0.871);
+
 }
 
 .username-text-button {
