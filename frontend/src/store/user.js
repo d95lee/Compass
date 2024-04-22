@@ -23,6 +23,10 @@ export const selectUser = userId => createSelector(
     [selectUsers],
     users => users[userId]
 );
+export const selectUserByUsername = username => createSelector(
+    [selectUsers], // Pass additional parameter (username)
+    users => Object.values(users).find(user => user?.username === username) // Select user by username
+);
 
 //Thunk Action
 

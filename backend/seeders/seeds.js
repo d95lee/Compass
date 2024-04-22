@@ -33,7 +33,7 @@ demoUser = new User({
   username: 'demo-user',
   email: 'demo-user@appacademy.io',
   hashedPassword: bcrypt.hashSync('starwars', 10),
-  profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/guy.jpg',
+  profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/jennifer.jpg',
   bio: 'I like traveling and telling it to my friends',
   likes: []
 });
