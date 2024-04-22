@@ -79,3 +79,16 @@ nav {
     font-weight: 500;
     font-size: 18px;
 }
+
+.username-text-container {
+    color: white;
+}
+
+.username-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.navbar-username-text {
+    color: white;
+}

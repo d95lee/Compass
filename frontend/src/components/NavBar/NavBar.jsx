@@ -27,9 +27,9 @@ function NavBar () {
     if (currentUser) {
       return (
         <>
-          <div>
-            <span><Link to={`profile/${currentUserId}`}><p>Hello {currentUsername}</p></Link></span>
-            <button onClick={logoutUser}>
+          <div className='username-text-container'>
+            <span className='username-text'><Link to={`profile/${currentUserId}`}><p className='navbar-username-text'>Hello {currentUsername}</p></Link></span>
+            <button className='username-text-button' onClick={logoutUser}>
               Logout
             </button>
           </div>
