@@ -59,7 +59,7 @@
 
 .living-form-box, .transportation-form-box
  {
-    border: 1px solid rgb(233, 233, 233);
+    /* border: 1px solid rgb(233, 233, 233); */
     margin: 30px;
 }
 
