@@ -65,6 +65,7 @@ export const createItinerary = (itineraryData) => (dispatch, getState) => (
     })
     .then(data => {
         dispatch(newItinerary(data))
+        return data
     })
 )
 
