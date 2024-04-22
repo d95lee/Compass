@@ -12,7 +12,7 @@ nav {
     /* background: rgb(231,216,89);
     background: linear-gradient(90deg, rgba(231,216,89,1) 0%, rgba(243,250,217,1) 50%, rgba(20,131,242,1) 100%); */
 
-    background: rgb(233,216,71); 
+    background: rgb(238, 234, 198); 
     background: linear-gradient(90deg, rgba(233,216,71,1) 0%, rgba(198,224,215,1) 50%, rgba(20,131,242,1) 100%);
 }
 
@@ -78,4 +78,17 @@ nav {
     color: white;
     font-weight: 500;
     font-size: 18px;
+}
+
+.username-text-container {
+    color: white;
+}
+
+.username-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.navbar-username-text {
+    color: white;
 }

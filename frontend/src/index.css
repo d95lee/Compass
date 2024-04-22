@@ -2,4 +2,7 @@
 body {
     margin: 0;
     font-family: helvetica;
+    background: rgb(233,216,71); 
+    background: linear-gradient(90deg, rgb(245, 241, 209) 0%, rgba(198,224,215,1) 50%, rgb(183, 212, 241) 100%);
 }
+
