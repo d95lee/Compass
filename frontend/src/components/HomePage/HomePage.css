@@ -30,7 +30,7 @@
 }
 
 .homepage-right-title {
-    margin-top: 30px;
+    margin-top: 16px;
     padding: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -52,6 +52,7 @@
 
 .homepage-socials {
     padding: 20px;
+    margin-top: -25px;
 }
 
 .homepage-socials img {
@@ -64,10 +65,11 @@
     border-radius: 5px;
     margin-bottom: 15px;
     padding: 10px;
-    width: 700px;
+    width: 800px;
     display: flex;
     justify-content: space-around;
 }
+
 
 /* .homepage-socials-box-left {
 }

@@ -117,21 +117,21 @@ const newGlobe = () => {
     //             console.log("hi")
     // }})
         // .hexPolygonsData(map.features)
-        .hexPolygonResolution(2) // 3 default
+        .hexPolygonResolution(3) // 3 default
         .hexPolygonMargin(0.2) // 0.7 default
         .hexPolygonsData(countries.features)
         // Add a single dot data point
-        .pointsData([
-            { lat: 37.94473839523154, lng: -98.39589896115403, labelText: "North America" }, // North America
-            { lat: 9.733334005343849, lng: 20.565433340457837, labelText: "Africa" }, // Africa
-            { lat: 50.949853817789965, lng: 89.10086333001446 }, // Asia (Russia)
-            { lat: -15.728307335891495, lng: -59.29560821837691 }, // South America
-            { lat: -24.999521047400123, lng: 135.5948694010283 }, // Australia
-            { lat: 51.4035271609263, lng: 15.353853121272373 }, // Europe
-            { lat: -76.74626412977844, lng: 10.581677628573393 } // Antarctica
-          ])
-        .pointColor(0xff0000)
-        .pointRadius(1)
+        // .pointsData([
+        //     { lat: 37.94473839523154, lng: -98.39589896115403, labelText: "North America" }, // North America
+        //     { lat: 9.733334005343849, lng: 20.565433340457837, labelText: "Africa" }, // Africa
+        //     { lat: 50.949853817789965, lng: 89.10086333001446 }, // Asia (Russia)
+        //     { lat: -15.728307335891495, lng: -59.29560821837691 }, // South America
+        //     { lat: -24.999521047400123, lng: 135.5948694010283 }, // Australia
+        //     { lat: 51.4035271609263, lng: 15.353853121272373 }, // Europe
+        //     { lat: -76.74626412977844, lng: 10.581677628573393 } // Antarctica
+        //   ])
+        // .pointColor(0xff0000)
+        // .pointRadius(1)
         // .labelsData([
         //     { lat: 37.86774960055474, lng: -121.55149239728406, labelText: "North America", labelSize: 2, labelColor: 'red' }, // North America
         //     { lat: 9.733334005343849, lng: 20.565433340457837, labelText: "Africa" } // Africa

@@ -7,6 +7,7 @@ import logo from '../../../../assets/compass.png';
 import { fetchItineraries, selectItinerary, selectItineraryByUser } from '../../store/itinerary.js';
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUsers, selectUserByUsername } from '../../store/user.js';
+import { Link } from 'react-router-dom';
 
 
 const HomePage = ()=> {
@@ -32,6 +33,11 @@ const HomePage = ()=> {
     const jerryItinerary = useSelector(selectItineraryByUser(jerry))
     const jhonItinerary = useSelector(selectItineraryByUser(jhon))
 
+    // const carolineId = () => {
+    //   const carolineUser = users.find(user => user.username === "caroline");
+    //   return carolineUser ? carolineUser._id : null;
+    // }
+
   return (
       <>
         <div className='homepage-container'>
@@ -56,8 +62,8 @@ const HomePage = ()=> {
                           <p>Country: <b>{carolineItinerary?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
-                          <img className='linkedin-logo' src={linkedin} alt="" />
-                          <img className='github-logo' src={github} alt="" />
+                          <a href="https://www.linkedin.com/in/carolineczhang/" target="_blank"><img className='linkedin-logo' src={linkedin} alt="" /></a>
+                          <a href="https://github.com/caroline495" target="_blank"><img className='github-logo' src={github} alt="" /></a>
                         </div>
                       </div>
 
@@ -71,8 +77,8 @@ const HomePage = ()=> {
                           <p>Country: <b>{davidItinerary?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
-                          <img className='linkedin-logo' src={linkedin} alt="" />
-                          <img className='github-logo' src={github} alt="" />
+                        <a href="https://www.linkedin.com/in/david-lee-49959a20a/" target="_blank"><img className='linkedin-logo' src={linkedin} alt="" /></a>
+                        <a href="https://github.com/d95lee" target="_blank"><img className='github-logo' src={github} alt="" /></a>
                         </div>
                       </div>
 
@@ -86,8 +92,8 @@ const HomePage = ()=> {
                           <p>Country: <b>{jerryItinerary?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
-                          <img className='linkedin-logo' src={linkedin} alt="" />
-                          <img className='github-logo' src={github} alt="" />
+                        <a href="https://www.linkedin.com/in/zwang01/" target="_blank"><img className='linkedin-logo' src={linkedin} alt="" /></a>
+                        <a href="https://github.com/ziyanwang1105" target="_blank"><img className='github-logo' src={github} alt="" /></a>
                         </div>
                       </div>
 
@@ -101,8 +107,8 @@ const HomePage = ()=> {
                           <p>Country: <b>{jhonItinerary?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
-                          <img className='linkedin-logo' src={linkedin} alt="" />
-                          <img className='github-logo' src={github} alt="" />
+                        <a href="https://www.linkedin.com/in/jhon-salazar-655b24208/" target="_blank"><img className='linkedin-logo' src={linkedin} alt="" /></a>
+                        <a href="https://github.com/JhonJSC182" target="_blank"><img className='github-logo' src={github} alt="" /></a>
                         </div>
                       </div>
                     </div>
