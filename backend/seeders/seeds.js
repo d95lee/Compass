@@ -302,7 +302,7 @@ darren = new User({
   email: 'darren@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
   profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/darren.jpg',
-  bio: 'I love teaching, I just wish these guys answered more of questions during lecture... some people call me the goat',
+  bio: 'I love teaching, I just wish these guys answered more questions during lecture... random fact: some people call me the goat',
   likes: []
 });
 
