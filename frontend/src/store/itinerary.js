@@ -98,8 +98,6 @@ export const updateItinerary = (itineraryData) => (dispatch, getState) => (
     })
 )
 
-
-
 export const deleteItinerary = (itineraryId) => (dispatch, getState) => (
     jwtFetch(`/api/itinerary/${itineraryId}`, {
         method: "DELETE",

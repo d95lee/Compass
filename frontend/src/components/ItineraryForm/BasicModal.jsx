@@ -25,24 +25,28 @@ const BasicModal = ({basicModalState, setBasicModalState, itinerary}) => {
         <>
             <div className='modal-background' onClick={e => setBasicModalState(null)} >
                 <div className='basic-info-modal-content' onClick={e => e.stopPropagation()}>
-                    <h3>Edit Basic information</h3>
+                    
+                    <div className='basic-info-modal-header'>Edit Itinerary Details</div>
+                    
                     <form className='basic-info-form' onSubmit={handleSubmit}>
                         <label>Title:
-                            <input type="text"
+                            <input className='basic-info-form-input' type="text"
                                 value ={title}
                                 onChange={e => setTitle(e.target.value)}/>
                         </label>
+
                         <label>Description:
-                            <input type="text"
+                            <input className='basic-info-form-input' type="text"
                                 value ={description}
                                 onChange={e => setDescription(e.target.value)}/>
                         </label>
+
                         <label>Country:
-                            <input type="text"
+                            <input className='basic-info-form-input' type="text"
                                 value ={country}
                                 onChange={e => setCountry(e.target.value)}/>
                         </label>
-                        <input type="submit" value={'save'} />
+                        <input className='form-save-button' type="submit" value={'save'} />
                     </form>
                 </div>
             </div>
