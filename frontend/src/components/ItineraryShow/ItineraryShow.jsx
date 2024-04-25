@@ -5,8 +5,7 @@ import { fetchItinerary, selectItinerary } from "../../store/itinerary"
 import { fetchUser, selectUser } from "../../store/user"
 import "./ItineraryShow.css"
 import TimelineBox from "./TimelineBox"
-import nyc from '../../../../assets/nyc-brooklyn-bridge.jpeg'
-import editbutton from '../../../../assets/edit-button.png'
+import editbutton from '../../assets/edit-button.png'
 import { likeItinerary, unlikeItinerary } from "../../store/like"
 
 
