@@ -44,11 +44,9 @@ const ItineraryShow = () => {
         }
         
         setLiked(likeStatus(user, itineraryId));
-        console.log('liked');
 
     }, [itineraryId, user, itinerary])
 
-    console.log(liked);
     // helper function that takes (user, itineraryId)- returns boolean whether user has liked the itinerary or not
 // when you fetch the user object, 
 
@@ -56,11 +54,9 @@ const ItineraryShow = () => {
     const handleLike = () => {
         // on click - like it or unlike it 
         if (!liked){
-           console.log('here');
            dispatch(likeItinerary(itineraryId)); 
            setHeartColor('#ff0000');
         } else {
-            console.log('hello')
             let likeIdValue;
             user.likes.forEach(like =>{
                 if (like.itinerary === itineraryId) {

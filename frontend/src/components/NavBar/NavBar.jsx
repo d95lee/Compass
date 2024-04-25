@@ -22,7 +22,7 @@ function NavBar () {
 
 
 
-  console.log(modalState, 'modal state');
+  // console.log(modalState, 'modal state');
   const getLinks = () => {
     if (currentUser) {
       return (
