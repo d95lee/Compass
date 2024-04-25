@@ -1186,17 +1186,17 @@ itineraries.push(steph_itinerary)
   mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => {
-    console.log('Connected to MongoDB successfully');
+    // console.log('Connected to MongoDB successfully');
     insertSeeds();
   })
   .catch(err => {
-    console.error(err.stack);
+    // console.error(err.stack);
     process.exit(1);
   });
 
 // Reset and seed db
 const insertSeeds = () => {
-  console.log("Resetting db and seeding users and itineraries...");
+  // console.log("Resetting db and seeding users and itineraries...");
 
   User.collection.drop()
                  .then(() => Itinerary.collection.drop())
@@ -1205,11 +1205,11 @@ const insertSeeds = () => {
                  .then(() => Itinerary.insertMany(itineraries))
                  .then(() => Like.insertMany(likes))
                  .then(() => {
-                   console.log("Done!");
+                   // console.log("Done!");
                    mongoose.disconnect();
                  })
                  .catch(err => {
-                   console.error(err.stack);
+                   // console.error(err.stack);
                    process.exit(1);
                  });
 }

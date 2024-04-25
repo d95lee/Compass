@@ -11,7 +11,7 @@ const EventBox = ({itinerary}) => {
     const [event, setEvent] = useState({})
 
     const sortedEvents = eventSort(itinerary);
-    console.log(sortedEvents, 'sorted events object');
+    //console.log(sortedEvents, 'sorted events object');
 
     // need to pass down the 3 props for eventItem
 

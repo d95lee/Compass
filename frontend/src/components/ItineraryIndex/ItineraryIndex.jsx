@@ -14,7 +14,7 @@ const ItineraryIndex = () => {
     const dispatch = useDispatch();
 
     const itineraries = useSelector(selectItineraries);
-    console.log(itineraries, 'itineraries');
+    // console.log(itineraries, 'itineraries');
 
     useEffect(() => {
         dispatch(fetchItineraries());
