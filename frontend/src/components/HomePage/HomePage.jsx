@@ -1,9 +1,9 @@
 import newGlobe from '../Globe/Globe.js';
 import './HomePage.css';
 import React, { useEffect } from 'react';
-import linkedin from '../../../../assets/linkedin.png'
-import github from '../../../../assets/github.png'
-import logo from '../../../../assets/compass.png';
+import linkedin from '../../assets/linkedin.png'
+import github from '../../assets/github.png'
+import logo from '../../assets/compass.png';
 import { fetchItineraries, selectItinerary, selectItineraryByUser } from '../../store/itinerary.js';
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUsers, selectUserByUsername } from '../../store/user.js';

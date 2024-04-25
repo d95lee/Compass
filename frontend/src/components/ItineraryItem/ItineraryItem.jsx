@@ -1,5 +1,4 @@
 import './ItineraryItem.css';
-import nyc from '../../../../assets/nyc-brooklyn-bridge.jpeg';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectItinerary, fetchItinerary } from '../../store/itinerary';
 import { useEffect } from 'react';
