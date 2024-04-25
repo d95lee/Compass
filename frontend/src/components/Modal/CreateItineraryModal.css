@@ -1,0 +1,54 @@
+
+.create-modal-background {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(25,25,25,.6);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    justify-content: center;
+    display: flex;
+}
+
+.create-modal-content {
+    height: 30vh;
+    width: 35vw;
+    position: absolute;
+    top: 25vh;
+    background-color: white;
+    text-align: center;
+    border-radius: 32px;
+}
+
+.create-form-header {
+    margin-top: 20px;
+    font-size: 18px;
+    /* color: rgb(192, 192, 192); */
+    font-weight: 400;
+    /* font-style: italic; */
+}
+.create-form-title {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.create-itinerary-input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border:1px solid rgb(205, 205, 205);
+}
+
+.create-submit {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(239, 232, 101, 0.871);
+    
+}

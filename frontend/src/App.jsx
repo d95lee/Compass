@@ -1,38 +1,69 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
-import { AuthRoute } from './components/Routes/Routes';
+import { AuthRoute, ProtectedRoute } from './components/Routes/Routes';
 import HomePage from './components/HomePage/HomePage';
-import SessionModal from './components/Modal/SessionModal';
+
 import NavBar from './components/NavBar/NavBar';
 import ItineraryIndex from './components/ItineraryIndex/ItineraryIndex';
 
 import { getCurrentUser } from './store/session';
 
+import Profile from './components/Profile/Profile';
+import ItineraryShow from './components/ItineraryShow/ItineraryShow';
+import ItineraryForm from './components/ItineraryForm/ItineraryForm';
+
+
+const Layout = () => {
+  return (
+    <>
+      <NavBar />
+      <Outlet />
+    </>
+  );
+};
+
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: 
-    <AuthRoute component={HomePage} />
-  },
-  {
-    path: 'modal',
-    element: <SessionModal />
-  },
-  {
-    path: 'nav',
-    element: <NavBar/>
-  },
-  {
-    path: 'nav-index',
-    element: 
-      <>
-        <NavBar/>
-        <ItineraryIndex />
-      </>
-  }
-]);
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />
+      },
+      {
+        path: "itinerary",
+        element: <Outlet />,
+        children: [
+          {
+            index: true,
+            element: <ItineraryIndex />
+          },
+          {
+            path: ":itineraryId",
+            element: <ItineraryShow /> // AuthRoute, don't have to be logged in to view
+          },
+          {
+            path:"form/:itineraryId",
+            element: <ItineraryForm />
+          }
+        ]
+      },
+      {
+        path: "profile",
+        element: <Outlet/>,
+        children: [
+          {
+            path: ":userId",
+            element: <Profile />
+          }
+        ]
+      }
+    ]
+}])
+
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -40,7 +71,7 @@ function App() {
   useEffect(() => {
     dispatch(getCurrentUser()).finally(() => setLoaded(true));
   }, [dispatch]);
-  
+
   return loaded && <RouterProvider router={router} />;
 }
 

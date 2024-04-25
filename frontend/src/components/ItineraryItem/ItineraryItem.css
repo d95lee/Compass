@@ -1,0 +1,52 @@
+.itinerary-index-item {
+    margin: 10px;
+    width: 250px;
+    height: 300px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.itinerary-index-image {
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+    /* display: flex; */
+    /* align-items: center; */
+    border-radius: 7px;
+}
+
+.image {
+    height: 240px;
+    width: auto;
+    border-radius: 7px;
+}
+
+.index-item-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.index-item-author {
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 4px;
+    font-weight: 300;
+}
+
+.index-item-title {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.index-item-description {
+    font-size: 14px;
+    text-indent: 4%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

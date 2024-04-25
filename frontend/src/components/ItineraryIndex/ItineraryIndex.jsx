@@ -1,48 +1,52 @@
 import './ItineraryIndex.css';
 import nyc from '../../../../assets/nyc-brooklyn-bridge.jpeg';
+import sydney from '../../../../assets/sydney.png';
+import paris from '../../../../assets/paris.jpeg';
+import { useDispatch, useSelector } from 'react-redux';
+// import { fetchItineraries, fetchItinerary, selectItinerary, selectItineraryArray } from '../../store/itinerary';
+import { fetchItineraries, fetchItinerary, selectItineraries, selectItinerary } from '../../store/itinerary';
+import ItineraryItem from '../ItineraryItem/ItineraryItem';
+import { useEffect } from 'react';
+import { removeGlobe } from '../Globe/Globe';
 
 const ItineraryIndex = () => {
+
+    const dispatch = useDispatch();
+
+    const itineraries = useSelector(selectItineraries);
+    console.log(itineraries, 'itineraries');
+
+    useEffect(() => {
+        dispatch(fetchItineraries());
+    }, [dispatch])
+
+    removeGlobe()
+
     return (
         <>
-            <div className='itinerary-index'>
-
-                <div className='itinerary-index-item'>
-                    <div className='itinerary-index-image'>
-                        <img className='image' src={nyc} />
+            <div className='itinerary-index-page'>
+                <div className='itinerary-index-left'>
+                    <div className='index-all-title'>All Itineraries</div>
+                    <div className='index-locations-title'>Locations</div>
+                    <div className='index-locations'>
+                        <div className='index-location-text'>North America</div>
+                        <div className='index-location-text'>Europe</div>
+                        <div className='index-location-text'>Asia</div>
+                        <div className='index-location-text'>South America</div>
+                        <div className='index-location-text'>Africa</div>                        
                     </div>
 
-                    <div className='index-item-details'>
-                        <span className='index-item-author'>Created by: Jimmy</span>
-                        <span className='index-item-title'>Fall in New York</span>
-                        <span className='index-item-description'>4 days in NYC</span>
-                    </div>
                 </div>
-
-                <div className='itinerary-index-item'>
-                    <div className='itinerary-index-image'>
-
-                    </div>
-
-                    <div className='index-item-details'>
-                        <span>Created by: Helen</span>
-                        <span>Paris Adventure</span>
-                        <span>5 days in Paris</span>
-                    </div>
-                </div>
-
-                <div className='itinerary-index-item'>
-                    <div className='itinerary-index-image'>
+                <div className='itinerary-index-right'>
+                    <div className='itinerary-index'>
+                        
+                        {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
+                        {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
 
                     </div>
-
-                    <div className='index-item-details'>
-                        <span>Created by: Margaret</span>
-                        <span>Sydney Trip</span>
-                        <span>Explore Sydney! Week long guide</span>
-                    </div>
-                </div>
-
+                </div>                
             </div>
+
         </>
     )
 }

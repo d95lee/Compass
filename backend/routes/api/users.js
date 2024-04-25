@@ -4,18 +4,12 @@ const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 const passport = require('passport');
-const { loginUser, restoreUser } = require('../../config/passport');
+const { loginUser, restoreUser, requireUser } = require('../../config/passport');
 const { isProduction } = require('../../config/keys');
 const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
 
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.json({
-    message: "GET /api/users"
-  });
-});
 
 router.post('/register', validateRegisterInput, async (req, res, next) =>{
   const user = await User.findOne({
@@ -83,5 +77,44 @@ router.get('/current', restoreUser, (req, res) => {
   });
 });
 
+router.patch('/:userId/bio', requireUser, async (req, res, next) => {
+  try {
+    const updateUser = await User.findByIdAndUpdate(req.params.userId,
+      { bio: req.body.bio}, { new: true })
+      let user = await updateUser.save()
+      return res.json(user)
+  }
+  catch (err) {
+    const error = new Error('User not found');
+    error.statusCode = 404;
+    error.errors = { message: "No user found with that id" };
+    return next(error);
+}
+})
+
+router.get('/', async (req, res) =>{
+  try{
+    const users = await User.find({},{username: 1, bio: 1, profileImageUrl: 1, likes: 1})
+                            .populate('likes', '_id itinerary')
+    return res.json(users)
+  }
+  catch(err){
+    return res.json([])
+  }
+})
+
+router.get('/:id', async (req, res, next) => {
+  try{
+    const user = await User.findById(req.params.id,{username: 1, bio: 1, profileImageUrl: 1, likes: 1})
+                            .populate('likes', '_id itinerary')
+    return res.json(user)
+  }
+  catch(err){
+    const error = new Error('User not found');
+      error.statusCode = 404;
+      error.errors = { message: "No User found with that id" };
+      return next(error);
+  }
+})
 
 module.exports = router;

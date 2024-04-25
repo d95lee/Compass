@@ -20,9 +20,21 @@ const itinerarySchema = new Schema({
     description: {
         type: String
     },
+    country: {
+      type: String,
+      require: true
+     },
+    imageUrls: {
+      type: [String],
+      // required: false //temporarily commented out for testing
+    },
     events:[eventSchema],
     transportations:[transportationSchema],
     livings:[livingSchema],
+    likes:{
+      type: Number,
+      default: 0
+    },
   }, {
     timestamps: true
   });

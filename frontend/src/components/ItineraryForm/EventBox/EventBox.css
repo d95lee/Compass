@@ -1,0 +1,83 @@
+.event-form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event-form-box-header {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.event-form-add-button {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.event-days-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* --------- EVENT-DATE-BOX styling here --------- */
+.event-date-box, .living-date-box, .transportation-date-box {
+    border: 1px solid rgb(233,233,233);
+    padding: 4px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.event-date-box-header, .living-date-box-header, .transportation-date-box-header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.timeline-event-edit-button {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.timeline-event-delete-button {
+    width: 19px;
+    height: 19px;
+    fill: #9c9696;
+}
+
+.timeline-form-input {
+    margin-bottom: 6px;
+    width: 250px;
+    border-radius: 6px;
+    border: 1px solid rgb(182, 177, 177);
+    height: 18px;
+}
+
+.timeline-form-input-submit {
+   width: 40px;
+}
+
+.add-event-modal-content {
+    height: 320px;
+    width: 350px;
+    position: absolute;
+    top: 25vh;
+    background-color: white;
+    text-align: center;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-form-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

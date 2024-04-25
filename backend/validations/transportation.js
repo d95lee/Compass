@@ -27,10 +27,14 @@ const validateTransportationInput = [
         .withMessage('End time must be HH:MM')
         .matches(/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/)
         .withMessage('End time must be in format HH:MM'),
+    check('startDate')
+        .exists({ checkFalsy: true }),
+    check('endDate')
+        .exists({ checkFalsy: true }),
     check('cost')
         .exists({ checkFalsy: true })
         .withMessage('Cost can\'t be blank'),
     handleValidationErrors
   ];
-  
+
   module.exports = validateTransportationInput;

@@ -68,7 +68,8 @@ router.get('/', async (req, res) => {
       const newItinerary = new Itinerary({
         author: req.user._id,
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
+        country: req.body.country
       });
 
       let itinerary = await newItinerary.save();
@@ -88,6 +89,7 @@ router.get('/', async (req, res) => {
           eventTitle: req.body.eventTitle,
           startTime: req.body.startTime,
           endTime: req.body.endTime,
+          date: req.body.date,
           location: req.body.location,
           description: req.body.description,
           category: req.body.category,
@@ -123,6 +125,8 @@ router.get('/', async (req, res) => {
           livingTitle: req.body.livingTitle,
           startTime: req.body.startTime,
           endTime: req.body.endTime,
+          startDate: req.body.startDate,
+          endDate: req.body.endDate,
           location: req.body.location,
           description: req.body.description,
           cost: req.body.cost
@@ -157,6 +161,8 @@ router.get('/', async (req, res) => {
           endLocation: req.body.endLocation,
           startTime: req.body.startTime,
           endTime: req.body.endTime,
+          startDate: req.body.startDate,
+          endDate: req.body.endDate,
           description: req.body.description,
           cost: req.body.cost
         })
@@ -182,12 +188,12 @@ router.get('/', async (req, res) => {
   // Updating the meta data (title and description of the outermost itinerary object)
   router.patch('/:id', requireUser, async (req, res, next) => {
     try {
-        const updateItinerary = await Itinerary.findByIdAndUpdate(req.params.id, 
-            { title: req.body.title, description: req.body.description }, { new: true })
+        const updateItinerary = await Itinerary.findByIdAndUpdate(req.params.id,
+            { title: req.body.title, description: req.body.description, country: req.body.country }, { new: true })
           let itinerary = await updateItinerary.save()
           itinerary = await itinerary.populate('author', '_id username');
           return res.json(itinerary)
-        } 
+        }
         catch (err) {
             const error = new Error('Itinerary not found');
             error.statusCode = 404;
@@ -209,10 +215,11 @@ router.get('/', async (req, res) => {
         }
         try{
           const updateEvent = updateItinerary.events[index]
-          updateItinerary.events[index] = {...updateEvent, 
+          updateItinerary.events[index] = {...updateEvent,
             eventTitle: req.body.eventTitle,
             startTime: req.body.startTime,
             endTime: req.body.endTime,
+            date: req.body.date,
             location: req.body.location,
             description: req.body.description,
             category: req.body.category,
@@ -245,12 +252,14 @@ router.patch('/:id/transportations/:transportationsId', requireUser, validateTra
         }
         try{
           const updateTransportation = updateItinerary.transportations[index]
-          updateItinerary.transportations[index] = {...updateTransportation, 
+          updateItinerary.transportations[index] = {...updateTransportation,
             transportationTitle: req.body.transportationTitle,
             startLocation: req.body.startLocation,
             endLocation: req.body.endLocation,
             startTime: req.body.startTime,
             endTime: req.body.endTime,
+            startDate: req.body.startDate,
+            endDate: req.body.endDate,
             description: req.body.description,
             cost: req.body.cost };
           let itinerary = await updateItinerary.save()
@@ -281,10 +290,12 @@ router.patch('/:id/livings/:livingsId', requireUser, validateLivingInput, async 
         }
         try{
           const updateLiving = updateItinerary.livings[index]
-          updateItinerary.livings[index] = {...updateLiving, 
+          updateItinerary.livings[index] = {...updateLiving,
             livingTitle: req.body.livingTitle,
             startTime: req.body.startTime,
             endTime: req.body.endTime,
+            startDate: req.body.startDate,
+            endDate: req.body.endDate,
             location: req.body.location,
             description: req.body.description,
             cost: req.body.cost };
@@ -334,7 +345,7 @@ router.patch('/:id/events/:eventsId/delete', requireUser, async (req, res, next)
         itinerary.events.splice(index, 1)
         itinerary.save()
         itinerary = await itinerary.populate('author', '_id username');
-        return res.json(itinerary)    
+        return res.json(itinerary)
     }
     catch (err) {
         const error = new Error('Itinerary not found');
@@ -359,7 +370,7 @@ router.patch('/:id/events/:eventsId/delete', requireUser, async (req, res, next)
         itinerary.livings.splice(index, 1)
         itinerary.save()
         itinerary = await itinerary.populate('author', '_id username');
-        return res.json(itinerary)    
+        return res.json(itinerary)
     }
     catch (err) {
         const error = new Error('Itinerary not found');
@@ -384,7 +395,7 @@ router.patch('/:id/transportations/:transportationsId/delete', requireUser, asyn
         itinerary.transportations.splice(index, 1)
         itinerary.save()
         itinerary = await itinerary.populate('author', '_id username');
-        return res.json(itinerary)    
+        return res.json(itinerary)
     }
     catch (err) {
         const error = new Error('Itinerary not found');

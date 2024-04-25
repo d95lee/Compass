@@ -1,0 +1,56 @@
+.basic-info-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-background {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(25,25,25,.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    justify-content: center;
+    display: flex;
+}
+
+.basic-info-modal-content {
+    height: 170px;
+    /* width: 25vw; */
+    border-radius: 24px;
+    position: fixed;
+    top: 25vh;
+    background-color: white;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.basic-info-form {
+    display: flex;
+    align-items: center;
+}
+
+.basic-info-modal-header {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.basic-info-form-input {
+    margin-bottom: 5px;
+}
+
+.form-save-button {
+    margin-top: 5px;
+    width: 50px;
+    height: 22px;
+    border-radius: 8px;
+    border: none;
+}

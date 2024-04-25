@@ -13,7 +13,18 @@ const userSchema = new Schema({
     hashedPassword: {
       type: String,
       required: true
-    }
+    },
+    bio: {
+      type: String
+    },
+    profileImageUrl: {
+      type: String,
+      // required: true //temporarily commented out for testing
+    },
+    likes:[{
+      type: Schema.Types.ObjectId,
+      ref: 'Like'
+    }],
   }, {
     timestamps: true
   });

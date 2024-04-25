@@ -8,7 +8,8 @@ export default defineConfig(({ mode }) => ({
     react(),
     eslint({
       lintOnStart: true,
-      failOnError: mode === "production"
+      failOnError: mode === "production",
+      exclude: [/backend/]
     })
   ],
   server: {
