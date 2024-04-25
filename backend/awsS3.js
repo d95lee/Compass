@@ -22,7 +22,7 @@ const singleFileUpload = async ({ file, isPublic = false }) => {
     try {
       const parallelUploadS3 = new Upload({ client, params });
       parallelUploadS3.on("httpUploadProgress", (progress) =>
-        console.log(progress)
+        // console.log(progress)
       );
       const result = await parallelUploadS3.done();
   
@@ -30,7 +30,7 @@ const singleFileUpload = async ({ file, isPublic = false }) => {
       // S3 bucket as the key in your database for subsequent retrieval.
       return isPublic ? result.Location : result.Key;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
