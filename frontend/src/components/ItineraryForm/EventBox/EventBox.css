@@ -50,20 +50,10 @@
     fill: #9c9696;
 }
 
-.timeline-form-input {
-    margin-bottom: 6px;
-    width: 250px;
-    border-radius: 6px;
-    border: 1px solid rgb(182, 177, 177);
-    height: 18px;
-}
 
-.timeline-form-input-submit {
-   width: 40px;
-}
-
+/* --------- EVENT-FORM-MODAL styling here --------- */
 .add-event-modal-content {
-    height: 320px;
+    /* height: 320px; */
     width: 350px;
     position: absolute;
     top: 25vh;
@@ -80,4 +70,62 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: center; */
+}
+
+.event-modal-top-area {
+    width: 100%;
+    display: flex;
+    /* align-items: flex-start; */
+    /* position: relative;
+    top: 10px;
+    right: 15px; */
+    justify-content: end;
+    flex-direction: row;
+}
+
+.event-modal-close-button {
+    position: relative;
+    top: 10px;
+    right: 15px;
+}
+.event-modal-close-button:hover {
+    cursor: pointer;
+}
+
+.event-modal-input-label {
+    font-size: 12px;
+    margin-top: 7px;
+    margin-bottom: 2px;
+}
+
+.event-modal-input-error {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.timeline-form-input {
+    margin-bottom: 3px;
+    width: 270px;
+    border-radius: 6px;
+    border: 1px solid rgb(182, 177, 177);
+    height: 20px;
+}
+
+.timeline-form-input-submit {
+   width: 45px;
+   text-align: center;
+   width: 50px;
+   height: 22px;
+   border-radius: 8px;
+   border: none;
+   margin-top: 7px;
+   margin-bottom: 15px;
+}
+
+.event-modal-input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

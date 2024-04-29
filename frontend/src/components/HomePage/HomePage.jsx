@@ -1,13 +1,12 @@
 import newGlobe from '../Globe/Globe.js';
 import './HomePage.css';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import linkedin from '../../assets/linkedin.png'
 import github from '../../assets/github.png'
 import logo from '../../assets/compass.png';
-import { fetchItineraries, selectItinerary, selectItineraryByUser } from '../../store/itinerary.js';
+import { fetchItineraries , selectItineraryByUser } from '../../store/itinerary.js';
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUsers, selectUserByUsername } from '../../store/user.js';
-import { Link } from 'react-router-dom';
 
 
 const HomePage = ()=> {
@@ -20,7 +19,7 @@ const HomePage = ()=> {
   useEffect(() => {
     dispatch(fetchItineraries())
     dispatch(fetchUsers())
-  }, [])
+  }, [dispatch])
 
     const caroline = useSelector(selectUserByUsername('caroline'))
     const jerry = useSelector(selectUserByUsername('jerry'))
@@ -62,8 +61,8 @@ const HomePage = ()=> {
                           <p>Country: <b>{carolineItinerary?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
-                          <a href="https://www.linkedin.com/in/carolineczhang/" target="_blank"><img className='linkedin-logo' src={linkedin} alt="" /></a>
-                          <a href="https://github.com/caroline495" target="_blank"><img className='github-logo' src={github} alt="" /></a>
+                          <a href="https://www.linkedin.com/in/carolineczhang/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
+                          <a href="https://github.com/caroline495"><img className='github-logo' src={github} alt="" /></a>
                         </div>
                       </div>
 
@@ -77,8 +76,8 @@ const HomePage = ()=> {
                           <p>Country: <b>{davidItinerary?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
-                        <a href="https://www.linkedin.com/in/david-lee-49959a20a/" target="_blank"><img className='linkedin-logo' src={linkedin} alt="" /></a>
-                        <a href="https://github.com/d95lee" target="_blank"><img className='github-logo' src={github} alt="" /></a>
+                        <a href="https://www.linkedin.com/in/david-lee-49959a20a/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
+                        <a href="https://github.com/d95lee"><img className='github-logo' src={github} alt="" /></a>
                         </div>
                       </div>
 
@@ -92,8 +91,8 @@ const HomePage = ()=> {
                           <p>Country: <b>{jerryItinerary?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
-                        <a href="https://www.linkedin.com/in/zwang01/" target="_blank"><img className='linkedin-logo' src={linkedin} alt="" /></a>
-                        <a href="https://github.com/ziyanwang1105" target="_blank"><img className='github-logo' src={github} alt="" /></a>
+                        <a href="https://www.linkedin.com/in/zwang01/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
+                        <a href="https://github.com/ziyanwang1105"><img className='github-logo' src={github} alt="" /></a>
                         </div>
                       </div>
 
@@ -107,8 +106,8 @@ const HomePage = ()=> {
                           <p>Country: <b>{jhonItinerary?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
-                        <a href="https://www.linkedin.com/in/jhon-salazar-655b24208/" target="_blank"><img className='linkedin-logo' src={linkedin} alt="" /></a>
-                        <a href="https://github.com/JhonJSC182" target="_blank"><img className='github-logo' src={github} alt="" /></a>
+                        <a href="https://www.linkedin.com/in/jhon-salazar-655b24208/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
+                        <a href="https://github.com/JhonJSC182"><img className='github-logo' src={github} alt="" /></a>
                         </div>
                       </div>
                     </div>

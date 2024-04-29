@@ -2,7 +2,7 @@ import { receiveItinerary } from "./itinerary";
 import jwtFetch from "./jwt"
 
 //Thunk action for transportation
-export const createTransportation = (itineraryId, transportationData) => (dispatch, getState) => (
+export const createTransportation = (itineraryId, transportationData) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}/transportations`, {
         method: 'PATCH',
         body: JSON.stringify(transportationData)
@@ -21,7 +21,7 @@ export const createTransportation = (itineraryId, transportationData) => (dispat
 
 //Update transportation itinerary
 
-export const updateTransportation = (itineraryId, transportationData) => (dispatch, getState) => (
+export const updateTransportation = (itineraryId, transportationData) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}/transportations/${transportationData._id}`, {
         method: 'PATCH',
         body: JSON.stringify(transportationData)
@@ -39,7 +39,7 @@ export const updateTransportation = (itineraryId, transportationData) => (dispat
 )
 
 //Delete transportation
-export const deleteTransportation = (itineraryId, transportationId) => (dispatch, getState) => (
+export const deleteTransportation = (itineraryId, transportationId) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}/transportations/${transportationId}/delete`, {
         method: 'PATCH'
     })

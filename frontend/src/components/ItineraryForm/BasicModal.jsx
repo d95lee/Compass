@@ -23,11 +23,11 @@ const BasicModal = ({basicModalState, setBasicModalState, itinerary}) => {
 
     return (
         <>
-            <div className='modal-background' onClick={e => setBasicModalState(null)} >
+            <div className='modal-background' onClick={() => setBasicModalState(null)} >
                 <div className='basic-info-modal-content' onClick={e => e.stopPropagation()}>
-                    
+
                     <div className='basic-info-modal-header'>Edit Itinerary Details</div>
-                    
+
                     <form className='basic-info-form' onSubmit={handleSubmit}>
                         <label>Title:
                             <input className='basic-info-form-input' type="text"
@@ -48,6 +48,7 @@ const BasicModal = ({basicModalState, setBasicModalState, itinerary}) => {
                         </label>
                         <input className='form-save-button' type="submit" value={'save'} />
                     </form>
+                    {errors && errors.map((err, idx) => (<p key={idx}>{err}</p>))}
                 </div>
             </div>
 

@@ -60,13 +60,13 @@ export const timelineSort = (itinerary) => {
     const livings = livingSort(itinerary);
     const transportations = transportationSort(itinerary);
     for (const key in events) {
-        if (events.hasOwnProperty(key)) {
+        if (key in events) {
             res[key] = events[key];
         }
-    };
+    }
     for (const key in livings) {
-        if (livings.hasOwnProperty(key)) {
-            if (res.hasOwnProperty(key)) {
+        if (key in livings) {
+            if (key in res) {
                 // If the key already exists in result, merge the values
                 res[key] = [].concat(res[key], livings[key]);
             } else {
@@ -74,10 +74,10 @@ export const timelineSort = (itinerary) => {
                 res[key] = livings[key];
             }
         }
-    };
+    }
     for (const key in transportations) {
-        if (transportations.hasOwnProperty(key)) {
-            if (res.hasOwnProperty(key)) {
+        if (key in transportations) {
+            if (key in res) {
                 // If the key already exists in result, merge the values
                 res[key] = [].concat(res[key], transportations[key]);
             } else {
@@ -85,7 +85,7 @@ export const timelineSort = (itinerary) => {
                 res[key] = transportations[key];
             }
         }
-    };
+    }
     return res
 }
 
@@ -127,4 +127,4 @@ function compareTimes(time1, time2) {
     } else {
         return 0;
     }
-};
+}

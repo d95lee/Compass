@@ -29,7 +29,9 @@ export const newItinerary = (itinerary) => ({
 
 export const selectItineraries = state => state.itinerary
 export const selectItinerary = (itineraryId) => createSelector([selectItineraries], itinerary => itinerary[itineraryId])
-export const selectItineraryByUser = (user) => createSelector([selectItineraries], itinerary => Object.values(itinerary).find(el => el?.author._id === user?._id))
+export const selectItineraryByUser = (user) => createSelector([selectItineraries], itinerary => {
+    return Object.values(itinerary).filter(el => el?.author._id === user?._id)
+})
 export const selectLikedItinerary = (user) => createSelector(
     [selectItineraries],
     (itineraries) => {
@@ -63,7 +65,7 @@ export const fetchItineraries = () => async dispatch => {
 
 
 //Create, update, delete
-export const createItinerary = (itineraryData) => (dispatch, getState) => (
+export const createItinerary = (itineraryData) => (dispatch) => (
     jwtFetch(`/api/itinerary`, {
         method: "POST",
         body: JSON.stringify(itineraryData)
@@ -81,7 +83,7 @@ export const createItinerary = (itineraryData) => (dispatch, getState) => (
     })
 )
 
-export const updateItinerary = (itineraryData) => (dispatch, getState) => (
+export const updateItinerary = (itineraryData) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryData._id}`, {
         method: "PATCH",
         body: JSON.stringify(itineraryData)
@@ -98,7 +100,7 @@ export const updateItinerary = (itineraryData) => (dispatch, getState) => (
     })
 )
 
-export const deleteItinerary = (itineraryId) => (dispatch, getState) => (
+export const deleteItinerary = (itineraryId) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}`, {
         method: "DELETE",
     })

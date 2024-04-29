@@ -1,18 +1,9 @@
 import './ItineraryItem.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectItinerary, fetchItinerary } from '../../store/itinerary';
-import { useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 
 const ItineraryItem = ({itinerary}) => {
-    // const dispatch = useDispatch();
-    // const itinerary = useSelector(selectItinerary(itineraryId));
 
-    // useEffect(() => {
-    //     dispatch(fetchItinerary(itineraryId));
-    // }, [dispatch, itineraryId])
-
-    // console.log(itinerary, 'item');
     return (
         <>
             <Link to={`/itinerary/${itinerary?._id}`}>
