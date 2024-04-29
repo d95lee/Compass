@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { updateBio } from "../../store/user";
 import { useParams } from "react-router-dom";
 
-const BioModal = ({bioState, setBioState}) => {
-    const [bio, setBio] = useState(bioState ? bioState : '');
+const BioModal = ({bioState, setBioState, userBio}) => {
+    const [bio, setBio] = useState(userBio ? userBio : '');
     const dispatch = useDispatch()
     const { userId } = useParams();
 

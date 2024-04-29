@@ -29,7 +29,9 @@ export const newItinerary = (itinerary) => ({
 
 export const selectItineraries = state => state.itinerary
 export const selectItinerary = (itineraryId) => createSelector([selectItineraries], itinerary => itinerary[itineraryId])
-export const selectItineraryByUser = (user) => createSelector([selectItineraries], itinerary => Object.values(itinerary).find(el => el?.author._id === user?._id))
+export const selectItineraryByUser = (user) => createSelector([selectItineraries], itinerary => {
+    return Object.values(itinerary).filter(el => el?.author._id === user?._id)
+})
 export const selectLikedItinerary = (user) => createSelector(
     [selectItineraries],
     (itineraries) => {

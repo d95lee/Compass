@@ -2,26 +2,24 @@ import { useEffect, useState } from 'react'
 import './Profile.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { fetchItineraries, selectItineraries, selectLikedItinerary } from '../../store/itinerary';
+import { fetchItineraries, selectItineraryByUser, selectLikedItinerary } from '../../store/itinerary';
 import { fetchUser, selectUser } from '../../store/user'
-import ItineraryItem from '../ItineraryItem/ItineraryItem';
 import { removeGlobe } from '../Globe/Globe';
 import BioModal from './BioModal';
+import ProfileItineraryIndex from './ProfileItineraryIndex';
 
 
 const Profile = () => {
     const dispatch = useDispatch();
     const { userId } = useParams();
-
     const [bioState, setBioState] = useState(null);
-
-
-    const itineraries = useSelector(selectItineraries);
-//hello
-const user = useSelector(selectUser(userId));
+    const [indexState, setIndexState] = useState('user')
+    const user = useSelector(selectUser(userId));
+    const userItineraries = useSelector(selectItineraryByUser(user));
+    const likeItineraries = useSelector(selectLikedItinerary(user))
     useEffect(() => {
-        dispatch(fetchItineraries(user));
-    }, [dispatch, user])
+        dispatch(fetchItineraries());
+    }, [dispatch])
 
 
 
@@ -30,7 +28,19 @@ const user = useSelector(selectUser(userId));
     }, [dispatch, userId])
 
 
-        const likeItineraries = useSelector(selectLikedItinerary(user))
+
+
+    const filterItineraries = ()=>{
+        switch(indexState){
+            case 'user':
+                return userItineraries;
+            case 'likes':
+                return likeItineraries;
+            default:
+                return [];
+        }
+    }
+
     removeGlobe()
 
     return (
@@ -41,43 +51,31 @@ const user = useSelector(selectUser(userId));
                 <BioModal
                     bioState={bioState}
                     setBioState={setBioState}
+                    userBio = {user?.bio}
                 />
             )}
-            {/* <img className='background-img' src="" alt="" /> */}
-            <div className='pic-div'>
-                {user?.profileImageUrl && (<img className='user-img' src={user.profileImageUrl}/>)}
-            </div>
 
-            <div className='user-info'>
-                {/* <h5>@{user?.username}</h5> */}
-                <h3>Bio: </h3>
-                <p className='user-bio'>{user?.bio}</p>
+            <div className='user-info-box'>
+                <div className='pic-div'>
+                    {user?.profileImageUrl && (<img className='user-img' src={user.profileImageUrl}/>)}
+                </div>
 
-            </div>
-            <button onClick={() => setBioState(true)} className='profile-edit-button'>Edit</button>
-
-
-            <div className='profile-itineraries'>
-            <div className='blocks'>
-                    <div className='my-itineraries'>
-                        <h2 className='header-display'>My itineraries</h2>
-                            <div className='itinerary-profile-index-container'>
-                                <div className='itinerary-index-profile'>
-                                {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
-                                {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
-                                </div>
-                            </div>
-                    </div>
-
-                    <div className='like-itineraries'>
-                        <h2 className='header-display'>Liked itineraries</h2>
-                        <div className='itinerary-index'>
-                        {likeItineraries.map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
-                        </div>
-                    </div>
+                <div className='user-info'>
+                    <h3>Bio: </h3>
+                    <p className='user-bio'>{user?.bio}</p>
 
                 </div>
+                <button onClick={() => setBioState(true)} className='profile-edit-button'>Edit</button>
             </div>
+
+            <div className='filter-buttons'>
+                <button onClick={()=> setIndexState('user')} className={indexState === 'user' ? 'filter-button active' : 'filter-button'}>Created itineraries</button>
+                <button onClick={()=> setIndexState('likes')} className={indexState === 'likes' ? 'filter-button active' : 'filter-button'}> Liked itineraries</button>
+
+            </div>
+
+
+            {filterItineraries() && <ProfileItineraryIndex itineraries={filterItineraries()} />}
         </div>
         </>
     )

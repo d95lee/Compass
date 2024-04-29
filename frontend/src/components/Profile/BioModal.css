@@ -1,11 +1,13 @@
 .bio-modal-background {
-    position: absolute;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     background-color: rgba(25,25,25,.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
     justify-content: center;
     display: flex;
-    z-index: 1;
 }
 
 .bio-modal-content {

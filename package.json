@@ -1,10 +1,17 @@
 {
-    "scripts": {
+  "name": "mern-travel",
+  "version": "1.0.0",
+  "description": "- When traveling, it is challenging figuring out how to have the most productive/fun trip possible. Finding which restaurants, understanding the transportation system and which activities are worthwhile are questions people ask themselves whenever visiting a new city.\r - Compass is an app primarily built with the MERN stack where users can share, compare, and plan itineraries to facilitate the planning stages when traveling to new cities.",
+  "main": "index.js",
+  "scripts": {
     "backend-install": "npm install --prefix backend",
     "backend": "npm run dev --prefix backend",
     "frontend": "npm run dev --prefix frontend",
     "build": "npm run backend-install"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "engines": {
     "node": "18.x"
   }
