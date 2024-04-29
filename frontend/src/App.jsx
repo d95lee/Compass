@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
-
-import { AuthRoute, ProtectedRoute } from './components/Routes/Routes';
 import HomePage from './components/HomePage/HomePage';
 
 import NavBar from './components/NavBar/NavBar';

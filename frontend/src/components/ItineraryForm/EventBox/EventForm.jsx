@@ -62,7 +62,7 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
     console.log(errors, 'errors');
 
     const hasErrors = Object.values(errors).length !== 0;
-    const handleClose = e => {
+    const handleClose = () => {
         setEventModalState(null);
         setEvent(null)
     }
@@ -169,6 +169,7 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
                         {/* {errors?.map(error => <p>{error}</p>)} */}
                         <input className='timeline-form-input-submit' type="submit" value={"Save"} />
                     </form>
+                    {errors && errors.map((err, idx) => (<p key={idx}>{err}</p>))}
                 </div>
             </div>
         </>

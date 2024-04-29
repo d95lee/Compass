@@ -1,42 +1,27 @@
 .profile-background {
-    border: none;
-    top: 0px;
-    left: 5%;
-    height: 250vh;
-    width: 90%;
-    position: relative;
-    display: flex;
+    padding-top: 10vh;
     justify-content: center;
-    margin-top: 5px;
-    /* background-color: rgb(188, 188, 188); */
-    overflow: hidden;
+    flex-direction: column;
+}
+.user-info-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10vh;
 }
 
 .pic-div {
     border: none;
     height: 200px;
     width: 200px;
-    position: absolute;
-    top: 50px;
     border-radius: 50%;
 }
 
 .user-info {
     border: none;
-    top: 30vh;
-    position: absolute;
-    width: 50%;
-    height: 15vh;
-    border-radius: 10px;
-    overflow: hidden;
-    justify-content: center;
     display: flex;
-}
-
-h3 {
-    position: relative;
-    display: inline;
-    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
 }
 
 .background-img {
@@ -50,14 +35,7 @@ h3 {
     height: 100%;
 }
 
-.profile-edit-button {
-    position: absolute;
-    top: 40vh;
-}
 
-.edit-form {
-    display: contents;
-}
 
 .profile-itineraries {
     position: absolute;
@@ -68,80 +46,11 @@ h3 {
     /* background-color: aqua; */
 }
 
-.itinerary-buttons {
-    display: flex;
-    justify-content: space-around;
-    padding: 5px;
-}
-
-
-.my-button {
-    background: rgb(233,216,71);
-    height: 40px;
-    border-radius: 20px;
-}
-
-.liked-button {
-    background: rgb(20,131,242);
-    height: 40px;
-    border-radius: 20px;
-}
-
-.my-button:hover {
-    background: #b3b344;
-    border: none;
-}
-
-.liked-button:hover {
-    background: #b3b344;
-    border: none;
-}
-
-
-.blocks {
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-.my-itineraries {
-    width: 100%;
-    height: auto;
-    /* background: green; */
-    display: flex;
-    height: 45vh;
-    justify-content: center;
-    display: flex;
-}
-
-
-/* .liked-itineraries {
-    width: 100%;
-    height: auto;
-    background: yellow;
-    display: none;
-} */
-
 .user-bio {
-    top: 50px;
-    position: absolute;
     border: none;
     justify-content: center;
-    display: inline;
     margin: 0;
-}
-
-.like-itineraries {
-    top: 100vh;
-    position: absolute;
-    
-    width: 100%;
-    height: auto;
-    /* background: green; */
-    display: flex;
-    height: 45vh;
-    justify-content: center;
-    display: flex;
+    padding-bottom: 5vh;
 }
 
 .header-display {
@@ -158,3 +67,21 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.filter-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.filter-button {
+    margin-top: 5px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .filter-button.active {
+    background-color: rgb(59, 130, 207);
+    color: white;
+  }

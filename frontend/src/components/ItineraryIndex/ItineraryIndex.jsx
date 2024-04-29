@@ -1,7 +1,7 @@
 import './ItineraryIndex.css';
 import { useDispatch, useSelector } from 'react-redux';
 // import { fetchItineraries, fetchItinerary, selectItinerary, selectItineraryArray } from '../../store/itinerary';
-import { fetchItineraries, fetchItinerary, selectItineraries, selectItinerary } from '../../store/itinerary';
+import { fetchItineraries, selectItineraries } from '../../store/itinerary';
 import ItineraryItem from '../ItineraryItem/ItineraryItem';
 import { useEffect } from 'react';
 import { removeGlobe } from '../Globe/Globe';
@@ -30,18 +30,18 @@ const ItineraryIndex = () => {
                         <div className='index-location-text'>Europe</div>
                         <div className='index-location-text'>Asia</div>
                         <div className='index-location-text'>South America</div>
-                        <div className='index-location-text'>Africa</div>                        
+                        <div className='index-location-text'>Africa</div>
                     </div>
 
                 </div>
                 <div className='itinerary-index-right'>
                     <div className='itinerary-index'>
-                        
+
                         {/* cannot directly pass in object to a sub component as prop, unless it's in an array */}
                         {Object.values(itineraries).map((itinerary, idx) => <ItineraryItem key={idx} itinerary={itinerary} />)}
 
                     </div>
-                </div>                
+                </div>
             </div>
 
         </>

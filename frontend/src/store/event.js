@@ -4,7 +4,7 @@ import jwtFetch from "./jwt";
 //Thunk action for events
 
 //Create event in the itinerary
-export const createEvent = (itineraryId, eventData) => (dispatch, getState) => (
+export const createEvent = (itineraryId, eventData) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}/events`, {
         method: "PATCH",
         body: JSON.stringify(eventData)
@@ -22,7 +22,7 @@ export const createEvent = (itineraryId, eventData) => (dispatch, getState) => (
 );
 
 //Update event in the itinerary
-export const updateEvent = (itineraryId, eventData) => (dispatch, getState) => (
+export const updateEvent = (itineraryId, eventData) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}/events/${eventData._id}`, {
         method: "PATCH",
         body: JSON.stringify(eventData)
@@ -40,7 +40,7 @@ export const updateEvent = (itineraryId, eventData) => (dispatch, getState) => (
 );
 
 //Delete event in the itinerary
-export const deleteEvent = (itineraryId, eventId) => (dispatch, getState) => (
+export const deleteEvent = (itineraryId, eventId) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}/events/${eventId}/delete`, {
         method: "PATCH"
     })

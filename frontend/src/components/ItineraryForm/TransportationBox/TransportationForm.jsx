@@ -60,7 +60,7 @@ const TransportationForm = ({itinerary, transportation, transModalState, setTran
 
      }
 
-     const handleClose = e => {
+     const handleClose = () => {
         setTransModalState(null);
         setTransportation({})
     }
@@ -144,10 +144,9 @@ const TransportationForm = ({itinerary, transportation, transModalState, setTran
                     </label>
                     <input type="submit" value={"Save"} />
                 </form>
+                {errors && errors.map((err, idx) => (<p key={idx}>{err}</p>))}
             </div>
         </div>
-            <div className="event-form-container">
-            </div>
         </>
     )
 }

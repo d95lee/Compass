@@ -2,7 +2,7 @@ import { receiveItinerary } from "./itinerary";
 import jwtFetch from "./jwt";
 
 // Thunk action for livings
-export const createLiving = (itineraryId, livingData) => (dispatch, getState) => (
+export const createLiving = (itineraryId, livingData) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}/livings`, {
         method: 'PATCH',
         body: JSON.stringify(livingData)
@@ -20,7 +20,7 @@ export const createLiving = (itineraryId, livingData) => (dispatch, getState) =>
 )
 
 //Update living in the itinerary
-export const updateLiving = (itineraryId, livingData) => (dispatch, getState) => (
+export const updateLiving = (itineraryId, livingData) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}/livings/${livingData._id}`, {
         method: "PATCH",
         body: JSON.stringify(livingData)
@@ -38,7 +38,7 @@ export const updateLiving = (itineraryId, livingData) => (dispatch, getState) =>
 );
 
 //Delete living in the itinerary
-export const deleteLiving = (itineraryId, livingId) => (dispatch, getState) => (
+export const deleteLiving = (itineraryId, livingId) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}/livings/${livingId}/delete`, {
         method: "PATCH"
     })
