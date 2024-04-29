@@ -18,13 +18,13 @@ const Profile = () => {
 
     const itineraries = useSelector(selectItineraries);
 //hello
-
+const user = useSelector(selectUser(userId));
     useEffect(() => {
         dispatch(fetchItineraries(user));
-    }, [dispatch])
+    }, [dispatch, user])
 
 
-    const user = useSelector(selectUser(userId));
+
     useEffect(() => {
         dispatch(fetchUser(userId));
     }, [dispatch, userId])
@@ -38,8 +38,8 @@ const Profile = () => {
 
         <div className='profile-background'>
         {bioState && (
-                <BioModal 
-                    bioState={bioState} 
+                <BioModal
+                    bioState={bioState}
                     setBioState={setBioState}
                 />
             )}

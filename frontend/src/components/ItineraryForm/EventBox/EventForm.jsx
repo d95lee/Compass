@@ -59,7 +59,7 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
         }
     }
 
-    const handleClose = e => {
+    const handleClose = () => {
         setEventModalState(null);
         setEvent(null)
     }
@@ -134,6 +134,7 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
                         </label>
                         <input className='timeline-form-input-submit' type="submit" value={"Save"} />
                     </form>
+                    {errors && errors.map((err, idx) => (<p key={idx}>{err}</p>))}
                 </div>
             </div>
         </>

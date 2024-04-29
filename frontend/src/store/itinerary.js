@@ -63,7 +63,7 @@ export const fetchItineraries = () => async dispatch => {
 
 
 //Create, update, delete
-export const createItinerary = (itineraryData) => (dispatch, getState) => (
+export const createItinerary = (itineraryData) => (dispatch) => (
     jwtFetch(`/api/itinerary`, {
         method: "POST",
         body: JSON.stringify(itineraryData)
@@ -81,7 +81,7 @@ export const createItinerary = (itineraryData) => (dispatch, getState) => (
     })
 )
 
-export const updateItinerary = (itineraryData) => (dispatch, getState) => (
+export const updateItinerary = (itineraryData) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryData._id}`, {
         method: "PATCH",
         body: JSON.stringify(itineraryData)
@@ -98,7 +98,7 @@ export const updateItinerary = (itineraryData) => (dispatch, getState) => (
     })
 )
 
-export const deleteItinerary = (itineraryId) => (dispatch, getState) => (
+export const deleteItinerary = (itineraryId) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}`, {
         method: "DELETE",
     })

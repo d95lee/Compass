@@ -56,7 +56,7 @@ const LivingForm = ({itinerary, living, livingModalState, setLivingModalState, s
         }
     }
 
-    const handleClose = e => {
+    const handleClose = () => {
         setLivingModalState(null);
         setLiving({})
     }
@@ -133,6 +133,7 @@ const LivingForm = ({itinerary, living, livingModalState, setLivingModalState, s
                         </label>
                         <input type="submit" value={"Save"} />
                     </form>
+                    {errors && errors.map((err, idx) => (<p key={idx}>{err}</p>))}
                 </div>
             </div>
 

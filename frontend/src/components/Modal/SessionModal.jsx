@@ -31,7 +31,7 @@ const SessionModal = ({ modalState, setModalState }) => {
     const formMode = () => {
         if (modalState === 'signup') {
             return (
-                <div className='modal-background' onClick={e => setModalState(null)}>
+                <div className='modal-background' onClick={() => setModalState(null)}>
                 <div className='signup-modal-content' onClick={e => e.stopPropagation()}>
                 <h2>Create Your Account</h2>
                     <form onSubmit={handleSubmit}>
@@ -62,7 +62,7 @@ const SessionModal = ({ modalState, setModalState }) => {
         } else if (modalState === 'login') {
             return (
                 // -------------------LOGIN MODAL ----------------------
-            <div className='modal-background' onClick={e => setModalState(null)}>
+            <div className='modal-background' onClick={() => setModalState(null)}>
                 <div className='login-modal-content' onClick={e => e.stopPropagation()}>
                 <h2>Log In</h2>
                 <form onSubmit={handleSubmit}>

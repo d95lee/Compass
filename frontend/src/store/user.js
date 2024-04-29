@@ -30,13 +30,13 @@ export const selectUserByUsername = username => createSelector(
 
 //Thunk Action
 
-export const fetchUser = (userId) => async (dispatch, getState) => {
+export const fetchUser = (userId) => async (dispatch) => {
     const res = await fetch(`/api/users/${userId}`);
 
     if (res.ok){
         const data = await res.json();
         dispatch(receiveUser(data));
-    };
+    }
 };
 
 export const fetchUsers = () => async (dispatch) => {
@@ -48,7 +48,7 @@ export const fetchUsers = () => async (dispatch) => {
     }
 }
 
-export const updateBio = (bioData, userId) => (dispatch, getState) => (
+export const updateBio = (bioData, userId) => (dispatch) => (
     jwtFetch(`/api/users/${userId}/bio`, {
         method: "PATCH",
         body: JSON.stringify(bioData)
@@ -82,7 +82,7 @@ const userReducer = (state={}, action) => {
             // return { ...state, ...action.users}
         default:
             return state;
-    };
+    }
 };
 
 export default userReducer
