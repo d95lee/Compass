@@ -4,6 +4,7 @@ import sessionReducer from './session';
 import itineraryReducer from './itinerary';
 import userReducer from './user';
 
+
 const rootReducer = combineReducers({
   session: sessionReducer,
   itinerary: itineraryReducer,

@@ -11,6 +11,8 @@ const SessionModal = ({ modalState, setModalState }) => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [image, setImage] = useState(null);
+    const [errors, setErrors]= useState([])
+
 
 
     const handleSubmit = e => {
@@ -18,9 +20,17 @@ const SessionModal = ({ modalState, setModalState }) => {
         if (modalState === 'signup') {
             dispatch(signup({ email, username, image, password}))
                 .then(() => setModalState(null))
+                .catch(async res =>{
+                    let data = await res.json();
+                    setErrors(data);
+                  });
         } else {
             dispatch(login({ email, password }))
             .then(() => setModalState(null))
+            .catch(async res =>{
+                let data = await res.json();
+                setErrors(data);
+              });
         }
     };
 
@@ -31,6 +41,8 @@ const SessionModal = ({ modalState, setModalState }) => {
     }
 
     const updateFile = e => setImage(e.target.files[0]);
+    const hasErrors = Object.values(errors).length !== 0;
+
 
     const formMode = () => {
         if (modalState === 'signup') {
@@ -39,25 +51,38 @@ const SessionModal = ({ modalState, setModalState }) => {
                 <div className='signup-modal-content' onClick={e => e.stopPropagation()}>
                 <h2>Create Your Account</h2>
                     <form onSubmit={handleSubmit}>
-                        <input
-                            className='buttons'
-                            placeholder='Username'
-                            value={username}
-                            onChange={e => setUsername(e.target.value)}
-                        />
-                        <input
-                            className='buttons'
-                            placeholder='Email'
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                        />
-                        <input
-                            className='buttons'
-                            placeholder='Password'
-                            type='password'
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                        />
+                        <label >
+                            Username:
+                            <input
+                                className='buttons'
+                                placeholder='Username'
+                                value={username}
+                                onChange={e => setUsername(e.target.value)}
+                            />
+                        </label>
+                        <div className="event-modal-input-error">{hasErrors && errors.errors.username ? errors.errors.username : ''}</div>
+                        <label>
+                            Email:
+                            <input
+                                className='buttons'
+                                placeholder='Email'
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                        </label>
+                        <div className="event-modal-input-error">{hasErrors && errors.errors.email ? errors.errors.email : ''}</div>
+
+                        <label >
+                            Password:
+                            <input
+                                className='buttons'
+                                placeholder='Password'
+                                type='password'
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                        </label>
+                        <div className="event-modal-input-error">{hasErrors && errors.errors.password ? errors.errors.password : ''}</div>
                         <label>
                             Profile Image
                             <input type="file" accept=".jpg, .jpeg, .png" onChange={updateFile} />
@@ -74,12 +99,17 @@ const SessionModal = ({ modalState, setModalState }) => {
                 <div className='login-modal-content' onClick={e => e.stopPropagation()}>
                 <h2>Log In</h2>
                 <form onSubmit={handleSubmit}>
+                    <label>
+                        Email:
                         <input
                             className='buttons'
                             placeholder='Email'
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                         />
+                    </label>
+                    <label>
+                        Password:
                         <input
                             className='buttons'
                             placeholder='Password'
@@ -87,9 +117,12 @@ const SessionModal = ({ modalState, setModalState }) => {
                             value={password}
                             onChange={e => setPassword(e.target.value)}
                         />
+                    </label>
+
                         <input className='click' type="submit" value={modalState} />
                         <button className='demo-login' onClick={handleDemoLogin}>Demo Login</button>
                     </form>
+                    <div className="event-modal-input-error">{hasErrors && 'Invalid Credentials'}</div>
                 </div>
             </div>
             )

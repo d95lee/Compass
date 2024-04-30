@@ -42,21 +42,38 @@ export const startSession = (userInfo, route) => async dispatch => {
 
   if (image) formData.append("image", image);
 
-  try {
-    const res = await jwtFetch(route, {
-      method: "POST",
-      body: formData
-      // body: JSON.stringify(userInfo)
-    });
-    const { user, token } = await res.json();
-    localStorage.setItem('jwtToken', token);
-    return dispatch(receiveCurrentUser(user));
-  } catch(err) {
-    const res = await err.json();
-    if (res.statusCode === 400) {
-      return dispatch(receiveErrors(res.errors));
-    }
-  }
+  // try {
+  //   const res = await jwtFetch(route, {
+  //     method: "POST",
+  //     body: formData
+  //     // body: JSON.stringify(userInfo)
+  //   });
+  //   const { user, token } = await res.json();
+  //   localStorage.setItem('jwtToken', token);
+  //   return dispatch(receiveCurrentUser(user));
+  // } catch(err) {
+  //   const res = await err.json();
+  //   if (res.statusCode === 400) {
+  //     dispatch(receiveErrors(res.errors));
+  //     return res.errors;
+  //   }
+  // }
+  return jwtFetch(route, {
+    method: "POST",
+    body: formData
+  })
+    .then(res => {
+      if(res.ok){
+          return res.json();
+      } else {
+          throw res;
+      }
+    })
+    .then(data =>{
+      const {user, token} = data;
+      localStorage.setItem('jwtToken', token);
+      return dispatch(receiveCurrentUser(user));
+    })
 };
 
 export const logout = () => dispatch => {
