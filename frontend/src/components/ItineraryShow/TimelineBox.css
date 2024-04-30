@@ -1,7 +1,7 @@
 .event-box, .transportation-box, .living-box {
     width: 300px;
     height: auto;
-    border: 1px solid rgb(233, 233, 233);
+    /* border: 1px solid rgb(185, 183, 183); */
     border-radius: 16px;
     margin-bottom: 20px;
     /* margin-left: 30px; */
@@ -10,7 +10,8 @@
 }
 
 .event-box {
-    border: 1px solid rgba(233, 216, 71);
+    border: 2px solid rgb(214, 198, 49);
+    background-color: rgb(233, 229, 189);
 }
 
 .transportation-box {
@@ -59,4 +60,9 @@
 
 .timeline-box-cost{
     margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.timeline-box-category {
+    margin-bottom: 8px;
 }
