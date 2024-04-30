@@ -33,11 +33,14 @@ When clicking on a specific itinerary, will display information on transportatio
 
 
 
-## Technologies and Technical Challenges
-- MERN 
-  - Mongo, Express, React, NodeJS
-- D3 implementation
-  - Globe, hover feature inside the itinerary to show more detail (calendars)
+## Technologies
+
+Compass was primarily built with MERN stack which includes:
+- MongoDB
+- Express
+- React
+- NodeJS
+
 
 
 
@@ -48,14 +51,21 @@ When clicking on a specific itinerary, will display information on transportatio
   - Scrollable timeline
 - Itineraries
   - Users are able to Like/Follow/Favorite 
-- Possible 3rd party integration
-  - Yelp, Google Maps, AI Integration (ChatGPT)
-- Search that interacts with 3rd party integration
-  - Index, search, filter, show 
+
+
 
 
 
 ## Contributors
-Caroline Zhang, David Lee, Jerry Wang, Jhon Salazar
+- Caroline Zhang
+- David Lee
+- Jerry Wang
+- Jhon Salazar
+
+## Future features
+- Search that interacts with 3rd party integration
+  - Index, search, filter, show
+  - Possible 3rd party integration
+  - Yelp, Google Maps, AI Integration (ChatGPT)
 
 
