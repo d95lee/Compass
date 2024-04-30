@@ -22,7 +22,7 @@ const singleFileUpload = async ({ file, isPublic = false }) => {
     try {
       const parallelUploadS3 = new Upload({ client, params });
       parallelUploadS3.on("httpUploadProgress", (progress) =>
-        // console.log(progress)
+        console.log(progress)
       );
       const result = await parallelUploadS3.done();
   

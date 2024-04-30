@@ -50,14 +50,14 @@ nav {
 }
 
 .signup-button:hover, .login-button:hover,
-.create-button:hover, .navbar-itineraries-text:hover {
+.create-button:hover, .navbar-itineraries-text:hover,
+.navbar-add-icon:hover {
     cursor: pointer;
     text-decoration: underline;
 }
 
 .create-button {
     margin-bottom: -15px;
-    margin-right: -30px;
 }
 
 .logo {
@@ -74,11 +74,16 @@ nav {
 }
 
 .username-text {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
 }
 
 .navbar-add-icon {
     margin-top: -16px;
-    margin-left: -30px;
+    width: 45px;
+    height: 45px;
+}
+
+.navbar-username-text {
+    color: white;
+    margin-bottom: 0;
 }
