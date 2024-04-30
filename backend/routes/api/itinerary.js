@@ -11,12 +11,13 @@ const {findObjById} = require('../../utils/itineraryHelper')
 const validateEventInput = require('../../validations/event');
 const validateTransportationInput = require('../../validations/transportation');
 const validateLivingInput = require('../../validations/living');
+const { multipleFilesUpload, multipleMulterUpload } = require("../../awsS3");
 
 
 router.get('/', async (req, res) => {
     try {
       const itineraries = await Itinerary.find()
-                                .populate("author", "_id username")
+                                .populate("author", "_id username profileImageUrl")
                                 .sort({ createdAt: -1 });
       return res.json(itineraries);
     }
@@ -39,7 +40,7 @@ router.get('/', async (req, res) => {
     try {
       const itineraries = await Itinerary.find({ author: user._id })
                                 .sort({ createdAt: -1 })
-                                .populate("author", "_id username");
+                                .populate("author", "_id username profileImageUrl");
       return res.json(itineraries);
     }
     catch(err) {
@@ -51,7 +52,7 @@ router.get('/', async (req, res) => {
   router.get('/:id', async (req, res, next) => {
     try {
       const itinerary = await Itinerary.findById(req.params.id)
-                               .populate("author", "_id username");
+                               .populate("author", "_id username profileImageUrl");
       return res.json(itinerary);
     }
     catch(err) {
@@ -63,17 +64,19 @@ router.get('/', async (req, res) => {
   });
 
 
-  router.post('/', requireUser, async (req, res, next) => {
+  router.post('/', multipleMulterUpload("images"), requireUser, async (req, res, next) => {
+    const imageUrls = await multipleFilesUpload({ files: req.files, isPublic: true });
     try {
       const newItinerary = new Itinerary({
         author: req.user._id,
         title: req.body.title,
+        imageUrls,
         description: req.body.description,
         country: req.body.country
       });
 
       let itinerary = await newItinerary.save();
-      itinerary = await itinerary.populate('author', '_id username');
+      itinerary = await itinerary.populate('author', '_id username profileImageUrl');
       return res.json(itinerary);
     }
     catch(err) {
@@ -98,7 +101,7 @@ router.get('/', async (req, res) => {
         updateItinerary.events.push(newEvent)
         try{
           let itinerary = await updateItinerary.save()
-          itinerary = await itinerary.populate('author', '_id username');
+          itinerary = await itinerary.populate('author', '_id username profileImageUrl');
           return res.json(itinerary)
 
         }
@@ -134,7 +137,7 @@ router.get('/', async (req, res) => {
         updateItinerary.livings.push(newLiving)
         try{
           let itinerary = await updateItinerary.save()
-          itinerary = await itinerary.populate('author', '_id username');
+          itinerary = await itinerary.populate('author', '_id username profileImageUrl');
           return res.json(itinerary)
 
         }
@@ -169,7 +172,7 @@ router.get('/', async (req, res) => {
         updateItinerary.transportations.push(newTransportation)
         try{
           let itinerary = await updateItinerary.save()
-          itinerary = await itinerary.populate('author', '_id username');
+          itinerary = await itinerary.populate('author', '_id username profileImageUrl');
           return res.json(itinerary)
 
         }
@@ -191,7 +194,7 @@ router.get('/', async (req, res) => {
         const updateItinerary = await Itinerary.findByIdAndUpdate(req.params.id,
             { title: req.body.title, description: req.body.description, country: req.body.country }, { new: true })
           let itinerary = await updateItinerary.save()
-          itinerary = await itinerary.populate('author', '_id username');
+          itinerary = await itinerary.populate('author', '_id username profileImageUrl');
           return res.json(itinerary)
         }
         catch (err) {
@@ -225,7 +228,7 @@ router.get('/', async (req, res) => {
             category: req.body.category,
             cost: req.body.cost};
           let itinerary = await updateItinerary.save()
-          itinerary = await itinerary.populate('author', '_id username');
+          itinerary = await itinerary.populate('author', '_id username profileImageUrl');
           return res.json(itinerary)
         } catch(err){
           next(err)
@@ -263,7 +266,7 @@ router.patch('/:id/transportations/:transportationsId', requireUser, validateTra
             description: req.body.description,
             cost: req.body.cost };
           let itinerary = await updateItinerary.save()
-          itinerary = await itinerary.populate('author', '_id username');
+          itinerary = await itinerary.populate('author', '_id username profileImageUrl');
           return res.json(itinerary)
         } catch(err){
           next(err)
@@ -300,7 +303,7 @@ router.patch('/:id/livings/:livingsId', requireUser, validateLivingInput, async 
             description: req.body.description,
             cost: req.body.cost };
           let itinerary = await updateItinerary.save()
-          itinerary = await itinerary.populate('author', '_id username');
+          itinerary = await itinerary.populate('author', '_id username profileImageUrl');
           return res.json(itinerary)
         } catch(err){
           next(err)
@@ -344,7 +347,7 @@ router.patch('/:id/events/:eventsId/delete', requireUser, async (req, res, next)
         }
         itinerary.events.splice(index, 1)
         itinerary.save()
-        itinerary = await itinerary.populate('author', '_id username');
+        itinerary = await itinerary.populate('author', '_id username profileImageUrl');
         return res.json(itinerary)
     }
     catch (err) {
@@ -369,7 +372,7 @@ router.patch('/:id/events/:eventsId/delete', requireUser, async (req, res, next)
         }
         itinerary.livings.splice(index, 1)
         itinerary.save()
-        itinerary = await itinerary.populate('author', '_id username');
+        itinerary = await itinerary.populate('author', '_id username profileImageUrl');
         return res.json(itinerary)
     }
     catch (err) {
@@ -394,7 +397,7 @@ router.patch('/:id/transportations/:transportationsId/delete', requireUser, asyn
         }
         itinerary.transportations.splice(index, 1)
         itinerary.save()
-        itinerary = await itinerary.populate('author', '_id username');
+        itinerary = await itinerary.populate('author', '_id username profileImageUrl');
         return res.json(itinerary)
     }
     catch (err) {

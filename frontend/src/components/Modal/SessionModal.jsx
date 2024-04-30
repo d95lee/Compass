@@ -10,11 +10,13 @@ const SessionModal = ({ modalState, setModalState }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
+    const [image, setImage] = useState(null);
+
 
     const handleSubmit = e => {
         e.preventDefault();
         if (modalState === 'signup') {
-            dispatch(signup({ email, username, password}))
+            dispatch(signup({ email, username, image, password}))
                 .then(() => setModalState(null))
         } else {
             dispatch(login({ email, password }))
@@ -27,6 +29,8 @@ const SessionModal = ({ modalState, setModalState }) => {
         dispatch(login({email:"demo-user@appacademy.io", password: "starwars"}))
         .then(()=>setModalState(null))
     }
+
+    const updateFile = e => setImage(e.target.files[0]);
 
     const formMode = () => {
         if (modalState === 'signup') {
@@ -54,6 +58,10 @@ const SessionModal = ({ modalState, setModalState }) => {
                             value={password}
                             onChange={e => setPassword(e.target.value)}
                         />
+                        <label>
+                            Profile Image
+                            <input type="file" accept=".jpg, .jpeg, .png" onChange={updateFile} />
+                        </label>
                         <input className='click' type="submit" value={modalState} />
                     </form>
                 </div>

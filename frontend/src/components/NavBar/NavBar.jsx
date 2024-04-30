@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './NavBar.css';
 import { logout } from '../../store/session';
 import logo from '../../assets/compass.png';
+import add_icon from '../../assets/add_icon2.png';
 import { useState } from 'react';
 import SessionModal from '../Modal/SessionModal';
 import CreateItineraryModal from '../Modal/CreateItineraryModal';
@@ -51,13 +52,19 @@ function NavBar () {
 
       <nav>
         <div className='navbar-left'>
-          <Link to={'/'}><img className='logo' src={logo}/></Link>
+            <Link to={'/'}><img className='logo' src={logo}/></Link>
+            <Link to={'/itinerary'}><div className='navbar-itineraries-text'>Itineraries</div></Link>
+        </div>
+        <div className='navbar-mid'>
+       
+        {currentUser ?
+            (<img src={add_icon} className='navbar-add-icon' onClick={() => setModalState('create')}/>) :
+            (<img src={add_icon} className='navbar-add-icon' onClick={() => setModalState('login')}/>)
+          }
           {currentUser ?
             (<div className='create-button' onClick={() => setModalState('create')}><span>Create</span></div>) :
             (<div className='create-button' onClick={() => setModalState('login')}><span>Create</span></div>)
           }
-
-          <Link to={'/itinerary'}><div className='navbar-itineraries-text'>&nbsp;&nbsp;&nbsp;&nbsp;Itineraries</div></Link>
         </div>
 
         <div className="links-auth">

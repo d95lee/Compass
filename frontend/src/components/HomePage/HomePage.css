@@ -53,6 +53,7 @@
 .homepage-socials {
     padding: 20px;
     margin-top: -25px;
+    font-size: 12px;
 }
 
 .homepage-socials img {
@@ -61,25 +62,34 @@
 }
 
 .homepage-socials-box {
-    border: 2px dotted black;
+    border: 2px dotted grey;
     border-radius: 5px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     padding: 10px;
-    width: 800px;
+    width: 600px;
+    height: 70px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-top: 15px;
 }
 
 
-/* .homepage-socials-box-left {
+.homepage-socials-box-left {
+    width: 150px;
+    margin-top: -10px;
 }
+
 
 .homepage-socials-box-mid {
+    margin-top: -10px;
+    width: 300px;
 }
 
-.homepage-socials-box-right {
-} */
+/* .homepage-socials-box-right {
+} 
 
+.socials-description {
+} */
 
 /* .linkedin-logo {
     width: 30px;
