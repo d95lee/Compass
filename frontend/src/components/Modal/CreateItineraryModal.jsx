@@ -12,6 +12,8 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
     const [images, setImages] = useState([]);
     const [imageUrls, setImageUrls] = useState([]);
     const fileRef = useRef(null);
+    const [country, setCountry] = useState('')
+    const [errors, setErrors]= useState([])
 
     useEffect(() => {
         dispatch(fetchItineraries())
@@ -20,12 +22,16 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        dispatch(createItinerary({ title, description }, images ))
+        dispatch(createItinerary({ title, description, country }, images ))
             .then((data) => navigate(`itinerary/form/${data._id}`))
             .then(() => setModalState(null))
             .then(() => setImages([]))
             .then(() => setImageUrls([]))
             .then(() => fileRef.current.value = null)
+            .catch(async res =>{
+                let data = await res.json();
+                setErrors(data);
+              });
     };
 
     const updateFiles = async e => {
@@ -39,13 +45,14 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
             fileReader.readAsDataURL(file);
             fileReader.onload = () => {
               urls[index] = fileReader.result;
-              if (++filesLoaded === files.length) 
+              if (++filesLoaded === files.length)
                 setImageUrls(urls);
             }
           });
         }
         else setImageUrls([]);
       }
+      const hasErrors = Object.values(errors).length !== 0;
 
 
     if (modalState === 'create') {
@@ -56,18 +63,34 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
                         <div className='create-form-header'>Start Planning Your Trip</div>
                         <div className='create-form-title'>Create Your Itinerary</div >
                         <form onSubmit={handleSubmit}>
-                            <input
-                                className='create-itinerary-input'
-                                placeholder='Title for your itinerary'
-                                value={title}
-                                onChange={e => setTitle(e.target.value)}
-                            />
-                            <input
-                                className='create-itinerary-input'
-                                placeholder='Description'
-                                value={description}
-                                onChange={e => setDescription(e.target.value)}
-                            />
+                            <label>
+                                Title:
+                                <input
+                                    className='create-itinerary-input'
+                                    placeholder='Title for your itinerary'
+                                    value={title}
+                                    onChange={e => setTitle(e.target.value)}
+                                />
+                            </label>
+                            <div className="event-modal-input-error">{hasErrors && errors.errors.title ? errors.errors.title : ''}</div>
+
+                            <label>
+                                Description:
+                                <input
+                                    className='create-itinerary-input'
+                                    placeholder='Description'
+                                    value={description}
+                                    onChange={e => setDescription(e.target.value)}
+                                />
+                            </label>
+                            <label >
+                                Country:
+                                <input className='create-itinerary-input'
+                                        placeholder='Country'
+                                        value={country}
+                                        onChange={e => setCountry(e.target.value)} />
+                            </label>
+                            <div className="event-modal-input-error">{hasErrors && errors.errors.country ? errors.errors.country : ''}</div>
                             <label>
                                 Images to Upload
                                 <input

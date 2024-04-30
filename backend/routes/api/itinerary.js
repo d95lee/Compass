@@ -12,6 +12,7 @@ const validateEventInput = require('../../validations/event');
 const validateTransportationInput = require('../../validations/transportation');
 const validateLivingInput = require('../../validations/living');
 const { multipleFilesUpload, multipleMulterUpload } = require("../../awsS3");
+const validateItineraryInput = require('../../validations/itinerary');
 
 
 router.get('/', async (req, res) => {
@@ -64,7 +65,7 @@ router.get('/', async (req, res) => {
   });
 
 
-  router.post('/', multipleMulterUpload("images"), requireUser, async (req, res, next) => {
+  router.post('/', multipleMulterUpload("images"), requireUser, validateItineraryInput, async (req, res, next) => {
     const imageUrls = await multipleFilesUpload({ files: req.files, isPublic: true });
     try {
       const newItinerary = new Itinerary({
@@ -189,7 +190,7 @@ router.get('/', async (req, res) => {
   });
 
   // Updating the meta data (title and description of the outermost itinerary object)
-  router.patch('/:id', requireUser, async (req, res, next) => {
+  router.patch('/:id', requireUser, validateItineraryInput, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findByIdAndUpdate(req.params.id,
             { title: req.body.title, description: req.body.description, country: req.body.country }, { new: true })

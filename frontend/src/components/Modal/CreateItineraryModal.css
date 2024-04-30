@@ -3,7 +3,7 @@
     height: 100vh;
     width: 100vw;
     background-color: rgba(25,25,25,.6);
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     z-index: 10;
@@ -12,7 +12,7 @@
 }
 
 .create-modal-content {
-    height: 30vh;
+    height: 50%;
     width: 35vw;
     position: absolute;
     top: 25vh;
@@ -50,5 +50,5 @@
     border: none;
     cursor: pointer;
     background-color: rgba(239, 232, 101, 0.871);
-    
+
 }
