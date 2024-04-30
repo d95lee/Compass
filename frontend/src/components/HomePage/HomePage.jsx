@@ -29,6 +29,7 @@ const HomePage = ()=> {
 
     const carolineItinerary = useSelector(selectItineraryByUser(caroline))
     const davidItinerary = useSelector(selectItineraryByUser(david))
+    console.log(davidItinerary);
     const jerryItinerary = useSelector(selectItineraryByUser(jerry))
     const jhonItinerary = useSelector(selectItineraryByUser(jhon))
 
@@ -54,11 +55,11 @@ const HomePage = ()=> {
                       <div className='homepage-socials-box'>
                         <div className='homepage-socials-box-left'>
                           <p>Name: <b>Caroline Zhang</b></p>
-                          <p>Itinerary: <b>{carolineItinerary?.title}</b></p>
+                          <p>Itinerary: <b>{carolineItinerary[0]?.title}</b></p>
                         </div>
                         <div className='homepage-socials-box-mid'>
-                          <p>Description: <b>{carolineItinerary?.description}</b></p>
-                          <p>Country: <b>{carolineItinerary?.country}</b></p>
+                          <p>Description: <b>{carolineItinerary[0]?.description}</b></p>
+                          <p>Country: <b>{carolineItinerary[0]?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
                           <a href="https://www.linkedin.com/in/carolineczhang/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
@@ -69,11 +70,11 @@ const HomePage = ()=> {
                       <div className='homepage-socials-box'>
                         <div className='homepage-socials-box-left'>
                           <p>Name: <b>David Lee</b></p>
-                          <p>Itinerary: <b>{davidItinerary?.title}</b></p>
+                          <p>Itinerary: <b>{davidItinerary[0]?.title}</b></p>
                         </div>
                         <div className='homepage-socials-box-mid'>
-                          <p>Description: <b>{davidItinerary?.description}</b></p>
-                          <p>Country: <b>{davidItinerary?.country}</b></p>
+                          <p>Description: <b>{davidItinerary[0]?.description}</b></p>
+                          <p>Country: <b>{davidItinerary[0]?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
                         <a href="https://www.linkedin.com/in/david-lee-49959a20a/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
@@ -84,11 +85,11 @@ const HomePage = ()=> {
                       <div className='homepage-socials-box'>
                         <div className='homepage-socials-box-left'>
                           <p>Name: <b>Jerry Wang</b></p>
-                          <p>Itinerary: <b>{jerryItinerary?.title}</b></p>
+                          <p>Itinerary: <b>{jerryItinerary[0]?.title}</b></p>
                         </div>
                         <div className='homepage-socials-box-mid'>
-                          <p>Description: <b>{jerryItinerary?.description}</b></p>
-                          <p>Country: <b>{jerryItinerary?.country}</b></p>
+                          <p>Description: <b>{jerryItinerary[0]?.description}</b></p>
+                          <p>Country: <b>{jerryItinerary[0]?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
                         <a href="https://www.linkedin.com/in/zwang01/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
@@ -99,11 +100,11 @@ const HomePage = ()=> {
                       <div className='homepage-socials-box'>
                         <div className='homepage-socials-box-left'>
                           <p>Name: <b>Jhon Salazar</b></p>
-                          <p>Itinerary: <b>{jhonItinerary?.title}</b></p>
+                          <p>Itinerary: <b>{jhonItinerary[0]?.title}</b></p>
                         </div>
                         <div className='homepage-socials-box-mid'>
-                          <p>Description: <b>{jhonItinerary?.description}</b></p>
-                          <p>Country: <b>{jhonItinerary?.country}</b></p>
+                          <p>Description: <b>{jhonItinerary[0]?.description}</b></p>
+                          <p>Country: <b>{jhonItinerary[0]?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
                         <a href="https://www.linkedin.com/in/jhon-salazar-655b24208/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
