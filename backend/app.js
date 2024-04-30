@@ -49,6 +49,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/csrf', csrfRouter);
 app.use('/api/itinerary', itineraryRouter)
 app.use('/api/likes', likeRouter)
+console.log(isProduction)
 
 if (isProduction) {
   const path = require('path');
