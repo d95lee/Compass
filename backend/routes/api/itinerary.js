@@ -11,6 +11,7 @@ const {findObjById} = require('../../utils/itineraryHelper')
 const validateEventInput = require('../../validations/event');
 const validateTransportationInput = require('../../validations/transportation');
 const validateLivingInput = require('../../validations/living');
+const { multipleFilesUpload, multipleMulterUpload } = require("../../awsS3");
 
 
 router.get('/', async (req, res) => {
@@ -63,11 +64,13 @@ router.get('/', async (req, res) => {
   });
 
 
-  router.post('/', requireUser, async (req, res, next) => {
+  router.post('/', multipleMulterUpload("images"), requireUser, async (req, res, next) => {
+    const imageUrls = await multipleFilesUpload({ files: req.files, isPublic: true });
     try {
       const newItinerary = new Itinerary({
         author: req.user._id,
         title: req.body.title,
+        imageUrls,
         description: req.body.description,
         country: req.body.country
       });

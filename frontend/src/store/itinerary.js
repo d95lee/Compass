@@ -65,10 +65,17 @@ export const fetchItineraries = () => async dispatch => {
 
 
 //Create, update, delete
-export const createItinerary = (itineraryData) => (dispatch) => (
-    jwtFetch(`/api/itinerary`, {
+export const createItinerary = (itineraryData, images) => (dispatch) => {
+    const formData = new FormData();
+    formData.append("title", itineraryData.title)
+    formData.append("description", itineraryData.description);
+    formData.append("country", itineraryData.country)
+    // formData.append("image", image)
+    Array.from(images).forEach(image => formData.append("images", image));
+    return jwtFetch(`/api/itinerary`, {
         method: "POST",
-        body: JSON.stringify(itineraryData)
+        body: formData
+        // body: JSON.stringify(itineraryData)
     })
     .then(res => {
         if(res.ok){
@@ -78,10 +85,10 @@ export const createItinerary = (itineraryData) => (dispatch) => (
         }
     })
     .then(data => {
-        dispatch(newItinerary(data))
+        dispatch(receiveItinerary(data))
         return data
     })
-)
+} // changed from parenthesis to brackets
 
 export const updateItinerary = (itineraryData) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryData._id}`, {
@@ -130,7 +137,6 @@ const itineraryReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ITINERARY:
-        // console.log("action.itinerary:", action.itineraryId)
         nextState[action.itinerary._id] = action.itinerary;
             return nextState
         case RECEIVE_ITINERARIES:
