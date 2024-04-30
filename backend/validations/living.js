@@ -6,7 +6,7 @@ const handleValidationErrors = require('./handleValidationErrors');
 const validateLivingInput = [
     check('livingTitle')
         .exists({ checkFalsy: true })
-        .withMessage('Living Title is invalid'),
+        .withMessage('Living accomodation title can\'t be blank'),
     check('startTime')
         .exists({ checkFalsy: true })
         .withMessage('Start time can\'t be blank')

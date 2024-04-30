@@ -1,4 +1,5 @@
-.event-form-box {
+.event-form-box, .living-form-box, .transportation-form-box
+ {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,6 +51,10 @@
     fill: #9c9696;
 }
 
+.timeline-event-edit-button, .timeline-event-delete-button {
+    cursor: pointer;
+}
+
 
 /* --------- EVENT-FORM-MODAL styling here --------- */
 .add-event-modal-content {
@@ -86,11 +91,21 @@
 
 .event-modal-close-button {
     position: relative;
-    top: 10px;
-    right: 15px;
+    top: 12px;
+    right: -150px;
+    /* top: 10px;
+    right: 15px; */
 }
+
 .event-modal-close-button:hover {
     cursor: pointer;
+}
+
+.event-form-modal-title {
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-size: 18px;
 }
 
 .event-modal-input-label {
@@ -122,6 +137,10 @@
    border: none;
    margin-top: 7px;
    margin-bottom: 15px;
+}
+
+.timeline-form-input-submit:hover {
+    cursor: pointer;
 }
 
 .event-modal-input-box {

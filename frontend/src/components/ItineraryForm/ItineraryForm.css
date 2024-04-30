@@ -24,6 +24,20 @@
     background-color: rgb(233, 233, 233);
 }
 
+.itinerary-delete-button-box {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 300;
+    width: 125px;
+    height: 30px;
+    color: white;
+    background-color: rgb(248, 136, 136);
+}
+
 /* --------- FORM CONTENTS --------- */
 .edit-contents {
     display: flex;

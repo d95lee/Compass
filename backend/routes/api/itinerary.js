@@ -118,7 +118,7 @@ router.get('/', async (req, res) => {
 
 
    // Creating livings
-  router.patch('/:id/livings', requireUser, async (req, res, next) => {
+  router.patch('/:id/livings', requireUser, validateLivingInput, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findById(req.params.id)
         const newLiving = new Living({
@@ -152,7 +152,7 @@ router.get('/', async (req, res) => {
 
 
    // Creating transportations
-  router.patch('/:id/transportations', requireUser, async (req, res, next) => {
+  router.patch('/:id/transportations', requireUser, validateTransportationInput, async (req, res, next) => {
     try {
         const updateItinerary = await Itinerary.findById(req.params.id)
         const newTransportation = new Transportation({

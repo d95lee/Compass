@@ -70,13 +70,12 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
         <>
             <div className="modal-background" onClick={handleClose}>
                 <div className="add-event-modal-content" onClick={e => e.stopPropagation()}>
-                    <div className="event-modal-top-area">
-                        <svg className="event-modal-close-button" fill="#000000" height="23px" width="23px" viewBox="0 0 1792 1792" onClick={handleClose}>
-                            <path d="M1082.2,896.6l410.2-410c51.5-51.5,51.5-134.6,0-186.1s-134.6-51.5-186.1,0l-410.2,410L486,300.4 c-51.5-51.5-134.6-51.5-186.1,0s-51.5,134.6,0,186.1l410.2,410l-410.2,410c-51.5,51.5-51.5,134.6,0,186.1 c51.6,51.5,135,51.5,186.1,0l410.2-410l410.2,410c51.5,51.5,134.6,51.5,186.1,0c51.1-51.5,51.1-134.6-0.5-186.2L1082.2,896.6z"></path>
-                        </svg>
-                    </div>
 
-                    <h3>{eventModalState === "Add" ? 'Add Event' : 'Edit Event'}</h3>
+                    <svg className="event-modal-close-button" fill="#000000" height="23px" width="23px" viewBox="0 0 1792 1792" onClick={handleClose}>
+                        <path d="M1082.2,896.6l410.2-410c51.5-51.5,51.5-134.6,0-186.1s-134.6-51.5-186.1,0l-410.2,410L486,300.4 c-51.5-51.5-134.6-51.5-186.1,0s-51.5,134.6,0,186.1l410.2,410l-410.2,410c-51.5,51.5-51.5,134.6,0,186.1 c51.6,51.5,135,51.5,186.1,0l410.2-410l410.2,410c51.5,51.5,134.6,51.5,186.1,0c51.1-51.5,51.1-134.6-0.5-186.2L1082.2,896.6z"></path>
+                    </svg>
+
+                    <div className="event-form-modal-title">{eventModalState === "Add" ? 'Add Event' : 'Edit Event'}</div>
                     <form className="event-form-modal" onSubmit={handleSubmit}>
                         
                         <label className="event-modal-input-box">
@@ -169,7 +168,6 @@ const EventForm = ({itinerary, event, eventModalState, setEventModalState, setEv
                         {/* {errors?.map(error => <p>{error}</p>)} */}
                         <input className='timeline-form-input-submit' type="submit" value={"Save"} />
                     </form>
-                    {errors && errors.map((err, idx) => (<p key={idx}>{err}</p>))}
                 </div>
             </div>
         </>

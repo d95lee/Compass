@@ -6,13 +6,13 @@ const handleValidationErrors = require('./handleValidationErrors');
 const validateTransportationInput = [
     check('transportationTitle')
       .exists({ checkFalsy: true })
-      .withMessage('Transportation Title can\'t be blank'),
+      .withMessage('Transportation title can\'t be blank'),
     check('startLocation')
       .exists({ checkFalsy: true })
-      .withMessage('Start Location can\'t be blank'),
+      .withMessage('Start location can\'t be blank'),
     check('endLocation')
         .exists({ checkFalsy: true })
-        .withMessage('End Location can\'t be blank'),
+        .withMessage('End location can\'t be blank'),
     check('startTime')
         .exists({ checkFalsy: true })
         .withMessage('Start time can\'t be blank')

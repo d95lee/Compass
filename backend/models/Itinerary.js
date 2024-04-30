@@ -15,14 +15,14 @@ const itinerarySchema = new Schema({
     },
     title: {
         type: String,
-        require: true
+        required: true
     },
     description: {
         type: String
     },
     country: {
       type: String,
-      require: true
+      required: true
      },
     imageUrls: {
       type: [String],

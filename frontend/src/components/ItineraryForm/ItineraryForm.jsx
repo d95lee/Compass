@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './ItineraryForm.css'
-import { useParams, Link } from 'react-router-dom';
-import { fetchItinerary, selectItinerary } from '../../store/itinerary';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { deleteItinerary, fetchItinerary, selectItinerary } from '../../store/itinerary';
 import { useEffect, useState } from 'react';
 import BasicModal from './BasicModal'
 import EventBox from './EventBox/EventBox';
@@ -11,6 +11,7 @@ import { removeGlobe } from '../Globe/Globe';
 
 const ItineraryForm = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { itineraryId } = useParams();
     const itinerary = useSelector(selectItinerary(itineraryId));
     const [basicModalState, setBasicModalState] = useState(false)
@@ -20,6 +21,12 @@ const ItineraryForm = () => {
     }, [dispatch, itineraryId])
 
     removeGlobe()
+
+    const handleDelete = () => {
+        dispatch(deleteItinerary(itineraryId))
+            .then(() => navigate(`/itinerary`))
+    }
+
     return (
        <>
         <div className='edit-form-header'>
@@ -30,6 +37,11 @@ const ItineraryForm = () => {
                     <div className='itinerary-view-button'>View Itinerary</div>
                 </div>
             </Link>
+
+            <div className='itinerary-delete-button-box' onClick={handleDelete}>
+                <div className='itinerary-delete-button'>Delete Itinerary</div>
+            </div>
+
         </div>
 
         <div className='edit-contents'>

@@ -104,8 +104,8 @@ export const deleteItinerary = (itineraryId) => (dispatch) => (
     jwtFetch(`/api/itinerary/${itineraryId}`, {
         method: "DELETE",
     })
-    .then(data => {
-        dispatch(removeItinerary(data))
+    .then(() => {
+        dispatch(removeItinerary(itineraryId))
     })
 )
 
@@ -135,6 +135,9 @@ const itineraryReducer = (state = {}, action) => {
             return nextState
         case RECEIVE_ITINERARIES:
             action.itineraries.map(itinerary => nextState[itinerary._id] = itinerary);
+            return nextState
+        case REMOVE_ITINERARY:
+            delete nextState[action.itineraryId]
             return nextState
         default:
             return state;

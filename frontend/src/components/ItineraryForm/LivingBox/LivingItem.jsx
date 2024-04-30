@@ -23,9 +23,9 @@ const LivingItem = ({living, setLivingModalState, setLiving})=>{
 
                 <div className='timeline-box-location'>Location: {living.location}</div>
 
-                <div className='timeline-box-time'>Start Date: {living.startDate.slice(0, 10)}</div>
+                <div className='timeline-box-time'>Start Date: {living.startDate ? living.startDate.slice(0, 10) : ''}</div>
                 <div className='location-box-time'>Start Time: {living.startTime}</div>
-                <div className='timeline-box-time'>End Date: {living.endDate.slice(0, 10)}</div>
+                <div className='timeline-box-time'>End Date: {living.endDate ? living.endDate.slice(0, 10) : ''}</div>
                 <div className='location-box-time'>End Time: {living.endTime}</div>
 
                 <div className='timeline-box-cost'>Cost: ${living.cost}</div>
