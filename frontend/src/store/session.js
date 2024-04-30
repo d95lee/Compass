@@ -1,3 +1,4 @@
+import { createSelector } from 'reselect';
 import jwtFetch from './jwt';
 
 const RECEIVE_CURRENT_USER = "session/RECEIVE_CURRENT_USER";
@@ -38,7 +39,7 @@ export const startSession = (userInfo, route) => async dispatch => {
   formData.append("username", username);
   formData.append("password", password);
   formData.append("email", email);
-  
+
   if (image) formData.append("image", image);
 
   try {
@@ -68,6 +69,11 @@ export const getCurrentUser = () => async dispatch => {
   const user = await res.json();
   return dispatch(receiveCurrentUser(user));
 };
+
+///selector for current user
+
+export const selectSession = state => state.session
+export const selectCurrentUser = createSelector([selectSession], session=> session.user)
 
 const initialState = {
   user: undefined
