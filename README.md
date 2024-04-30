@@ -1,6 +1,44 @@
-## Background and Overview
-- When traveling, it is challenging figuring out how to have the most productive/fun trip possible. Finding which restaurants, understanding the transportation system and which activities are worthwhile are questions people ask themselves whenever visiting a new city.
-- Compass is an app primarily built with the MERN stack where users can share, compare, and plan itineraries to facilitate the planning stages when traveling to new cities.
+# Welcome to Compass
+
+Compass is a social media website where users can interact with each other by creating, sharing and interacting with itineraries in order to plan future trips or share past experiences. This allows for people to connect  and make the best decisions depending on the users needs and wants, taking into account the location, price and type of trip (backpacking, luxury travel, exploring, etc.)
+
+
+## Table of contents
+
+1. Features
+2. Technologies
+3. Functionality
+4. Contributors
+5. Future Features
+
+
+## Features
+Users will have the ability to create or log in to their account via modal once entering the home page.
+
+![image](https://github.com/d95lee/Compass/assets/112995904/c2b6167d-2859-43b7-b9fa-b53f72c0aab4)
+
+
+Whether logged in or logged out, users can preview itineries.
+
+![image](https://github.com/d95lee/Compass/assets/112995904/0a22bae6-8bb3-4d12-b458-ac34c5b4561f)
+
+User profile shows like or created itineraries as well as an optional bio.
+
+![image](https://github.com/d95lee/Compass/assets/112995904/cbdfe684-2dca-41e5-950a-ca0d27ffa9e5)
+
+When clicking on a specific itinerary, will display information on transportation, living and events
+
+![image](https://github.com/d95lee/Compass/assets/112995904/7cb43403-a77f-4e8e-8608-3f371a2bbe1f)
+
+
+
+
+## Technologies and Technical Challenges
+- MERN 
+  - Mongo, Express, React, NodeJS
+- D3 implementation
+  - Globe, hover feature inside the itinerary to show more detail (calendars)
+
 
 
 ## Functionality and MVP
@@ -16,30 +54,8 @@
   - Index, search, filter, show 
 
 
-## Technologies and Technical Challenges
-- MERN 
-  - Mongo, Express, React, NodeJS
-- D3 implementation
-  - Globe, hover feature inside the itinerary to show more detail (calendars)
 
-## Group Members & Work Breakdown
+## Contributors
 Caroline Zhang, David Lee, Jerry Wang, Jhon Salazar
 
-April 15th - Day 1 
-- User Auth
-- Setting up database
-- Connecting DB to frontend
 
-April 16th - Day 2
-- Backend DB design implementation
-
-April 17th - Day 3
-- Itinerary features 
-
-April 18th - Day 4
-- Itinerary features (continued)
-
-April 19th - Day 5
-- Move on to API if itinerary features are done
-
-April 20th - Day 6
