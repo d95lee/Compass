@@ -7,6 +7,7 @@ import "./ItineraryShow.css"
 import TimelineBox from "./TimelineBox"
 import editbutton from '../../assets/edit-button.png'
 import { likeItinerary, unlikeItinerary } from "../../store/like"
+import { selectCurrentUser } from "../../store/session"
 
 
 const ItineraryShow = () => {
@@ -22,11 +23,15 @@ const ItineraryShow = () => {
     const itinerary = useSelector(selectItinerary(itineraryId))
 
     const userId = itinerary?.author._id
+    const user = useSelector(selectUser(userId));
+    const currentUser = useSelector(selectCurrentUser)
+    const currentUserDetails = useSelector(selectUser(currentUser._id))
+
     useEffect(() => {
         dispatch(fetchUser(userId));
-    }, [dispatch, userId])
+        dispatch(fetchUser(currentUser._id))
+    }, [dispatch, userId, currentUser])
 
-    const user = useSelector(selectUser(userId));
 
     // useEffect to check the like status of the current itinerary
     useEffect(() =>{
@@ -42,28 +47,29 @@ const ItineraryShow = () => {
             return liked;
         }
 
-        setLiked(likeStatus(user, itineraryId));
+        setLiked(likeStatus(currentUserDetails, itineraryId));
 
-    }, [itineraryId, user, itinerary])
+    }, [itineraryId, currentUserDetails, itinerary])
 
     // helper function that takes (user, itineraryId)- returns boolean whether user has liked the itinerary or not
 // when you fetch the user object,
 
     // use timeline chronological sort on array from date key
-    const handleLike = () => {
+    const handleLike = e => {
         // on click - like it or unlike it
+        e.preventDefault()
         if (!liked){
-           dispatch(likeItinerary(itineraryId));
-           setHeartColor('#ff0000');
+           dispatch(likeItinerary(itineraryId))
+            .then(()=>setHeartColor('#ff0000'));
         } else {
             let likeIdValue;
-            user.likes.forEach(like =>{
+            currentUserDetails.likes.forEach(like =>{
                 if (like.itinerary === itineraryId) {
                     likeIdValue = like._id
                 }
             })
-            dispatch(unlikeItinerary(likeIdValue, itineraryId));
-            setHeartColor('#000000');
+            dispatch(unlikeItinerary(likeIdValue, itineraryId))
+                .then(()=>setHeartColor('#000000'))
         }
 
     }
