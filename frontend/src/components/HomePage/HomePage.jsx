@@ -1,4 +1,4 @@
-import newGlobe from '../Globe/Globe.js';
+// import newGlobe from '../Globe/Globe.js';
 import './HomePage.css';
 import { useEffect } from 'react';
 import linkedin from '../../assets/linkedin.png'
@@ -7,14 +7,15 @@ import logo from '../../assets/compass.png';
 import { fetchItineraries , selectItineraryByUser } from '../../store/itinerary.js';
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUsers, selectUserByUsername } from '../../store/user.js';
+import { Link } from 'react-router-dom';
 
 
 const HomePage = ()=> {
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    newGlobe()
-  }, [])
+  // useEffect(() => {
+  //   newGlobe()
+  // }, [])
 
   useEffect(() => {
     dispatch(fetchItineraries())
@@ -43,23 +44,25 @@ const HomePage = ()=> {
         <div className='homepage-container'>
             <div className='homepage-left-right-container'>
                 <div className='homepage-right'>
+                </div>
+
+                <div className='homepage-left'>
                     <div className='homepage-right-container'>
                         <div className='homepage-right-title'>
-                            <h1 className='homepage-right-title-welcome' >Welcome to C<img className='homepage-logo' src={logo}/>mpass</h1>
-                            <h2 className='homepage-right-title-plan'>Plan your next trip here</h2>
+                            <h1 className='homepage-right-title-welcome' >Welcome to C<img className='homepage-logo' src={logo}/>mpass.</h1>
+                            <h2 className='homepage-right-title-plan'>Plan your next trip here.</h2>
+                            <Link to={'/itinerary'}><button className='homepage-explore-button'>Explore</button></Link>
                         </div>
-                    </div>
 
-
-                    <div className='homepage-socials'>
+                        <div className='homepage-socials'>
                       <div className='homepage-socials-box'>
                         <div className='homepage-socials-box-left'>
-                          <p>Name: <b>Caroline Zhang</b></p>
-                          <p>Itinerary: <b>{carolineItinerary[0]?.title}</b></p>
+                          <p><b>Caroline Zhang</b></p>
+                          <p><b>{carolineItinerary[0]?.title}</b></p>
                         </div>
                         <div className='homepage-socials-box-mid'>
-                          <p>Description: <b>{carolineItinerary[0]?.description}</b></p>
-                          <p>Country: <b>{carolineItinerary[0]?.country}</b></p>
+                          <p><b>{carolineItinerary[0]?.description}</b></p>
+                          <p><b>{carolineItinerary[0]?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
                           <a href="https://www.linkedin.com/in/carolineczhang/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
@@ -69,12 +72,12 @@ const HomePage = ()=> {
 
                       <div className='homepage-socials-box'>
                         <div className='homepage-socials-box-left'>
-                          <p>Name: <b>David Lee</b></p>
-                          <p>Itinerary: <b>{davidItinerary[0]?.title}</b></p>
+                          <p><b>David Lee</b></p>
+                          <p><b>{davidItinerary[0]?.title}</b></p>
                         </div>
                         <div className='homepage-socials-box-mid'>
-                          <p>Description: <b>{davidItinerary[0]?.description}</b></p>
-                          <p>Country: <b>{davidItinerary[0]?.country}</b></p>
+                          <p><b>{davidItinerary[0]?.description}</b></p>
+                          <p><b>{davidItinerary[0]?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
                         <a href="https://www.linkedin.com/in/david-lee-49959a20a/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
@@ -84,12 +87,12 @@ const HomePage = ()=> {
 
                       <div className='homepage-socials-box'>
                         <div className='homepage-socials-box-left'>
-                          <p>Name: <b>Jerry Wang</b></p>
-                          <p>Itinerary: <b>{jerryItinerary[0]?.title}</b></p>
+                          <p><b>Jerry Wang</b></p>
+                          <p><b>{jerryItinerary[0]?.title}</b></p>
                         </div>
                         <div className='homepage-socials-box-mid'>
-                          <p>Description: <b>{jerryItinerary[0]?.description}</b></p>
-                          <p>Country: <b>{jerryItinerary[0]?.country}</b></p>
+                          <p><b>{jerryItinerary[0]?.description}</b></p>
+                          <p><b>{jerryItinerary[0]?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
                         <a href="https://www.linkedin.com/in/zwang01/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
@@ -99,12 +102,12 @@ const HomePage = ()=> {
 
                       <div className='homepage-socials-box'>
                         <div className='homepage-socials-box-left'>
-                          <p>Name: <b>Jhon Salazar</b></p>
-                          <p>Itinerary: <b>{jhonItinerary[0]?.title}</b></p>
+                          <p><b>Jhon Salazar</b></p>
+                          <p><b>{jhonItinerary[0]?.title}</b></p>
                         </div>
                         <div className='homepage-socials-box-mid'>
-                          <p>Description: <b>{jhonItinerary[0]?.description}</b></p>
-                          <p>Country: <b>{jhonItinerary[0]?.country}</b></p>
+                          <p><b>{jhonItinerary[0]?.description}</b></p>
+                          <p><b>{jhonItinerary[0]?.country}</b></p>
                         </div>
                         <div className='homepage-socials-box-right'>
                         <a href="https://www.linkedin.com/in/jhon-salazar-655b24208/"><img className='linkedin-logo' src={linkedin} alt="" /></a>
@@ -112,10 +115,7 @@ const HomePage = ()=> {
                         </div>
                       </div>
                     </div>
-                </div>
-
-                <div className='homepage-left'>
-
+                    </div>
                 </div>
             </div>
         </div>

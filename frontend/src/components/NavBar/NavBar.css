@@ -29,8 +29,8 @@ nav {
     display: flex;
     width: 150px;
     justify-content:space-between;
-    margin-right: 60px;
-    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-bottom: 12px;
 }
 
 .signup-button {
@@ -51,7 +51,7 @@ nav {
 
 .signup-button:hover, .login-button:hover,
 .create-button:hover, .navbar-itineraries-text:hover,
-.navbar-add-icon:hover {
+.navbar-add-icon:hover, .homepage-explore-button:hover {
     cursor: pointer;
     text-decoration: underline;
 }
@@ -85,5 +85,25 @@ nav {
 
 .navbar-username-text {
     color: white;
-    margin-bottom: 0;
+    margin-bottom: -1px;
+}
+
+.navbar-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: -40px;
+    margin-right: 20px;
+}
+
+.username-text-container {
+    margin-bottom: 10px;
+}
+
+.navbar-profile-right {
+    
+}
+
+.navbar-profile-right-container {
+    margin-bottom: -10px;
 }

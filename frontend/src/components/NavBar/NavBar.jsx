@@ -13,6 +13,7 @@ function NavBar () {
   const currentUser = useSelector(state => !!state.session.user);
   const currentUsername = useSelector(state => state.session.user?.username)
   const currentUserId= useSelector(state => state.session.user?._id)
+  const loggedInUser = useSelector(state => state.session.user)
   const [modalState, setModalState] = useState(null);
 
   const logoutUser = e => {
@@ -29,10 +30,13 @@ function NavBar () {
       return (
         <>
           <div className='username-text-container'>
-            <span className='username-text'><Link to={`profile/${currentUserId}`}><p className='navbar-username-text'>Hello {currentUsername}</p></Link></span>
+            <span className='username-text'><Link to={`profile/${currentUserId}`}><p className='navbar-username-text'>{currentUsername}</p></Link></span>
             <button className='username-text-button' onClick={logoutUser}>
               Logout
             </button>
+          </div>
+          <div className='navbar-profile-right-container'>
+            <span className='navbar-profile-right'>{loggedInUser?.profileImageUrl && (<img className='navbar-profile-pic' src={loggedInUser.profileImageUrl}/>)}</span>
           </div>
         </>
       );
