@@ -4,35 +4,46 @@
 } */
 
 .homepage-container {
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/greece.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: -10px;
+    z-index: -1;
 }
 
 .homepage-let-right-container {
-    position: relative;
+    position: absolute;
 }
 
 .homepage-right {
     /* background-color: rgb(210, 221, 163); */
-    background: linear-gradient(90deg, rgb(225, 238, 234) 0%, rgba(198,224,215,1) 50%, rgba(210, 221, 163) 100%);
+    /* background: linear-gradient(90deg, rgb(225, 238, 234) 0%, rgba(198,224,215,1) 50%, rgba(210, 221, 163) 100%); */
     position: absolute;
     top: 0;
     right: 0;
     width: 50vw;
     height: 100vh;
+    
 }
 
 .homepage-left {
-    background-color: transparent;
+    /* background-color: transparent; */
     position: absolute;
-    top: 0;
-    left: 0;
     height: 100vh;
+    min-width: 700px;
+    display: flex;
+    align-items: center;
+    padding-left: 140px;
 }
 
 .homepage-right-title {
     margin-top: 16px;
     padding: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    margin-top: -100px;
 }
 
 .homepage-right-title-welcome {
@@ -51,9 +62,13 @@
 }
 
 .homepage-socials {
-    padding: 20px;
-    margin-top: -25px;
-    font-size: 12px;
+    /* margin-left: -50px; */
+    font-size: 10px;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
 }
 
 .homepage-socials img {
@@ -61,33 +76,81 @@
     height: 30px;
 }
 
-.homepage-socials-box {
-    border: 2px dotted grey;
-    border-radius: 5px;
-    /* margin-bottom: 15px; */
+/* .homepage-socials-box {
+    border-radius: 20px;
     padding: 10px;
-    width: 600px;
-    height: 70px;
+    width: 500px;
+    height: 130px;
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+    background-image: url('../../assets/plane_ticket.jpg');
+    background-repeat: no-repeat;
+    background-position: right -68px center;
+    background-size: 170% 188%;
+} */
+
+.homepage-socials-box {
+    border-radius: 16px;
+    padding: 10px;
+    width: 300px;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    background-image: url('../../assets/yellow_ticket.jpg');
+    background-repeat: no-repeat;
+    background-position: right -70px top -70px;
+    background-size: 140% 300%;
 }
 
 
 .homepage-socials-box-left {
-    width: 150px;
-    margin-top: -10px;
+    width: 200px;
+    margin-top: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 15px;
 }
 
 
 .homepage-socials-box-mid {
-    margin-top: -10px;
-    width: 300px;
+    /* margin-top: 14px; */
+    width: 164px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    line-height: 44px;
+    display: block;
 }
 
-/* .homepage-socials-box-right {
+.homepage-socials-box-right {
+    padding-left: 35px;
 } 
 
+.homepage-right-container {
+    position: absolute;
+
+}
+
+.homepage-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.homepage-explore-button {
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: rgb(255, 214, 72);
+    border: 0;
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+/*
 .socials-description {
 } */
 
