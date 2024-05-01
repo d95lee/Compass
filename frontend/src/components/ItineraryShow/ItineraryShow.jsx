@@ -25,13 +25,12 @@ const ItineraryShow = () => {
     const userId = itinerary?.author._id
     const user = useSelector(selectUser(userId));
     const currentUser = useSelector(selectCurrentUser)
-    const currentUserDetails = useSelector(selectUser(currentUser._id))
+    const currentUserDetails = useSelector(selectUser(currentUser?._id))
 
     useEffect(() => {
         dispatch(fetchUser(userId));
-        dispatch(fetchUser(currentUser._id))
+        dispatch(fetchUser(currentUser?._id))
     }, [dispatch, userId, currentUser])
-
 
     // useEffect to check the like status of the current itinerary
     useEffect(() =>{
@@ -112,8 +111,8 @@ const ItineraryShow = () => {
                     </div>
 
                     <div className='itinerary-show-page-header-text'>
-                        <div className='itinerary-show-page-title'>{itinerary.title ? itinerary?.title.toUpperCase() : ''}</div>
-                        <div className='itinerary-show-page-description'>{itinerary.description ? itinerary?.description.toUpperCase() : ''}</div>
+                        <div className='itinerary-show-page-title'>{itinerary?.title ? itinerary?.title.toUpperCase() : ''}</div>
+                        <div className='itinerary-show-page-description'>{itinerary?.description ? itinerary?.description.toUpperCase() : ''}</div>
                         <div className='itinerary-show-page-description' onClick={handleUserShow}>@{user?.username}</div>
                     </div>
 
