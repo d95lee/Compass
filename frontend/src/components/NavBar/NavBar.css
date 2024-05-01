@@ -51,7 +51,8 @@ nav {
 
 .signup-button:hover, .login-button:hover,
 .create-button:hover, .navbar-itineraries-text:hover,
-.navbar-add-icon:hover, .homepage-explore-button:hover {
+.navbar-add-icon:hover, .homepage-explore-button:hover,
+.username-text-button:hover {
     cursor: pointer;
     text-decoration: underline;
 }
