@@ -50,7 +50,7 @@
 
 .itinerary-index-right {
     width: 120vw;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .itinerary-index-item {

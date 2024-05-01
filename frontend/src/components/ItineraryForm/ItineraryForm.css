@@ -36,6 +36,7 @@
     height: 30px;
     color: white;
     background-color: rgb(248, 136, 136);
+    cursor: pointer;
 }
 
 /* --------- FORM CONTENTS --------- */
@@ -51,22 +52,47 @@
     margin: 30px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .basic-info-header {
     display: flex;
     /* flex-direction: column; */
     align-items: center;
+    /* justify-content: center; */
     margin-bottom: 10px;
 }
 
 .basic-info-header-text {
     font-weight: 600;
     font-size: 18px;
-    margin-bottom: 3px;
+    /* margin-bottom: 3px; */
     margin-right: 10px;
 }
 
+.itinerary-details-line {
+    width: 60vw;
+    /* color: gray; */
+    background-color: rgb(171, 166, 166);
+    height: 1px;
+    
+}
+
+.basic-info-details {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.basic-info-details-field {
+    margin-bottom: 4px;
+}
+
+.basic-info-title {
+    font-size: 14px;
+    font-weight: 300;
+}
 .edit-itinerary-basic-info-button{
     margin-bottom: 5px;
 }
