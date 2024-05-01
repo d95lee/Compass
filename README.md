@@ -36,15 +36,12 @@ When clicking on a specific itinerary, will display information on transportatio
 ## Technologies
 
 Compass was primarily built with MERN stack which includes:
-- MongoDB
-  - Utilized for storing data (password, email, username)
-- Express
-  - Used the express framework for routing
-- React
-  - Used the react library to create a component based appliation.
-- NodeJS
-  - To enable the creating of a fullstack web application.
-
+- `React` & `JavaScript` frontend with `css` styling and `Redux state`
+- `MongoDB`, `Mongoose`, `Node.js`, `Express` backend. Allowing routing and storing of information (username, email, password, etc)
+- `AWS` allowing users to upload and store images.
+- `Webpack` for managing dependencies in order to bundle and optimize our code.
+- `npm` to manage project dependencies.
+- `Heroku` for hosting the application.
 
 
 
@@ -57,7 +54,7 @@ Compass was primarily built with MERN stack which includes:
 - Itineraries
   - Users are able to Like/Follow/Favorite
 - Transportation
-  - Able to create or delete the transportation used.
+  - Able to create or delete the transportation.
   - Title, start/end (time, location, date), description & cost
 - Living
   - Able to provide accomodation information
