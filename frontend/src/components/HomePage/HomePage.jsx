@@ -30,7 +30,7 @@ const HomePage = ()=> {
 
     const carolineItinerary = useSelector(selectItineraryByUser(caroline))
     const davidItinerary = useSelector(selectItineraryByUser(david))
-    console.log(davidItinerary);
+    // console.log(davidItinerary);
     const jerryItinerary = useSelector(selectItineraryByUser(jerry))
     const jhonItinerary = useSelector(selectItineraryByUser(jhon))
 

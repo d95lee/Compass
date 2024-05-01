@@ -1,3 +1,4 @@
+import { createSelector } from 'reselect';
 import jwtFetch from './jwt';
 
 const RECEIVE_CURRENT_USER = "session/RECEIVE_CURRENT_USER";
@@ -38,24 +39,41 @@ export const startSession = (userInfo, route) => async dispatch => {
   formData.append("username", username);
   formData.append("password", password);
   formData.append("email", email);
-  
+
   if (image) formData.append("image", image);
 
-  try {
-    const res = await jwtFetch(route, {
-      method: "POST",
-      body: formData
-      // body: JSON.stringify(userInfo)
-    });
-    const { user, token } = await res.json();
-    localStorage.setItem('jwtToken', token);
-    return dispatch(receiveCurrentUser(user));
-  } catch(err) {
-    const res = await err.json();
-    if (res.statusCode === 400) {
-      return dispatch(receiveErrors(res.errors));
-    }
-  }
+  // try {
+  //   const res = await jwtFetch(route, {
+  //     method: "POST",
+  //     body: formData
+  //     // body: JSON.stringify(userInfo)
+  //   });
+  //   const { user, token } = await res.json();
+  //   localStorage.setItem('jwtToken', token);
+  //   return dispatch(receiveCurrentUser(user));
+  // } catch(err) {
+  //   const res = await err.json();
+  //   if (res.statusCode === 400) {
+  //     dispatch(receiveErrors(res.errors));
+  //     return res.errors;
+  //   }
+  // }
+  return jwtFetch(route, {
+    method: "POST",
+    body: formData
+  })
+    .then(res => {
+      if(res.ok){
+          return res.json();
+      } else {
+          throw res;
+      }
+    })
+    .then(data =>{
+      const {user, token} = data;
+      localStorage.setItem('jwtToken', token);
+      return dispatch(receiveCurrentUser(user));
+    })
 };
 
 export const logout = () => dispatch => {
@@ -68,6 +86,11 @@ export const getCurrentUser = () => async dispatch => {
   const user = await res.json();
   return dispatch(receiveCurrentUser(user));
 };
+
+///selector for current user
+
+export const selectSession = state => state.session
+export const selectCurrentUser = createSelector([selectSession], session=> session.user)
 
 const initialState = {
   user: undefined
