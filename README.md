@@ -37,20 +37,34 @@ When clicking on a specific itinerary, will display information on transportatio
 
 Compass was primarily built with MERN stack which includes:
 - MongoDB
+  - Utilized for storing data (password, email, username)
 - Express
+  - Used the express framework for routing
 - React
+  - Used the react library to create a component based appliation.
 - NodeJS
+  - To enable the creating of a fullstack web application.
 
 
 
 
 ## Functionality and MVP
 - User Auth
+  - Can create a user or log in if already have an account
 - Itinerary
   - CRUD (create, update, delete, index, show) 
   - Scrollable timeline
 - Itineraries
-  - Users are able to Like/Follow/Favorite 
+  - Users are able to Like/Follow/Favorite
+- Transportation
+  - Able to create or delete the transportation used.
+  - Title, start/end (time, location, date), description & cost
+- Living
+  - Able to provide accomodation information
+  - Title, start/end (time, date), location, description & cost
+- Event
+  - Provide information on events
+  - title, start/end time, date, location, description, category & cost
 
 
 
