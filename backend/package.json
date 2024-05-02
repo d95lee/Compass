@@ -25,7 +25,7 @@
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
-    "uglify-js": "^3.17.4",
+    "uglify-js": "^2.8.29",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
