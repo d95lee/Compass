@@ -113,7 +113,7 @@ const ItineraryIndex = () => {
 <br>
 <br>
 
-User profile shows liked or created itineraries.
+User profile shows liked or created itineraries. Can also upload or change profile pictures.
 
 ![image](https://github.com/d95lee/Compass/assets/112995904/ed465261-113c-4031-adb4-6499bb59046f)
 
@@ -359,7 +359,7 @@ Compass was primarily built with MERN stack which includes:
    <br>
 
 - Itinerary
-  - CRUD (create, update, delete, index, show)
+  - Users can create, delete or update their own itineraries.
   <br>
   
 ![image](https://github.com/d95lee/Compass/assets/112995904/2a6327d5-d7d5-40f1-807a-ad233330ef14)
