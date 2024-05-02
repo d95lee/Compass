@@ -1,5 +1,24 @@
 // Test object id: "662184fee0ed831fc79e7512"
 
+// Does not work in react bc can't find "events" yet when itinerary is not fetched
+export const newItineraryObject = ( itinerary )=> {
+    const eventsArray = itinerary?.events.map(event => ({...event, 'type': 'event'}));
+
+    const transportationArray = itinerary?.transportations.map(transportation =>({...transportation, 'type': 'transportation'}));
+    
+    const livingsArray = itinerary?.livings.map(living => ({...living, 'type':'living'}));
+    
+    if (itinerary?.events) {
+        itinerary[events] = eventsArray;
+        itinerary[transportations] = transportationArray;
+        itinerary[livings] = livingsArray;
+    }
+
+    return itinerary;
+}
+
+
+
 export const eventSort = (itinerary) => {
 
     let res = {};
@@ -92,7 +111,7 @@ export const timelineSort = (itinerary) => {
 
 
 export const oneDaySort = (Array) =>{
-    //make a copy of array of one day of  event, transportation, living, or timeline from above helper function
+    //make a copy of array of one day of event, transportation, living, or timeline from above helper function
     // it will sort the day of object by looking at the startTime
     const copy = Array.slice();
     return copy.sort((a,b) => compareTimes(a.startTime, b.startTime));

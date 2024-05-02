@@ -47,6 +47,19 @@
    margin-right: 8px;
 }
 
+.itinerary-show-page-username {
+    margin-bottom: 5px;
+    margin-right: 8px;
+}
+
+.itinerary-show-page-username:hover {
+    cursor: pointer;
+}
+
+.itinerary-show-likes {
+    display: flex;
+    align-items: center;
+}
 .likes-number-text {
     margin-left: 6px;
 }
@@ -67,23 +80,30 @@
 
 /* -------- SHOW PAGE CONTENT -------- */
 
-.itinerary-show-page-content {
-    /* background-color: grey;
+/* .itinerary-show-page-content {
+    background-color: grey;
     width: 100vw;
-    height: 100vh; */
+    height: 100vh;
     border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
+} */
 
 
 .itinerary-display-items-container {
-    border: 1px solid rgb(184, 181, 181);
-    width: 400px;
+    border: 2px solid rgb(184, 181, 181);
+    display: grid;
+    /* grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); */
+    /* grid-auto-columns: 350px;
+    grid-auto-rows: 1000px; */
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* align-items: flex-start; */
+    padding: 10px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px 0px;
+    overflow-x:hidden;
 }
 
 .day-header {

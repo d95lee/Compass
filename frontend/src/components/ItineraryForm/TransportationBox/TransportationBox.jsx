@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './TransportationBox.css'
 import TransportationForm from './TransportationForm';
 import { transportationSort } from '../../../utils/calenderSort';
 import TransportationDateBox from './TransportationDateBox';

@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import './TransportationItem.css'
 import { useParams } from 'react-router-dom';
 import {deleteTransportation} from "../../../store/transportation.js"
 
@@ -24,11 +23,11 @@ const TransportationItem = ({transportation, setTransModalState, setTransportati
 
                 <div className='transportation-box-location'>Start Location: {transportation.startLocation}</div>
                 <div className='transportation-box-time'>Start Time: {transportation.startTime}</div>
-                <div className='transportation-box-time'>Start Date: {transportation.startDate}</div>
+                <div className='transportation-box-time'>Start Date: {transportation.startDate.slice(0,10)}</div>
 
                 <div className='transportation-box-location'>End Location: {transportation.endLocation}</div>
                 <div className='transportation-box-time'>End Time: {transportation.endTime}</div>
-                <div className='transportation-box-time'>End Date: {transportation.endDate}</div>
+                <div className='transportation-box-time'>End Date: {transportation.endDate.slice(0,10)}</div>
                 <div className='timeline-box-cost'>Cost: ${transportation.cost}</div>
 
                 <svg className="timeline-event-edit-button" fill="#9c9696" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494.936 494.936" onClick={handleEditButton}>
