@@ -1,15 +1,20 @@
 .profile-background {
-    padding-top: 10vh;
+    padding-top: 6vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 .user-info-box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    /* padding-bottom: 10vh; */
+    /* border: 1px solid rgb(168, 216, 250); */
+    background-color: rgba(25,25,25,.1);
+    padding: 40px;
+    margin-bottom: 50px;
+    border-radius: 16px;
 }
 
 .pic-div {
@@ -22,18 +27,6 @@
     align-items: center; /* Center vertically */
 }
 
-.user-info {
-    border: none;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.background-img {
-    height: 25vh;
-    width: 100%;
-}
-
 .user-img {
     width: 100%;
     border-radius: 50%;
@@ -41,15 +34,11 @@
     object-fit: cover;
 }
 
-
-
-.profile-itineraries {
-    position: absolute;
-    /* border: solid; */
-    top: 50vh;
-    width: 100%;
-    height: 100%;
-    /* background-color: aqua; */
+.user-info {
+    display: flex;
+    margin-left: 25px;
+    /* align-items: center; */
+    flex-direction: column;
 }
 
 .user-bio {
@@ -61,58 +50,25 @@
 
 .user-bio-username {
     margin-top: 5px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
+
+.user-bio-line {
+    background-color: #847e7e;
+    height: 1px;
+}
+
 .user-bio-title {
     font-weight: 600;
+    font-style: italic;
 }
+
 .header-display {
     display: flex;
     justify-content: center;
     position: absolute;
-}
-
-.itinerary-index-profile {
-    margin: 50px;
-    height: 330px;
-    width: 85vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.filter-buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 400px;
-}
-
-.filter-button {
-    margin-top: 5px;
-    border-radius: 16px;
-    border: none;
-    cursor: pointer;
-    height: 30px;
-    width: 150px;
-    font-size: 16px;
-  }
-
-  .filter-button.active {
-    background-color: rgb(113, 184, 219);
-    color: white;
-  }
-
-.profile-line {
-    width: 75vw;
-    /* color: gray; */
-    background-color: rgb(171, 166, 166);
-    height: 1px;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .user-bio-edit-button {
@@ -121,3 +77,36 @@
     margin-left: 10px;
     cursor: pointer;
 }
+
+.filter-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+}
+
+.filter-button {
+    margin-top: 5px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    height: 33px;
+    width: 160px;
+    font-size: 16px;
+  }
+
+  .filter-button.active {
+    background-color:   #847e7e;;
+    color: white;
+  }
+
+.profile-line {
+    width: 80vw;
+    /* color: rgb(171, 166, 166); */
+    background-color: rgb(157, 151, 151);
+    height: 2px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+

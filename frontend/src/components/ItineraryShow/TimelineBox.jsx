@@ -5,7 +5,7 @@ const TimelineBox = ({activity}) => {
     
     // console.log(activity, 'activity');
 
-    if (activity.type === "event"){
+    if (activity.eventTitle){
         return (
             <>
                 <div className='event-box'>
@@ -22,7 +22,7 @@ const TimelineBox = ({activity}) => {
                 </div>
             </>
         )
-    } else if (activity.type === "transportation"){
+    } else if (activity.transportationTitle){
         return (
             <>
                 <div className='transportation-box'>
@@ -32,16 +32,16 @@ const TimelineBox = ({activity}) => {
 
                     <div className='transportation-box-location'>Start Location: {activity.startLocation}</div>
                     <div className='transportation-box-time'>Start Time: {activity.startTime}</div>
-                    <div className='transportation-box-time'>Start Date: {activity.startDate}</div>
+                    <div className='transportation-box-time'>Start Date: {activity.startDate.slice(0,10)}</div>
                     
                     <div className='transportation-box-location'>End Location: {activity.endLocation}</div>
                     <div className='transportation-box-time'>End Time: {activity.endTime}</div>
-                    <div className='transportation-box-time'>End Date: {activity.endDate}</div>
+                    <div className='transportation-box-time'>End Date: {activity.endDate.slice(0,10)}</div>
                     <div className='timeline-box-cost'>Cost: ${activity.cost}</div>
                 </div>
             </>
         )
-    } else if (activity.type === "living") {
+    } else if (activity.livingTitle) {
         return (
             <>
                 <div className='living-box'>

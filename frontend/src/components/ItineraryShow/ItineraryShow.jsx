@@ -5,10 +5,11 @@ import { fetchItinerary, selectItinerary } from "../../store/itinerary"
 import { fetchUser, selectUser } from "../../store/user"
 import "./ItineraryShow.css"
 import TimelineBox from "./TimelineBox"
+import ItineraryShowDateBox from "./ItineraryShowDateBox"
 import editbutton from '../../assets/edit-button.png'
 import { likeItinerary, unlikeItinerary } from "../../store/like"
 import { selectCurrentUser } from "../../store/session"
-
+import { oneDaySort, timelineSort, newItineraryObject } from "../../utils/calenderSort"
 
 const ItineraryShow = () => {
     const dispatch = useDispatch()
@@ -27,6 +28,7 @@ const ItineraryShow = () => {
     const currentUser = useSelector(selectCurrentUser)
     const currentUserDetails = useSelector(selectUser(currentUser?._id))
 
+    const author = user === currentUser
     useEffect(() => {
         dispatch(fetchUser(userId));
         dispatch(fetchUser(currentUser?._id))
@@ -70,9 +72,7 @@ const ItineraryShow = () => {
             dispatch(unlikeItinerary(likeIdValue, itineraryId))
                 .then(()=>setHeartColor('#000000'))
         }
-
     }
-
 
     const handleEditClick = () => {
         navigate(`/itinerary/form/${itinerary?._id}`);
@@ -88,6 +88,21 @@ const ItineraryShow = () => {
         return newArray;
     }
 
+    // const newItineraryObject = ( itinerary )=> {
+    //     const eventsArray = itinerary?.events.map(event => ({...event, 'type': 'event'}));
+
+    //     const transportationArray = itinerary?.transportations.map(transportation =>({...transportation, 'type': 'transportation'}));
+        
+    //     const livingsArray = itinerary?.livings.map(living => ({...living, 'type':'living'}));
+        
+    //     if (itinerary) {
+    //         itinerary[events] = eventsArray;
+    //         itinerary[transportations] = transportationArray;
+    //         itinerary[livings] = livingsArray;
+    //     }
+
+    //     return itinerary;
+    // }
     // add in imageUrl to connect to each itinerary
 
     // Add date key for each activity to show in different date/day columns
@@ -99,9 +114,21 @@ const ItineraryShow = () => {
     const handleUserShow = () => {
         navigate(`/profile/${user?._id}`);
     }
-
+    // console.log(itinerary, 'itinerary');
     // console.log(itinerarySubobjectsArray(itinerary), 'test array');
-    // console.log(itinerary);
+    // console.log(timelineSort(itinerary), 'sorted activities');
+    
+    // console.log(newItineraryObject(itinerary), 'new itinerary obj');
+
+
+    const sortedActivities = timelineSort(itinerary);
+    const createShowCalendar = (sortedActivities) => {
+        // can't use for loop bc we need to return the subcomponent each time
+
+
+        return Object.values(sortedActivities).map((ele, idx) => (<ItineraryShowDateBox key={idx} activitiesArray={ele} date={Object.keys(sortedActivities)[idx]} />))
+    }
+
     return (
         <>
             <div className="itinerary-show-page-container">
@@ -113,18 +140,18 @@ const ItineraryShow = () => {
                     <div className='itinerary-show-page-header-text'>
                         <div className='itinerary-show-page-title'>{itinerary?.title ? itinerary?.title.toUpperCase() : ''}</div>
                         <div className='itinerary-show-page-description'>{itinerary?.description ? itinerary?.description.toUpperCase() : ''}</div>
-                        <div className='itinerary-show-page-description' onClick={handleUserShow}>@{user?.username}</div>
+                        <div className='itinerary-show-page-username' onClick={handleUserShow}>@{user?.username}</div>
+                        <div className="itinerary-show-likes">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill={heartColor} x="0px" y="0px" height="23px" width="23px" viewBox="0 0 122.88 107.41" onClick={handleLike}><g>
+                            <path d="M60.83,17.19C68.84,8.84,74.45,1.62,86.79,0.21c23.17-2.66,44.48,21.06,32.78,44.41 c-3.33,6.65-10.11,14.56-17.61,22.32c-8.23,8.52-17.34,16.87-23.72,23.2l-17.4,17.26L46.46,93.56C29.16,76.9,0.95,55.93,0.02,29.95 C-0.63,11.75,13.73,0.09,30.25,0.3C45.01,0.5,51.22,7.84,60.83,17.19L60.83,17.19L60.83,17.19z" /></g>
+                        </svg>
+                        <div className="likes-number-text">{itinerary?.likes} likes</div> 
+                        </div>
+                        
                     </div>
 
-                    <div></div>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill={heartColor} x="0px" y="0px" height="23px" width="23px" viewBox="0 0 122.88 107.41" onClick={handleLike}><g>
-                            <path d="M60.83,17.19C68.84,8.84,74.45,1.62,86.79,0.21c23.17-2.66,44.48,21.06,32.78,44.41 c-3.33,6.65-10.11,14.56-17.61,22.32c-8.23,8.52-17.34,16.87-23.72,23.2l-17.4,17.26L46.46,93.56C29.16,76.9,0.95,55.93,0.02,29.95 C-0.63,11.75,13.73,0.09,30.25,0.3C45.01,0.5,51.22,7.84,60.83,17.19L60.83,17.19L60.83,17.19z"/></g>
-                        </svg>
-                        <div className="likes-number-text">{itinerary?.likes} likes</div>
-
                     <div className='itinerary-edit-button-box'>
-                        <img className='itinerary-edit-button' src={editbutton} onClick={handleEditClick} />
+                        {<img className='itinerary-edit-button' src={editbutton} onClick={handleEditClick} />}
                     </div>
 
                 </div>
@@ -132,14 +159,10 @@ const ItineraryShow = () => {
 
                 <div className='itinerary-show-page-content'>
                     <div className="itinerary-display-items-container">
-                        <div className="day-header"> Date</div>
-
-                        {itinerary ? itinerarySubobjectsArray(itinerary).map((activity, idx) => <TimelineBox key={idx} activity={activity} />) : ''}
+                        {/* <div className="day-header"> Date</div> */}
+                        {sortedActivities && createShowCalendar(sortedActivities)}
+                        {/* {itinerary ? itinerarySubobjectsArray(itinerary).map((activity, idx) => <TimelineBox key={idx} activity={activity} />) : ''} */}
                     </div>
-
-                    <div className="itinerary-display-items-container"></div>
-
-                    <div className="itinerary-display-items-container"></div>
 
                 </div>
 

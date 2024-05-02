@@ -1,12 +1,14 @@
 .itinerary-index-page {
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    height: 100%;
 }
 
 .itinerary-index-left {
     width: 200px;
     height: 100vh;
+    flex-grow:calc(): 1;
     padding-right: 30px;
     border-right: 1px solid rgb(177, 177, 177);
     display: flex;

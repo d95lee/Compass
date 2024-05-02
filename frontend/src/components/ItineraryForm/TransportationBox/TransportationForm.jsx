@@ -1,6 +1,5 @@
 import {  useState } from "react"
 import { useDispatch } from "react-redux"
-import './TransportationForm.css'
 
 import { createTransportation, updateTransportation } from "../../../store/transportation"
 
