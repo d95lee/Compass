@@ -15,11 +15,13 @@
 }
 
 .transportation-box {
-    border: 1px solid rgb(94, 194, 159);
+    border: 2px solid rgb(94, 194, 159);
+    background-color: rgb(190, 226, 213);
 }
 
 .living-box {
-    border: 1px solid rgb(20, 131, 242);
+    border: 2px solid rgb(20, 131, 242);
+    background-color:rgb(181, 211, 242);
 }
 
 .timeline-box-date {
