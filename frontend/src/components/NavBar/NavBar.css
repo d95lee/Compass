@@ -28,10 +28,17 @@ nav {
 .links-auth {
     display: flex;
     width: 150px;
-    /* justify-content:space-between; */
     justify-content: center;
     margin-right: 10px;
     margin-bottom: 20px;
+}
+
+.links-auth-currentuser {
+    display: flex;
+    width: 150px;
+    justify-content: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .signup-button {
@@ -103,10 +110,6 @@ nav {
     margin-bottom: 10px;
 }
 
-/* .navbar-profile-right {
-    
-} */
-
-/* .navbar-profile-right-container {
-    margin-bottom: -10px;
-} */
+.navbar-profile-right {
+    margin-left: 5px;
+}
