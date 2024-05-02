@@ -17,6 +17,9 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 .user-info {
@@ -35,6 +38,7 @@
     width: 100%;
     border-radius: 50%;
     height: 100%;
+    object-fit: cover;
 }
 
 

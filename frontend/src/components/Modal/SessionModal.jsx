@@ -52,7 +52,7 @@ const SessionModal = ({ modalState, setModalState }) => {
                 <h2>Create Your Account</h2>
                     <form onSubmit={handleSubmit}>
                         <label >
-                            Username:
+                            <span className='modal-session-text'>Username:</span>
                             <input
                                 className='buttons'
                                 placeholder='Username'
@@ -62,7 +62,7 @@ const SessionModal = ({ modalState, setModalState }) => {
                         </label>
                         <div className="event-modal-input-error">{hasErrors && errors.errors.username ? errors.errors.username : ''}</div>
                         <label>
-                            Email:
+                            <span className='modal-session-text'>Email:</span>
                             <input
                                 className='buttons'
                                 placeholder='Email'
@@ -73,7 +73,7 @@ const SessionModal = ({ modalState, setModalState }) => {
                         <div className="event-modal-input-error">{hasErrors && errors.errors.email ? errors.errors.email : ''}</div>
 
                         <label >
-                            Password:
+                            <span className='modal-session-text'>Password:</span>
                             <input
                                 className='buttons'
                                 placeholder='Password'
@@ -84,10 +84,10 @@ const SessionModal = ({ modalState, setModalState }) => {
                         </label>
                         <div className="event-modal-input-error">{hasErrors && errors.errors.password ? errors.errors.password : ''}</div>
                         <label>
-                            Profile Image
+                            <span className='modal-session-text'>Upload Profile Image:</span>
                             <input type="file" accept=".jpg, .jpeg, .png" onChange={updateFile} />
                         </label>
-                        <input className='click' type="submit" value={modalState} />
+                        <input className='click-signup' type="submit" value={modalState} />
                     </form>
                 </div>
                 </div>
@@ -100,7 +100,7 @@ const SessionModal = ({ modalState, setModalState }) => {
                 <h2>Log In</h2>
                 <form onSubmit={handleSubmit}>
                     <label>
-                        Email:
+                        <span className='modal-session-text'>Email:</span>
                         <input
                             className='buttons'
                             placeholder='Email'
@@ -109,7 +109,7 @@ const SessionModal = ({ modalState, setModalState }) => {
                         />
                     </label>
                     <label>
-                        Password:
+                        <span className='modal-session-text'>Password:</span>
                         <input
                             className='buttons'
                             placeholder='Password'
