@@ -253,7 +253,7 @@ const caroline_living1 = new Living({
   livingTitle: 'Madison Hotel',
   startTime: '12:00',
   endTime: '11:00',
-  startDate: "02-01-2024",
+  startDate: "02-04-2024",
   endDate: "02-04-2024",
   location: 'NYC',
   description: 'hotel for NYC',
