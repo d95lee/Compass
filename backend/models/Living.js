@@ -9,7 +9,7 @@ const livingSchema = new Schema({
     endDate: Date,
     location: String,
     description: String,
-    cost: Number
+    cost: String
 })
 
 module.exports = mongoose.model('Living', livingSchema);

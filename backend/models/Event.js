@@ -9,7 +9,7 @@ const eventSchema = new Schema({
     location: String,
     description: String,
     category: String,
-    cost: Number
+    cost: String
 })
 
 module.exports = mongoose.model('Event', eventSchema);
