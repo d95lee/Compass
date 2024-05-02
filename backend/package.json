@@ -24,7 +24,8 @@
     "netstat": "^0.0.2",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "dotenv-cli": "^7.4.1",
