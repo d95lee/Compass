@@ -10,7 +10,7 @@ const transportationSchema = new Schema({
     startDate: Date, // corrected to startDate
     endDate: Date,
     description: String,
-    cost: Number
+    cost: String
 })
 
 module.exports = mongoose.model('Transportation', transportationSchema);

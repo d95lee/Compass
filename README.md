@@ -57,7 +57,8 @@ useEffect(() => {
 Whether logged in or logged out, users can preview itineries
 
 
-![image](https://github.com/d95lee/Compass/assets/112995904/c947a763-4a7e-4a19-960e-5433f3e83b24)
+![image](https://github.com/d95lee/Compass/assets/112995904/7e706ea4-b901-469b-8412-76845dc107ef)
+
 
 
 <br>
@@ -114,7 +115,8 @@ const ItineraryIndex = () => {
 
 User profile shows liked or created itineraries.
 
-![image](https://github.com/d95lee/Compass/assets/112995904/52edfbed-a986-4af7-8824-db659d5c58ae)
+![image](https://github.com/d95lee/Compass/assets/112995904/ed465261-113c-4031-adb4-6499bb59046f)
+
 
 
 <br>
@@ -146,7 +148,8 @@ const [bio, setBio] = useState(userBio ? userBio : '');
 
 When clicking on a specific itinerary, will display information on transportation, living and events.
 
-![image](https://github.com/d95lee/Compass/assets/112995904/8f9a4dc4-cc35-4e18-a2ff-40e98f03aa53)
+![image](https://github.com/d95lee/Compass/assets/112995904/56380a7f-6a57-4d51-b05a-67d391b6d970)
+
 
 
 
@@ -358,8 +361,11 @@ Compass was primarily built with MERN stack which includes:
 - Itinerary
   - CRUD (create, update, delete, index, show)
   <br>
-![image](https://github.com/d95lee/Compass/assets/112995904/2847890b-24ac-42e7-9e7e-7c535f6f6ece)
+  
+![image](https://github.com/d95lee/Compass/assets/112995904/2a6327d5-d7d5-40f1-807a-ad233330ef14)
+
 <br>
+
 ![image](https://github.com/d95lee/Compass/assets/112995904/1e16dd7e-cc22-4765-8f16-6a392a9b35f2)
 
 <br>
@@ -368,9 +374,12 @@ Compass was primarily built with MERN stack which includes:
 <br>
 <br>
 
-![image](https://github.com/d95lee/Compass/assets/112995904/bd9ebad3-5ece-4aad-86aa-712d0aa6856a)
+![image](https://github.com/d95lee/Compass/assets/112995904/41d7f140-58ea-46e6-8e2c-f7d3c7101af1)
+
 <br>
-![image](https://github.com/d95lee/Compass/assets/112995904/36eefbcb-b142-452d-bcad-e110c2ed8bf0)
+
+![image](https://github.com/d95lee/Compass/assets/112995904/6db7922e-65a2-41a1-8a17-39324bb18e5b)
+
 
 <br>
 
