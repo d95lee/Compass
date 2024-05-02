@@ -64,7 +64,7 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
                         <div className='create-form-title'>Create Your Itinerary</div >
                         <form onSubmit={handleSubmit}>
                             <label>
-                                Title:
+                                <span className='modal-session-text'>Title:</span>
                                 <input
                                     className='create-itinerary-input'
                                     placeholder='Title for your itinerary'
@@ -75,7 +75,7 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
                             <div className="event-modal-input-error">{hasErrors && errors.errors.title ? errors.errors.title : ''}</div>
 
                             <label>
-                                Description:
+                                <span className='modal-session-text'>Description:</span>
                                 <input
                                     className='create-itinerary-input'
                                     placeholder='Description'
@@ -84,7 +84,7 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
                                 />
                             </label>
                             <label >
-                                Country:
+                                <span className='modal-session-text'>Country:</span>
                                 <input className='create-itinerary-input'
                                         placeholder='Country'
                                         value={country}
@@ -92,7 +92,7 @@ const CreateItineraryModal = ({ modalState, setModalState })  => {
                             </label>
                             <div className="event-modal-input-error">{hasErrors && errors.errors.country ? errors.errors.country : ''}</div>
                             <label>
-                                Images to Upload
+                                <span className='modal-session-text'>Images to Upload</span>
                                 <input
                                     type='file'
                                     ref={fileRef}

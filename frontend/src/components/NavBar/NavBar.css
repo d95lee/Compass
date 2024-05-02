@@ -28,9 +28,10 @@ nav {
 .links-auth {
     display: flex;
     width: 150px;
-    justify-content:space-between;
+    /* justify-content:space-between; */
+    justify-content: center;
     margin-right: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 .signup-button {
@@ -79,7 +80,7 @@ nav {
 }
 
 .navbar-add-icon {
-    margin-top: -16px;
+    margin-top: -14px;
     width: 45px;
     height: 45px;
 }
@@ -95,16 +96,17 @@ nav {
     border-radius: 50%;
     margin-bottom: -40px;
     margin-right: 20px;
+    object-fit: cover;
 }
 
 .username-text-container {
     margin-bottom: 10px;
 }
 
-.navbar-profile-right {
+/* .navbar-profile-right {
     
-}
+} */
 
-.navbar-profile-right-container {
+/* .navbar-profile-right-container {
     margin-bottom: -10px;
-}
+} */

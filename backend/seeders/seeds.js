@@ -49,7 +49,7 @@ const trip1 = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 34
 });
 // 3. create events in itinerary
 const event1 = new Event({
@@ -132,7 +132,7 @@ const caroline_itinerary = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 23
 });
 // 3. create events in itinerary
 const caroline_event1 = new Event({
@@ -317,7 +317,7 @@ const darren_itinerary = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 15
 });
 // 3. create events in itinerary
 const darren_event1 = new Event({
@@ -429,7 +429,7 @@ const ayce_itinerary = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 31
 });
 // 3. create events in itinerary
 const ayce_event1 = new Event({
@@ -542,7 +542,7 @@ const david_itinerary = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 192
 });
 // 3. create events in itinerary
 const david_event1 = new Event({
@@ -656,7 +656,7 @@ const jerry_itinerary = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 46
 });
 
 const jerry_event1 = new Event({
@@ -756,7 +756,7 @@ const jhon_itinerary = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 26
 });
 
 const jhon_event1 = new Event({
@@ -865,7 +865,7 @@ const kevin_itinerary = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 692
 });
 
 const kevin_event1 = new Event({
@@ -980,7 +980,7 @@ const justin_itinerary = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 807
 });
 
 const justin_event1 = new Event({
@@ -1084,7 +1084,7 @@ const steph_itinerary = new Itinerary({
   events: [],
   transportations: [],
   livings: [],
-  likes: 0
+  likes: 2812
 });
 
 const steph_event1 = new Event({

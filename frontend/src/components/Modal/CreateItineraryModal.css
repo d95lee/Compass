@@ -12,7 +12,6 @@
 }
 
 .create-modal-content {
-    height: 50%;
     width: 35vw;
     position: absolute;
     top: 25vh;
@@ -50,5 +49,6 @@
     border: none;
     cursor: pointer;
     background-color: rgba(239, 232, 101, 0.871);
-
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
