@@ -10,7 +10,7 @@ const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
 const { singleFileUpload, singleMulterUpload } = require("../../awsS3");
 
-const DEFAULT_PROFILE_IMAGE_URL = 'https://mern-travel.s3.us-west-1.amazonaws.com/joe.png'
+const DEFAULT_PROFILE_IMAGE_URL = 'https://mern-travel.s3.us-west-1.amazonaws.com/default_profile_pic.jpg'
 
 
 router.post('/register', singleMulterUpload("image"), validateRegisterInput, async (req, res, next) =>{

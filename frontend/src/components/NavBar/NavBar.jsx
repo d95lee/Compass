@@ -36,7 +36,7 @@ function NavBar () {
             </button>
           </div>
           <div className='navbar-profile-right-container'>
-            <span className='navbar-profile-right'>{loggedInUser?.profileImageUrl && (<img className='navbar-profile-pic' src={loggedInUser.profileImageUrl}/>)}</span>
+            <span className='navbar-profile-right'><Link to={`profile/${currentUserId}`}>{loggedInUser?.profileImageUrl && (<img className='navbar-profile-pic' src={loggedInUser.profileImageUrl}/>)}</Link></span>
           </div>
         </>
       );
