@@ -15,20 +15,46 @@ Compass is a social media website where users can interact with each other by cr
 ## Features
 Users will have the ability to create or log in to their account via modal once entering the home page.
 
-![image](https://github.com/d95lee/Compass/assets/112995904/c2b6167d-2859-43b7-b9fa-b53f72c0aab4)
+![image](https://github.com/d95lee/Compass/assets/112995904/5f035fdb-bca2-4fe3-8501-a1fec2e84877)
+
+
+When first entering the page, users will have access to the contributors itineraries.
+
+![image](https://github.com/d95lee/Compass/assets/112995904/1c887c6e-4b8f-4e92-b4c3-89f138b1827c)
+
+
+
 
 
 Whether logged in or logged out, users can preview itineries.
 
 ![image](https://github.com/d95lee/Compass/assets/112995904/0a22bae6-8bb3-4d12-b458-ac34c5b4561f)
 
-User profile shows like or created itineraries as well as an optional bio.
+Itineraries will be able to be categorized by continent, making the search process easier.
+
+![image](https://github.com/d95lee/Compass/assets/112995904/6cdd4eba-4411-4afc-ba6d-02914597277d)
+
+
+User profile shows like or created itineraries.
 
 ![image](https://github.com/d95lee/Compass/assets/112995904/cbdfe684-2dca-41e5-950a-ca0d27ffa9e5)
+
+The option to have a personal bio so that other users can know more about you is also available in the profile page.
+
+![image](https://github.com/d95lee/Compass/assets/112995904/957c072b-c0fe-4501-b047-4efb9cc4c8c7)
+
 
 When clicking on a specific itinerary, will display information on transportation, living and events
 
 ![image](https://github.com/d95lee/Compass/assets/112995904/7cb43403-a77f-4e8e-8608-3f371a2bbe1f)
+
+
+Users browsing through itineraries can like the ones they are interested in, this way it can be saved for future reference in their own profile.
+
+![image](https://github.com/d95lee/Compass/assets/112995904/ac92d590-80fd-4276-b400-eb39d5a33d72)
+
+
+User experience
 
 
 
@@ -36,15 +62,12 @@ When clicking on a specific itinerary, will display information on transportatio
 ## Technologies
 
 Compass was primarily built with MERN stack which includes:
-- MongoDB
-  - Utilized for storing data (password, email, username)
-- Express
-  - Used the express framework for routing
-- React
-  - Used the react library to create a component based appliation.
-- NodeJS
-  - To enable the creating of a fullstack web application.
-
+- `React` & `JavaScript` frontend with `css` styling and `Redux state`
+- `MongoDB`, `Mongoose`, `Node.js`, `Express` backend. Allowing routing and storing of information (username, email, password, etc)
+- `AWS` allowing users to upload and store images.
+- `Webpack` for managing dependencies in order to bundle and optimize our code.
+- `npm` to manage project dependencies.
+- `Heroku` for hosting the application.
 
 
 
@@ -57,7 +80,7 @@ Compass was primarily built with MERN stack which includes:
 - Itineraries
   - Users are able to Like/Follow/Favorite
 - Transportation
-  - Able to create or delete the transportation used.
+  - Able to create or delete the transportation.
   - Title, start/end (time, location, date), description & cost
 - Living
   - Able to provide accomodation information

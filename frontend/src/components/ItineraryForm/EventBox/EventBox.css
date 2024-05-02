@@ -8,7 +8,14 @@
 .event-form-box-header {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.event-form-header-text {
+    font-weight: 600;
+    font-size: 18px;
+    /* margin-right: 10px; */
 }
 
 .event-form-add-button {
@@ -31,6 +38,10 @@
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
+    /* z-index: 0; */
+    /* opacity: 0.5; */
+    /* background-color: #d8d3d3; */
+    background-color: rgba(25,25,25,.1);
 }
 
 .event-date-box-header, .living-date-box-header, .transportation-date-box-header {

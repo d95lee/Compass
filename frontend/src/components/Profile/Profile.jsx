@@ -70,8 +70,8 @@ const Profile = () => {
             </div>
 
             <div className='filter-buttons'>
-                <button className='user-created-itineraries-button' onClick={()=> setIndexState('user')} className={indexState === 'user' ? 'filter-button active' : 'filter-button'}>Created itineraries</button>
-                <button className='user-liked-itineraries-button' onClick={()=> setIndexState('likes')} className={indexState === 'likes' ? 'filter-button active' : 'filter-button'}> Liked itineraries</button>
+                <button onClick={()=> setIndexState('user')} className={indexState === 'user' ? 'filter-button active' : 'filter-button'}>Created itineraries</button>
+                <button onClick={()=> setIndexState('likes')} className={indexState === 'likes' ? 'filter-button active' : 'filter-button'}> Liked itineraries</button>
 
             </div>
             <hr className='profile-line'></hr>

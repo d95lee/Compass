@@ -29,23 +29,28 @@ const ItineraryForm = () => {
 
     return (
        <>
-        <div className='edit-form-header'>
-           <div className='edit-form-header-text'>EDIT ITINERARY</div>
+       <div className='itinerary-back-button-circle'>
+            <svg className='itinerary-back-button' fill="#000000" width='32px' height='32px' viewBox="0 0 24 24" onClick={()=> navigate(`/itinerary/${itinerary?._id}`)}>
+                {/* <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> 
+                <g data-name="Layer 2"> <g data-name="arrow-back"> <rect width="24" height="24" transform="rotate(90 12 12)" opacity="0"></rect>  */}
+                <path d="M19 11H7.14l3.63-4.36a1 1 0 1 0-1.54-1.28l-5 6a1.19 1.19 0 0 0-.09.15c0 .05 0 .08-.07.13A1 1 0 0 0 4 12a1 1 0 0 0 .07.36c0 .05 0 .08.07.13a1.19 1.19 0 0 0 .09.15l5 6A1 1 0 0 0 10 19a1 1 0 0 0 .64-.23 1 1 0 0 0 .13-1.41L7.14 13H19a1 1 0 0 0 0-2z"></path> 
+                {/* </g> </g> </g> */}
+            </svg>        
+       </div>
 
-           <Link to={`/itinerary/${itinerary?._id}`}>
+        <div className='edit-form-header'>
+           <div className='edit-form-header-text'>Edit Itinerary</div>
+           {/* <Link to={`/itinerary/${itinerary?._id}`}>
                 <div className='itinerary-view-button-box'>
                     <div className='itinerary-view-button'>View Itinerary</div>
                 </div>
-            </Link>
-
-
-
+            </Link> */}
         </div>
 
         <div className='edit-contents'>
             <div className='basic-info'>
                 <div className='basic-info-header'>
-                    <div className='basic-info-header-text'>Itinerary Details</div>
+                    <div className='basic-info-header-text'>ITINERARY DETAILS</div>
                     
                     <svg className="timeline-event-edit-button" fill="#9c9696" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494.936 494.936" onClick={() => setBasicModalState(!basicModalState)}>
                         <path d="M389.844,182.85c-6.743,0-12.21,5.467-12.21,12.21v222.968c0,23.562-19.174,42.735-42.736,42.735H67.157 c-23.562,0-42.736-19.174-42.736-42.735V150.285c0-23.562,19.174-42.735,42.736-42.735h267.741c6.743,0,12.21-5.467,12.21-12.21 s-5.467-12.21-12.21-12.21H67.157C30.126,83.13,0,113.255,0,150.285v267.743c0,37.029,30.126,67.155,67.157,67.155h267.741 c37.03,0,67.156-30.126,67.156-67.155V195.061C402.054,188.318,396.587,182.85,389.844,182.85z"></path>
