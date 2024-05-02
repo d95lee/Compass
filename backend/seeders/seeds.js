@@ -675,13 +675,11 @@ ayce_itinerary.livings.push(ayce_living1)
 // 7. create like for itinerary
 const ayce_like1 = new Like({
   user: caroline,
-  user: darren,
   itinerary: ayce_itinerary
 })
 // 8. update likes column in both user and itinerary
 ayce_like1.likes += 1
 caroline.likes.push(ayce_like1)
-darren.likes.push(ayce_like1)
 
 //9. push like, user, itinerary into the array accordingly
 
@@ -1111,20 +1109,22 @@ kevin_itinerary.livings.push(kevin_living1)
 // 7. create like for itinerary
 const kevin_like1 = new Like({
   user: jerry,
+  itinerary: kevin_itinerary
+})
+
+const kevin_like2 = new Like({
   user: david,
-  user: caroline,
   itinerary: kevin_itinerary
 })
 // 8. update likes column in both user and itinerary
-kevin_like1.likes += 1
-david.likes.push(kevin_like1)
+kevin_like1.likes += 2
+david.likes.push(kevin_like2)
 jerry.likes.push(kevin_like1)
-caroline.likes.push(kevin_like1)
 
 
 //9. push like, user, itinerary into the array accordingly
 
-likes.push(kevin_like1)
+likes.push(kevin_like1, kevin_like2)
 users.push(kevin)
 itineraries.push(kevin_itinerary)
 
@@ -1214,15 +1214,12 @@ justin_itinerary.livings.push(justin_living1)
 // 7. create like for itinerary
 const justin_like1 = new Like({
   user: jerry,
-  user: david,
-  user: caroline,
   itinerary: justin_itinerary
 })
 // 8. update likes column in both user and itinerary
 justin_like1.likes += 1
-david.likes.push(justin_like1)
 jerry.likes.push(justin_like1)
-caroline.likes.push(justin_like1)
+
 
 
 //9. push like, user, itinerary into the array accordingly
@@ -1318,17 +1315,11 @@ steph_itinerary.livings.push(steph_living1)
 // 7. create like for itinerary
 const steph_like1 = new Like({
   user: jerry,
-  user: david,
-  user: caroline,
-  user: jhon,
   itinerary: steph_itinerary
 })
 // 8. update likes column in both user and itinerary
 steph_like1.likes += 1
-david.likes.push(steph_like1)
 jerry.likes.push(steph_like1)
-caroline.likes.push(steph_like1)
-jhon.likes.push(steph_like1)
 
 
 //9. push like, user, itinerary into the array accordingly
@@ -1429,19 +1420,13 @@ jennifer_itinerary.livings.push(jennifer_living1);
 
 // 7. create likes for Jennifer's itinerary
 const jennifer_like1 = new Like({
-  user: jerry,
   user: david,
-  user: caroline,
-  user: jhon,
   itinerary: jennifer_itinerary
 });
 
 // 8. update likes column in both user and itinerary
 jennifer_like1.likes += 1;
 david.likes.push(jennifer_like1);
-jerry.likes.push(jennifer_like1);
-caroline.likes.push(jennifer_like1);
-jhon.likes.push(jennifer_like1);
 
 // 9. push like, user, itinerary into the array accordingly
 likes.push(jennifer_like1);
@@ -1610,19 +1595,13 @@ mila_itinerary.livings.push(mila_living1, mila_living2);
 
 // 7. create likes for Mila's itinerary
 const mila_like1 = new Like({
-  user: jerry,
-  user: david,
   user: caroline,
-  user: jhon,
   itinerary: mila_itinerary
 });
 
 // 8. update likes column in both user and itinerary
 mila_like1.likes += 1;
-david.likes.push(mila_like1);
-jerry.likes.push(mila_like1);
 caroline.likes.push(mila_like1);
-jhon.likes.push(mila_like1);
 
 // 9. push like, user, itinerary into the array accordingly
 likes.push(mila_like1);
@@ -1816,20 +1795,12 @@ serena_itinerary.livings.push(serena_living1, serena_living2);
 
 // 8. create likes for Serena's itinerary
 const serena_like1 = new Like({
-  user: jerry,
-  user: david,
-  user: caroline,
-  user: jhon,
   user: demoUser,
   itinerary: serena_itinerary
 });
 
 // 9. update likes column in both user and itinerary
 serena_like1.likes += 1;
-david.likes.push(serena_like1);
-jerry.likes.push(serena_like1);
-caroline.likes.push(serena_like1);
-jhon.likes.push(serena_like1);
 demoUser.likes.push(serena_like1)
 
 // 10. push like, user, itinerary into the array accordingly
@@ -2024,20 +1995,12 @@ robert_itinerary.livings.push(robert_living1, robert_living2);
 
 // 8. create likes for Robert's itinerary
 const robert_like1 = new Like({
-  user: jerry,
-  user: david,
-  user: caroline,
-  user: jhon,
   user: demoUser,
   itinerary: robert_itinerary
 });
 
 // 9. update likes column in both user and itinerary
 robert_like1.likes += 1;
-david.likes.push(robert_like1);
-jerry.likes.push(robert_like1);
-caroline.likes.push(robert_like1);
-jhon.likes.push(robert_like1);
 demoUser.likes.push(robert_like1)
 
 // 10. push like, user, itinerary into the array accordingly
@@ -2209,20 +2172,12 @@ suzanne_itinerary.livings.push(suzanne_living1, suzanne_living2);
 // 8. create likes for Suzanne's itinerary
 const suzanne_like1 = new Like({
   user: jerry,
-  user: david,
-  user: caroline,
-  user: jhon,
-  user: demoUser,
   itinerary: suzanne_itinerary
 });
 
 // 9. update likes column in both user and itinerary
 suzanne_like1.likes += 1;
-david.likes.push(suzanne_like1);
 jerry.likes.push(suzanne_like1);
-caroline.likes.push(suzanne_like1);
-jhon.likes.push(suzanne_like1);
-demoUser.likes.push(suzanne_like1)
 
 // 10. push like, user, itinerary into the array accordingly
 likes.push(suzanne_like1);
@@ -2311,19 +2266,13 @@ tim_itinerary.livings.push(tim_living1);
 
 // 7. create likes for Tim's itinerary
 const tim_like1 = new Like({
-  user: jerry,
   user: david,
-  user: caroline,
-  user: jhon,
   itinerary: tim_itinerary
 });
 
 // 8. update likes column in both user and itinerary
 tim_like1.likes += 1;
 david.likes.push(tim_like1);
-jerry.likes.push(tim_like1);
-caroline.likes.push(tim_like1);
-jhon.likes.push(tim_like1);
 
 // 9. push like, user, itinerary into the array accordingly
 likes.push(tim_like1);
@@ -2445,21 +2394,13 @@ lebron_itinerary.livings.push(lebron_living1);
 
 // 7. create likes for LeBron's itinerary
 const lebron_like1 = new Like({
-  user: jerry,
-  user: david,
   user: caroline,
-  user: jhon,
-  user: demoUser,
   itinerary: lebron_itinerary
 });
 
 // 8. update likes column in both user and itinerary
 lebron_like1.likes += 1;
-david.likes.push(lebron_like1);
-jerry.likes.push(lebron_like1);
 caroline.likes.push(lebron_like1);
-jhon.likes.push(lebron_like1);
-demoUser.likes.push(lebron_like1)
 
 // 9. push like, user, itinerary into the array accordingly
 likes.push(lebron_like1);
@@ -2603,21 +2544,13 @@ lionel_itinerary.livings.push(lionel_living1);
 
 // 7. create likes for Lionel's itinerary
 const lionel_like1 = new Like({
-  user: jerry,
-  user: david,
-  user: caroline,
   user: jhon,
-  user: demoUser,
   itinerary: lionel_itinerary
 });
 
 // 8. update likes column in both user and itinerary
 lionel_like1.likes += 1;
-david.likes.push(lionel_like1);
-jerry.likes.push(lionel_like1);
-caroline.likes.push(lionel_like1);
 jhon.likes.push(lionel_like1);
-demoUser.likes.push(lionel_like1)
 
 // 9. push like, user, itinerary into the array accordingly
 likes.push(lionel_like1);
@@ -2797,20 +2730,12 @@ jungkook_itinerary.livings.push(jungkook_living1);
 
 // 7. create likes for Jungkook's itinerary
 const jungkook_like1 = new Like({
-  user: jerry,
-  user: david,
-  user: caroline,
-  user: jhon,
   user: demoUser,
   itinerary: jungkook_itinerary
 });
 
 // 8. update likes column in both user and itinerary
 jungkook_like1.likes += 1;
-david.likes.push(jungkook_like1);
-jerry.likes.push(jungkook_like1);
-caroline.likes.push(jungkook_like1);
-jhon.likes.push(jungkook_like1);
 demoUser.likes.push(jungkook_like1)
 
 // 9. push like, user, itinerary into the array accordingly
@@ -2992,19 +2917,13 @@ tyson_itinerary.livings.push(tyson_living1);
 
 // 7. create likes for Tyson's itinerary
 const tyson_like1 = new Like({
-  user: jerry,
-  user: david,
   user: caroline,
-  user: jhon,
   itinerary: tyson_itinerary
 });
 
 // 8. update likes column in both user and itinerary
 tyson_like1.likes += 1;
-david.likes.push(tyson_like1);
-jerry.likes.push(tyson_like1);
 caroline.likes.push(tyson_like1);
-jhon.likes.push(tyson_like1);
 
 // 9. push like, user, itinerary into the array accordingly
 likes.push(tyson_like1);
