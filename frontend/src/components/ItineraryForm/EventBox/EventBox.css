@@ -41,7 +41,7 @@
     /* z-index: 0; */
     /* opacity: 0.5; */
     /* background-color: #d8d3d3; */
-    background-color: rgba(25,25,25,.1);
+    background-color: rgba(25,25,25,.05);
 }
 
 .event-date-box-header, .living-date-box-header, .transportation-date-box-header {
