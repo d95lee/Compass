@@ -78,7 +78,8 @@ function NavBar () {
           }
         </div>
 
-        <div className="links-auth">
+        {/* <div className="links-auth"> */}
+        <div className={currentUser ? 'links-auth-currentuser' : 'links-auth'}>
             {getLinks()}
         </div>
 
