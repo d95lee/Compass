@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { fetchItineraries, fetchItinerary, selectItinerary, selectItineraryArray } from '../../store/itinerary';
 import { fetchItineraries, selectItineraries } from '../../store/itinerary';
 import ItineraryItem from '../ItineraryItem/ItineraryItem';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { removeGlobe } from '../Globe/Globe';
 
 const ItineraryIndex = () => {
@@ -12,12 +12,13 @@ const ItineraryIndex = () => {
 
     const itineraries = useSelector(selectItineraries);
     // console.log(itineraries, 'itineraries');
+    const [fiterLocation, setFilterLocation] = useState('all')
 
     useEffect(() => {
         dispatch(fetchItineraries());
     }, [dispatch])
 
-    removeGlobe()
+
 
     return (
         <>
