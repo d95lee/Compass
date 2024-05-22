@@ -1,6 +1,6 @@
 # Welcome to Compass
 
-Compass is a social media website where users can interact with each other by creating, sharing and interacting with itineraries in order to plan future trips or share past experiences. This allows for people to connect  and make the best decisions depending on the users needs and wants, taking into account the location, price and type of trip (backpacking, luxury travel, exploring, etc.)
+Compass is a social media website where users can interact with each other by creating, sharing, and interacting with itineraries to plan future trips or share past experiences. This allows for people to connect and make the best decisions depending on the user’s needs and wants, considering the location, price and type of trip (backpacking, luxury travel, exploring, etc.)
 
 
 ## Table of contents
@@ -26,7 +26,7 @@ Users will have the ability to create or log in to their account via modal once 
 
 <br>
 <br>
- When first entering the page, users will have access to the contributors itineraries.
+ When first entering the page, users will have access to the contributor’s itineraries.
  <br>
 <br>
 
@@ -54,7 +54,7 @@ useEffect(() => {
 
 
 
-Whether logged in or logged out, users can preview itineries
+Whether logged in or logged out, users can preview itineraries.
 
 
 ![image](https://github.com/d95lee/Compass/assets/112995904/7e706ea4-b901-469b-8412-76845dc107ef)
@@ -156,7 +156,7 @@ When clicking on a specific itinerary, will display information on transportatio
 <br>
 <br>
 
-Users browsing through itineraries can like the ones they are interested in and it will have them be saved for future reference in their own profile.
+Users browsing through itineraries can like the ones they are interested in, and it will have them be saved for future reference in their own profile.
 
 ```
  useEffect(() => {
@@ -229,7 +229,7 @@ Users browsing through itineraries can like the ones they are interested in and 
 <br>
 <br>
 
-The itinerary forms were created in a way that will show them chronologically timed, as a result it can efficently display events, transportations and living so that users viewing have the most recent information pop up first.
+The itinerary forms were created in a way that will show them chronologically timed, as a result it can efficiently display events, transportations and living so that users viewing have the most recent information pop up first.
 
 ```
 export const eventSort = (itinerary) => {
@@ -359,7 +359,7 @@ Compass was primarily built with MERN stack which includes:
    <br>
 
 - Itinerary
-  - Users can create, delete or update their own itineraries.
+  - Users can create, delete, or update their own itineraries.
   <br>
   
 ![image](https://github.com/d95lee/Compass/assets/112995904/2a6327d5-d7d5-40f1-807a-ad233330ef14)
@@ -370,7 +370,7 @@ Compass was primarily built with MERN stack which includes:
 
 <br>
 - Itineraries
-  - Users are able to Like/Follow/Favorite the itineraries they are interested in
+  - Users can Like/Follow/Favorite the itineraries they are interested in
 <br>
 <br>
 
@@ -396,7 +396,7 @@ Compass was primarily built with MERN stack which includes:
 
   
 - Living
-  - Able to provide accomodation information
+  - Able to provide accommodation information
   - Title
   - Start & end time
   - Start/end date
