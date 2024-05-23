@@ -30,7 +30,7 @@ Users will have the ability to create or log in to their account via modal once 
  <br>
 <br>
 
-```
+```javascript
 useEffect(() => {
     dispatch(fetchItineraries())
     dispatch(fetchUsers())
@@ -40,8 +40,6 @@ useEffect(() => {
     const jerry = useSelector(selectUserByUsername('jerry'))
     const jhon = useSelector(selectUserByUsername('jhon'))
     const david = useSelector(selectUserByUsername('david'))
-    console.log(jerry)
-
 
     const carolineItinerary = useSelector(selectItineraryByUser(caroline))
     const davidItinerary = useSelector(selectItineraryByUser(david))
@@ -67,7 +65,7 @@ Whether logged in or logged out, users can preview itineraries.
 
 Itineraries will be able to be categorized by continent, making the search process easier.
 
-```
+```javascript
 const ItineraryIndex = () => {
 
     const dispatch = useDispatch();
@@ -124,12 +122,10 @@ User profile shows liked or created itineraries. Can also upload or change profi
 
 The option to have a personal bio so that other users can know more about you is also available in the profile page.
 
-```
+```javascript
 const [bio, setBio] = useState(userBio ? userBio : '');
     const dispatch = useDispatch()
     const { userId } = useParams();
-
-
 
     const handleEdit = e => {
         e.preventDefault();
@@ -158,7 +154,7 @@ When clicking on a specific itinerary, will display information on transportatio
 
 Users browsing through itineraries can like the ones they are interested in, and it will have them be saved for future reference in their own profile.
 
-```
+```javascript
  useEffect(() => {
         dispatch(fetchItinerary(itineraryId));
     }, [dispatch, itineraryId])
@@ -231,7 +227,7 @@ Users browsing through itineraries can like the ones they are interested in, and
 
 The itinerary forms were created in a way that will show them chronologically timed, as a result it can efficiently display events, transportations and living so that users viewing have the most recent information pop up first.
 
-```
+```javascript
 export const eventSort = (itinerary) => {
     let res = {};
     const events = itinerary?.events.slice();
