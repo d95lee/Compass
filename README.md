@@ -424,12 +424,11 @@ Compass was primarily built with MERN stack which includes:
 
 
 
-
 ## Contributors
-- David Lee (Team lead, flex)
-- Caroline Zhang (Frontend lead)
-- Jerry Wang (Backend lead)
-- Jhon Salazar (Flex)
+- David Lee (Team lead, flex) | [github](https://github.com/d95lee) | [Linkedin](https://www.linkedin.com/in/david-lee-49959a20a/)
+- Caroline Zhang (Frontend lead) | [github](https://github.com/caroline495) | [Linkedin](https://www.linkedin.com/in/carolineczhang/)
+- Jerry Wang (Backend lead) | [github](https://github.com/ziyanwang1105) | [Linkedin](https://www.linkedin.com/in/zwang01/)
+- Jhon Salazar (Flex) | [github](https://github.com/JhonJSC182) | [Linkedin](https://www.linkedin.com/in/jhon-salazar-655b24208/)
 
 ## Future features
 - Search that interacts with 3rd party integration
