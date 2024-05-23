@@ -53,16 +53,16 @@ const trip1 = new Itinerary({
 });
 // 3. create events in itinerary
 const event1 = new Event({
-  eventTitle: "Time Square Walk",
+  eventTitle: "Times Square Walk",
   startTime: "12:00",
   endTime: "13:00",
-  location: "Time Square",
+  location: "Times Square",
   description: "Walk",
   cost: Math.floor(Math.random() * 10000),
   category: "Tour",
   date: faker.date.past()
 });
-//4. create transporataions in itineraray
+//4. create transportations in itinerary
 const transportation1 = new Transportation({
   transportationTitle: 'AA airline',
   startLocation: 'SF',
@@ -128,8 +128,8 @@ const demoUser_event1 = new Event({
   startTime: "12:00",
   endTime: "15:00",
   location: "Charles de Gaulle Airport",
-  description: "Arrive in Paris and kick off your trip to the City of Light. Explore the iconic landmarks, indulge in French cuisine, and immerse yourself in the Parisian atmosphere.",
-  cost: 0,
+  description: "Arrive in Paris and kick off trip to the City of Light. Excited to explore the iconic landmarks, indulge in French cuisine, and immerse myself in the Parisian atmosphere.",
+  cost: 500,
   category: "Travel",
   date: "03-21-2025"
 });
@@ -158,10 +158,10 @@ const demoUser_event3 = new Event({
 
 const demoUser_event4 = new Event({
   eventTitle: "Seine River Cruise",
-  startTime: "11:00",
-  endTime: "13:00",
+  startTime: "18:00",
+  endTime: "20:00",
   location: "Seine River, Paris",
-  description: "Embark on a scenic cruise along the Seine River. Sail past historic landmarks such as Notre-Dame Cathedral and enjoy the picturesque views of Parisian architecture.",
+  description: "Take a scenic cruise along the Seine River. Sail past historic landmarks such as Notre-Dame Cathedral and enjoy the picturesque views of Parisian architecture.",
   cost: 40,
   category: "Sightseeing",
   date: "03-24-2025"
@@ -173,18 +173,18 @@ const demoUser_event5 = new Event({
   endTime: "12:00",
   location: "Le Cordon Bleu, Paris",
   description: "Learn the art of French cuisine in a cooking class at Le Cordon Bleu. Master classic French recipes and indulge in the flavors of French gastronomy.",
-  cost: 50,
+  cost: 100,
   category: "Culinary",
   date: "03-25-2025"
 });
 
 const demoUser_event6 = new Event({
   eventTitle: "Shopping on Champs-Élysées",
-  startTime: "14:00",
+  startTime: "12:00",
   endTime: "17:00",
   location: "Champs-Élysées, Paris",
-  description: "Shop till you drop on the famous Champs-Élysées boulevard. Explore luxury boutiques, flagship stores, and trendy cafes along one of the most famous avenues in the world.",
-  cost: 100,
+  description: "Shop till you drop on the famous Champs-Élysées boulevard. Check out luxury boutiques, flagship stores, and trendy cafes along one of the most famous avenues in the world.",
+  cost: 200,
   category: "Shopping",
   date: "03-26-2025"
 });
@@ -194,7 +194,7 @@ const demoUser_event7 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Charles de Gaulle Airport",
-  description: "Bid farewell to Paris as you depart from Charles de Gaulle Airport. Take with you unforgettable memories of your adventure in the City of Light!",
+  description: "Bid farewell to Paris, taking unforgettable memories",
   cost: 0,
   category: "Travel",
   date: "03-28-2025"
@@ -209,7 +209,7 @@ const demoUser_transportation1 = new Transportation({
   endTime: '15:00',
   startDate: "03-21-2025",
   endDate: "03-21-2025",
-  description: 'Transfer from Charles de Gaulle Airport to your hotel in Paris.',
+  description: 'Transfer from Charles de Gaulle Airport to hotel in Paris.',
   cost: 50
 });
 
@@ -221,7 +221,7 @@ const demoUser_transportation2 = new Transportation({
   endTime: '17:00',
   startDate: "03-22-2025",
   endDate: "03-26-2025",
-  description: 'Enjoy a convenient city tour shuttle service to explore various attractions and landmarks in Paris.',
+  description: 'Convenient city tour shuttle service to explore various attractions and landmarks in Paris.',
   cost: 100
 });
 
@@ -233,7 +233,7 @@ const demoUser_transportation3 = new Transportation({
   endTime: '12:00',
   startDate: "03-25-2025",
   endDate: "03-25-2025",
-  description: 'Shuttle service to and from Le Cordon Bleu for your French cooking class.',
+  description: 'Shuttle service to and from Le Cordon Bleu for French cooking class.',
   cost: 20
 });
 
@@ -245,7 +245,7 @@ const demoUser_transportation4 = new Transportation({
   endTime: '12:00',
   startDate: "03-28-2025",
   endDate: "03-28-2025",
-  description: 'Transfer from your hotel in Paris to Charles de Gaulle Airport for your departure.',
+  description: 'Transfer from hotel in Paris to Charles de Gaulle Airport for departure',
   cost: 50
 });
 
@@ -257,7 +257,7 @@ const demoUser_living1 = new Living({
   startDate: "03-21-2025",
   endDate: "03-28-2025",
   location: 'Paris',
-  description: 'Stay in a luxury hotel in the heart of Paris, offering exquisite accommodations and exceptional service amidst the charm of the City of Light.',
+  description: 'Stay in luxury hotel in the heart of Paris',
   cost: 1200
 });
 
@@ -398,7 +398,7 @@ const caroline_event8 = new Event({
   date: "02-04-2024"
 });
 
-//4. create transporataions in itineraray
+//4. create transportations in itinerary
 const caroline_transportation1 = new Transportation({
   transportationTitle: 'Flight from SF to NYC - test',
   startLocation: 'SFO Airport',
@@ -497,8 +497,8 @@ const darren_itinerary = new Itinerary({
 // 3. create events in itinerary
 const darren_event1 = new Event({
   eventTitle: "Turtle Whispering Workshop",
-  startTime: "10:00",
-  endTime: "11:30",
+  startTime: "13:00",
+  endTime: "14:30",
   location: "Turtle Beach",
   description: "Learn the ancient art of communicating with turtles and master the art of turtle yoga.",
   cost: 0,
@@ -507,13 +507,13 @@ const darren_event1 = new Event({
 });
 
 
-//4. create transporataions in itineraray
+//4. create transportations in itinerary
 const darren_event2 = new Event({
   eventTitle: "Hawaiian Luau Extravaganza",
   startTime: "18:00",
   endTime: "23:00",
   location: "Beachside Resort",
-  description: "Join Ayce for an epic beachside luau filled with hula dancing, fire performances, and unlimited tropical cocktails!",
+  description: "Epic beachside luau filled with hula dancing, fire performances, and unlimited tropical cocktails",
   cost: 50,
   category: "Party",
   date: "02-02-2024"
@@ -538,7 +538,8 @@ const darren_transportation1 = new Transportation({
   endTime: '12:00',
   startDate: "02-01-2024",
   endDate: "02-01-2024",
-  description: 'Experience the joy of early morning travel as you navigate through the bustling terminals of SFO, endure the security line saga, and eventually board a metal tube hurtling through the skies to the Big Apple. Complimentary peanuts and a lukewarm beverage included.',
+  description: 'early morning travel to the Big Apple',
+  //'Experience the joy of early morning travel as you navigate through the bustling terminals of SFO, endure the security line saga, and eventually board a metal tube hurtling through the skies to the Big Apple. Complimentary peanuts and a lukewarm beverage included.',
   cost: 300
 });
 
@@ -598,7 +599,8 @@ ayce = new User({
 const ayce_itinerary = new Itinerary({
   author: ayce._id,
   title: "Ayce's Adventure in Washington",
-  description: "A 5-day exploration of the nation's capital with Ayce, filled with history, culture, and a touch of whimsy.",
+  description: "A 5-day exploration of the nation's capital",
+  // "A 5-day exploration of the nation's capital with Ayce, filled with history, culture, and a touch of whimsy.",
   country: "USA",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/washington.jpg",
   events: [],
@@ -612,7 +614,8 @@ const ayce_event1 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Washington, D.C.",
-  description: "Embark on a guided tour of Capitol Hill, exploring iconic landmarks like the United States Capitol and the Library of Congress. Learn about the rich history and political significance of these institutions.",
+  description: "guided tour of Capitol Hill, hit up landmarks like the United States Capitol and the Library of Congress",
+  // "Embark on a guided tour of Capitol Hill, exploring iconic landmarks like the United States Capitol and the Library of Congress. Learn about the rich history and political significance of these institutions.",
   cost: 0,
   category: "Sightseeing",
   date: "02-06-2024"
@@ -624,6 +627,7 @@ const ayce_event2 = new Event({
   endTime: "15:00",
   location: "Tidal Basin",
   description: "Enjoy a picturesque picnic amidst the blooming cherry blossoms at Tidal Basin. Capture stunning photos, relax under the shade of cherry trees, and savor delicious snacks.",
+  // "Enjoy a picturesque picnic amidst the blooming cherry blossoms at Tidal Basin. Capture stunning photos, relax under the shade of cherry trees, and savor delicious snacks.",
   cost: 20,
   category: "Outdoor",
   date: "02-07-2024"
@@ -634,7 +638,8 @@ const ayce_event3 = new Event({
   startTime: "10:00",
   endTime: "11:00",
   location: "White House",
-  description: "Strike a pose outside the iconic White House and snap some memorable photos. Who knows, you might even catch a glimpse of the President!",
+  description: "Strike a pose outside the iconic White House",
+  // "Strike a pose outside the iconic White House and snap some memorable photos. Who knows, you might even catch a glimpse of the President!",
   cost: 0,
   category: "Sightseeing",
   date: "02-08-2024"
@@ -648,7 +653,8 @@ const ayce_transportation1 = new Transportation({
   endTime: '16:00',
   startDate: "02-05-2024",
   endDate: "02-05-2024",
-  description: 'Embark on a cross-country journey from the sunny shores of Honolulu to the historic streets of Washington D.C. Buckle up for a whirlwind adventure!',
+  description: 'flight from Honolulu to Washington D.C.',
+  // 'Embark on a cross-country journey from the sunny shores of Honolulu to the historic streets of Washington D.C. Buckle up for a whirlwind adventure!',
   cost: 600
 });
 
@@ -659,7 +665,8 @@ const ayce_living1 = new Living({
   startDate: "02-05-2024",
   endDate: "02-09-2024",
   location: 'Washington, D.C.',
-  description: 'Stay in a charming historic hotel located in the heart of downtown Washington, offering easy access to iconic attractions and vibrant neighborhoods. Prepare for a cozy and memorable stay!',
+  description: 'Stay in a historic hotel located in downtown Washington',
+  // 'Stay in a charming historic hotel located in the heart of downtown Washington, offering easy access to iconic attractions and vibrant neighborhoods. Prepare for a cozy and memorable stay!',
   cost: 1000
 });
 //6. push events, transportations, livings in to the itinerary created accordingly
@@ -730,7 +737,7 @@ const david_event1 = new Event({
 });
 
 
-//4. create transporataions in itineraray
+//4. create transportations in itinerary
 const david_event2 = new Event({
   eventTitle: "Glacier Point",
   startTime: "18:00",
@@ -823,7 +830,8 @@ jerry = new User({
 const jerry_itinerary = new Itinerary({
   author: jerry._id,
   title: "Russian Adventure - Moscow & St. Petersburg",
-  description: "7 day trip to explore the wonders of Russia, from the iconic landmarks of Moscow to the cultural riches of St. Petersburg.",
+  description: "7 day trip in Russia, from Moscow to St. Petersburg.",
+  // "7 day trip to explore the wonders of Russia, from the iconic landmarks of Moscow to the cultural riches of St. Petersburg.",
   country: "Russia",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/russia.jpg",
   events: [],
@@ -1033,6 +1041,7 @@ const kevin_itinerary = new Itinerary({
   author: kevin._id,
   title: "Kevin Hart's Wild Ride in Las Vegas",
   description: "5-day adventure in Sin City with Kevin Hart, where laughter, chaos, and unexpected escapades await around every corner.",
+  // "5-day adventure in Sin City with Kevin Hart, where laughter, chaos, and unexpected escapades await around every corner.",
   country: "USA",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/las-vegas.jpg",
   events: [],
@@ -1046,8 +1055,9 @@ const kevin_event1 = new Event({
   startTime: "20:00",
   endTime: "22:00",
   location: "Caesars Palace",
-  description: "Catch Kevin Hart live on stage for a hilarious stand-up comedy show at Caesars Palace. Get ready for non-stop laughter and unforgettable moments!",
-  cost: 0,
+  description: "Catch me live on stage for a hilarious stand-up comedy show at Caesars Palace. Get ready for non-stop laughter and unforgettable moments!",
+  // "Catch Kevin Hart live on stage for a hilarious stand-up comedy show at Caesars Palace. Get ready for non-stop laughter and unforgettable moments!",
+  cost: 150,
   category: "Entertainment",
   date: "12-01-2024"
 });
@@ -1057,7 +1067,8 @@ const kevin_event2 = new Event({
   startTime: "10:00",
   endTime: "12:00",
   location: "High Roller Observation Wheel",
-  description: "Join Kevin Hart for a ride on the High Roller Observation Wheel, where the view is as dizzying as the jokes. Hold onto your seats!",
+  description: "Ride on the High Roller Observation Wheel",
+  // "Join Kevin Hart for a ride on the High Roller Observation Wheel, where the view is as dizzying as the jokes. Hold onto your seats!",
   cost: 50,
   category: "Adventure",
   date: "12-02-2024"
@@ -1068,8 +1079,9 @@ const kevin_event3 = new Event({
   startTime: "18:00",
   endTime: "20:00",
   location: "Bellagio Casino",
-  description: "Compete alongside Kevin Hart in a high-stakes blackjack tournament at the Bellagio. Will luck be on your side, or will Kevin's antics distract you?",
-  cost: 100,
+  description: "Compete in a high-stakes blackjack tournament at the Bellagio",
+  // "Compete alongside Kevin Hart in a high-stakes blackjack tournament at the Bellagio. Will luck be on your side, or will Kevin's antics distract you?",
+  cost: 150,
   category: "Gaming",
   date: "12-04-2024"
 });
@@ -1082,7 +1094,8 @@ const kevin_transportation1 = new Transportation({
   endTime: '14:00',
   startDate: "12-01-024",
   endDate: "12-05-2024",
-  description: 'Take a private jet from Los Angeles to Las Vegas, because why not travel in style when you\'re with Kevin Hart?',
+  description: 'Take a private jet from Los Angeles to Las Vegas, because why not travel in style when you\'re Kevin Hart?',
+  // 'Take a private jet from Los Angeles to Las Vegas, because why not travel in style when you\'re with Kevin Hart?',
   cost: 5000
 });
 
@@ -1093,7 +1106,8 @@ const kevin_living1 = new Living({
   startDate: "12-01-2024",
   endDate: "12-05-2024",
   location: 'The Venetian Hotel',
-  description: 'Stay in a lavish luxury suite at The Venetian, where Kevin Hart\'s antics are sure to make your stay unforgettable. Prepare for a comedy show in your room!',
+  description: 'Stay in a lavish luxury suite at The Venetian. Prepare for comedy show in my room!',
+  // 'Stay in a lavish luxury suite at The Venetian, where Kevin Hart\'s antics are sure to make your stay unforgettable. Prepare for a comedy show in your room!',
   cost: 1500
 });
 //6. push events, transportations, livings in to the itinerary created accordingly
@@ -1149,7 +1163,8 @@ justin = new User({
 const justin_itinerary = new Itinerary({
   author: justin._id,
   title: "Justin Bieber's Japanese Adventure",
-  description: "10-day vacation in the Land of the Rising Sun with Justin Bieber, where he'll immerse himself in the culture, cuisine, and beauty of Japan.",
+  description: "10-day vacation in Japan",
+  // "10-day vacation in the Land of the Rising Sun with Justin Bieber, where he'll immerse himself in the culture, cuisine, and beauty of Japan.",
   country: "Japan",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/japan.jpg",
   events: [],
@@ -1160,10 +1175,11 @@ const justin_itinerary = new Itinerary({
 
 const justin_event1 = new Event({
   eventTitle: "Sushi Making Class",
-  startTime: "11:00",
-  endTime: "13:00",
+  startTime: "10:00",
+  endTime: "12:00",
   location: "Tokyo",
-  description: "Join Justin Bieber for a hands-on sushi making class in Tokyo. Learn the art of sushi rolling from expert chefs and indulge in your delicious creations!",
+  description: "Hands-on sushi making class in Tokyo. Learn the art of sushi rolling",
+  // "Join Justin Bieber for a hands-on sushi making class in Tokyo. Learn the art of sushi rolling from expert chefs and indulge in your delicious creations!",
   cost: 50,
   category: "Culinary",
   date: "04-04-2024"
@@ -1174,21 +1190,23 @@ const justin_event2 = new Event({
   startTime: "15:00",
   endTime: "17:00",
   location: "Ryogoku Kokugikan, Tokyo",
-  description: "Experience the excitement of a sumo wrestling match with Justin Bieber at Ryogoku Kokugikan. Cheer for your favorite wrestlers and witness the ancient sport in action!",
+  description: "Experience the excitement of a sumo wrestling match at Ryogoku Kokugikan",
+  // "Experience the excitement of a sumo wrestling match with Justin Bieber at Ryogoku Kokugikan. Cheer for your favorite wrestlers and witness the ancient sport in action!",
   cost: 80,
   category: "Sports",
-  date: "04-06-2024"
+  date: "04-05-2024"
 });
 
 const justin_transportation1 = new Transportation({
   transportationTitle: 'Bullet Train',
   startLocation: 'Tokyo',
   endLocation: 'Kyoto',
-  startTime: '10:00',
-  endTime: '12:00',
-  startDate: "04-04-2024",
-  endDate: "04-05-2024",
-  description: 'Hop on a bullet train from Tokyo to Kyoto, enjoying the breathtaking scenery of Japan\'s countryside along the way.',
+  startTime: '13:00',
+  endTime: '15:00',
+  startDate: "04-06-2024",
+  endDate: "04-06-2024",
+  description: 'Hop on a bullet train from Tokyo to Kyoto, enjoying the scenery of Japan\'s countryside along the way.',
+  // 'Hop on a bullet train from Tokyo to Kyoto, enjoying the breathtaking scenery of Japan\'s countryside along the way.',
   cost: 100
 });
 
@@ -1196,11 +1214,12 @@ const justin_living1 = new Living({
   livingTitle: 'Traditional Ryokan in Kyoto',
   startTime: '15:00',
   endTime: '12:00',
-  startDate: "004-04-2024",
+  startDate: "04-06-2024",
   endDate: "04-14-2024",
   location: 'Kyoto',
-  description: 'Stay in a charming traditional ryokan in Kyoto, where Justin Bieber will experience the tranquility of Japanese hospitality and enjoy relaxing hot spring baths.',
-  cost: 200
+  description: 'Stay in traditional ryokan in Kyoto, relax in the hot spring baths.',
+  // 'Stay in a charming traditional ryokan in Kyoto, where Justin Bieber will experience the tranquility of Japanese hospitality and enjoy relaxing hot spring baths.',
+  cost: 800
 });
 //6. push events, transportations, livings in to the itinerary created accordingly
 
@@ -1250,7 +1269,8 @@ steph = new User({
 const steph_itinerary = new Itinerary({
   author: steph._id,
   title: "Steph Curry's Hoops Journey in China",
-  description: "10-day basketball adventure in the Far East with Steph Curry, where he'll shoot hoops, interact with fans, and experience the rich culture of China.",
+  description: "10-day basketball adventure in the Far East -- shoot some hoops, interact with fans, and experience the rich culture of China.",
+  // "10-day basketball adventure in the Far East with Steph Curry, where he'll shoot hoops, interact with fans, and experience the rich culture of China.",
   country: "China",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/china.jpg",
   events: [],
@@ -1260,11 +1280,12 @@ const steph_itinerary = new Itinerary({
 });
 
 const steph_event1 = new Event({
-  eventTitle: "Basketball Clinic in Shanghai",
+  eventTitle: "Volunteer Basketball Clinic in Shanghai",
   startTime: "10:00",
   endTime: "12:00",
   location: "Shanghai",
-  description: "Join Steph Curry for an exclusive basketball clinic in Shanghai. Learn shooting techniques, dribbling skills, and teamwork strategies from the NBA superstar himself!",
+  description: "Basketball clinic in Shanghai - teach some shooting techniques, dribbling skills, and teamwork strategies to kids in China",
+  // "Join Steph Curry for an exclusive basketball clinic in Shanghai. Learn shooting techniques, dribbling skills, and teamwork strategies from the NBA superstar himself!",
   cost: 0,
   category: "Sports",
   date: "10-01-2024"
@@ -1275,7 +1296,8 @@ const steph_event2 = new Event({
   startTime: "15:00",
   endTime: "17:00",
   location: "Beijing",
-  description: "Witness Steph Curry showcase his sharpshooting skills in a thrilling 3-point shootout competition at Beijing Stadium. Get ready for some long-range excitement!",
+  description: "3-point shootout competition at Beijing Stadium",
+  // "Witness Steph Curry showcase his sharpshooting skills in a thrilling 3-point shootout competition at Beijing Stadium. Get ready for some long-range excitement!",
   cost: 50,
   category: "Sports",
   date: "10-03-2024"
@@ -1287,9 +1309,10 @@ const steph_transportation1 = new Transportation({
   endLocation: 'Beijing',
   startTime: '08:00',
   endTime: '12:00',
-  startDate: "10-01-2024",
+  startDate: "10-03-2024",
   endDate: "10-03-2024",
-  description: 'Travel from Shanghai to Beijing on a high-speed train, enjoying the scenic views and comfortable ride across China.',
+  description: 'Travel from Shanghai to Beijing on high-speed train',
+  // 'Travel from Shanghai to Beijing on a high-speed train, enjoying the scenic views and comfortable ride across China.',
   cost: 150
 });
 
@@ -1297,11 +1320,12 @@ const steph_living1 = new Living({
   livingTitle: 'Luxury Hotel in Beijing',
   startTime: '15:00',
   endTime: '12:00',
-  startDate: "10-01-2024",
+  startDate: "10-03-2024",
   endDate: "10-08-2024",
   location: 'Beijing',
-  description: 'Stay in a luxurious hotel in Beijing, where Steph Curry will relax and recharge after thrilling basketball events. Enjoy top-notch amenities and impeccable service!',
-  cost: 300
+  description: 'Stay in a luxurious hotel in Beijing',
+  // 'Stay in a luxurious hotel in Beijing, where Steph Curry will relax and recharge after thrilling basketball events. Enjoy top-notch amenities and impeccable service!',
+  cost: 500
 });
 //6. push events, transportations, livings in to the itinerary created accordingly
 
@@ -1337,7 +1361,7 @@ const jennifer = new User({
   email: 'jennifer@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
   profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/jennifer.jpg',
-  bio: 'Excited to embark on a thrilling adventure!',
+  bio: 'seeking adventures with sun',
   likes: []
 });
 
@@ -1345,7 +1369,8 @@ const jennifer = new User({
 const jennifer_itinerary = new Itinerary({
   author: jennifer._id,
   title: "Jennifer Lawrence's Cruise Adventure",
-  description: "3-day cruise exploring the beauty of the ocean",
+  description: "Cruise around Caribbean",
+  // "3-day cruise exploring the beauty of the ocean",
   country: "International Waters",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/cruise.jpg",
   events: [],
@@ -1360,7 +1385,8 @@ const jennifer_event1 = new Event({
   startTime: "19:00",
   endTime: "22:00",
   location: "Cruise Ship",
-  description: "Kick off the cruise adventure with a lively welcome party on board. Enjoy music, drinks, and meet fellow travelers!",
+  description: "attend welcome party on board to meet fellow travelers, kick off cruise adventure",
+  // "Kick off the cruise adventure with a lively welcome party on board. Enjoy music, drinks, and meet fellow travelers!",
   cost: 0,
   category: "Entertainment",
   date: "10-01-2024"
@@ -1371,8 +1397,9 @@ const jennifer_event2 = new Event({
   startTime: "18:00",
   endTime: "19:00",
   location: "Deck",
-  description: "Savor breathtaking views of the sunset while enjoying delicious cocktails on the deck of the cruise ship.",
-  cost: 20,
+  description: "savor views of the sunset while enjoying cocktails on the deck",
+  // "Savor breathtaking views of the sunset while enjoying delicious cocktails on the deck of the cruise ship.",
+  cost: 50,
   category: "Food & Drink",
   date: "10-02-2024"
 });
@@ -1382,7 +1409,8 @@ const jennifer_event3 = new Event({
   startTime: "12:00",
   endTime: "14:00",
   location: "Pool Deck",
-  description: "Indulge in a mouthwatering barbecue feast by the pool. Enjoy grilled delights and refreshing drinks under the sun.",
+  description: "barbecue feast by the pool - looking forward to grill and drinks under the sun",
+  // "Indulge in a mouthwatering barbecue feast by the pool. Enjoy grilled delights and refreshing drinks under the sun.",
   cost: 25,
   category: "Food & Drink",
   date: "10-02-2024"
@@ -1397,7 +1425,8 @@ const jennifer_transportation1 = new Transportation({
   endTime: '15:00',
   startDate: "10-01-2024",
   endDate: "10-01-2024",
-  description: 'Board the cruise ship at the designated port and begin the exciting journey across the ocean.',
+  description: 'board cruise ship for journey across ocean',
+  // 'Board the cruise ship at the designated port and begin the exciting journey across the ocean.',
   cost: 0
 });
 
@@ -1409,8 +1438,9 @@ const jennifer_living1 = new Living({
   startDate: "10-01-2024",
   endDate: "10-04-2024",
   location: 'Cruise Ship',
-  description: 'Stay in a luxurious oceanview stateroom equipped with modern amenities and enjoy stunning views of the sea throughout the cruise.',
-  cost: 500
+  description: 'room with amazing views of the sea',
+  // 'Stay in a luxurious oceanview stateroom equipped with modern amenities and enjoy stunning views of the sea throughout the cruise.',
+  cost: 1500
 });
 
 // 6. push events, transportations, livings into Jennifer's itinerary accordingly
@@ -1467,7 +1497,8 @@ const mila_event1 = new Event({
   startTime: "12:00",
   endTime: "15:00",
   location: "Cancun International Airport",
-  description: "Arrive in Cancun and soak in the warm Mexican sun as you start your tropical getaway.",
+  description: "Arrive in Cancun",
+  // "Arrive in Cancun and soak in the warm Mexican sun as you start your tropical getaway.",
   cost: 0,
   category: "Travel",
   date: "03-02-2024"
@@ -1478,7 +1509,8 @@ const mila_event2 = new Event({
   startTime: "10:00",
   endTime: "17:00",
   location: "Playa del Carmen",
-  description: "Spend the day lounging on the pristine beaches of Playa del Carmen, enjoying the turquoise waters and golden sands.",
+  description: "Spend the day on the beach",
+  // "Spend the day lounging on the pristine beaches of Playa del Carmen, enjoying the turquoise waters and golden sands.",
   cost: 0,
   category: "Leisure",
   date: "03-03-2024"
@@ -1489,7 +1521,8 @@ const mila_event3 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Tulum",
-  description: "Explore the ancient Mayan ruins of Tulum and discover the rich history and culture of the region.",
+  description: "Explore the ancient Mayan ruins of Tulum",
+  // "Explore the ancient Mayan ruins of Tulum and discover the rich history and culture of the region.",
   cost: 50,
   category: "Sightseeing",
   date: "03-04-2024"
@@ -2567,7 +2600,7 @@ const jungkook = new User({
   email: 'jungkook@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
   profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/jungkook.jpg',
-  bio: 'Memorable trip to Korea to explore the city and enjoy my K-pop!',
+  bio: 'Jungkook of BTS. Listen to Golden!',
   likes: []
 });
 
@@ -2600,7 +2633,7 @@ const jungkook_event2 = new Event({
   eventTitle: "Visit to K-pop Studio",
   startTime: "10:00",
   endTime: "12:00",
-  location: "SM Entertainment Studio, Seoul",
+  location: "Hybe Studio, Seoul",
   description: "Take a tour of a K-pop studio and get a behind-the-scenes look at how K-pop music is produced. Experience the excitement of being in a real K-pop studio!",
   cost: 0,
   category: "Entertainment",
