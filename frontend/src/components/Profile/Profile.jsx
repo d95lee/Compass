@@ -14,6 +14,7 @@ const Profile = () => {
     const { userId } = useParams();
     const [bioState, setBioState] = useState(null);
     const [indexState, setIndexState] = useState('user')
+    const [image, setImage] = useState(null);
     const user = useSelector(selectUser(userId));
     const userItineraries = useSelector(selectItineraryByUser(user));
     const likeItineraries = useSelector(selectLikedItinerary(user))
@@ -36,7 +37,13 @@ const Profile = () => {
         }
     }
 
-    removeGlobe()
+    const updateFile = e => {
+        const file = e.target.files[0];
+        if (file) {
+            setImage(file);
+            // Further processing for file upload can be done here
+        }
+    };
 
     return (
         <>
@@ -54,6 +61,12 @@ const Profile = () => {
                 <div className='pic-div'>
                     {user?.profileImageUrl && (<img className='user-img' src={user.profileImageUrl}/>)}
                 </div>
+
+               
+                <button className='modal-session-text'>Edit Profile Image:
+                    <input type="file" accept=".jpg, .jpeg, .png" onChange={updateFile} />
+                </button>
+                
 
                 <div className='user-info'>
                     <div className='user-bio-username'>@{user?.username}</div>

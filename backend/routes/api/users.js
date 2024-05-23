@@ -56,6 +56,21 @@ router.post('/register', singleMulterUpload("image"), validateRegisterInput, asy
   });
 });
 
+router.patch('/:userId/editProfileImage', requireUser, async (req, res, next) => {
+  try {
+    const updateUser = await User.findByIdAndUpdate(req.params.userId,
+      { profileImageUrl: req.body.profileImageUrl}, { new: true })
+      let user = await updateUser.save()
+      return res.json(user)
+  }
+  catch (err) {
+    const error = new Error('User not found');
+    error.statusCode = 404;
+    error.errors = { message: "No user found with that id" };
+    return next(error);
+}
+})
+
 router.post('/login', singleMulterUpload(""), validateLoginInput, async (req, res, next) => {
   passport.authenticate('local', async function(err, user) {
     if (err) return next(err);

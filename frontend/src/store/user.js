@@ -65,6 +65,10 @@ export const updateBio = (bioData, userId) => (dispatch) => (
     })
 )
 
+export const editProfileImage = () => (
+    jwtFetch(`/api/users/${userId}`)
+)
+
 // // export const selectUser = (userId) => state => state.user[userId]
 
 //Reducer
