@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
 import configureStore from './store/store.js';
-import { createItinerary, deleteItinerary, fetchItineraries, fetchItinerary, fetchUserItineraries, selectLikedItinerary, updateItinerary } from './store/itinerary.js';
+import { createItinerary, deleteItinerary, fetchItineraries, fetchItinerary, fetchUserItineraries, selectItineraryByContinent, selectLikedItinerary, updateItinerary } from './store/itinerary.js';
 import { createTransportation, deleteTransportation, updateTransportation } from './store/transportation.js';
 
 
@@ -14,6 +14,7 @@ import { getCurrentUser, login } from './store/session.js';
 import { likeItinerary, unlikeItinerary } from './store/like.js';
 import { eventSort, timelineSort } from './utils/calenderSort.js';
 import { fetchUser, fetchUsers, selectUser } from './store/user.js';
+import { isCountryInContinent } from './utils/locationFilter.js';
 const store = configureStore();
 
 if (import.meta.env.MODE !== "production") {
@@ -45,6 +46,8 @@ if (import.meta.env.MODE !== "production") {
   window.selectLikedItinerary = selectLikedItinerary;
   window.selectUser= selectUser;
   window.fetchUsers= fetchUsers;
+  window.isCountryInContinent = isCountryInContinent;
+  window.selectItineraryByContinent = selectItineraryByContinent;
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(

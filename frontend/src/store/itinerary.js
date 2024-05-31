@@ -1,3 +1,4 @@
+import { isCountryInContinent } from "../utils/locationFilter";
 import jwtFetch from "./jwt";
 import {createSelector} from 'reselect'
 
@@ -42,6 +43,17 @@ export const selectLikedItinerary = (user) => createSelector(
       return user.likes.map(like => itineraries[like.itinerary]);
     }
   );
+
+export const selectItineraryByContinent = (continent) => createSelector([selectItineraries],
+    (itineraries) =>{
+        if(continent !== 'all'){
+            return Object.values(itineraries).filter(itinerary => isCountryInContinent(continent, itinerary.country))
+        }
+        else{
+            return Object.values(itineraries)
+        }
+    }
+)
 
 // export const selectItineraryArray = state => Object.values(state.itinerary)
 
