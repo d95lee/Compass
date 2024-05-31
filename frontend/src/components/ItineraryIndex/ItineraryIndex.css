@@ -23,6 +23,12 @@
     font-size: 18px;
     font-weight: 600;
 }
+.index-all-title:hover{
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: lightgrey;
+    cursor: pointer;
+}
 
 .index-locations-title {
     /* position: relative; */
@@ -35,11 +41,17 @@
 }
 
 /* .index-locations {
-    
+
 } */
 .index-location-text {
     margin-left: 30px;
     margin-bottom: 10px;
+}
+.index-location-text:hover{
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: lightgrey;
+    cursor: pointer;
 }
 
 
@@ -79,7 +91,7 @@
 .image {
     height: 240px;
     width: auto;
-    
+
 }
 
 .index-item-details {
