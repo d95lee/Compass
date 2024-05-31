@@ -1,3 +1,5 @@
+## [Compass Live!!](https://compass-d27943df57bc.herokuapp.com/)
+
 ## Background and Overview
 - When traveling, it is challenging figuring out how to have the most productive/fun trip possible. Finding which restaurants, understanding the transportation system and which activities are worthwhile are questions people ask themselves whenever visiting a new city.
 - Compass is an app primarily built with the MERN stack where users can share, compare, and plan itineraries to facilitate the planning stages when traveling to new cities.
