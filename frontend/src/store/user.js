@@ -66,7 +66,20 @@ export const updateBio = (bioData, userId) => (dispatch) => (
 )
 
 export const editProfileImage = () => (
-    jwtFetch(`/api/users/${userId}`)
+    jwtFetch(`/api/users/${userId}`, {
+        method: "PATCH",
+        body: formData
+    })
+    .then(res => {
+        if (res.ok) {
+            return res.json();
+        } else {
+            throw res;
+        }
+    })
+    .then(data => {
+        return dispatch(receiveUser(data))
+    })
 )
 
 // // export const selectUser = (userId) => state => state.user[userId]

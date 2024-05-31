@@ -64,7 +64,7 @@ router.patch('/:userId/editProfileImage', requireUser, async (req, res, next) =>
       return res.json(user)
   }
   catch (err) {
-    const error = new Error('User not found');
+    const error = new Error('Unable to update profile image');
     error.statusCode = 404;
     error.errors = { message: "No user found with that id" };
     return next(error);

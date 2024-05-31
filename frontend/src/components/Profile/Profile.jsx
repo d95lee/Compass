@@ -3,7 +3,7 @@ import './Profile.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { fetchItineraries, selectItineraryByUser, selectLikedItinerary } from '../../store/itinerary';
-import { fetchUser, selectUser } from '../../store/user'
+import { editProfileImage, fetchUser, selectUser } from '../../store/user'
 import { removeGlobe } from '../Globe/Globe';
 import BioModal from './BioModal';
 import ProfileItineraryIndex from './ProfileItineraryIndex';
@@ -39,10 +39,13 @@ const Profile = () => {
 
     const updateFile = e => {
         const file = e.target.files[0];
-        if (file) {
-            setImage(file);
-            // Further processing for file upload can be done here
-        }
+        // if (file) {
+        //     dispatch(fetchUser(userId))
+        //     if (dispatch(editProfileImage(file))) {
+        //         setImage(file);
+        //     }
+        //     // Further processing for file upload can be done here
+        // }
     };
 
     return (
