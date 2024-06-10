@@ -60,15 +60,11 @@ router.patch('/:userId/editProfileImage', requireUser, async (req, res, next) =>
   try {
     const updateUser = await User.findByIdAndUpdate(req.params.userId,
       { profileImageUrl: req.body.profileImageUrl}, { new: true })
-    //   let user = await updateUser.save()
-    //   return res.json(user)
-
-    // If user has an existing profile image, delete it
+  
     if (updateUser.profileImage) {
         fs.unlinkSync(path.join(__dirname, 'uploads', updateUser.profileImage));
     }
 
-    // Update user profile image
     updateUser.profileImage = req.file.filename;
     await updateUser.save();
 
