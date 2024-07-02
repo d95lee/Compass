@@ -1482,7 +1482,7 @@ const mila = new User({
 const mila_itinerary = new Itinerary({
   author: mila._id,
   title: "Mila's Mexico Getaway",
-  description: "Escape to Mexico with Mila for a 3-day trip.",
+  description: "Escape to Mexico for a 3-day trip.",
   country: "Mexico",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/mexico.jpg",
   events: [],
@@ -1498,7 +1498,6 @@ const mila_event1 = new Event({
   endTime: "15:00",
   location: "Cancun International Airport",
   description: "Arrive in Cancun",
-  // "Arrive in Cancun and soak in the warm Mexican sun as you start your tropical getaway.",
   cost: 0,
   category: "Travel",
   date: "03-02-2024"
@@ -1508,80 +1507,57 @@ const mila_event2 = new Event({
   eventTitle: "Beach Day",
   startTime: "10:00",
   endTime: "17:00",
-  location: "Playa del Carmen",
+  location: "Playa Delfines",
   description: "Spend the day on the beach",
-  // "Spend the day lounging on the pristine beaches of Playa del Carmen, enjoying the turquoise waters and golden sands.",
   cost: 0,
   category: "Leisure",
   date: "03-03-2024"
 });
 
-const mila_event3 = new Event({
-  eventTitle: "Mayan Ruins Tour",
-  startTime: "09:00",
-  endTime: "12:00",
-  location: "Tulum",
-  description: "Explore the ancient Mayan ruins of Tulum",
-  // "Explore the ancient Mayan ruins of Tulum and discover the rich history and culture of the region.",
-  cost: 50,
-  category: "Sightseeing",
-  date: "03-04-2024"
-});
 
 // 4. create more events for Mila's Mexico getaway
-const mila_event4 = new Event({
-  eventTitle: "Snorkeling Adventure",
-  startTime: "10:00",
-  endTime: "13:00",
-  location: "Cozumel",
-  description: "Explore the vibrant underwater world of Cozumel with a guided snorkeling adventure. Discover colorful coral reefs and tropical marine life.",
-  cost: 75,
-  category: "Adventure",
-  date: "03-05-2024"
-});
 
-const mila_event5 = new Event({
+const mila_event3 = new Event({
   eventTitle: "Sunset Cruise",
   startTime: "17:00",
   endTime: "19:00",
   location: "Cancun Marina",
-  description: "Embark on a romantic sunset cruise along the coast of Cancun. Enjoy breathtaking views of the sunset over the Caribbean Sea.",
+  description: "romantic sunset cruise along the coast of Cancun",
   cost: 100,
   category: "Leisure",
-  date: "03-05-2024"
+  date: "03-03-2024"
 });
 
-const mila_event6 = new Event({
+const mila_event4 = new Event({
   eventTitle: "Mexican Cooking Class",
   startTime: "11:00",
   endTime: "14:00",
-  location: "Playa del Carmen",
-  description: "Learn to prepare traditional Mexican dishes with a hands-on cooking class in Playa del Carmen. Discover the secrets of authentic Mexican cuisine!",
+  location: "Cancun",
+  description: "Learn to prepare traditional Mexican dishes",
   cost: 50,
   category: "Food & Drink",
-  date: "03-06-2024"
+  date: "03-04-2024"
 });
 
-const mila_event7 = new Event({
+const mila_event5 = new Event({
   eventTitle: "Farewell Dinner",
   startTime: "19:00",
-  endTime: "22:00",
+  endTime: "20:30",
   location: "Cancun",
-  description: "Celebrate the end of your Mexico getaway with a delightful farewell dinner at a local restaurant in Cancun. Enjoy delicious Mexican cuisine and toast to unforgettable memories!",
-  cost: 80,
+  description: "last dinner at local restaurant in Cancun",
   category: "Food & Drink",
-  date: "03-06-2024"
+  date: "03-04-2024"
 });
 
-const mila_event8 = new Event({
+const mila_event6 = new Event({
   eventTitle: "Departure from Cancun",
   startTime: "09:00",
   endTime: "12:00",
   location: "Cancun International Airport",
-  description: "Bid farewell to Mexico as you depart from Cancun International Airport. Take with you cherished memories of your tropical adventure.",
+  description: "depart from Cancun International Airport",
   cost: 0,
   category: "Travel",
-  date: "03-07-2024"
+  date: "03-05-2024"
 });
 
 
@@ -1606,25 +1582,14 @@ const mila_living1 = new Living({
   startDate: "03-02-2024",
   endDate: "03-05-2024",
   location: 'Cancun',
-  description: 'Stay in a luxurious beachfront resort in Cancun, offering stunning views of the Caribbean Sea and top-notch amenities.',
+  description: 'Stay in beachfront resort in Cancun',
   cost: 600
 });
 
-const mila_living2 = new Living({
-  livingTitle: 'Beachfront Villa in Tulum',
-  startTime: '14:00',
-  endTime: '11:00',
-  startDate: "03-02-2024",
-  endDate: "03-06-2024",
-  location: 'Tulum',
-  description: 'Experience luxury living in a beachfront villa in Tulum. Relax in style with stunning ocean views, private beach access, and top-notch amenities.',
-  cost: 800
-});
-
 // 6. push events, transportations, livings into Mila's itinerary accordingly
-mila_itinerary.events.push(mila_event1, mila_event2, mila_event3, mila_event4, mila_event5, mila_event6, mila_event7, mila_event8);
+mila_itinerary.events.push(mila_event1, mila_event2, mila_event3, mila_event4, mila_event5, mila_event6);
 mila_itinerary.transportations.push(mila_transportation1);
-mila_itinerary.livings.push(mila_living1, mila_living2);
+mila_itinerary.livings.push(mila_living1);
 
 // 7. create likes for Mila's itinerary
 const mila_like1 = new Like({
@@ -1653,7 +1618,7 @@ const serena = new User({
   email: 'serena@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
   profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/serena.jpg',
-  bio: 'Excited for a memorable vacation in India!',
+  bio: 'Living, Loving, and working to help you.',
   likes: []
 });
 
@@ -1661,7 +1626,7 @@ const serena = new User({
 const serena_itinerary = new Itinerary({
   author: serena._id,
   title: "Serena's Indian Adventure",
-  description: "Trip to India exploring its rich culture, history, and landscapes.",
+  description: "Trip to India visiting New Delhi, Agra, Mumbai, and more.",
   country: "India",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/india.jpg",
   events: [],
@@ -1676,7 +1641,7 @@ const serena_event1 = new Event({
   startTime: "12:00",
   endTime: "15:00",
   location: "Indira Gandhi International Airport",
-  description: "Arrive in New Delhi and immerse yourself in the bustling streets, vibrant markets, and rich history of the Indian capital.",
+  description: "Arrive in New Delhi",
   cost: 0,
   category: "Travel",
   date: "09-06-2024"
@@ -1687,30 +1652,19 @@ const serena_event2 = new Event({
   startTime: "08:00",
   endTime: "12:00",
   location: "Taj Mahal, Agra",
-  description: "Visit the iconic Taj Mahal, a UNESCO World Heritage Site and symbol of eternal love. Marvel at its stunning architecture and intricate marble craftsmanship.",
+  description: "Visit the iconic Taj Mahal",
   cost: 25,
   category: "Sightseeing",
   date: "09-07-2024"
 });
 
-const serena_event3 = new Event({
-  eventTitle: "Boat Ride on the Ganges",
-  startTime: "16:00",
-  endTime: "18:00",
-  location: "Ganges River, Varanasi",
-  description: "Experience the spiritual ambiance of Varanasi with a boat ride on the sacred Ganges River. Witness traditional rituals and ceremonies along the ghats.",
-  cost: 20,
-  category: "Cultural",
-  date: "09-08-2024"
-});
-
 // 4. create more events for Serena's Indian adventure
 const serena_event4 = new Event({
   eventTitle: "Wildlife Safari in Ranthambore National Park",
-  startTime: "06:00",
-  endTime: "11:00",
+  startTime: "15:00",
+  endTime: "18:00",
   location: "Ranthambore National Park",
-  description: "Embark on an exhilarating wildlife safari in Ranthambore National Park. Spot majestic tigers, leopards, and other exotic wildlife in their natural habitat.",
+  description: "Go on wildlife safari in Ranthambore National Park. Goal: spot tigers, leopards, and other exotic wildlife",
   cost: 50,
   category: "Adventure",
   date: "09-09-2024"
@@ -1721,7 +1675,7 @@ const serena_event5 = new Event({
   startTime: "18:00",
   endTime: "21:00",
   location: "Jaipur",
-  description: "Experience the vibrant culture of Jaipur with an evening of traditional music, dance, and Rajasthani cuisine. Immerse yourself in the colorful festivities!",
+  description: "Experience the culture of Jaipur with traditional music, dance, and Rajasthani cuisine",
   cost: 30,
   category: "Cultural",
   date: "09-10-2024"
@@ -1732,7 +1686,7 @@ const serena_event6 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Rishikesh",
-  description: "Embark on a spiritual retreat in the serene surroundings of Rishikesh. Practice yoga, meditation, and mindfulness amidst the tranquil Himalayan foothills.",
+  description: "Spiritual retreat in the serene surroundings of Rishikesh. Practice yoga, meditation, and mindfulness amidst the tranquil Himalayan foothills.",
   cost: 40,
   category: "Wellness",
   date: "09-11-2024"
@@ -1743,7 +1697,7 @@ const serena_event7 = new Event({
   startTime: "10:00",
   endTime: "14:00",
   location: "Mumbai",
-  description: "Indulge in a shopping extravaganza in the bustling markets of Mumbai. Discover exquisite textiles, jewelry, and handicrafts from across India.",
+  description: "Shopping in the markets of Mumbai - check out textiles, jewelry, and handicrafts",
   cost: 35,
   category: "Shopping",
   date: "09-12-2024"
@@ -1754,7 +1708,7 @@ const serena_event8 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Indira Gandhi International Airport",
-  description: "Bid farewell to the enchanting land of India as you depart from New Delhi. Take with you cherished memories of your Indian adventure.",
+  description: "Leave from New Delhi",
   cost: 0,
   category: "Travel",
   date: "09-13-2024"
@@ -1770,7 +1724,7 @@ const serena_transportation1 = new Transportation({
   endTime: '15:00',
   startDate: "09-06-2024",
   endDate: "09-06-2024",
-  description: 'Transfer from Indira Gandhi International Airport to your hotel in New Delhi.',
+  description: 'Transfer from Indira Gandhi International Airport to hotel in New Delhi.',
   cost: 30
 });
 
@@ -1782,7 +1736,7 @@ const serena_transportation2 = new Transportation({
   endTime: '09:00',
   startDate: "09-07-2024",
   endDate: "09-07-2024",
-  description: 'Enjoy a scenic train journey from New Delhi to Agra, the city of the Taj Mahal.',
+  description: 'Scenic train journey from New Delhi to Agra, the city of the Taj Mahal.',
   cost: 20
 });
 
@@ -1790,24 +1744,24 @@ const serena_transportation3 = new Transportation({
   transportationTitle: 'Flight to Jaipur',
   startLocation: 'Agra',
   endLocation: 'Jaipur',
-  startTime: '12:00',
-  endTime: '13:00',
+  startTime: '06:30',
+  endTime: '14:30',
   startDate: "09-09-2024",
   endDate: "09-09-2024",
-  description: 'Fly from Agra to Jaipur, the vibrant capital of Rajasthan.',
+  description: 'Fly from Agra to Jaipur, capital of Rajasthan.',
   cost: 50
 });
 
 // 6. create livings for Serena's Indian adventure
 const serena_living1 = new Living({
-  livingTitle: 'Luxury Hotel in New Delhi',
+  livingTitle: 'Hotel in New Delhi',
   startTime: '15:00',
   endTime: '12:00',
   startDate: "09-06-2024",
-  endDate: "09-10-2024",
+  endDate: "09-07-2024",
   location: 'New Delhi',
-  description: 'Experience luxury living in a 5-star hotel in New Delhi, offering world-class amenities and impeccable service.',
-  cost: 800
+  description: 'Hotel stay in New Delhi',
+  cost: 200
 });
 
 const serena_living2 = new Living({
@@ -1817,7 +1771,7 @@ const serena_living2 = new Living({
   startDate: "09-09-2024",
   endDate: "09-11-2024",
   location: 'Jaipur',
-  description: 'Stay in a charming heritage hotel in Jaipur, showcasing the rich cultural heritage of Rajasthan. Enjoy traditional Rajput hospitality and royal accommodations.',
+  description: 'Stay in heritage hotel in Jaipur',
   cost: 600
 });
 
@@ -1853,7 +1807,7 @@ const robert = new User({
   email: 'robert@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
   profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/robert.jpg',
-  bio: 'Excited for a memorable vacation in Switzerland!',
+  bio: 'Keep up with my latest adventures',
   likes: []
 });
 
@@ -1861,7 +1815,7 @@ const robert = new User({
 const robert_itinerary = new Itinerary({
   author: robert._id,
   title: "Robert's Swiss Adventure",
-  description: "Switzerland exploring its picturesque landscapes, charming cities, and alpine wonders.",
+  description: "Switzerland exploring",
   country: "Switzerland",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/switzerland.jpg",
   events: [],
@@ -1876,7 +1830,7 @@ const robert_event1 = new Event({
   startTime: "12:00",
   endTime: "15:00",
   location: "Zurich Airport",
-  description: "Arrive in Zurich and experience the cosmopolitan charm of Switzerland's largest city. Explore its historic old town, scenic lakefront, and vibrant cultural scene.",
+  description: "Arrive in Zurich - Switzerland's largest city",
   cost: 0,
   category: "Travel",
   date: "07-24-2024"
@@ -1887,7 +1841,7 @@ const robert_event2 = new Event({
   startTime: "08:00",
   endTime: "11:00",
   location: "Zurich to Interlaken",
-  description: "Embark on a scenic train journey from Zurich to Interlaken, passing through breathtaking alpine landscapes, quaint villages, and picturesque valleys.",
+  description: "Take train from Zurich to Interlaken, passing through alpine landscapes, villages, and valleys.",
   cost: 30,
   category: "Travel",
   date: "07-25-2024"
@@ -1898,7 +1852,7 @@ const robert_event3 = new Event({
   startTime: "09:00",
   endTime: "17:00",
   location: "Jungfrau Region",
-  description: "Discover the natural beauty of the Jungfrau Region, surrounded by towering snow-capped peaks, pristine lakes, and lush meadows. Enjoy hiking, sightseeing, and outdoor adventures.",
+  description: "Enjoy hiking, sightseeing, and outdoor adventures",
   cost: 40,
   category: "Adventure",
   date: "07-26-2024"
@@ -1910,7 +1864,7 @@ const robert_event4 = new Event({
   startTime: "14:00",
   endTime: "16:00",
   location: "Lake Geneva",
-  description: "Embark on a scenic boat cruise on Lake Geneva and admire the stunning vistas of the Swiss Riviera, charming lakeside towns, and majestic mountains.",
+  description: "Boat cruise on Lake Geneva to see vistas of the Swiss Riviera, lakeside towns, and mountains",
   cost: 35,
   category: "Leisure",
   date: "07-27-2024"
@@ -1921,7 +1875,7 @@ const robert_event5 = new Event({
   startTime: "10:00",
   endTime: "18:00",
   location: "Lucerne",
-  description: "Discover the medieval charm of Lucerne with its picturesque old town, iconic Chapel Bridge, and stunning views of Lake Lucerne and the Swiss Alps.",
+  description: "Explore old town, iconic Chapel Bridge, Lake Lucerne",
   cost: 25,
   category: "Sightseeing",
   date: "07-28-2024"
@@ -1932,7 +1886,7 @@ const robert_event6 = new Event({
   startTime: "08:00",
   endTime: "17:00",
   location: "Zermatt",
-  description: "Embark on an unforgettable alpine adventure in Zermatt, home to the iconic Matterhorn. Enjoy hiking, skiing, and panoramic views of the Swiss Alps.",
+  description: "Alpine adventure in Zermatt, home to the iconic Matterhorn. Enjoy hiking, skiing, and panoramic views of the Swiss Alps",
   cost: 50,
   category: "Adventure",
   date: "07-29-2024"
@@ -1943,7 +1897,7 @@ const robert_event7 = new Event({
   startTime: "19:00",
   endTime: "22:00",
   location: "Zurich",
-  description: "Celebrate the end of your Swiss adventure with a delightful farewell dinner at a local restaurant in Zurich. Enjoy Swiss cuisine and toast to unforgettable memories!",
+  description: "Last dinner at a local restaurant in Zurich",
   cost: 45,
   category: "Food & Drink",
   date: "07-30-2024"
@@ -1954,7 +1908,7 @@ const robert_event8 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Zurich Airport",
-  description: "Bid farewell to Switzerland as you depart from Zurich Airport. Take with you cherished memories of your Swiss adventure.",
+  description: "Depart from Zurich Airport",
   cost: 0,
   category: "Travel",
   date: "07-31-2024"
@@ -1970,7 +1924,7 @@ const robert_transportation1 = new Transportation({
   endTime: '15:00',
   startDate: "07-24-2024",
   endDate: "07-24-2024",
-  description: 'Transfer from Zurich Airport to your hotel in Zurich.',
+  description: 'Transfer from Zurich Airport to hotel in Zurich.',
   cost: 30
 });
 
@@ -1982,7 +1936,7 @@ const robert_transportation2 = new Transportation({
   endTime: '11:00',
   startDate: "07-25-2024",
   endDate: "07-25-2024",
-  description: 'Enjoy a scenic train ride from Zurich to Interlaken, passing through picturesque Swiss countryside.',
+  description: 'Train ride from Zurich to Interlaken',
   cost: 50
 });
 
@@ -1994,20 +1948,20 @@ const robert_transportation3 = new Transportation({
   endTime: '11:00',
   startDate: "07-27-2024",
   endDate: "07-27-2024",
-  description: 'Travel by train from Interlaken to Lucerne, soaking in the stunning views of Swiss Alps along the way.',
+  description: 'Travel by train from Interlaken to Lucerne',
   cost: 40
 });
 
 // 6. create livings for Robert's Swiss adventure
 const robert_living1 = new Living({
-  livingTitle: 'Luxury Hotel in Zurich',
+  livingTitle: 'Hotel in Zurich',
   startTime: '15:00',
   endTime: '12:00',
   startDate: "07-24-2024",
-  endDate: "07-28-2024",
+  endDate: "07-26-2024",
   location: 'Zurich',
-  description: 'Experience luxury accommodation in a 5-star hotel in Zurich, offering breathtaking views of the city skyline and Lake Zurich.',
-  cost: 1000
+  description: 'hotel in Zurich',
+  cost: 600
 });
 
 const robert_living2 = new Living({
@@ -2017,8 +1971,8 @@ const robert_living2 = new Living({
   startDate: "07-28-2024",
   endDate: "07-30-2024",
   location: 'Zermatt',
-  description: 'Stay in a cozy alpine chalet in Zermatt, surrounded by majestic mountains and pristine nature. Experience Swiss hospitality at its finest!',
-  cost: 900
+  description: 'Stay in a cozy alpine chalet in Zermatt',
+  cost: 500
 });
 
 // 7. push events, transportations, livings into Robert's itinerary accordingly
@@ -2059,8 +2013,8 @@ const suzanne = new User({
 // 2. create itinerary for Suzanne
 const suzanne_itinerary = new Itinerary({
   author: suzanne._id,
-  title: "Suzanne's Family Visit to Poland",
-  description: "Poland to visit my family!",
+  title: "Family Visit to Poland",
+  description: "Visit to Poland to see family",
   country: "Poland",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/poland.jpg",
   events: [],
@@ -2075,7 +2029,7 @@ const suzanne_event1 = new Event({
   startTime: "12:00",
   endTime: "15:00",
   location: "Warsaw Chopin Airport",
-  description: "Arrive in Warsaw and begin your family adventure in Poland's dynamic capital. Explore its historic old town, royal palaces, and lively atmosphere.",
+  description: "Arrive in Warsaw",
   cost: 0,
   category: "Travel",
   date: "06-15-2024"
@@ -2083,10 +2037,10 @@ const suzanne_event1 = new Event({
 
 const suzanne_event2 = new Event({
   eventTitle: "Exploring Krakow",
-  startTime: "08:00",
-  endTime: "17:00",
+  startTime: "11:30",
+  endTime: "19:00",
   location: "Krakow",
-  description: "Discover the charm of Krakow, Poland's cultural gem and former royal capital. Visit its UNESCO-listed old town, Wawel Castle, and vibrant Jewish Quarter.",
+  description: "Discover Krakow, Poland's former royal capital. On the list: UNESCO-listed old town, Wawel Castle, and Jewish Quarter",
   cost: 25,
   category: "Sightseeing",
   date: "06-16-2024"
@@ -2097,7 +2051,7 @@ const suzanne_event3 = new Event({
   startTime: "09:00",
   endTime: "15:00",
   location: "Auschwitz-Birkenau Memorial and Museum",
-  description: "Pay tribute to the victims of the Holocaust with a solemn visit to Auschwitz-Birkenau Memorial and Museum. Gain insight into one of the darkest chapters in human history.",
+  description: "Visit Auschwitz to pay tribute and learn about history",
   cost: 30,
   category: "Cultural",
   date: "06-17-2024"
@@ -2106,10 +2060,10 @@ const suzanne_event3 = new Event({
 // 4. create more events for Suzanne's Polish adventure
 const suzanne_event4 = new Event({
   eventTitle: "Exploring Wroclaw",
-  startTime: "10:00",
-  endTime: "16:00",
+  startTime: "11:30",
+  endTime: "18:00",
   location: "Wroclaw",
-  description: "Discover the vibrant city of Wroclaw, known for its stunning architecture, colorful market square, and picturesque islands. Explore its charming streets and hidden gems.",
+  description: "Discover Wroclaw, known for architecture, colorful market square, and picturesque islands",
   cost: 20,
   category: "Sightseeing",
   date: "06-18-2024"
@@ -2120,18 +2074,18 @@ const suzanne_event5 = new Event({
   startTime: "09:00",
   endTime: "17:00",
   location: "Zakopane",
-  description: "Enjoy a day of family fun in Zakopane, Poland's winter capital and gateway to the Tatra Mountains. Experience outdoor activities, traditional cuisine, and local culture.",
+  description: "Enjoy family fun in Zakopane, Poland's winter capital. Experience outdoor activities, traditional cuisine, and local culture.",
   cost: 35,
   category: "Leisure",
   date: "06-19-2024"
 });
 
 const suzanne_event6 = new Event({
-  eventTitle: "Cultural Immersion in Gdansk",
+  eventTitle: "Visiting Gdansk",
   startTime: "11:00",
   endTime: "18:00",
   location: "Gdansk",
-  description: "Immerse yourself in the rich maritime history and cultural heritage of Gdansk. Explore its historic port, Gothic architecture, and charming waterfront.",
+  description: "Immerse in the rich maritime history and cultural heritage of Gdansk. Explore its historic port, Gothic architecture, and charming waterfront.",
   cost: 30,
   category: "Cultural",
   date: "06-20-2024"
@@ -2142,11 +2096,11 @@ const suzanne_transportation1 = new Transportation({
   transportationTitle: 'Airport Transfer',
   startLocation: 'Warsaw Chopin Airport',
   endLocation: 'Hotel',
-  startTime: '12:00',
-  endTime: '15:00',
+  startTime: '15:00',
+  endTime: '16:00',
   startDate: "06-15-2024",
   endDate: "06-15-2024",
-  description: 'Transfer from Warsaw Chopin Airport to your hotel in Warsaw.',
+  description: 'Transfer from Warsaw Chopin Airport to hotel in Warsaw.',
   cost: 30
 });
 
@@ -2155,10 +2109,10 @@ const suzanne_transportation2 = new Transportation({
   startLocation: 'Warsaw',
   endLocation: 'Krakow',
   startTime: '08:00',
-  endTime: '11:00',
+  endTime: '10:30',
   startDate: "06-16-2024",
   endDate: "06-16-2024",
-  description: 'Travel by train from Warsaw to Krakow, immersing in the scenic landscapes of Poland.',
+  description: 'Travel by train from Warsaw to Krakow',
   cost: 40
 });
 
@@ -2167,22 +2121,22 @@ const suzanne_transportation3 = new Transportation({
   startLocation: 'Krakow',
   endLocation: 'Wroclaw',
   startTime: '09:00',
-  endTime: '12:00',
+  endTime: '11:30',
   startDate: "06-18-2024",
   endDate: "06-18-2024",
-  description: 'Travel by train from Krakow to Wroclaw, experiencing the convenience of Poland\’s railway network.',
+  description: 'Travel by train from Krakow to Wroclaw',
   cost: 30
 });
 
 // 6. create livings for Suzanne's Polish adventure
 const suzanne_living1 = new Living({
-  livingTitle: 'Family Hotel in Warsaw',
+  livingTitle: 'Hotel in Warsaw',
   startTime: '15:00',
   endTime: '12:00',
   startDate: "06-15-2024",
-  endDate: "06-18-2024",
+  endDate: "06-16-2024",
   location: 'Warsaw',
-  description: 'Stay in a family-friendly hotel in Warsaw, offering comfortable accommodation and convenient access to the city\'s attractions.',
+  description: 'Stay in a hotel offering convenient access to the city\'s attractions.',
   cost: 600
 });
 
@@ -2227,15 +2181,15 @@ const tim = new User({
   email: 'tim@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
   profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/tim.jpg',
-  bio: 'Excited for a memorable visit to the Apple building in Cupertino!',
+  bio: 'Apple CEO  Auburn 🏀 🏈 Duke 🏀 National Parks 🏞️ \“Life\'s most persistent and urgent question is, \'What are you doing for others?\'\” - MLK. he/him',
   likes: []
 });
 
 // 2. create itinerary for Tim
 const tim_itinerary = new Itinerary({
   author: tim._id,
-  title: "Tim's Visit to the Apple Building",
-  description: "Apple building in Cupertino exploring its innovative workspace, cutting-edge technology, and iconic architecture.",
+  title: "Visit to the Apple Building",
+  description: "Visit Apple building in Cupertino exploring its innovative workspace, cutting-edge technology, and iconic architecture.",
   country: "USA",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/apple_building.jpg",
   events: [],
@@ -2250,7 +2204,7 @@ const tim_event1 = new Event({
   startTime: "12:00",
   endTime: "15:00",
   location: "San Francisco International Airport",
-  description: "Arrive in San Francisco and travel to Cupertino to begin your exciting visit to the Apple building. Prepare to be inspired by the world of Apple.",
+  description: "Arrive in San Francisco and travel to Cupertino",
   cost: 0,
   category: "Travel",
   date: "12-12-2024"
@@ -2258,44 +2212,44 @@ const tim_event1 = new Event({
 
 const tim_event2 = new Event({
   eventTitle: "Exploring the Apple Building",
-  startTime: "08:00",
+  startTime: "09:00",
   endTime: "17:00",
   location: "Apple Park, Cupertino",
-  description: "Explore the innovative Apple Park campus, home to the iconic Apple building. Discover its cutting-edge design, futuristic architecture, and lush surroundings.",
-  cost: 25,
+  description: "Explore the innovative Apple Park campus, home to the iconic Apple building.",
+  cost: 0,
   category: "Sightseeing",
   date: "12-13-2024"
 });
 
 // 4. create transportation for Tim's visit to the Apple building
-const tim_transportation1 = new Transportation({
-  transportationTitle: 'Airport Transfer',
-  startLocation: 'San Francisco International Airport',
-  endLocation: 'Hotel in Cupertino',
-  startTime: '12:00',
-  endTime: '15:00',
-  startDate: "12-12-2024",
-  endDate: "12-12-2024",
-  description: 'Transfer from San Francisco International Airport to your hotel in Cupertino.',
-  cost: 30
-});
+// const tim_transportation1 = new Transportation({
+//   transportationTitle: 'Airport Transfer',
+//   startLocation: 'San Francisco International Airport',
+//   endLocation: 'Hotel in Cupertino',
+//   startTime: '12:00',
+//   endTime: '15:00',
+//   startDate: "12-12-2024",
+//   endDate: "12-12-2024",
+//   description: 'Transfer from San Francisco International Airport to hotel in Cupertino.',
+//   cost: 30
+// });
 
 // 5. create living for Tim's visit to the Apple building
-const tim_living1 = new Living({
-  livingTitle: 'Hotel in Cupertino',
-  startTime: '15:00',
-  endTime: '12:00',
-  startDate: "12-12-2024",
-  endDate: "12-15-2024",
-  location: 'Cupertino',
-  description: 'Stay in a hotel conveniently located in Cupertino, providing easy access to the Apple building and other attractions.',
-  cost: 500
-});
+// const tim_living1 = new Living({
+//   livingTitle: 'Hotel in Cupertino',
+//   startTime: '15:00',
+//   endTime: '12:00',
+//   startDate: "12-12-2024",
+//   endDate: "12-15-2024",
+//   location: 'Cupertino',
+//   description: 'Stay in a hotel providing easy access to the Apple building and other attractions.',
+//   cost: 500
+// });
 
 // 6. push events, transportations, livings into Tim's itinerary accordingly
 tim_itinerary.events.push(tim_event1, tim_event2);
-tim_itinerary.transportations.push(tim_transportation1);
-tim_itinerary.livings.push(tim_living1);
+//tim_itinerary.transportations.push(tim_transportation1);
+//tim_itinerary.livings.push(tim_living1);
 
 // 7. create likes for Tim's itinerary
 const tim_like1 = new Like({
@@ -2322,7 +2276,7 @@ const lebron = new User({
   email: 'lebron@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
   profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/lebron.jpg',
-  bio: 'Excited for a memorable family vacation in Oklahoma!',
+  bio: 'Go Lakers!',
   likes: []
 });
 
@@ -2330,7 +2284,7 @@ const lebron = new User({
 const lebron_itinerary = new Itinerary({
   author: lebron._id,
   title: "LeBron's Family Vacation to Oklahoma",
-  description: "Family vacation to Oklahoma to play some ball",
+  description: "Family vacation to Oklahoma",
   country: "USA",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/oklahoma.jpg",
   events: [],
@@ -2345,7 +2299,7 @@ const lebron_event1 = new Event({
   startTime: "12:00",
   endTime: "15:00",
   location: "Will Rogers World Airport",
-  description: "Arrive in Oklahoma City and kick off your family vacation in the vibrant heart of Oklahoma. Explore its museums, parks, and cultural attractions.",
+  description: "Arrive in Oklahoma City",
   cost: 0,
   category: "Travel",
   date: "09-16-2024"
@@ -2356,7 +2310,7 @@ const lebron_event2 = new Event({
   startTime: "09:00",
   endTime: "17:00",
   location: "Oklahoma City Zoo",
-  description: "Spend a fun-filled day with your family at the Oklahoma City Zoo, home to a diverse collection of animals from around the world. Enjoy exhibits, shows, and interactive experiences.",
+  description: "Spend a day with family at the Oklahoma City Zoo",
   cost: 30,
   category: "Family",
   date: "09-17-2024"
@@ -2367,18 +2321,18 @@ const lebron_event3 = new Event({
   startTime: "08:00",
   endTime: "16:00",
   location: "Wichita Mountains Wildlife Refuge",
-  description: "Embark on an outdoor adventure in the scenic Wichita Mountains Wildlife Refuge. Hike, bike, or drive through picturesque landscapes and encounter native wildlife.",
+  description: "Have an outdoor adventure in the scenic Wichita Mountains Wildlife Refuge",
   cost: 20,
   category: "Adventure",
   date: "09-18-2024"
 });
 
 const lebron_event4 = new Event({
-  eventTitle: "Visit to the National Cowboy & Western Heritage Museum",
+  eventTitle: "Visit National Cowboy & Western Heritage Museum",
   startTime: "10:00",
   endTime: "14:00",
   location: "National Cowboy & Western Heritage Museum",
-  description: "Immerse yourself in the rich history and culture of the American West at the National Cowboy & Western Heritage Museum. Explore exhibits, artifacts, and artwork celebrating cowboy life and Native American heritage.",
+  description: "Learn about the history and culture of the American West",
   cost: 25,
   category: "Cultural",
   date: "09-19-2024"
@@ -2389,7 +2343,7 @@ const lebron_event5 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Will Rogers World Airport",
-  description: "Bid farewell to Oklahoma City as you depart from Will Rogers World Airport. Take with you cherished memories of your family vacation in the heartland of America.",
+  description: "Farewell to Oklahoma City",
   cost: 0,
   category: "Travel",
   date: "09-20-2024"
@@ -2404,7 +2358,7 @@ const lebron_transportation1 = new Transportation({
   endTime: '15:00',
   startDate: "09-16-2024",
   endDate: "09-16-2024",
-  description: 'Transfer from Will Rogers World Airport to your hotel in Oklahoma City.',
+  description: 'Transfer from Will Rogers World Airport to hotel in Oklahoma City.',
   cost: 30
 });
 
