@@ -829,10 +829,9 @@ jerry = new User({
 
 const jerry_itinerary = new Itinerary({
   author: jerry._id,
-  title: "Russian Adventure - Moscow & St. Petersburg",
-  description: "7 day trip in Russia, from Moscow to St. Petersburg.",
-  // "7 day trip to explore the wonders of Russia, from the iconic landmarks of Moscow to the cultural riches of St. Petersburg.",
-  country: "Russia",
+  title: "Florida Trip with Family",
+  description: "Week long trip with family to Florida",
+  country: "USA",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/russia.jpg",
   events: [],
   transportations: [],
@@ -841,47 +840,47 @@ const jerry_itinerary = new Itinerary({
 });
 
 const jerry_event1 = new Event({
-  eventTitle: "Red Square and Kremlin Tour",
+  eventTitle: "Everglades Adventure",
   startTime: "9:00",
   endTime: "13:00",
-  location: "Moscow",
-  description: "Discover the historical heart of Moscow with a guided tour of the iconic Red Square and the grandeur of the Kremlin. Don't forget to snap some photos!",
+  location: "Everglades National Park",
+  description: "Visit Everglades National Park",
   cost: 0,
   category: "Sightseeing",
   date: "11-05-2024"
 });
 
 const jerry_event2 = new Event({
-  eventTitle: "Hermitage Museum Visit",
+  eventTitle: "Zoo Miami",
   startTime: "10:00",
   endTime: "15:00",
-  location: "St. Petersburg",
-  description: "Immerse yourself in art and history at the magnificent Hermitage Museum, home to one of the world's largest and most impressive collections.",
+  location: "Zoo Miami",
+  description: "Visit zoo in Miami",
   cost: 0,
-  category: "Culture",
+  category: "Sightseeing",
   date: "11-07-2024"
 });
 
 const jerry_transportation1 = new Transportation({
   transportationTitle: 'Flight',
-  startLocation: 'San Francisco',
-  endLocation: 'Moscow',
+  startLocation: 'Seattle',
+  endLocation: 'Miami',
   startTime: '12:00',
   endTime: '10:00',
   startDate: "11-05-2024",
   endDate: "11-06-2024",
-  description: 'Embark on an epic journey from San Francisco to Moscow, crossing multiple time zones and experiencing the thrill of international travel.',
+  description: 'Travel from Seattle to Miami',
   cost: 800
 });
 
 const jerry_living1 = new Living({
-  livingTitle: 'Hotel Kremlin',
+  livingTitle: 'Hotel',
   startTime: '15:00',
   endTime: '12:00',
   startDate: "11-05-2024",
   endDate: "11-17-2024",
-  location: 'Moscow',
-  description: 'Stay in the heart of Moscow at the luxurious Hotel Kremlin, offering unparalleled views of Red Square and the Kremlin walls. Indulge in Russian hospitality and soak in the city\'s vibrant atmosphere.',
+  location: 'Miami',
+  description: 'hotel stay in Miami',
   cost: 1200
 });
 //6. push events, transportations, livings in to the itinerary created accordingly
@@ -2330,9 +2329,9 @@ const lebron_event3 = new Event({
 const lebron_event4 = new Event({
   eventTitle: "Visit National Cowboy & Western Heritage Museum",
   startTime: "10:00",
-  endTime: "14:00",
+  endTime: "13:00",
   location: "National Cowboy & Western Heritage Museum",
-  description: "Learn about the history and culture of the American West",
+  description: "Learn about the history & culture of the American West",
   cost: 25,
   category: "Cultural",
   date: "09-19-2024"
@@ -2354,8 +2353,8 @@ const lebron_transportation1 = new Transportation({
   transportationTitle: 'Airport Transfer',
   startLocation: 'Will Rogers World Airport',
   endLocation: 'Hotel',
-  startTime: '12:00',
-  endTime: '15:00',
+  startTime: '15:15',
+  endTime: '15:45',
   startDate: "09-16-2024",
   endDate: "09-16-2024",
   description: 'Transfer from Will Rogers World Airport to hotel in Oklahoma City.',
@@ -2365,7 +2364,7 @@ const lebron_transportation1 = new Transportation({
 // 5. create livings for LeBron's Oklahoma vacation
 const lebron_living1 = new Living({
   livingTitle: 'Family-friendly Resort in Oklahoma City',
-  startTime: '15:00',
+  startTime: '15:45',
   endTime: '12:00',
   startDate: "09-16-2024",
   endDate: "09-20-2024",
@@ -2404,7 +2403,7 @@ const lionel = new User({
   email: 'lionel@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
   profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/lionel.jpg',
-  bio: 'Excited for a memorable vacation in Jamaica to play soccer!',
+  bio: 'fútbol y vida',
   likes: []
 });
 
@@ -2412,7 +2411,7 @@ const lionel = new User({
 const lionel_itinerary = new Itinerary({
   author: lionel._id,
   title: "Lionel's Soccer Vacation in Jamaica",
-  description: "Soccer in Jamaica! Enjoying the sun, sand, and soccer on the beautiful Caribbean island.",
+  description: "Enjoying the sun, sand, and soccer in Jamaica",
   country: "Jamaica",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/jamaica.jpg",
   events: [],
@@ -2425,9 +2424,9 @@ const lionel_itinerary = new Itinerary({
 const lionel_event1 = new Event({
   eventTitle: "Arrival in Montego Bay",
   startTime: "12:00",
-  endTime: "15:00",
+  endTime: "17:00",
   location: "Sangster International Airport",
-  description: "Arrive in Montego Bay and kick off your soccer vacation in Jamaica. Explore its beautiful beaches, vibrant culture, and enjoy some reggae music.",
+  description: "Arrive in Montego Bay and kick off soccer vacation in Jamaica",
   cost: 0,
   category: "Travel",
   date: "01-05-2025"
@@ -2438,31 +2437,31 @@ const lionel_event2 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Local Soccer Field, Montego Bay",
-  description: "Join a local soccer team for a practice session at a nearby soccer field. Experience the passion and skill of Jamaican soccer players.",
+  description: "Join a local soccer team for a practice session at a nearby soccer field",
   cost: 0,
   category: "Sports",
   date: "01-06-2025"
 });
 
 const lionel_event3 = new Event({
-  eventTitle: "Friendly Soccer Match",
+  eventTitle: "Soccer Match",
   startTime: "15:00",
   endTime: "17:00",
   location: "Montego Bay Stadium",
-  description: "Participate in a friendly soccer match against a local team at the Montego Bay Stadium. Showcase your soccer skills and enjoy the competitive spirit.",
+  description: "Play in a soccer match against local team at the Montego Bay Stadium",
   cost: 0,
   category: "Sports",
   date: "01-07-2025"
 });
 
 const lionel_event4 = new Event({
-  eventTitle: "Beach Day and Soccer on the Sand",
+  eventTitle: "Beach Day on the Sand",
   startTime: "10:00",
   endTime: "16:00",
   location: "Doctor's Cave Beach, Montego Bay",
-  description: "Spend a relaxing day at Doctor's Cave Beach, enjoying the sun, sand, and playing soccer on the beach with friends and locals.",
+  description: "Spend a relaxing day at Doctor's Cave Beach, enjoying the beach with friends and locals",
   cost: 10,
-  category: "Beach/Sports",
+  category: "Beach",
   date: "01-08-2025"
 });
 
@@ -2471,7 +2470,7 @@ const lionel_event5 = new Event({
   startTime: "09:00",
   endTime: "17:00",
   location: "Kingston",
-  description: "Explore the capital city of Jamaica, Kingston. Visit historical sites, museums, and experience the vibrant music and culture of the city.",
+  description: "Explore the capital city of Jamaica, Kingston",
   cost: 20,
   category: "Sightseeing",
   date: "01-09-2025"
@@ -2480,9 +2479,9 @@ const lionel_event5 = new Event({
 const lionel_event6 = new Event({
   eventTitle: "Reggae Night at Bob Marley Museum",
   startTime: "19:00",
-  endTime: "22:00",
+  endTime: "21:00",
   location: "Bob Marley Museum, Kingston",
-  description: "Immerse yourself in the rhythms of reggae music at the iconic Bob Marley Museum. Enjoy live music, dance, and learn about the legendary musician's life.",
+  description: "Enjoy reggae music at the iconic Bob Marley Museum",
   cost: 30,
   category: "Music/Cultural",
   date: "01-10-2025"
@@ -2493,7 +2492,7 @@ const lionel_event7 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Sangster International Airport",
-  description: "Bid farewell to Jamaica as you depart from Sangster International Airport. Take with you unforgettable memories of your soccer vacation in the Caribbean.",
+  description: "Leave Jamaica",
   cost: 0,
   category: "Travel",
   date: "01-20-2025"
@@ -2504,24 +2503,24 @@ const lionel_transportation1 = new Transportation({
   transportationTitle: 'Airport Transfer',
   startLocation: 'Sangster International Airport',
   endLocation: 'Hotel',
-  startTime: '12:00',
-  endTime: '15:00',
+  startTime: '17:00',
+  endTime: '17:30',
   startDate: "01-05-2025",
   endDate: "01-05-2025",
-  description: 'Transfer from Sangster International Airport to your hotel in Montego Bay.',
+  description: 'Transfer from Sangster International Airport to hotel in Montego Bay.',
   cost: 30
 });
 
 // 5. create livings for Lionel's Jamaica soccer vacation
 const lionel_living1 = new Living({
   livingTitle: 'Beachfront Villa in Montego Bay',
-  startTime: '15:00',
+  startTime: '17:30',
   endTime: '12:00',
   startDate: "01-05-2025",
   endDate: "01-20-2025",
   location: 'Montego Bay',
-  description: 'Stay in a luxurious beachfront villa in Montego Bay, offering breathtaking ocean views and access to private beaches. Experience the ultimate relaxation and luxury.',
-  cost: 1500
+  description: 'Stay in a beachfront villa in Montego Bay, offering ocean views and easy beach access',
+  cost: 2000
 });
 
 // 6. push events, transportations, livings into Lionel's itinerary accordingly
@@ -2561,8 +2560,8 @@ const jungkook = new User({
 // 2. create itinerary for Jungkook
 const jungkook_itinerary = new Itinerary({
   author: jungkook._id,
-  title: "Jungkook's K-pop Adventure in Korea",
-  description: "Embark on an exciting trip to Korea with Jungkook, exploring the vibrant city and immersing in the world of K-pop!",
+  title: "Jungkook's Trip to Korea",
+  description: "Trip to Korea, incorporating both work and fun",
   country: "South Korea",
   imageUrls: "https://mern-travel.s3.us-west-1.amazonaws.com/korea.jpg",
   events: [],
@@ -2574,43 +2573,43 @@ const jungkook_itinerary = new Itinerary({
 // 3. create events for Jungkook's Korea trip
 const jungkook_event1 = new Event({
   eventTitle: "Arrival in Seoul",
-  startTime: "12:00",
+  startTime: "9:00",
   endTime: "15:00",
   location: "Incheon International Airport",
-  description: "Arrive in Seoul and kick off your trip to Korea. Explore the vibrant city, visit K-pop studios, and immerse yourself in Korean culture.",
+  description: "Arrive in Seoul and kick off trip to Korea",
   cost: 0,
   category: "Travel",
   date: "03-21-2025"
 });
 
 const jungkook_event2 = new Event({
-  eventTitle: "Visit to K-pop Studio",
+  eventTitle: "Recording at Studio",
   startTime: "10:00",
-  endTime: "12:00",
-  location: "Hybe Studio, Seoul",
-  description: "Take a tour of a K-pop studio and get a behind-the-scenes look at how K-pop music is produced. Experience the excitement of being in a real K-pop studio!",
+  endTime: "15:00",
+  location: "Hybe Entertainment, Seoul",
+  description: "visit producer at the studio and record new songs",
   cost: 0,
   category: "Entertainment",
   date: "03-22-2025"
 });
 
 const jungkook_event3 = new Event({
-  eventTitle: "Exploring Gangnam District",
-  startTime: "14:00",
-  endTime: "18:00",
-  location: "Gangnam District, Seoul",
-  description: "Explore the trendy Gangnam District, known for its upscale shopping, vibrant nightlife, and iconic K-pop culture. Discover the places where your favorite K-pop stars hang out!",
+  eventTitle: "Exploring Gyeongbokgung Palace",
+  startTime: "10:00",
+  endTime: "13:00",
+  location: "Jongno District, Seoul",
+  description: "visit main royal palace during Joseon Dynasty",
   cost: 50,
   category: "Sightseeing",
   date: "03-23-2025"
 });
 
 const jungkook_event4 = new Event({
-  eventTitle: "K-pop Dance Class",
-  startTime: "11:00",
-  endTime: "13:00",
-  location: "K-pop Dance Academy, Seoul",
-  description: "Join a K-pop dance class and learn the latest dance moves from professional instructors. Channel your inner K-pop star and master the choreography!",
+  eventTitle: "Dance Practice",
+  startTime: "10:00",
+  endTime: "22:00",
+  location: "Hybe Entertainment, Seoul",
+  description: "Learn new dance for upcoming songs from instructors, rehearse and practice choreography",
   cost: 30,
   category: "Entertainment",
   date: "03-24-2025"
@@ -2621,7 +2620,7 @@ const jungkook_event5 = new Event({
   startTime: "15:00",
   endTime: "17:00",
   location: "BTS Fan Club, Seoul",
-  description: "Meet up with fellow BTS fans for a fan gathering. Share your love for BTS, exchange fan theories, and make new friends who share your passion for K-pop!",
+  description: "Meet BTS Army for a fan meeting, perform and talk with fans",
   cost: 0,
   category: "Community",
   date: "03-25-2025"
@@ -2632,7 +2631,7 @@ const jungkook_event6 = new Event({
   startTime: "10:00",
   endTime: "16:00",
   location: "Myeongdong, Seoul",
-  description: "Indulge in a shopping spree in Myeongdong, Seoul's premier shopping district. Shop for trendy fashion, cosmetics, and K-pop merchandise.",
+  description: "Indulge in a shopping spree in Myeongdong, shop for clothes and accessories",
   cost: 100,
   category: "Shopping",
   date: "03-26-2025"
@@ -2643,7 +2642,7 @@ const jungkook_event7 = new Event({
   startTime: "09:00",
   endTime: "12:00",
   location: "Incheon International Airport",
-  description: "Bid farewell to Seoul as you depart from Incheon International Airport. Take with you unforgettable memories of your K-pop adventure in Korea!",
+  description: "Leave Seoul for overseas promotions",
   cost: 0,
   category: "Travel",
   date: "03-28-2025"
@@ -2653,66 +2652,66 @@ const jungkook_event7 = new Event({
 const jungkook_transportation1 = new Transportation({
   transportationTitle: 'Airport Transfer (Arrival)',
   startLocation: 'Incheon International Airport',
-  endLocation: 'Hotel',
-  startTime: '12:00',
-  endTime: '15:00',
+  endLocation: 'Seoul Apartment',
+  startTime: '15:00',
+  endTime: '15:30',
   startDate: "03-21-2025",
   endDate: "03-21-2025",
-  description: 'Transfer from Incheon International Airport to your hotel in Seoul.',
+  description: 'Transfer from Incheon International Airport to home in Seoul.',
   cost: 50
 });
 
-const jungkook_transportation2 = new Transportation({
-  transportationTitle: 'City Tour Shuttle',
-  startLocation: 'Hotel',
-  endLocation: 'Various Locations',
-  startTime: '10:00',
-  endTime: '17:00',
-  startDate: "03-22-2025",
-  endDate: "03-26-2025",
-  description: 'Enjoy a convenient city tour shuttle service to explore various K-pop studios, shopping districts, and cultural landmarks.',
-  cost: 100
-});
+// const jungkook_transportation2 = new Transportation({
+//   transportationTitle: 'City Tour Shuttle',
+//   startLocation: 'Hotel',
+//   endLocation: 'Various Locations',
+//   startTime: '10:00',
+//   endTime: '17:00',
+//   startDate: "03-22-2025",
+//   endDate: "03-26-2025",
+//   description: 'Enjoy a convenient city tour shuttle service to explore various K-pop studios, shopping districts, and cultural landmarks.',
+//   cost: 100
+// });
 
-const jungkook_transportation3 = new Transportation({
-  transportationTitle: 'K-pop Dance Class Shuttle',
-  startLocation: 'Hotel',
-  endLocation: 'K-pop Dance Academy',
-  startTime: '10:00',
-  endTime: '13:00',
-  startDate: "03-24-2025",
-  endDate: "03-24-2025",
-  description: 'Shuttle service to and from the K-pop Dance Academy for your K-pop dance class.',
-  cost: 20
-});
+// const jungkook_transportation3 = new Transportation({
+//   transportationTitle: 'K-pop Dance Class Shuttle',
+//   startLocation: 'Hotel',
+//   endLocation: 'K-pop Dance Academy',
+//   startTime: '10:00',
+//   endTime: '13:00',
+//   startDate: "03-24-2025",
+//   endDate: "03-24-2025",
+//   description: 'Shuttle service to and from the K-pop Dance Academy for your K-pop dance class.',
+//   cost: 20
+// });
 
 const jungkook_transportation4 = new Transportation({
   transportationTitle: 'Airport Transfer (Departure)',
-  startLocation: 'Hotel',
+  startLocation: 'Seoul Apartment',
   endLocation: 'Incheon International Airport',
-  startTime: '09:00',
-  endTime: '12:00',
+  startTime: '07:30',
+  endTime: '08:00',
   startDate: "03-28-2025",
   endDate: "03-28-2025",
-  description: 'Transfer from your hotel in Seoul to Incheon International Airport for your departure.',
+  description: 'Travel to Incheon International Airport',
   cost: 50
 });
 
 // 5. create livings for Jungkook's Korea trip
 const jungkook_living1 = new Living({
-  livingTitle: 'Luxury Hotel in Gangnam',
-  startTime: '15:00',
-  endTime: '12:00',
+  livingTitle: 'Seoul apartment',
+  startTime: '15:30',
+  endTime: '09:00',
   startDate: "03-21-2025",
   endDate: "03-28-2025",
   location: 'Seoul',
-  description: 'Stay in a luxury hotel in the heart of Gangnam, Seoul, known for its upscale amenities and convenient access to K-pop attractions.',
+  description: 'Stay in Seoul home',
   cost: 1200
 });
 
 // 6. push events, transportations, livings into Jungkook's itinerary accordingly
 jungkook_itinerary.events.push(jungkook_event1, jungkook_event2, jungkook_event3, jungkook_event4, jungkook_event5, jungkook_event6, jungkook_event7);
-jungkook_itinerary.transportations.push(jungkook_transportation1, jungkook_transportation2, jungkook_transportation3, jungkook_transportation4);
+jungkook_itinerary.transportations.push(jungkook_transportation1, jungkook_transportation4);
 jungkook_itinerary.livings.push(jungkook_living1);
 
 // 7. create likes for Jungkook's itinerary
@@ -2737,11 +2736,11 @@ itineraries.push(jungkook_itinerary);
 
 // 1. create a user
 const tyson = new User({
-  username: 'tyson',
+  username: 'TenZ',
   email: 'tyson@gmail.com',
   hashedPassword: bcrypt.hashSync('password', 10),
   profileImageUrl: 'https://mern-travel.s3.us-west-1.amazonaws.com/tyson.jpg',
-  bio: 'Excited for a memorable trip to Italy to compete in the Valorant Champions!',
+  bio: 'Professional VALORANT Player for @Sentinels',
   likes: []
 });
 
@@ -2761,10 +2760,10 @@ const tyson_itinerary = new Itinerary({
 // 3. create events for Tyson's Italy trip
 const tyson_event1 = new Event({
   eventTitle: "Arrival in Rome",
-  startTime: "12:00",
-  endTime: "15:00",
+  startTime: "09:00",
+  endTime: "17:00",
   location: "Leonardo da Vinci–Fiumicino Airport",
-  description: "Arrive in Rome and kick off your trip to Italy. Prepare for the Valorant Champions tournament and explore the historic city.",
+  description: "Arrive in Rome",
   cost: 0,
   category: "Travel",
   date: "04-22-2026"
@@ -2775,31 +2774,31 @@ const tyson_event2 = new Event({
   startTime: "09:00",
   endTime: "18:00",
   location: "Stadio Olimpico, Rome",
-  description: "Compete in the Valorant Champions tournament at Stadio Olimpico, Rome. Showcase your skills and strive for victory!",
+  description: "Compete in the Valorant Champions tournament at Stadio Olimpico, Rome",
   cost: 0,
   category: "Esports",
   date: "04-23-2026"
 });
 
 const tyson_event3 = new Event({
-  eventTitle: "Exploring Florence",
+  eventTitle: "Exploring historical Rome",
   startTime: "10:00",
   endTime: "16:00",
-  location: "Florence",
-  description: "Explore the historic city of Florence, known for its Renaissance art and architecture. Visit iconic landmarks such as the Florence Cathedral and Ponte Vecchio.",
+  location: "Rome",
+  description: "take a tour around Rome to see iconic landmarks including the Colosseum, Pantheon, etc",
   cost: 50,
   category: "Sightseeing",
   date: "04-24-2026"
 });
 
 const tyson_event4 = new Event({
-  eventTitle: "Valorant Bootcamp",
+  eventTitle: "Pizza Making Class",
   startTime: "10:00",
-  endTime: "17:00",
-  location: "Gaming Arena, Milan",
-  description: "Participate in a Valorant bootcamp at a gaming arena in Milan. Hone your skills, strategize with your team, and prepare for upcoming matches.",
+  endTime: "13:00",
+  location: "Local cooking studio",
+  description: "try out making pizza the way the Italians do",
   cost: 0,
-  category: "Esports",
+  category: "Classes",
   date: "04-25-2026"
 });
 
@@ -2808,7 +2807,7 @@ const tyson_event5 = new Event({
   startTime: "14:00",
   endTime: "18:00",
   location: "Stadio Olimpico, Rome",
-  description: "Compete in the Valorant semifinals at Stadio Olimpico, Rome. Face off against top teams and aim for a spot in the finals!",
+  description: "Compete in the Valorant semifinals at Stadio Olimpico, Rome",
   cost: 0,
   category: "Esports",
   date: "04-26-2026"
@@ -2819,7 +2818,7 @@ const tyson_event6 = new Event({
   startTime: "09:00",
   endTime: "17:00",
   location: "Venice",
-  description: "Enjoy a free day in Venice, exploring its charming canals, historic architecture, and vibrant atmosphere. Take a gondola ride and savor authentic Italian cuisine.",
+  description: "Enjoy free day in Venice, go on a gondola ride and explore the canals",
   cost: 100,
   category: "Sightseeing",
   date: "04-27-2026"
@@ -2828,9 +2827,9 @@ const tyson_event6 = new Event({
 const tyson_event7 = new Event({
   eventTitle: "Departure from Rome",
   startTime: "09:00",
-  endTime: "12:00",
+  endTime: "17:00",
   location: "Leonardo da Vinci–Fiumicino Airport",
-  description: "Bid farewell to Italy as you depart from Leonardo da Vinci–Fiumicino Airport. Take with you unforgettable memories of your Valorant adventure in Italy!",
+  description: "Leave Italy",
   cost: 0,
   category: "Travel",
   date: "04-28-2026"
@@ -2841,11 +2840,11 @@ const tyson_transportation1 = new Transportation({
   transportationTitle: 'Airport Transfer (Arrival)',
   startLocation: 'Leonardo da Vinci–Fiumicino Airport',
   endLocation: 'Hotel',
-  startTime: '12:00',
-  endTime: '15:00',
+  startTime: '17:00',
+  endTime: '17:45',
   startDate: "04-22-2026",
   endDate: "04-22-2026",
-  description: 'Transfer from Leonardo da Vinci–Fiumicino Airport to your hotel in Rome.',
+  description: 'Travel from airport to hotel in Rome.',
   cost: 50
 });
 
@@ -2861,45 +2860,45 @@ const tyson_transportation2 = new Transportation({
   cost: 0
 });
 
-const tyson_transportation3 = new Transportation({
-  transportationTitle: 'Bootcamp Shuttle',
-  startLocation: 'Hotel',
-  endLocation: 'Gaming Arena, Milan',
-  startTime: '09:00',
-  endTime: '18:00',
-  startDate: "04-25-2026",
-  endDate: "04-25-2026",
-  description: 'Shuttle service to and from the Valorant bootcamp venue in Milan.',
-  cost: 50
-});
+// const tyson_transportation3 = new Transportation({
+//   transportationTitle: 'Bootcamp Shuttle',
+//   startLocation: 'Hotel',
+//   endLocation: 'Gaming Arena, Milan',
+//   startTime: '09:00',
+//   endTime: '18:00',
+//   startDate: "04-25-2026",
+//   endDate: "04-25-2026",
+//   description: 'Shuttle service to and from the Valorant bootcamp venue in Milan.',
+//   cost: 50
+// });
 
 const tyson_transportation4 = new Transportation({
   transportationTitle: 'Airport Transfer (Departure)',
   startLocation: 'Hotel',
   endLocation: 'Leonardo da Vinci–Fiumicino Airport',
-  startTime: '09:00',
-  endTime: '12:00',
+  startTime: '08:00',
+  endTime: '08:30',
   startDate: "04-28-2026",
   endDate: "04-28-2026",
-  description: 'Transfer from your hotel in Rome to Leonardo da Vinci–Fiumicino Airport for your departure.',
+  description: 'Travel to airport from hotel',
   cost: 50
 });
 
 // 5. create livings for Tyson's Italy trip
 const tyson_living1 = new Living({
-  livingTitle: 'Luxury Hotel in Rome',
-  startTime: '15:00',
+  livingTitle: 'Hotel in Rome',
+  startTime: '18:00',
   endTime: '12:00',
   startDate: "04-22-2026",
   endDate: "04-28-2026",
   location: 'Rome',
-  description: 'Stay in a luxury hotel in the heart of Rome, offering exquisite accommodations and easy access to the Valorant Champions tournament venue.',
+  description: 'stay in hotel close to the Valorant Champions tournament venue.',
   cost: 1200
 });
 
 // 6. push events, transportations, livings into Tyson's itinerary accordingly
 tyson_itinerary.events.push(tyson_event1, tyson_event2, tyson_event3, tyson_event4, tyson_event5, tyson_event6, tyson_event7);
-tyson_itinerary.transportations.push(tyson_transportation1, tyson_transportation2, tyson_transportation3, tyson_transportation4);
+tyson_itinerary.transportations.push(tyson_transportation1, tyson_transportation2, tyson_transportation4);
 tyson_itinerary.livings.push(tyson_living1);
 
 // 7. create likes for Tyson's itinerary
